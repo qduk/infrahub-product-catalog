@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "extensions": {
+    "critique": {
+      "version": "1.0.0",
+      "source": "local",
+      "manifest_hash": "sha256:0b63a1835415df730cbd487c90c1252b294980176c10c14a3fa9c31a7cb882e0",
+      "enabled": true,
+      "priority": 10,
+      "registered_commands": {
+        "claude": [
+          "speckit.critique.run"
+        ]
+      },
+      "registered_skills": [],
+      "installed_at": "2026-10-20T17:19:52.747116+00:00"
+    },
+    "checkpoint": {
+      "version": "1.0.0",
+      "source": "local",
+      "manifest_hash": "sha256:f1f8587fcfee109d13e5fd2837df498439695218b32d00083f6e98095fca64c0",
+      "enabled": true,
+      "priority": 10,
+      "registered_commands": {
+        "claude": [
+          "speckit.checkpoint.commit"
+        ]
+      },
+      "registered_skills": [],
+      "installed_at": "2026-10-20T17:19:52.945445+00:00"
+    },
+    "pov": {
+      "version": "1.1.0",
+      "source": "local",
+      "manifest_hash": "sha256:9ce68ff680ea0e83f4a38261944971226a946d187724a01e6d3e96250885f90f",
+      "enabled": true,
+      "priority": 10,
+      "registered_commands": {
+        "claude": [
+          "speckit.pov.extract",
+          "speckit.pov.retrospect",
+          "speckit.pov.summary",
+          "speckit.pov.auto",
+          "speckit.pov.prep",
+          "speckit.pov.implement"
+        ]
+      },
+      "registered_skills": [],
+      "installed_at": "2026-10-20T17:19:53.103656+00:00"
+    },
+    "infrahub-speckit": {
+      "version": "3.0.0",
+      "source": "local",
+      "manifest_hash": "sha256:a1b70d6f77d2a0cf37cb3fa5ef4d655882051a75eb772d489fa3029951956e3b",
+      "enabled": true,
+      "priority": 10,
+      "registered_commands": {
+        "claude": [
+          "speckit.infrahub-speckit.route-specify",
+          "speckit.infrahub-speckit.route-plan",
+          "speckit.infrahub-speckit.route-implement"
+        ]
+      },
+      "registered_skills": [],
+      "installed_at": "2026-10-20T17:19:53.251033+00:00"
+    }
+  }
+}

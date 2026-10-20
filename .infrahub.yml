@@ -1,0 +1,4 @@
+---
+# Infrahub repository configuration.
+# Add schemas, transforms, generators, checks and menus here as they are created.
+schemas: []

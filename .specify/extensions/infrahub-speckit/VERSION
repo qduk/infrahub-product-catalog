@@ -1,0 +1,7 @@
+upstream: https://github.com/opsmill/infrahub-speckit
+branch:   ic-hook-based-routing
+commit:   af97e90064102143d34a3755e8ed6ac77431f726
+date:     2026-06-02
+notes:    Pinned at PR #3 head pre-merge (v3.0: preset -> hook-based extension).
+          Re-vendor from main once PR #3 merges.
+          PR: https://github.com/opsmill/infrahub-speckit/pull/3

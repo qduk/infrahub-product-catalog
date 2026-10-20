@@ -1,0 +1,5 @@
+upstream: https://github.com/arunt14/spec-kit-critique
+branch:   main
+commit:   907fa6bc0d0b1d77e0b2f54f93616615fce789e8
+date:     2026-06-04
+notes:    Initial vendor — required dep of opsmill-speckit's prep/implement orchestrators.

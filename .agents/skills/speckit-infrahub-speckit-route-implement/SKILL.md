@@ -1,0 +1,1 @@
+../../../.specify/extensions/infrahub-speckit/.specify-dev/agent-commands/claude/speckit-infrahub-speckit-route-implement/SKILL.md

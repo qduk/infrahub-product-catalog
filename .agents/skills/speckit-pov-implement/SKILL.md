@@ -1,0 +1,1 @@
+../../../.specify/extensions/pov/.specify-dev/agent-commands/claude/speckit-pov-implement/SKILL.md

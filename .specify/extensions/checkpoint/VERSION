@@ -1,0 +1,5 @@
+upstream: https://github.com/aaronrsun/spec-kit-checkpoint
+branch:   main
+commit:   e25397412745d44460cab11a0d9b3f277f9f34bb
+date:     2026-06-04
+notes:    Initial vendor — required dep of opsmill-speckit's prep/implement orchestrators.

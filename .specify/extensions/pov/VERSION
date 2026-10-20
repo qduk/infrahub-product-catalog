@@ -1,0 +1,47 @@
+upstream: https://github.com/opsmill/opsmill-speckit
+branch:   add-auto-prep-implement-commands
+commit:   30a48aa8a94bc628f4cae8fca32ee87a781c7e4a
+date:     2026-06-02
+notes:    Pinned at PR #3 head pre-merge (v1.1.0: adds auto/prep/implement
+          autonomous workflow commands; removes after_implement -> extract
+          hook). Re-vendor from main once PR #3 merges.
+          PR: https://github.com/opsmill/opsmill-speckit/pull/3
+
+local_patches:
+  - file:    commands/prep.md
+    intent:  scaffold-aware short-circuit + alignment-check fourth branch
+    summary: |
+      Adds Phase 1 short-circuit when ./spec.md exists in an NNN-<slug>
+      directory (skip speckit-specify; the scaffold-grounded spec is
+      authoritative), and adds a 4th detection branch in Phase 5a that
+      reads the source PRD from spec.md's Context preamble when
+      $ARGUMENTS is empty. Enables autonomous-pipeline use against
+      scaffolded destinations (e.g. presales-creating-pov-sdds output)
+      without requiring a $ARGUMENTS PRD link.
+    upstream_status: |
+      Not yet upstreamed. Plan to send as a follow-up PR to
+      opsmill/opsmill-speckit once PR #3 merges. When upstream lands the
+      same change, re-vendor from main and remove this local_patches:
+      block in the same commit (the diff against fresh upstream should
+      be zero).
+    plan_ref: docs/plans/pov-auto-pipeline.md §3.5
+    patched_at: 2026-06-02
+  - file:    extension.yml (+ command bodies, README, and all presales-side references)
+    intent:  rename command namespace opsmill -> pov for the PoV destination
+    summary: |
+      Changes the extension id from "opsmill" to "pov" and renames all six
+      workflow commands speckit.opsmill.{auto,prep,implement,extract,summary,
+      retrospect} -> speckit.pov.* (plus the after_taskstoissues hook command
+      and every in-body cross-reference). In a PoV scaffold destination the SE
+      types speckit.pov.auto etc.; the "opsmill" house-namespace read as
+      internal/confusing. pov-speckit's separate speckit.pov-speckit.self-heal
+      is intentionally left unchanged. CHANGELOG.md is left as the upstream
+      mirror (not rewritten); the extension version stays pinned at 1.1.0.
+    upstream_status: |
+      Local-only divergence — will NOT be upstreamed (opsmill/opsmill-speckit
+      keeps the "opsmill" namespace). This rename MUST be re-applied on every
+      re-vendor from upstream: after copying fresh upstream, re-run
+      `sed -i 's/speckit\.opsmill/speckit.pov/g'` across the extension files
+      and reset extension.yml id to "pov". The diff against fresh upstream is
+      therefore intentionally non-zero for this patch.
+    patched_at: 2026-07-11

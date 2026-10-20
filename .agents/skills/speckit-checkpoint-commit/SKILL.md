@@ -1,0 +1,1 @@
+../../../.specify/extensions/checkpoint/.specify-dev/agent-commands/claude/speckit-checkpoint-commit/SKILL.md
