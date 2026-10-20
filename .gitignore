@@ -1,2 +1,5 @@
 # Machine-local Claude Code settings
 .claude/settings.local.json
+
+# Python virtual environment
+.venv/

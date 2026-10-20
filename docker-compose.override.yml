@@ -1,0 +1,13 @@
+---
+# Local settings for this repository's Infrahub instance.
+# docker-compose.yml is the unmodified file from https://infrahub.opsmill.io.
+name: infrahub-product-catalog
+
+services:
+  message-queue:
+    ports: !reset []
+  database:
+    ports: !reset []
+  infrahub-server:
+    ports: !override
+      - ${INFRAHUB_PORT:-8100}:8000
