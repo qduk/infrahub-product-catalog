@@ -1,50 +1,120 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report
+- Version change: template (unversioned) → 1.0.0
+- Principles defined (all new, replacing template placeholders):
+  - I. Schema-First Modeling
+  - II. Validation on the Local Infrahub Instance
+  - III. Sourced Product Records
+  - IV. Framework Terms Recorded as Data
+  - V. Infrahub Conventions Through the Managing Skills
+- Added sections: Technical Constraints, Development Workflow, Governance
+- Removed sections: none
+- Templates: none modified. Dependent templates and commands read this file at runtime.
+- Deferred TODOs: none
+-->
+
+# Infrahub Product Catalog Constitution
+
+This repository runs an Infrahub instance that records network automation products and maps each
+product to the building blocks of the Network Automation Framework that it covers.
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Schema-First Modeling
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+- Every feature MUST start as a change to the schema files listed in `.infrahub.yml`.
+- The schema change MUST pass `uv run infrahubctl schema check` before anyone writes object
+  files, transforms, generators, checks or menus that depend on it.
+- A node, attribute or relationship that the schema does not define MUST NOT appear in object
+  files or GraphQL queries.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+Rationale: the schema defines what the catalog can record. Data and automation written before the
+schema exists have to be rewritten when the schema changes.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### II. Validation on the Local Infrahub Instance
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+- A change counts as done only after it is loaded into the local Infrahub instance
+  (`http://localhost:8100`) and runs there without errors.
+- Schemas are loaded with `uv run infrahubctl schema load`, object files with
+  `uv run infrahubctl object load`, and menus with `uv run infrahubctl menu load`.
+- Transforms, generators and checks are run with `uv run infrahubctl transform`,
+  `uv run infrahubctl render`, `uv run infrahubctl generator` and `uv run infrahubctl check`,
+  because this repository is not connected to the instance as a Git repository.
+- A failed load or run MUST be reported with its output. It MUST NOT be reported as done.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+Rationale: unit tests and schema checks do not catch every error that a running Infrahub server
+returns. Loading into the local instance is the only check that matches how the catalog is used.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### III. Sourced Product Records
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+- Every product record MUST link to the source of each fact it states, such as the vendor's
+  documentation or release notes.
+- When no source states a fact, the record MUST leave the attribute empty. It MUST NOT fill the
+  attribute with an assumed value.
+- Product descriptions MUST state what the product does without marketing language. When a record
+  quotes a vendor's claim, it MUST name the vendor as the source of the claim.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+Rationale: people use the catalog to compare products. A value without a source cannot be checked,
+and a wrong value leads to a wrong comparison.
+
+### IV. Framework Terms Recorded as Data
+
+- The building blocks of the Network Automation Framework MUST be recorded as nodes in Infrahub,
+  loaded from object files, with a link to the framework's own definition of each block.
+- Schemas, transforms, generators and checks MUST NOT hard-code the list of building blocks.
+- Product records MUST use the framework's names for its building blocks exactly as the framework
+  defines them.
+
+Rationale: when the framework changes, the catalog is updated by editing object files, not code.
+Using the framework's own names lets readers match the catalog to the framework.
+
+### V. Infrahub Conventions Through the Managing Skills
+
+- Before writing or editing a schema, object file, transform, generator, check, menu or GraphQL
+  query, contributors MUST read the matching `infrahub-managing-*` skill.
+- Nodes and generics MUST use PascalCase names. Attributes and relationships MUST use snake_case
+  names.
+- Every node MUST define a `human_friendly_id`. Every relationship that has a peer relationship in
+  the other direction MUST set an `identifier`.
+- A generic MUST be added only when two or more nodes share its attributes or relationships.
+
+Rationale: the skills hold integration rules that the source code does not show. Changes that skip
+them have passed unit tests and still failed against a running Infrahub server.
+
+## Technical Constraints
+
+- Infrahub version: 1.11.8, set in `docker-compose.yml`. That file is the unchanged file from
+  <https://infrahub.opsmill.io>. Local changes MUST go in `docker-compose.override.yml`.
+- The instance runs under the Docker Compose project name `infrahub-product-catalog`, and its web
+  server is published on port 8100 unless `INFRAHUB_PORT` sets another port. Commands MUST NOT
+  pass `-p infrahub`, because other stacks on this machine use that project name.
+- `infrahubctl` MUST be run through uv (`uv run infrahubctl`). It is not installed on the PATH.
+- Commands that change data use the default admin API token from `docker-compose.yml`, set in
+  `INFRAHUB_API_TOKEN`. This token MUST NOT be used outside the local instance.
+- Python 3.13 or later, with dependencies managed by uv in `pyproject.toml`.
+
+## Development Workflow
+
+- Features follow the Spec Kit sequence: `/speckit-specify`, `/speckit-plan`, `/speckit-tasks`,
+  `/speckit-implement`. The Infrahub routing hooks in `.specify/extensions.yml` run before the
+  specify, plan and implement steps and MUST NOT be skipped.
+- Each plan MUST include a constitution check that lists how the feature meets Principles I to V,
+  and MUST justify any exception.
+- Work is committed on a feature branch, not on `main`.
+- Specs that the team keeps after a feature is done go in `dev/specs/`. Decisions that change the
+  schema design or this constitution are recorded as decision records in `dev/adr/`.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+- This constitution takes precedence over other practices in this repository. `AGENTS.md` holds
+  the operating instructions for the local instance and MUST stay consistent with this document.
+- An amendment is made by running `/speckit-constitution`, and is reviewed in a pull request. An
+  amendment that removes or redefines a principle MUST be recorded in `dev/adr/`.
+- Versions follow semantic versioning:
+  - MAJOR: a principle or section is removed or redefined in a way that makes earlier compliant
+    work non-compliant.
+  - MINOR: a principle or section is added, or its rules are materially expanded.
+  - PATCH: wording, clarifications and typo fixes that do not change a rule.
+- Every pull request review MUST confirm that the change complies with Principles I to V.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-10-20 | **Last Amended**: 2026-10-20
