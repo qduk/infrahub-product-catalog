@@ -42,3 +42,28 @@ Total time: about 7 minutes 20 seconds.
   source dated 2026-04-19. It did not mention the source dated 2026-04-20. After the 2099 date was
   reset to 2026-10-20, the check exited with status 0 and still listed the 2026-04-19 source as
   due for review. The branch was deleted.
+
+### Repository registration (task T025)
+
+- 2026-10-20: `uv run infrahubctl object load bootstrap/repository.yml` created the read-only
+  repository with one load. No uniqueness error, so the task workers were not scaled down. The
+  repository reached `sync_status` `in-sync` and `operational_status` `online` at commit
+  `43f1779`, and Infrahub listed the check definition `catalog_source_check`.
+
+### Demo arc (task T026)
+
+Run on 2026-10-20. The proposed change was opened, checked, merged and closed through Infrahub's
+GraphQL API, which applies the same rules as the web interface.
+
+| # | Outcome | Time |
+|---|---|---|
+| 1 | Pass. 18 tests passed. | under 1s |
+| 2 | Pass. The check passed on `main` and listed nothing. | 1s |
+| 3 | Pass. On `demo-source-check`, the product "Demo Product" (license model `commercial`, no license model source) was added and the Ansible README source was set to 2026-01-01. | 3s |
+| 4 | Pass. 20 seconds after the proposed change opened, "Check: catalog_source_check" completed with conclusion `failure`. It showed the license model error for "OpsMill Demo Product" and the "Due for review" message for the Ansible README. Data Integrity and Schema Integrity passed. | 22s |
+| 5 | Pass. The merge was refused: "Unable to merge proposed change containing failing checks". | under 5s |
+| 6 | Pass. After a license model source was added and the check was run again, it completed with conclusion `success` and still listed the Ansible README as due for review. The change was not merged, as row 7 requires. | 17s |
+| 7 | Pass. The proposed change was closed and the branch deleted. `main` still has 3 products, and the check on `main` passes with nothing listed. | 4s |
+
+Observation: the proposed change showed no separate validator for the repository's `pytest`
+tests. Run them with `uv run pytest tests/` before pushing.

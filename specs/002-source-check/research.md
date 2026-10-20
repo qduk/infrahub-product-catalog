@@ -28,10 +28,11 @@ pinned to 1.11.
   needs a GitHub token with write access, polls GitHub several times a minute, creates an Infrahub
   branch for every Git branch, and pushes merges back to GitHub. None of this is needed for one
   check.
-- **Not known yet**: the docs do not say which commit of a read-only repository's checks Infrahub
-  uses for a proposed change whose source branch does not sync with Git. The expected answer is
-  the commit imported on `main`. Implementation MUST confirm this on a proposed change before the
-  feature is marked done (quickstart row 4).
+- **Confirmed during implementation (task T026)**: the docs do not say which commit of a
+  read-only repository's checks Infrahub uses for a proposed change whose source branch does not
+  sync with Git. On 2026-10-20, a proposed change from such a branch ran `catalog_source_check`
+  from the commit imported on `main` (`43f1779`) and blocked the merge (quickstart results,
+  rows 4 and 5).
 
 ## R2. What the repository import loads
 

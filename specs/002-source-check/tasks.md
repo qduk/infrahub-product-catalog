@@ -192,11 +192,11 @@ the instance is set up, so it also updates the governing documents.
   `.specify/memory/constitution.md` from 1.0.0 to 1.1.0. The amendment says checks also run on
   every proposed change through the read-only repository connection, and keeps the requirement to
   validate on the local instance (research R8).
-- [ ] T024 Commit all work on the Git branch `002-source-check`, merge it into `main` with
+- [X] T024 Commit all work on the Git branch `002-source-check`, merge it into `main` with
   `git merge --ff-only`, then ask the user for the go-ahead to push `main` to
   `origin` (`git@github.com:qduk/infrahub-product-catalog.git`); push only after they agree,
   and stop here if they do not
-- [ ] T025 Register the repository with
+- [X] T025 Register the repository with
   `uv run infrahubctl object load bootstrap/repository.yml`. If the import fails with a uniqueness
   error, run `docker compose up -d --scale task-worker=1`, delete the failed registration, load
   the file again and then run `docker compose up -d` to restore two workers (research R7). Confirm
@@ -207,16 +207,16 @@ the instance is set up, so it also updates the governing documents.
 
 ## Phase 6: Polish & Cross-Cutting Concerns
 
-- [ ] T026 Run every row of the demo arc in `specs/002-source-check/quickstart.md` on the
+- [X] T026 Run every row of the demo arc in `specs/002-source-check/quickstart.md` on the
   Infrahub branch `demo-source-check`, and record the outcome and time of each row in its
   "Results" section. Row 4 settles the open question in research R1. If Infrahub does not run the
   check on the proposed change, stop and report this to the user with the proposed change's
   check output; do not mark the feature done.
-- [ ] T027 Confirm that `main` on the local instance is unchanged after the arc: no test products
+- [X] T027 Confirm that `main` on the local instance is unchanged after the arc: no test products
   remain, and every source's last-checked date is still 2026-10-20 (use
   `uv run infrahubctl check catalog_source_check --branch main --format-json`, which should pass
   and list nothing)
-- [ ] T028 Mark the completed tasks in `specs/002-source-check/tasks.md` and record any task
+- [X] T028 Mark the completed tasks in `specs/002-source-check/tasks.md` and record any task
   left open, with the reason, under it
 
 ---
