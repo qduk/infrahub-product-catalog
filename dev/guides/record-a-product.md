@@ -1,0 +1,47 @@
+# Record a product in the catalog
+
+These steps add a network automation product, its publisher, its sources and the building blocks
+it covers. The file format is in
+[contracts/object-files.md](../../specs/001-catalog-schema/contracts/object-files.md).
+
+## Before you start
+
+- The local instance is running. `uv run infrahubctl info` shows `http://localhost:8100` as
+  connected.
+- Run `export INFRAHUB_API_TOKEN=06438eb2-8019-4776-878c-0941b1f1d1ec`.
+- Create an Infrahub branch for the change, for example
+  `uv run infrahubctl branch create add-<product>`.
+
+## Steps
+
+1. Collect a source for each fact before you write anything.
+   - One source for the publisher.
+   - One source for the description.
+   - One source for the license model, if any source states it.
+   - One or more sources for each building block the product covers, and whether it covers the
+     block fully or partly.
+   A fact that no source states stays out of the catalog.
+2. Add each new source to `objects/02_sources.yml`, with a title, the URL and today's date as
+   `last_checked`. Reuse an existing entry when the URL is already there.
+3. Add the publisher to `objects/03_publishers.yml` if it is not there yet.
+4. Add the product to `objects/04_products.yml`.
+   - Refer to the publisher by name and to sources by URL.
+   - Write a description that states what the product does, without marketing language.
+   - Leave out `license_model` when no source states it.
+   - Add one entry under `coverage_claims` for each building block, with `extent` set to `full`
+     or `partial`, an optional `note` and at least one source.
+5. Check and load the files on your branch:
+
+   ```bash
+   uv run infrahubctl object validate --branch add-<product> objects/
+   uv run infrahubctl object load --branch add-<product> objects/
+   ```
+
+6. Open the product in the web interface on your branch and check its publisher, sources and
+   claims. Then merge the branch through a proposed change.
+
+## Renaming a building block, publisher or product
+
+Object files find existing nodes by name. Changing a name in a file creates a new node and leaves
+the old one in place. Rename the node in the web interface first, then change the name in the
+file.

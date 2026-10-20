@@ -3,3 +3,10 @@
 
 # Python virtual environment
 .venv/
+
+# Python caches
+__pycache__/
+*.pyc
+
+# Operating system files
+.DS_Store

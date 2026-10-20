@@ -1,0 +1,32 @@
+---
+# Documents that support facts in the catalog.
+# last_checked is the date a maintainer last opened the source and confirmed the facts it supports.
+apiVersion: infrahub.app/v1
+kind: Object
+spec:
+  kind: CatalogSource
+  data:
+    - title: What is Infrahub
+      url: https://docs.infrahub.app/overview
+      last_checked: "2026-10-20T00:00:00Z"
+    - title: opsmill/infrahub README
+      url: https://github.com/opsmill/infrahub
+      last_checked: "2026-10-20T00:00:00Z"
+    - title: ansible/ansible README
+      url: https://github.com/ansible/ansible
+      last_checked: "2026-10-20T00:00:00Z"
+    - title: Ansible Network Getting Started
+      url: https://docs.ansible.com/ansible/latest/network/getting_started/index.html
+      last_checked: "2026-10-20T00:00:00Z"
+    - title: Ansible Network Resource Modules
+      url: https://docs.ansible.com/ansible/latest/network/user_guide/network_resource_modules.html
+      last_checked: "2026-10-20T00:00:00Z"
+    - title: Ansible Run Your First Command and Playbook
+      url: https://docs.ansible.com/ansible/latest/network/getting_started/first_playbook.html
+      last_checked: "2026-10-20T00:00:00Z"
+    - title: netenglabs/suzieq README
+      url: https://github.com/netenglabs/suzieq
+      last_checked: "2026-10-20T00:00:00Z"
+    - title: SuzieQ documentation
+      url: https://suzieq.readthedocs.io/en/latest/
+      last_checked: "2026-10-20T00:00:00Z"

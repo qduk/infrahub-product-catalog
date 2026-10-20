@@ -1,0 +1,70 @@
+---
+# Network automation products and the framework building blocks they cover.
+# Every fact links to a source from 02_sources.yml. See specs/001-catalog-schema/research.md R10.
+apiVersion: infrahub.app/v1
+kind: Object
+spec:
+  kind: CatalogProduct
+  data:
+    - name: Infrahub
+      publisher: OpsMill
+      description: >-
+        A graph-based data management platform with built-in version control, CI workflows, peer
+        review and API access.
+      homepage_url: https://docs.infrahub.app/
+      license_model: open_core
+      publisher_sources: [https://docs.infrahub.app/overview]
+      description_sources: [https://docs.infrahub.app/overview]
+      license_model_sources: [https://github.com/opsmill/infrahub]
+      coverage_claims:
+        data:
+          - building_block: Intent
+            extent: full
+            note: The README describes Infrahub as one source of truth for infrastructure data.
+            sources: [https://github.com/opsmill/infrahub]
+
+    - name: Ansible
+      publisher: Red Hat
+      description: >-
+        An agentless automation tool that manages network devices from many vendors over SSH or
+        HTTPS, using playbooks and vendor modules.
+      homepage_url: https://www.ansible.com/
+      license_model: open_source
+      publisher_sources: [https://github.com/ansible/ansible]
+      description_sources: [https://docs.ansible.com/ansible/latest/network/getting_started/index.html]
+      license_model_sources: [https://github.com/ansible/ansible]
+      coverage_claims:
+        data:
+          - building_block: Executor
+            extent: full
+            note: Network resource modules merge, replace, override or delete device configuration.
+            sources:
+              - https://docs.ansible.com/ansible/latest/network/user_guide/network_resource_modules.html
+          - building_block: Collector
+            extent: partial
+            note: >-
+              Gathers device facts when a playbook runs. It does not poll devices on its own.
+            sources:
+              - https://docs.ansible.com/ansible/latest/network/getting_started/first_playbook.html
+
+    - name: SuzieQ
+      publisher: Stardust Systems
+      description: >-
+        A multi-vendor network observability application that collects device state over SSH or
+        REST API, stores it in Parquet files and answers questions about it through a CLI, GUI,
+        REST API or Python.
+      homepage_url: https://suzieq.readthedocs.io/en/latest/
+      license_model: open_core
+      publisher_sources: [https://github.com/netenglabs/suzieq]
+      description_sources: [https://suzieq.readthedocs.io/en/latest/]
+      license_model_sources: [https://github.com/netenglabs/suzieq]
+      coverage_claims:
+        data:
+          - building_block: Collector
+            extent: full
+            note: The poller gathers data from devices over SSH or REST API.
+            sources: [https://suzieq.readthedocs.io/en/latest/]
+          - building_block: Observability
+            extent: full
+            note: Stores collected state in Parquet files and provides analysis on top of it.
+            sources: [https://suzieq.readthedocs.io/en/latest/]

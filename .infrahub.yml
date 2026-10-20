@@ -1,4 +1,8 @@
 ---
 # Infrahub repository configuration.
 # Add schemas, transforms, generators, checks and menus here as they are created.
-schemas: []
+schemas:
+  - schemas/catalog.yml
+
+objects:
+  - objects

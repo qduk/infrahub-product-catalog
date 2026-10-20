@@ -1,0 +1,13 @@
+---
+# Companies, foundations and open-source projects that publish products.
+apiVersion: infrahub.app/v1
+kind: Object
+spec:
+  kind: CatalogPublisher
+  data:
+    - name: OpsMill
+      homepage_url: https://opsmill.com/
+    - name: Red Hat
+      homepage_url: https://www.redhat.com/
+    - name: Stardust Systems
+      homepage_url: https://www.stardustsystems.net/

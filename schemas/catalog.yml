@@ -1,0 +1,252 @@
+---
+# yaml-language-server: $schema=https://schema.infrahub.app/infrahub/schema/latest.json
+version: "1.0"
+
+nodes:
+  - name: BuildingBlock
+    namespace: Catalog
+    description: A building block of the Network Automation Framework.
+    label: Building Block
+    icon: mdi:puzzle-outline
+    include_in_menu: true
+    human_friendly_id:
+      - name__value
+    order_by:
+      - name__value
+    display_label: name__value
+    generate_profile: false
+    attributes:
+      - name: name
+        kind: Text
+        unique: true
+        description: Name exactly as the framework writes it.
+        order_weight: 1000
+      - name: description
+        kind: TextArea
+        description: Description quoted from the framework.
+        order_weight: 1100
+      - name: definition_url
+        kind: URL
+        label: Definition
+        description: Link to the framework's definition of this block.
+        order_weight: 1200
+    relationships:
+      - name: coverage_claims
+        peer: CatalogCoverageClaim
+        kind: Generic
+        cardinality: many
+        identifier: building_block__coverage_claims
+        description: Claims that a product covers this block.
+
+  - name: Publisher
+    namespace: Catalog
+    description: A company, foundation or open-source project that publishes products.
+    icon: mdi:domain
+    include_in_menu: true
+    human_friendly_id:
+      - name__value
+    order_by:
+      - name__value
+    display_label: name__value
+    generate_profile: false
+    attributes:
+      - name: name
+        kind: Text
+        unique: true
+        order_weight: 1000
+      - name: homepage_url
+        kind: URL
+        label: Home Page
+        order_weight: 1100
+    relationships:
+      - name: products
+        peer: CatalogProduct
+        kind: Generic
+        cardinality: many
+        identifier: publisher__products
+
+  - name: Source
+    namespace: Catalog
+    description: A document that supports facts in the catalog.
+    icon: mdi:file-document-outline
+    include_in_menu: true
+    human_friendly_id:
+      - url__value
+    order_by:
+      - title__value
+    display_label: title__value
+    generate_profile: false
+    attributes:
+      - name: title
+        kind: Text
+        order_weight: 1000
+      - name: url
+        kind: URL
+        label: URL
+        unique: true
+        order_weight: 1100
+      - name: last_checked
+        kind: DateTime
+        description: When a maintainer last confirmed this source.
+        order_weight: 1200
+    relationships:
+      - name: coverage_claims
+        peer: CatalogCoverageClaim
+        kind: Generic
+        cardinality: many
+        identifier: coverage_claim__sources
+        description: Coverage claims this source supports.
+      - name: publisher_of_products
+        peer: CatalogProduct
+        kind: Generic
+        cardinality: many
+        identifier: product__publisher_sources
+        description: Products whose publisher this source states.
+      - name: description_of_products
+        peer: CatalogProduct
+        kind: Generic
+        cardinality: many
+        identifier: product__description_sources
+        description: Products whose description this source supports.
+      - name: license_model_of_products
+        peer: CatalogProduct
+        kind: Generic
+        cardinality: many
+        identifier: product__license_model_sources
+        description: Products whose license model this source states.
+
+  - name: Product
+    namespace: Catalog
+    description: A network automation product.
+    icon: mdi:package-variant-closed
+    include_in_menu: true
+    human_friendly_id:
+      - publisher__name__value
+      - name__value
+    order_by:
+      - full_name__value
+    display_label: full_name__value
+    uniqueness_constraints:
+      - ["publisher", "name__value"]
+    generate_profile: false
+    attributes:
+      - name: name
+        kind: Text
+        description: Product name, unique for each publisher.
+        order_weight: 1000
+      - name: full_name
+        kind: Text
+        unique: true
+        read_only: true
+        computed_attribute:
+          kind: Jinja2
+          jinja2_template: "{{ publisher__name__value }} {{ name__value }}"
+        description: Publisher name followed by product name.
+        order_weight: 1100
+      - name: description
+        kind: TextArea
+        description: What the product does, without marketing language.
+        order_weight: 1200
+      - name: homepage_url
+        kind: URL
+        label: Home Page
+        order_weight: 1300
+      - name: license_model
+        kind: Dropdown
+        choices:
+          - name: open_source
+            label: Open source
+          - name: open_core
+            label: Open core
+          - name: commercial
+            label: Commercial
+        optional: true
+        description: Leave empty when no source states the license model.
+        order_weight: 1400
+    relationships:
+      - name: publisher
+        peer: CatalogPublisher
+        kind: Attribute
+        cardinality: one
+        optional: false
+        identifier: publisher__products
+        order_weight: 1050
+      - name: publisher_sources
+        peer: CatalogSource
+        kind: Attribute
+        cardinality: many
+        optional: false
+        identifier: product__publisher_sources
+        min_count: 1
+        description: Sources that state the publisher.
+      - name: description_sources
+        peer: CatalogSource
+        kind: Attribute
+        cardinality: many
+        optional: false
+        identifier: product__description_sources
+        min_count: 1
+        description: Sources that support the description.
+      - name: license_model_sources
+        peer: CatalogSource
+        kind: Attribute
+        cardinality: many
+        identifier: product__license_model_sources
+        description: Sources that state the license model.
+      - name: coverage_claims
+        peer: CatalogCoverageClaim
+        kind: Component
+        cardinality: many
+        identifier: product__coverage_claims
+        on_delete: cascade
+
+  - name: CoverageClaim
+    namespace: Catalog
+    description: States that a product covers a building block, with sources.
+    label: Coverage Claim
+    icon: mdi:link-variant
+    include_in_menu: true
+    human_friendly_id:
+      - product__full_name__value
+      - building_block__name__value
+    display_label: "{{ product__full_name__value }} - {{ building_block__name__value }}"
+    uniqueness_constraints:
+      - ["product", "building_block"]
+    generate_profile: false
+    attributes:
+      - name: extent
+        kind: Dropdown
+        choices:
+          - name: full
+            label: Full
+          - name: partial
+            label: Partial
+        description: Whether the product covers the whole block or part of it.
+        order_weight: 1200
+      - name: note
+        kind: TextArea
+        optional: true
+        order_weight: 1300
+    relationships:
+      - name: product
+        peer: CatalogProduct
+        kind: Parent
+        cardinality: one
+        optional: false
+        identifier: product__coverage_claims
+        order_weight: 1000
+      - name: building_block
+        peer: CatalogBuildingBlock
+        kind: Attribute
+        cardinality: one
+        optional: false
+        identifier: building_block__coverage_claims
+        order_weight: 1100
+      - name: sources
+        peer: CatalogSource
+        kind: Attribute
+        cardinality: many
+        optional: false
+        identifier: coverage_claim__sources
+        min_count: 1
+        description: Sources that support the coverage and its extent.

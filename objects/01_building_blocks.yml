@@ -1,0 +1,37 @@
+---
+# Building blocks of the Network Automation Framework.
+# Source: https://reference.networkautomation.forum/Framework/Framework/
+# Names and descriptions are copied word for word from the "Architecture" list on that page.
+apiVersion: infrahub.app/v1
+kind: Object
+spec:
+  kind: CatalogBuildingBlock
+  data:
+    - name: Intent
+      description: >-
+        Defines the logic to handle and the persistence layer to store the desired state of the
+        network, including both configuration and operational expectations.
+      definition_url: https://reference.networkautomation.forum/Framework/Framework/#intent
+    - name: Observability
+      description: >-
+        It persists the actual network state, and defines the logic to process it.
+      definition_url: https://reference.networkautomation.forum/Framework/Framework/#observability
+    - name: Orchestrator
+      description: >-
+        Defines how the automation tasks are coordinated and executed in response to events.
+      definition_url: https://reference.networkautomation.forum/Framework/Framework/#orchestrator
+    - name: Executor
+      description: >-
+        Encompasses the actual tasks applied to the network to drive changes (e.g., updating
+        configuration) as guided by the intended state.
+      definition_url: https://reference.networkautomation.forum/Framework/Framework/#executor
+    - name: Collector
+      description: >-
+        In contrast to Executor, this component focuses on retrieving (i.e., reading) the actual
+        state of the network.
+      definition_url: https://reference.networkautomation.forum/Framework/Framework/#collector
+    - name: Presentation
+      description: >-
+        Provides the interfaces through which users interact with the system, including
+        dashboards, graphical user interfaces (e.g., ITSM), and CLI tools.
+      definition_url: https://reference.networkautomation.forum/Framework/Framework/#presentation
