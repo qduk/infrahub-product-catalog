@@ -1,0 +1,34 @@
+---
+version: "1.0"
+infrahub_tests:
+  - resource: Check
+    resource_name: catalog_source_check
+    tests:
+      - name: smoke_catalog_source_check
+        spec:
+          kind: check-smoke
+      - name: unit_license_model_missing_source
+        spec:
+          kind: check-unit-process
+          directory: fixtures/license_model_missing_source
+        expect: FAIL
+      - name: unit_license_model_with_source
+        spec:
+          kind: check-unit-process
+          directory: fixtures/license_model_with_source
+        expect: PASS
+      - name: unit_license_model_empty
+        spec:
+          kind: check-unit-process
+          directory: fixtures/license_model_empty
+        expect: PASS
+      - name: unit_source_old
+        spec:
+          kind: check-unit-process
+          directory: fixtures/source_old
+        expect: PASS
+      - name: unit_source_future
+        spec:
+          kind: check-unit-process
+          directory: fixtures/source_future
+        expect: FAIL

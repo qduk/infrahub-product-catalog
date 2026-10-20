@@ -38,7 +38,17 @@ it covers. The file format is in
    ```
 
 6. Open the product in the web interface on your branch and check its publisher, sources and
-   claims. Then merge the branch through a proposed change.
+   claims.
+7. Run the source check on your branch:
+
+   ```bash
+   uv run infrahubctl check catalog_source_check --branch add-<product> --format-json
+   ```
+
+   Fix every `ERROR` line, for example a license model with no source. `INFO` lines that start
+   with "Due for review" list sources to open again and confirm. They do not block the merge.
+8. Open a proposed change from your branch to `main`. Infrahub runs the same check on it. Merge
+   only through the proposed change: a direct branch merge skips the check.
 
 ## Renaming a building block, publisher or product
 

@@ -1,0 +1,14 @@
+---
+# Registers this repository in Infrahub as a read-only repository, so that Infrahub runs
+# catalog_source_check on every proposed change. Load once with:
+#   uv run infrahubctl object load bootstrap/repository.yml
+# Kept outside objects/ so it is never loaded together with catalog data.
+# See dev/adr/0002-connect-repository-read-only.md.
+apiVersion: infrahub.app/v1
+kind: Object
+spec:
+  kind: CoreReadOnlyRepository
+  data:
+    - name: infrahub-product-catalog
+      location: https://github.com/qduk/infrahub-product-catalog.git
+      ref: main

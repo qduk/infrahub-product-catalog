@@ -1,15 +1,17 @@
 <!--
 Sync Impact Report
-- Version change: template (unversioned) → 1.0.0
-- Principles defined (all new, replacing template placeholders):
-  - I. Schema-First Modeling
-  - II. Validation on the Local Infrahub Instance
-  - III. Sourced Product Records
-  - IV. Framework Terms Recorded as Data
-  - V. Infrahub Conventions Through the Managing Skills
-- Added sections: Technical Constraints, Development Workflow, Governance
+- Version change: 1.0.0 → 1.1.0 (MINOR: materially expanded guidance in Principle II)
+- Modified principles:
+  - II. Validation on the Local Infrahub Instance (title unchanged). The repository is now
+    connected to the instance as a read-only Git repository. Checks also run on every proposed
+    change, a failed check blocks the merge, and changes reach main only through a proposed
+    change. Schemas, object files, menus, transforms and generators are still loaded or run with
+    infrahubctl.
+- Added sections: none (Technical Constraints gains one bullet about the repository connection)
 - Removed sections: none
 - Templates: none modified. Dependent templates and commands read this file at runtime.
+- Evidence: specs/002-source-check/research.md R1 to R3 and R8,
+  dev/adr/0002-connect-repository-read-only.md
 - Deferred TODOs: none
 -->
 
@@ -37,13 +39,21 @@ schema exists have to be rewritten when the schema changes.
   (`http://localhost:8100`) and runs there without errors.
 - Schemas are loaded with `uv run infrahubctl schema load`, object files with
   `uv run infrahubctl object load`, and menus with `uv run infrahubctl menu load`.
-- Transforms, generators and checks are run with `uv run infrahubctl transform`,
-  `uv run infrahubctl render`, `uv run infrahubctl generator` and `uv run infrahubctl check`,
-  because this repository is not connected to the instance as a Git repository.
+- Schema and object files MUST be loaded on an Infrahub branch and reach `main` only through a
+  proposed change. A direct branch merge MUST NOT be used, because it skips the proposed change's
+  checks.
+- The instance reads this repository from GitHub as a read-only repository. `.infrahub.yml` lists
+  only checks and their queries, so the repository import never writes schema or data to `main`.
+  Infrahub runs these checks on every proposed change, and a failed check blocks the merge.
+- Every check MUST also be run by hand with `uv run infrahubctl check <name> --branch <branch>`
+  before a change that adds or edits it is pushed. Transforms and generators are run with
+  `uv run infrahubctl transform`, `uv run infrahubctl render` and `uv run infrahubctl generator`.
 - A failed load or run MUST be reported with its output. It MUST NOT be reported as done.
 
 Rationale: unit tests and schema checks do not catch every error that a running Infrahub server
 returns. Loading into the local instance is the only check that matches how the catalog is used.
+Running checks on every proposed change enforces the rules that the schema cannot express, without
+relying on a maintainer to remember to run them.
 
 ### III. Sourced Product Records
 
@@ -92,6 +102,10 @@ them have passed unit tests and still failed against a running Infrahub server.
 - Commands that change data use the default admin API token from `docker-compose.yml`, set in
   `INFRAHUB_API_TOKEN`. This token MUST NOT be used outside the local instance.
 - Python 3.13 or later, with dependencies managed by uv in `pyproject.toml`.
+- The instance reads this repository from <https://github.com/qduk/infrahub-product-catalog>
+  (`CoreReadOnlyRepository`, ref `main`, registered from `bootstrap/repository.yml`). Infrahub
+  reads only pushed commits. After a change to `checks/`, `queries/` or `.infrahub.yml` is pushed,
+  a maintainer MUST run **Import latest commit** on the repository.
 
 ## Development Workflow
 
@@ -117,4 +131,4 @@ them have passed unit tests and still failed against a running Infrahub server.
   - PATCH: wording, clarifications and typo fixes that do not change a rule.
 - Every pull request review MUST confirm that the change complies with Principles I to V.
 
-**Version**: 1.0.0 | **Ratified**: 2026-10-20 | **Last Amended**: 2026-10-20
+**Version**: 1.1.0 | **Ratified**: 2026-10-20 | **Last Amended**: 2026-10-20

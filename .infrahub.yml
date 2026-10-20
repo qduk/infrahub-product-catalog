@@ -1,8 +1,12 @@
 ---
 # Infrahub repository configuration.
-# Add schemas, transforms, generators, checks and menus here as they are created.
-schemas:
-  - schemas/catalog.yml
+# Schemas and object files are loaded with infrahubctl on an Infrahub branch, not imported from
+# this repository, so that data reaches main only through a proposed change.
+queries:
+  - name: catalog_source_check
+    file_path: queries/catalog_source_check.gql
 
-objects:
-  - objects
+check_definitions:
+  - name: catalog_source_check
+    class_name: CatalogSourceCheck
+    file_path: checks/catalog_source_check.py

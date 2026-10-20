@@ -1,0 +1,37 @@
+# Data for the catalog source check (checks/catalog_source_check.py).
+query catalog_source_check {
+  CatalogProduct {
+    edges {
+      node {
+        id
+        __typename
+        full_name {
+          value
+        }
+        license_model {
+          value
+        }
+        license_model_sources {
+          count
+        }
+      }
+    }
+  }
+  CatalogSource {
+    edges {
+      node {
+        id
+        __typename
+        title {
+          value
+        }
+        url {
+          value
+        }
+        last_checked {
+          value
+        }
+      }
+    }
+  }
+}
