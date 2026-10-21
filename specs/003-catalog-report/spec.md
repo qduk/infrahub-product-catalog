@@ -4,7 +4,8 @@
 
 **Created**: 2026-10-21
 
-**Status**: Draft
+**Status**: Draft. Scope reduced on 2026-10-21: the user kept only the coverage table (see
+"Scope change" below).
 
 **Input**: User description (taken from the recommendation the user accepted): "Catalog report
 artifact: one Markdown report in Infrahub with Mermaid charts built from the catalog data. It holds
@@ -39,53 +40,11 @@ in the catalog.
 
 ---
 
-### User Story 2 - View how many products cover each building block (Priority: P2)
-
-The engineer views a bar chart with one bar per building block. Each bar shows how many products
-cover the block, split into full and partial coverage, so the engineer can see which blocks have
-many options and which have none.
-
-**Why this priority**: the gaps (blocks with no products) show where the catalog or the market is
-thin. This builds on the same data as User Story 1.
-
-**Independent Test**: open the report and compare each bar with a count of the coverage claims
-for that block.
-
-**Acceptance Scenarios**:
-
-1. **Given** Collector, covered fully by one product and partly by another, **When** the engineer
-   views the chart, **Then** Collector shows 1 full and 1 partial.
-2. **Given** Orchestrator and Presentation, which no product covers, **When** the engineer views
-   the chart, **Then** both appear with a count of 0.
-
----
-
-### User Story 3 - View the map from products to building blocks (Priority: P3)
-
-The engineer views a diagram that connects each product to the building blocks it covers. A full
-claim and a partial claim use different line styles, so the engineer can follow how a set of
-products would combine to cover the framework.
-
-**Why this priority**: the diagram shows the same claims as the table in another form. It is
-easier to read for a few products and harder for many, so it comes after the table and the chart.
-
-**Independent Test**: open the report and confirm that each coverage claim appears as one line
-with the right style.
-
-**Acceptance Scenarios**:
-
-1. **Given** the catalog's 5 coverage claims, **When** the engineer views the diagram, **Then**
-   it shows 5 lines, with full claims drawn one way and partial claims another.
-2. **Given** a building block with no claims, **When** the engineer views the diagram, **Then**
-   the block appears with no lines to it.
-
----
-
 ### User Story 4 - Review how a change affects the report (Priority: P2)
 
 A catalog maintainer opens a proposed change that adds a product or a coverage claim. The proposed
 change shows the report as it will be after the change, so the reviewer can see how the table,
-chart and diagram change before merging.
+table changes before merging.
 
 **Why this priority**: changes reach `main` only through proposed changes (constitution 1.1.0,
 Principle II). Seeing the report change during review catches mistakes, such as a claim on the
@@ -105,14 +64,11 @@ report on the proposed change includes the new claim while the report on `main` 
 
 - The catalog has no products. The report still shows every building block, with empty rows and
   zero counts, and says that no products are recorded.
-- A product has no coverage claims. It appears in the table with no coverage in every cell, and in
-  the diagram with no lines.
-- A building block is added to the catalog. The report adds a column, a bar and a diagram node for
-  it without any change to the report itself.
-- Product or building block names contain characters that the chart format treats specially,
-  such as brackets, quotes or parentheses. The report shows the names as written.
-- The catalog grows to many products. The table stays readable. The diagram may become crowded,
-  and that is accepted.
+- A product has no coverage claims. It appears in the table with no coverage in every cell.
+- A building block is added to the catalog. The report adds a column for it without any change to
+  the report itself.
+- Product or building block names contain characters that the table format treats specially, such
+  as `|`. The report shows the names as written.
 
 ## Requirements *(mandatory)*
 
@@ -122,12 +78,9 @@ report on the proposed change includes the new claim while the report on `main` 
   Infrahub's web interface.
 - **FR-002**: The report MUST include a table with one row per product (named with its publisher)
   and one column per building block, showing full, partial or no coverage in each cell.
-- **FR-003**: The report MUST include a chart with one bar per building block, showing the number
-  of products that cover it fully and the number that cover it partly.
-- **FR-004**: The report MUST include a diagram that links each product to each building block it
-  covers, with a different line style for full and partial coverage.
-- **FR-005**: The report MUST list building blocks in the same order in every section, and
-  products in the same order in every section.
+- **FR-003**: Removed on 2026-10-21 (bar chart, see "Scope change").
+- **FR-004**: Removed on 2026-10-21 (product map, see "Scope change").
+- **FR-005**: The report MUST list building blocks and products in a stable order: sorted by name.
 - **FR-006**: The report MUST read building blocks, products and claims from the catalog data. It
   MUST NOT contain a fixed list of building blocks or products (constitution Principle IV).
 - **FR-007**: The report MUST be rebuilt for each proposed change, so that the reviewer sees the
@@ -151,8 +104,7 @@ report on the proposed change includes the new claim while the report on `main` 
 
 ### Measurable Outcomes
 
-- **SC-001**: 100% of coverage claims in the catalog appear in the table, the chart and the
-  diagram, each with the right extent.
+- **SC-001**: 100% of coverage claims in the catalog appear in the table with the right extent.
 - **SC-002**: An engineer can find which products cover a given building block in under 30
   seconds after opening the report.
 - **SC-003**: Adding a product or claim and opening a proposed change shows the updated report on
@@ -160,14 +112,18 @@ report on the proposed change includes the new claim while the report on `main` 
 - **SC-004**: Adding a building block to the catalog changes the report with no change to the
   report's own files.
 
+## Scope change
+
+On 2026-10-21, after viewing the rendered report, the user decided to keep only the coverage table
+for now and to build interactive charts in a separate front end later. User Stories 2 (bar chart)
+and 3 (product map), FR-003 and FR-004 were removed. Both charts worked in Infrahub before they
+were removed: they are in commit `a63ec0d`, and the user confirmed that the bar chart drew the two
+series over each other.
+
 ## Assumptions
 
-- The three sections chosen are the ones the user accepted: table, bar chart and diagram. A license
-  model chart is out of scope.
-- The report is read in Infrahub's web interface, which shows charts written in the Mermaid format
-  inside Markdown reports (Infrahub 1.11 and later, [artifacts
-  overview](https://github.com/opsmill/infrahub/blob/stable/docs/docs/artifacts/overview.mdx)).
-  Which Mermaid chart types the installed version shows is confirmed during planning.
+- A license model chart is out of scope.
+- The report is read in Infrahub's web interface, which shows Markdown reports as formatted text.
 - Infrahub attaches each report to one object. The catalog has no object that stands for the
   catalog as a whole, so this feature adds one. This is a small schema change. Planning decides
   whether it is done in this feature or in a separate schema feature first (constitution

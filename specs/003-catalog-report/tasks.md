@@ -208,14 +208,14 @@ the proposed change includes it while the report on `main` does not.
 - [X] T021 [US4] Run `uv run infrahubctl check catalog_source_check --branch catalog-report --format-json`
   and confirm it passes, then open a proposed change from `catalog-report` to `main` for the
   schema and report object, confirm all checks pass, and merge it
-- [ ] T022 [US4] Commit all work on the Git branch `003-catalog-report`, merge it into `main` with
+- [X] T022 [US4] Commit all work on the Git branch `003-catalog-report`, merge it into `main` with
   `git merge --ff-only`, then ask the user for the go-ahead to push `main` to `origin`; push only
   after they agree, and stop here if they do not
-- [ ] T023 [US4] In the Infrahub web interface (or through the API), run **Import latest commit**
+- [X] T023 [US4] In the Infrahub web interface (or through the API), run **Import latest commit**
   on the repository `infrahub-product-catalog`, wait until it is in sync at the new commit, and
   confirm Infrahub lists the transform `catalog_report` and the artifact definition
   `catalog_coverage_report`
-- [ ] T024 [US4] Generate the artifact on `main` for the definition `catalog_coverage_report`,
+- [X] T024 [US4] Generate the artifact on `main` for the definition `catalog_coverage_report`,
   poll `CoreArtifact` until it exists (transforms skill, `artifacts-async-regen-polling`), and
   confirm its content matches `tests/fixtures/catalog_report_current/output.md`; record the result
   in the "Results" section of `specs/003-catalog-report/quickstart.md`
@@ -226,17 +226,19 @@ the proposed change includes it while the report on `main` does not.
 
 ## Phase 7: Polish & Cross-Cutting Concerns
 
-- [ ] T025 Run quickstart rows 2 to 6 in `specs/003-catalog-report/quickstart.md` on the
+- [X] T025 Run quickstart rows 2 to 6 in `specs/003-catalog-report/quickstart.md` on the
   Infrahub branch `demo-report`, and record each row's outcome and time in its "Results" section.
   Row 4 confirms that the report is rebuilt on a proposed change (FR-007), and row 5 that a new
   building block appears with no change to any file (SC-004). Close the proposed change and delete
   the branch afterwards.
-- [ ] T026 Ask the user to run quickstart row 1 in a browser (view the table, bar chart and
+- [X] T026 Ask the user to run quickstart row 1 in a browser (view the table, bar chart and
   diagram on the artifact, and say how the two bar series are drawn), and record their answer in
   `specs/003-catalog-report/quickstart.md`; if the bars are drawn side by side, update the
   explanation line in `transforms/catalog_report.py`, the expected outputs and
   `specs/003-catalog-report/contracts/report.md` (research R2)
-- [ ] T027 Update `dev/guides/record-a-product.md` with a step that says where to view the report
+  - Done 2026-10-21: the bars were drawn over each other. The user then asked to keep only the
+    table, so the bar chart and the product map were removed (spec, "Scope change").
+- [X] T027 Update `dev/guides/record-a-product.md` with a step that says where to view the report
   and that a proposed change shows the updated report; commit the results on a new Git branch,
   merge it into `main`, and ask the user before pushing
 - [ ] T028 Mark the completed tasks in `specs/003-catalog-report/tasks.md` and record any task

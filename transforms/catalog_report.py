@@ -1,4 +1,4 @@
-"""Build the catalog coverage report: a Markdown report with Mermaid charts."""
+"""Build the catalog coverage report: a Markdown table of products against building blocks."""
 
 from dataclasses import dataclass
 
@@ -24,45 +24,6 @@ def count(number: int, singular: str, plural: str) -> str:
 
 def table_cell(text: str) -> str:
     return text.replace("|", "\\|")
-
-
-def mermaid_label(text: str) -> str:
-    return '"' + text.replace('"', "#quot;") + '"'
-
-
-def bar_chart(blocks: list[str], products: list[Product]) -> list[str]:
-    totals = [sum(1 for product in products if block in product.claims) for block in blocks]
-    full = [sum(1 for product in products if product.claims.get(block) == "full") for block in blocks]
-    return [
-        "## Products per building block",
-        "",
-        "```mermaid",
-        "xychart-beta",
-        '    title "Products per building block"',
-        "    x-axis [" + ", ".join(mermaid_label(block) for block in blocks) + "]",
-        f'    y-axis "Products" 0 --> {max(len(products), 1)}',
-        "    bar [" + ", ".join(str(count) for count in totals) + "]",
-        "    bar [" + ", ".join(str(count) for count in full) + "]",
-        "```",
-        "",
-        "The first bar series counts all products that cover the block. The second, drawn over it, "
-        "counts products with full coverage. The difference is partial coverage.",
-    ]
-
-
-def product_map(blocks: list[str], products: list[Product]) -> list[str]:
-    block_ids = {block: f"b{index}" for index, block in enumerate(blocks, start=1)}
-    lines = ["## Map of products to building blocks", "", "```mermaid", "flowchart LR"]
-    lines.extend(f"    p{index}[{mermaid_label(product.name)}]" for index, product in enumerate(products, start=1))
-    lines.extend(f"    {block_ids[block]}[{mermaid_label(block)}]" for block in blocks)
-    for index, product in enumerate(products, start=1):
-        for block in blocks:
-            extent = product.claims.get(block)
-            if extent:
-                arrow = "==>" if extent == "full" else "-.->"
-                lines.append(f"    p{index} {arrow} {block_ids[block]}")
-    lines.extend(["```", "", "Thick lines show full coverage. Dotted lines show partial coverage."])
-    return lines
 
 
 def coverage_table(blocks: list[str], products: list[Product]) -> list[str]:
@@ -113,9 +74,5 @@ class CatalogReportTransform(InfrahubTransform):
             f"{count(claim_count, 'coverage claim', 'coverage claims')}.",
             "",
             *coverage_table(blocks, products),
-            "",
-            *bar_chart(blocks, products),
-            "",
-            *product_map(blocks, products),
         ]
         return "\n".join(lines) + "\n"

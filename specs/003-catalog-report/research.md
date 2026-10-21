@@ -1,5 +1,9 @@
 # Research: Catalog Coverage Report
 
+> **Scope change, 2026-10-21**: the user kept only the coverage table. R1 (chart types), R2 (bar
+> chart) and the Mermaid parts of R7 describe the removed charts and are kept as a record. The user
+> confirmed that Infrahub drew the two bar series over each other, as R2 expected.
+
 **Feature**: [spec.md](./spec.md) | **Plan**: [plan.md](./plan.md) | **Date**: 2026-10-21
 
 ## R1. Chart format and the chart types Infrahub can show

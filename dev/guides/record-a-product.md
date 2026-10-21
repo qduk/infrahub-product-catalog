@@ -49,6 +49,16 @@ it covers. The file format is in
    with "Due for review" list sources to open again and confirm. They do not block the merge.
 8. Open a proposed change from your branch to `main`. Infrahub runs the same check on it. Merge
    only through the proposed change: a direct branch merge skips the check.
+9. On the proposed change, open the artifact `catalog-coverage-report`. It shows the coverage
+   table as it will be after the merge. Check that the new product's claims appear in the right
+   building block columns.
+
+## Viewing the coverage report
+
+The report is an artifact of the object **Catalog Report** > "Catalog coverage report". Open the
+object and select **Artifacts** > `catalog-coverage-report`. Infrahub rebuilds it on every proposed
+change. The report text depends only on the catalog data, so it shows as changed only when the
+data changes.
 
 ## Renaming a building block, publisher or product
 

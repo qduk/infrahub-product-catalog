@@ -6,6 +6,10 @@
 
 ## Summary
 
+> **Scope change, 2026-10-21**: the report now holds only the coverage table. The bar chart and the
+> product map were built, shown in Infrahub, and then removed at the user's request (spec, "Scope
+> change").
+
 Engineers get one report in Infrahub that shows the whole catalog:
 - a coverage table of products against building blocks;
 - a bar chart of products per building block;
