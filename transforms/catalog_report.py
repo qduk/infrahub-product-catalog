@@ -11,7 +11,12 @@ EXTENT_LABELS = {"full": "Full", "partial": "Partial"}
 @dataclass
 class Product:
     name: str
+    status: str
     claims: dict[str, str]  # building block name -> extent ("full" or "partial")
+
+    @property
+    def label(self) -> str:
+        return self.name if self.status == "active" else f"{self.name} ({self.status})"
 
 
 def sort_key(name: str) -> str:
@@ -35,7 +40,7 @@ def coverage_table(blocks: list[str], products: list[Product]) -> list[str]:
     ]
     for product in products:
         cells = [EXTENT_LABELS.get(product.claims.get(block, ""), NO_COVERAGE) for block in blocks]
-        lines.append(f"| {table_cell(product.name)} | " + " | ".join(cells) + " |")
+        lines.append(f"| {table_cell(product.label)} | " + " | ".join(cells) + " |")
     if not products:
         lines.extend(["", "No products are recorded."])
     lines.extend(["", "Each claim's sources are listed on the claim in the catalog."])
@@ -55,6 +60,7 @@ class CatalogReportTransform(InfrahubTransform):
             (
                 Product(
                     name=edge["node"]["full_name"]["value"],
+                    status=edge["node"]["status"]["value"],
                     claims={
                         claim["node"]["building_block"]["node"]["name"]["value"]: claim["node"]["extent"]["value"]
                         for claim in edge["node"]["coverage_claims"]["edges"]

@@ -30,6 +30,10 @@ it covers. The file format is in
    - Leave out `license_model` when no source states it.
    - Add one entry under `coverage_claims` for each building block, with `extent` set to `full`
      or `partial`, an optional `note` and at least one source.
+   - If the product is no longer sold, set `status` to `discontinued`, or to `acquired` when it
+     was absorbed into another company and is no longer sold on its own. Add the source that
+     states it under `status_sources`, and `status_date` when the source gives a date. Leave all
+     three out for a product that is still sold.
 5. Check and load the files on your branch:
 
    ```bash

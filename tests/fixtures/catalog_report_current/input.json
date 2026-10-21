@@ -99,6 +99,9 @@
                 }
               }
             ]
+          },
+          "status": {
+            "value": "active"
           }
         }
       },
@@ -146,6 +149,9 @@
                 }
               }
             ]
+          },
+          "status": {
+            "value": "active"
           }
         }
       },
@@ -193,6 +199,9 @@
                 }
               }
             ]
+          },
+          "status": {
+            "value": "active"
           }
         }
       }

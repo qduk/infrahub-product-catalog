@@ -45,6 +45,9 @@
           },
           "coverage_claims": {
             "edges": []
+          },
+          "status": {
+            "value": "active"
           }
         }
       }

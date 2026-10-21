@@ -104,3 +104,20 @@ def test_months_before_uses_last_day_of_shorter_month() -> None:
     assert catalog_source_check.months_before(date(2026, 8, 31), 6) == date(2026, 2, 28)
     assert catalog_source_check.months_before(date(2028, 8, 31), 6) == date(2028, 2, 29)
     assert catalog_source_check.months_before(date(2027, 3, 15), 6) == date(2026, 9, 15)
+
+
+def test_status_without_source_is_an_error() -> None:
+    check = run_check("status_missing_source")
+    assert check.passed is False
+    assert messages(check, "ERROR") == [
+        "Example Corp Example Product: the status is discontinued but has no source. Add a status source."
+    ]
+
+
+@pytest.mark.parametrize(
+    "fixture",
+    ["status_with_source", "license_model_with_source", "license_model_empty", "source_old"],
+)
+def test_status_rule_passes(fixture: str) -> None:
+    check = run_check(fixture)
+    assert not [message for message in messages(check, "ERROR") if "status" in message]

@@ -1,0 +1,46 @@
+{
+  "CatalogProduct": {
+    "edges": [
+      {
+        "node": {
+          "id": "product-1",
+          "__typename": "CatalogProduct",
+          "full_name": {
+            "value": "Example Corp Example Product"
+          },
+          "license_model": {
+            "value": "open_source"
+          },
+          "license_model_sources": {
+            "count": 1
+          },
+          "status": {
+            "value": "acquired"
+          },
+          "status_sources": {
+            "count": 1
+          }
+        }
+      }
+    ]
+  },
+  "CatalogSource": {
+    "edges": [
+      {
+        "node": {
+          "id": "source-1",
+          "__typename": "CatalogSource",
+          "title": {
+            "value": "Example documentation"
+          },
+          "url": {
+            "value": "https://example.org/docs"
+          },
+          "last_checked": {
+            "value": "2026-10-20T00:00:00+00:00"
+          }
+        }
+      }
+    ]
+  }
+}

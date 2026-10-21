@@ -32,3 +32,13 @@ infrahub_tests:
           kind: check-unit-process
           directory: fixtures/source_future
         expect: FAIL
+      - name: unit_status_missing_source
+        spec:
+          kind: check-unit-process
+          directory: fixtures/status_missing_source
+        expect: FAIL
+      - name: unit_status_with_source
+        spec:
+          kind: check-unit-process
+          directory: fixtures/status_with_source
+        expect: PASS

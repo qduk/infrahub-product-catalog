@@ -65,3 +65,9 @@ def test_pipe_in_product_name_is_escaped() -> None:
 def test_summary_line_uses_singular_for_one() -> None:
     report = build_report("catalog_report_special_names")
     assert "1 product, 2 building blocks, 1 coverage claim." in report.splitlines()
+
+
+def test_status_is_shown_after_name_of_products_that_are_not_active() -> None:
+    table = section(build_report("catalog_report_status"), "Coverage by product").splitlines()
+    assert "| Closed Corp Old Tool (discontinued) | — | Full |" in table
+    assert "| Example Corp Example Tool | — | — |" in table

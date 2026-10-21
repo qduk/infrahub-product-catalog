@@ -30,6 +30,7 @@ class CatalogSourceCheck(InfrahubCheck):
     def validate(self, data: dict) -> None:
         for edge in data["CatalogProduct"]["edges"]:
             self.check_license_model_source(edge["node"])
+            self.check_status_source(edge["node"])
 
         current_day = today()
         cutoff = months_before(current_day, REVIEW_AGE_MONTHS)
@@ -43,6 +44,19 @@ class CatalogSourceCheck(InfrahubCheck):
             message=(
                 f"{product['full_name']['value']}: the license model has no source. "
                 "Add a license model source or remove the license model."
+            ),
+            object_id=product["id"],
+            object_type=product["__typename"],
+        )
+
+    def check_status_source(self, product: dict) -> None:
+        status = product["status"]["value"]
+        if status == "active" or product["status_sources"]["count"] > 0:
+            return
+        self.log_error(
+            message=(
+                f"{product['full_name']['value']}: the status is {status} but has no source. "
+                "Add a status source."
             ),
             object_id=product["id"],
             object_type=product["__typename"],

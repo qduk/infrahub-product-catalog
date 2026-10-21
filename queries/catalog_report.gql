@@ -30,6 +30,9 @@ query catalog_report($report: String!) {
         full_name {
           value
         }
+        status {
+          value
+        }
         coverage_claims {
           edges {
             node {

@@ -114,6 +114,12 @@ nodes:
         cardinality: many
         identifier: product__license_model_sources
         description: Products whose license model this source states.
+      - name: status_of_products
+        peer: CatalogProduct
+        kind: Generic
+        cardinality: many
+        identifier: product__status_sources
+        description: Products whose status this source states.
 
   - name: Product
     namespace: Catalog
@@ -163,6 +169,23 @@ nodes:
         optional: true
         description: Leave empty when no source states the license model.
         order_weight: 1400
+      - name: status
+        kind: Dropdown
+        default_value: active
+        choices:
+          - name: active
+            label: Active
+          - name: discontinued
+            label: Discontinued
+          - name: acquired
+            label: Acquired
+        description: Whether the product is still sold under its own name.
+        order_weight: 1500
+      - name: status_date
+        kind: DateTime
+        optional: true
+        description: When the status took effect, if a source states it.
+        order_weight: 1600
     relationships:
       - name: publisher
         peer: CatalogPublisher
@@ -193,6 +216,12 @@ nodes:
         cardinality: many
         identifier: product__license_model_sources
         description: Sources that state the license model.
+      - name: status_sources
+        peer: CatalogSource
+        kind: Attribute
+        cardinality: many
+        identifier: product__status_sources
+        description: Sources that state the status.
       - name: coverage_claims
         peer: CatalogCoverageClaim
         kind: Component

@@ -31,3 +31,9 @@ infrahub_tests:
           directory: fixtures/catalog_report_special_names
           output: output.md
         expect: PASS
+      - name: unit_catalog_report_status
+        spec:
+          kind: python-transform-unit-process
+          directory: fixtures/catalog_report_status
+          output: output.md
+        expect: PASS

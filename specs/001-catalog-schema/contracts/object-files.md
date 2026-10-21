@@ -54,6 +54,9 @@ spec:
       publisher_sources: [<source URL>]
       description_sources: [<source URL>]
       license_model_sources: [<source URL>]
+      status: discontinued              # omit for active products (feature 004)
+      status_date: "2025-02-24T00:00:00Z"   # omit when no source states it
+      status_sources: [<source URL>]    # required when status is not active
       coverage_claims:
         data:
           - building_block: Executor
@@ -68,4 +71,7 @@ spec:
 - Leave `license_model` out when no source states it. When it is set, list its sources in
   `license_model_sources`.
 - Rename a node in the web interface first, then change the file (research R8).
+- `status` is `active`, `discontinued` or `acquired` (feature 004). Leave it out for active
+  products. A discontinued or acquired product needs at least one `status_sources` entry, or the
+  source check fails.
 - Loading a file twice changes nothing.
