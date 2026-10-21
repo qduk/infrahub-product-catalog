@@ -1,0 +1,326 @@
+[
+  {
+    "name": "Forward Enterprise",
+    "publisher": "Forward Networks",
+    "publisher_homepage": "https://www.forwardnetworks.com/",
+    "publisher_source": {
+      "url": "https://www.forwardnetworks.com/",
+      "quote": "Forward Networks. All rights reserved."
+    },
+    "homepage": "https://www.forwardnetworks.com/forward-enterprise/",
+    "description": "Builds a model of a hybrid network from device and cloud state and configuration, so teams can search it, verify its behavior and test proposed changes before deployment.",
+    "description_source": {
+      "url": "https://www.forwardnetworks.com/forward-enterprise/",
+      "quote": "Forward Enterprise builds a mathematically accurate digital twin of your network, ingesting state and configuration from every router, switch, firewall, load balancer, and public cloud instance to create a single verified model of how your entire network behaves, right now, historically, and into the future."
+    },
+    "license_model": "commercial",
+    "license_source": {
+      "url": "https://www.forwardnetworks.com/pricing/",
+      "quote": "Forward is priced as a modular subscription."
+    },
+    "claims": [
+      {
+        "block": "Observability",
+        "extent": "full",
+        "source_url": "https://www.forwardnetworks.com/forward-enterprise/",
+        "quote": "Forward Enterprise builds a mathematically accurate digital twin of your network, ingesting state and configuration from every router, switch, firewall, load balancer, and public cloud instance to create a single verified model of how your entire network behaves, right now, historically, and into the future.",
+        "reasoning": "Storing and analysing the actual network state in a model, including history, is the main purpose of the product."
+      },
+      {
+        "block": "Collector",
+        "extent": "full",
+        "source_url": "https://www.forwardnetworks.com/forward-enterprise/",
+        "quote": "ingesting state and configuration from every router, switch, firewall, load balancer, and public cloud instance",
+        "reasoning": "The product reads state and configuration from network devices and cloud instances to build its model."
+      },
+      {
+        "block": "Intent",
+        "extent": "partial",
+        "source_url": "https://www.forwardnetworks.com/forward-enterprise/",
+        "quote": "Continuously enforce business rules against the digital twin. Custom intent checks validate forwarding behavior, segmentation, and policy.",
+        "reasoning": "The product stores and checks operational expectations (intent checks), but it is not where the desired configuration of the network is defined."
+      }
+    ],
+    "notes": "The company names itself both \"Forward\" and \"Forward Networks\" on its home page. The pricing page states licensing \"per modelled device\". The home page offers a free trial; no source states a free or open-source edition."
+  },
+  {
+    "name": "IP Fabric",
+    "publisher": "IP Fabric, Inc.",
+    "publisher_homepage": "https://ipfabric.io/",
+    "publisher_source": {
+      "url": "https://ipfabric.io/",
+      "quote": "IP Fabric, Inc. © 2026 All Rights Reserved"
+    },
+    "homepage": "https://ipfabric.io/",
+    "description": "Discovers on-premises and cloud network devices through CLI and API calls and builds a read-only, point-in-time model of the network for analysis, compliance checks and integration.",
+    "description_source": {
+      "url": "https://ipfabric.io/",
+      "quote": "It uses CLI and API calls to discover every device and connection across on-prem and cloud environments, then it ingests application data from tools like"
+    },
+    "license_model": "commercial",
+    "license_source": {
+      "url": "https://ipfabric.io/",
+      "quote": "IP Fabric is licensed on an annual subscription basis according to the number of on-prem devices and cloud objects in your target infrastructure."
+    },
+    "claims": [
+      {
+        "block": "Collector",
+        "extent": "full",
+        "source_url": "https://ipfabric.io/",
+        "quote": "It uses CLI and API calls to discover every device and connection across on-prem and cloud environments",
+        "reasoning": "Reading the actual state of every device with read-only access is a core function of the product."
+      },
+      {
+        "block": "Observability",
+        "extent": "full",
+        "source_url": "https://ipfabric.io/",
+        "quote": "IP Fabric builds a read-only digital twin of your on-prem and cloud environments, mapping critical applications and services to underlying infrastructure.",
+        "reasoning": "Storing the discovered network state as a model and analysing it is the main purpose of the product."
+      }
+    ],
+    "notes": "The home page also states that IP Fabric shows \"whether that behavior matches your intent\"; this was not claimed as the Intent block because the product does not store the desired state as its main purpose."
+  },
+  {
+    "name": "NetBrain Agentic NetOps Platform",
+    "publisher": "NetBrain Technologies, Inc.",
+    "publisher_homepage": "https://www.netbrain.com/",
+    "publisher_source": {
+      "url": "https://www.netbrain.com/news/netbrain-hits-customer-milestone-and-introduces-simpler-software-licensing/",
+      "quote": "NetBrain, NetworkBrain, and the NetBrain logo are trademarks or registered trademarks of NetBrain Technologies, Inc."
+    },
+    "homepage": "https://www.netbrain.com/platform/",
+    "description": "Collects device, topology and path data from multi-vendor networks and uses it for AI-assisted diagnosis, compliance assessment and change runbooks with pre-checks and post-checks.",
+    "description_source": {
+      "url": "https://www.netbrain.com/platform/",
+      "quote": "Deep Diagnosis finds root cause, Assessment runs checks across the network, Change builds a governed runbook, and Companion assists with everyday needs."
+    },
+    "license_model": "commercial",
+    "license_source": {
+      "url": "https://www.netbrain.com/news/netbrain-hits-customer-milestone-and-introduces-simpler-software-licensing/",
+      "quote": "beginning on January 1 2022 NetBrain will retire our perpetual licensing model and be offering NetBrain’s network automation platform by subscription only."
+    },
+    "claims": [
+      {
+        "block": "Observability",
+        "extent": "full",
+        "source_url": "https://www.netbrain.com/platform/",
+        "quote": "complete device, topology, and path data across your hybrid, multi-vendor network",
+        "reasoning": "Holding and analysing the live device, topology and path data of the network is the base of the product."
+      },
+      {
+        "block": "Intent",
+        "extent": "partial",
+        "source_url": "https://www.netbrain.com/platform/",
+        "quote": "the design rules, golden configuration, and baseline that guide how your Network is meant to operate",
+        "reasoning": "The product stores design rules and golden configurations as expectations to check against, but it is not presented as the main store of the desired network state."
+      },
+      {
+        "block": "Executor",
+        "extent": "partial",
+        "source_url": "https://www.netbrain.com/platform/",
+        "quote": "Govern every change with pre-check, execute, and post-check validation.",
+        "reasoning": "The product runs changes through runbooks, but change execution is one of several functions."
+      }
+    ],
+    "notes": "www.netbraintech.com returns HTTP 301 to www.netbrain.com. The publisher's site names the product \"the NetBrain Agentic NetOps Platform\"; the about page (https://www.netbrain.com/about/) also uses the name \"NetBrain Next-Gen\". The licensing quote is from a NetBrain news release; the release date is not shown in the extracted text."
+  },
+  {
+    "name": "Slurp'it",
+    "publisher": "Slurp'it",
+    "publisher_homepage": "https://slurpit.io/",
+    "publisher_source": {
+      "url": "https://slurpit.io/",
+      "quote": "©2026 Slurp'it. All Rights Reserved."
+    },
+    "homepage": "https://slurpit.io/",
+    "description": "Discovers network devices, collects command output from them and turns it into structured inventory data that can be exported or synchronised to NetBox, Nautobot or Infrahub.",
+    "description_source": {
+      "url": "https://slurpit.io/",
+      "quote": "Slurp’it collects and structures data from your devices."
+    },
+    "license_model": "commercial",
+    "license_source": {
+      "url": "https://slurpit.io/pricing/",
+      "quote": "We believe in a Hybrid modal where parts are FREE and unlimited and parts a transparent in what they cost."
+    },
+    "claims": [
+      {
+        "block": "Collector",
+        "extent": "full",
+        "source_url": "https://slurpit.io/",
+        "quote": "You decide what you want to collect and we ‘slurp’ it.",
+        "reasoning": "Reading data from network devices is the main purpose of the product."
+      },
+      {
+        "block": "Observability",
+        "extent": "partial",
+        "source_url": "https://slurpit.io/",
+        "quote": "Every collection stored, diffable",
+        "reasoning": "The product stores collected data and its history, but analysis is limited to inventory search and reports."
+      }
+    ],
+    "notes": "The pricing page lists a free \"Foundation\" tier and paid \"Professional\" and \"Enterprise\" tiers, and the site links to an End User License Agreement. No source states that the product is open source, so the license model is set to commercial with a free tier."
+  },
+  {
+    "name": "Apstra Data Center Director",
+    "publisher": "Juniper Networks, Inc.",
+    "publisher_homepage": "https://www.juniper.net/",
+    "publisher_source": {
+      "url": "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html",
+      "quote": "© 1999 - 2025 Juniper Networks, Inc. All rights reserved."
+    },
+    "homepage": "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html",
+    "description": "Manages data center fabrics across vendors: stores the intended design in a graph database, generates device configurations from it and validates the network state against it.",
+    "description_source": {
+      "url": "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html",
+      "quote": "Apstra Data Center Director is data center fabric management and automation software."
+    },
+    "license_model": "commercial",
+    "license_source": {
+      "url": "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html",
+      "quote": "Juniper offers a three-tiered licensing subscription model"
+    },
+    "claims": [
+      {
+        "block": "Intent",
+        "extent": "full",
+        "source_url": "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html",
+        "quote": "provides true intent-based networking across multivendor switching networks with a contextual graph database as a single source of truth",
+        "reasoning": "Storing the desired state of the fabric, including the expectations that must be met, is the main purpose of the product; the scope is data center fabrics only."
+      },
+      {
+        "block": "Executor",
+        "extent": "full",
+        "source_url": "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html",
+        "quote": "Data Center Director automatically generates correct vendor-specific configurations based on your intent, pre-validates every change, and continuously validates network state.",
+        "reasoning": "Generating and deploying configuration from the intended state is a main function of the product."
+      },
+      {
+        "block": "Observability",
+        "extent": "partial",
+        "source_url": "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html",
+        "quote": "Comprehensive telemetry ensures that every relevant data point is collected and analyzed.",
+        "reasoning": "The product collects and analyses telemetry, but mainly to validate its own intent; deeper analytics are placed in a separate product, Juniper Data Center Assurance."
+      }
+    ],
+    "notes": "The former product URL https://www.juniper.net/us/en/products/network-automation/apstra.html redirects to the Apstra Data Center Director page, so the product formerly listed as Juniper Apstra is now named Apstra Data Center Director. The same page states \"Juniper.net is transitioning to HPE.com\"; no opened page gives the details of the change of ownership. The page states that multivendor support requires the Premium license tier."
+  },
+  {
+    "name": "SOLIDserver DDI",
+    "publisher": "EfficientIP",
+    "publisher_homepage": "https://efficientip.com/",
+    "publisher_source": {
+      "url": "https://efficientip.com/about-efficientip/",
+      "quote": "EfficientIP is a network security and automation company, specializing in DNS, DHCP and IPAM, collectively known as DDI Technology."
+    },
+    "homepage": "https://efficientip.com/products/solidserver-ddi/",
+    "description": "Provides DNS, DHCP and IP address management on hardware or virtual appliances, and pushes IP address changes to DNS and DHCP servers from a central repository.",
+    "description_source": {
+      "url": "https://efficientip.com/products/solidserver-ddi/",
+      "quote": "The SOLIDserver™ DDI suite is designed to deliver highly scalable, secure and robust virtual and hardware appliances for critical"
+    },
+    "license_model": "commercial",
+    "license_source": {
+      "url": "https://efficientip.com/support-services/license-request/",
+      "quote": "Submit your requests for permanent or temporary licenses based on your model needs."
+    },
+    "claims": [
+      {
+        "block": "Intent",
+        "extent": "partial",
+        "source_url": "https://efficientip.com/products/solidserver-ddi/",
+        "quote": "This “source of truth” data and metadata provides accurate technical and organizational information ensuring comprehensive, efficient network management, and empowering end-to-end automation.",
+        "reasoning": "The product stores the desired state for IP addressing, DNS and DHCP only, not for the whole network."
+      },
+      {
+        "block": "Executor",
+        "extent": "partial",
+        "source_url": "https://efficientip.com/products/solidserver-ddi/",
+        "quote": "All scheme changes regarding IP addresses are automatically pushed to the DNS and DHCP servers, eliminating human errors and enforcing corporate policies.",
+        "reasoning": "The product applies changes to DNS and DHCP services only."
+      }
+    ],
+    "notes": "The license request page shows that SOLIDserver needs a license per model and request key; no opened page states prices or a free or open-source edition. Device discovery and switch configuration are sold as separate extensions (NetChange, Network Object Manager, Cloud Observer), so they are not claimed here."
+  },
+  {
+    "name": "Infoblox NIOS",
+    "publisher": "Infoblox",
+    "publisher_homepage": "https://www.infoblox.com/",
+    "publisher_source": {
+      "url": "https://www.infoblox.com/company/",
+      "quote": "© 2026 Infoblox. All rights reserved."
+    },
+    "homepage": "https://www.infoblox.com/products/nios/",
+    "description": "Provides DNS, DHCP and IP address management for on-premises and cloud networks, with optional discovery, reporting and integrations with automation tools.",
+    "description_source": {
+      "url": "https://www.infoblox.com/products/nios/",
+      "quote": "Infoblox NIOS DDI delivers on-premises and cloud DNS, DHCP and IP address management (IPAM) to deliver resilient, always-on performance"
+    },
+    "license_model": "commercial",
+    "license_source": {
+      "url": "https://www.infoblox.com/products/nios/",
+      "quote": "NIOS PayGo offers flexible, usage-based licensing with a self-service model specifically designed for hybrid and cloud environments."
+    },
+    "claims": [
+      {
+        "block": "Intent",
+        "extent": "partial",
+        "source_url": "https://www.infoblox.com/products/nios/",
+        "quote": "Infoblox NIOS DDI delivers and integrates critical network services, such as DNS, DHCP and IPAM, and provides visibility, automation, control and resiliency across hybrid, multi-cloud infrastructures.",
+        "reasoning": "The product stores the desired state for IP addressing, DNS and DHCP only, not for the whole network."
+      },
+      {
+        "block": "Collector",
+        "extent": "partial",
+        "source_url": "https://www.infoblox.com/products/nios/",
+        "quote": "NIOS value-added solutions automate cloud and on-premises discovery",
+        "reasoning": "Discovery is an add-on to the product, not its main purpose."
+      }
+    ],
+    "notes": "Infoblox sells two DDI products: NIOS (on-premises and cloud appliances, https://www.infoblox.com/products/nios/) and Universal DDI (SaaS management, https://www.infoblox.com/products/universal-ddi/), which can also manage NIOS deployments. This entry describes NIOS."
+  },
+  {
+    "name": "SuzieQ",
+    "publisher": "Stardust Systems",
+    "publisher_homepage": "https://www.stardustsystems.net/",
+    "publisher_source": {
+      "url": "https://github.com/netenglabs/suzieq",
+      "quote": "the company behind SuzieQ, Stardust Systems was named a \"Cool Vendor\" by Gartner"
+    },
+    "homepage": "https://www.stardustsystems.net/product",
+    "description": "Collects operational data from multi-vendor network devices, normalises and stores it with timestamps, and lets engineers query, compare and check it through a CLI, GUI and REST API.",
+    "description_source": {
+      "url": "https://www.stardustsystems.net/product",
+      "quote": "SuzieQ collects, normalizes, and stores timestamped data that is otherwise only available to engineers by logging into each device"
+    },
+    "license_model": "open_core",
+    "license_source": {
+      "url": "https://www.stardustsystems.net/product",
+      "quote": "SuzieQ Enterprise is more scalable and performant compared to the open source edition."
+    },
+    "claims": [
+      {
+        "block": "Collector",
+        "extent": "full",
+        "source_url": "https://github.com/netenglabs/suzieq",
+        "quote": "It collects data from devices and systems across your network.",
+        "reasoning": "Reading data from network devices is a core function of the product."
+      },
+      {
+        "block": "Observability",
+        "extent": "full",
+        "source_url": "https://github.com/netenglabs/suzieq",
+        "quote": "It normalizes the data and then stores it in a vendor independent way. Then it allows analysis of that data.",
+        "reasoning": "Storing the actual network state and analysing it is the main purpose of the product."
+      },
+      {
+        "block": "Presentation",
+        "extent": "partial",
+        "source_url": "https://www.stardustsystems.net/product",
+        "quote": "Users can install the CLI on their laptops and have instant access to information as the CLI communicates with the REST server to do all the processing.",
+        "reasoning": "The CLI, GUI and REST API are the interfaces to the product's own data, not a general interface for the automation system."
+      }
+    ],
+    "notes": "Identified as the unnamed purple owl logo in the 'Discovery / Assurance' group: the image https://raw.githubusercontent.com/netenglabs/suzieq/master/suzieq/gui/images/logo-small.jpg (in the netenglabs/suzieq repository) shows a purple shield-shaped owl face with the word 'suzieq'. The open-source edition is published at https://github.com/netenglabs/suzieq under the Apache-2.0 license (GitHub API license field). The steinzi.com network automation landscape (https://steinzi.com/network-automation-landscape/) does not list SuzieQ in its 'Network Discovery/Assurance' group, so the map the caller saw may be a different version."
+  }
+]

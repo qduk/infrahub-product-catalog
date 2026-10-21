@@ -1,0 +1,125 @@
+[
+  {
+    "name": "NetBox",
+    "publisher": "NetBox Labs",
+    "publisher_homepage": "https://netboxlabs.com/",
+    "publisher_source": {"url": "https://netboxlabs.com/community/", "quote": "NetBox Labs are the commercial stewards of NetBox."},
+    "homepage": "https://netboxlabs.com/products/netbox/",
+    "description": "NetBox models and documents network infrastructure, defines its intended state and makes that data available to automation tools through APIs and a web interface.",
+    "description_source": {"url": "https://github.com/netbox-community/netbox", "quote": "NetBox functions as the **source of truth** for your network infrastructure. Its job is to define and validate the _intended state_ of all network components and resources. NetBox does not interact with network nodes directly; rather, it makes this data available programmatically to purpose-built automation, monitoring, and assurance tools."},
+    "license_model": "open_core",
+    "license_source": {"url": "https://netboxlabs.com/netbox-enterprise/", "quote": "By using NetBox—open-source, Cloud, or Enterprise—clients rely on the leading source of truth for network management and automation."},
+    "claims": [
+      {"block": "Intent", "extent": "full", "source_url": "https://github.com/netbox-community/netbox", "quote": "NetBox functions as the **source of truth** for your network infrastructure. Its job is to define and validate the _intended state_ of all network components and resources.", "reasoning": "Storing and validating the intended state of the network is the stated main purpose of NetBox."},
+      {"block": "Presentation", "extent": "partial", "source_url": "https://github.com/netbox-community/netbox", "quote": "By providing a single robust user interface and programmable APIs for everything from cable maps to device configurations, NetBox serves as the central source of truth for the modern network.", "reasoning": "NetBox provides a user interface for its own data, but not dashboards or interfaces for the rest of an automation system."}
+    ],
+    "notes": "The open-source code is in the netbox-community GitHub organization under the Apache 2.0 license (GitHub API reports Apache-2.0). NetBox Labs sells NetBox Cloud and NetBox Enterprise. The NetBox Labs home page (https://netboxlabs.com/) says its commercial platform adds 'Live infrastructure state compared to intent in real time'; this was not claimed for open-source NetBox because the README says 'NetBox does not interact with network nodes directly'."
+  },
+  {
+    "name": "Nautobot",
+    "publisher": "Network to Code",
+    "publisher_homepage": "https://networktocode.com/",
+    "publisher_source": {"url": "https://github.com/nautobot/nautobot", "quote": "Network to Code is the sponsor and official steward of Nautobot."},
+    "homepage": "https://networktocode.com/nautobot/",
+    "description": "Nautobot stores the intended state of a network in extensible data models and runs automation jobs against that data, with REST and GraphQL APIs and an app framework.",
+    "description_source": {"url": "https://github.com/nautobot/nautobot", "quote": "Nautobot is the open source **Network Source of Truth** and **Network Automation Platform** for enterprises operating complex networks at scale."},
+    "license_model": "open_core",
+    "license_source": {"url": "https://github.com/nautobot/nautobot", "quote": "**Commercial editions** from Network to Code build on the same open source Nautobot core."},
+    "claims": [
+      {"block": "Intent", "extent": "full", "source_url": "https://github.com/nautobot/nautobot", "quote": "Nautobot's data models define the _intended state_ of your network: locations and racks, devices and interfaces, IP address space, VLANs, circuits, cables, and more.", "reasoning": "Defining and storing the intended network state, with validation rules, is the main purpose of Nautobot."},
+      {"block": "Orchestrator", "extent": "partial", "source_url": "https://github.com/nautobot/nautobot", "quote": "Nautobot Jobs execute against your network data on demand or on a schedule, with permissions, logging, and approvals built in.", "reasoning": "Jobs run on demand or on a schedule and webhooks connect other tools, but coordinating automation in response to events is a secondary feature, not the main purpose."}
+    ],
+    "notes": "The quotes come from the README shown on the GitHub repository page (raw file: https://raw.githubusercontent.com/nautobot/nautobot/develop/README.md). The GitHub API reports the license as Apache-2.0. Open-source apps (Golden Configuration, Device Onboarding) may add Executor and Collector features; these were not claimed because they are separate apps."
+  },
+  {
+    "name": "Device42",
+    "publisher": "Freshworks",
+    "publisher_homepage": "https://www.freshworks.com/",
+    "publisher_source": {"url": "https://www.device42.com/company/", "quote": "As part of the Freshworks family, we are delivering world class software solutions and support our global customers and partners."},
+    "homepage": "https://www.device42.com/",
+    "description": "Device42 discovers and maps IT infrastructure and application dependencies across data centers and cloud, and records the results in a CMDB with DCIM, IPAM and asset management features.",
+    "description_source": {"url": "https://www.device42.com/company/", "quote": "Device42 continuously discovers, maps, and optimizes infrastructure and applications across data centers and cloud, while intelligently grouping workloads by application affinities and other resource formats that provide a clear view of what is connected to the environment at any given time."},
+    "license_model": "commercial",
+    "license_source": {"url": "https://www.device42.com/pricing/", "quote": "Our software is offered as an annual subscription model, based on the number of devices."},
+    "claims": [
+      {"block": "Collector", "extent": "partial", "source_url": "https://www.device42.com/company/", "quote": "organizations of all sizes rely on Device42 as the most trusted, advanced, and complete full-stack agentless discovery and dependency mapping platform for Hybrid IT.", "reasoning": "Discovery of the actual state is the main purpose, but it covers hybrid IT inventory and dependencies rather than the full operational state of the network."},
+      {"block": "Observability", "extent": "partial", "source_url": "https://www.device42.com/", "quote": "Next Generation CMDB is here. Near Real-time, automated, with actionable insights.", "reasoning": "The CMDB persists discovered state and reports on it, but the sources do not describe processing of network operational data such as telemetry."}
+    ],
+    "notes": "Device42 was acquired by Freshworks. Nasdaq press release (https://www.nasdaq.com/press-release/freshworks-completes-acquisition-device42-2024-06-06): '(NASDAQ: FRSH) today announced the completion of its acquisition of Device42'. The Device42 home page title reads 'Device42, A Freshworks Company'. The Freshworks IR copy of the press release returned HTTP 404. The publisher_homepage URL was not opened in this task."
+  },
+  {
+    "name": "dcTrack",
+    "publisher": "Sunbird Software",
+    "publisher_homepage": "https://www.sunbirddcim.com/",
+    "publisher_source": {"url": "https://www.sunbirddcim.com/dcim-products", "quote": "Sunbird's dcTrack DCIM Solution provides you with complete, accurate views of capacity, including physical space, power and network ports available in racks, plus the capacity of infrastructure devices like UPSs, CRACs, and circuit panels."},
+    "homepage": "https://www.sunbirddcim.com/dcim-products",
+    "description": "dcTrack is data center infrastructure management software that records physical assets, capacity and power and network connections, and manages change requests for data center equipment.",
+    "description_source": {"url": "https://info.sunbirddcim.com/hubfs/DS009_Sunbird_DataSheet_dcTrack9_2.pdf", "quote": "Detailed data center business intelligence and analytics about your infrastructure and visual mappings help you manage placement of your IT equipment, make informed capacity management decisions, and keep track of your data center assets."},
+    "license_model": "commercial",
+    "license_source": {"url": "https://www.sunbirddcim.com/dcim-products", "quote": "Customers on maintenance receive software support services and access to new software releases."},
+    "claims": [
+      {"block": "Intent", "extent": "partial", "source_url": "https://www.sunbirddcim.com/dcim-products", "quote": "Map physical relationships between all of these devices and see how the entire power and network chain in the data center is connected down to the port level.", "reasoning": "dcTrack stores the planned physical layer (racks, power, cabling, ports) but not logical network configuration or operational expectations."},
+      {"block": "Presentation", "extent": "partial", "source_url": "https://info.sunbirddcim.com/hubfs/DS009_Sunbird_DataSheet_dcTrack9_2.pdf", "quote": "3D color-coded, floor map overlays show power, cooling, and capacity data", "reasoning": "dcTrack provides 3D views and dashboards for its own data center data, not an interface for a whole network automation system."}
+    ],
+    "notes": "The site footer names 'Sunbird Software, Inc.' and '© 2026 Sunbird Inc.'. No page found that names dcTrack's publisher in one sentence, so the publisher_source quote names the product under the Sunbird brand on Sunbird's own site. No dedicated dcTrack product page was found (https://www.sunbirddcim.com/dctrack redirects to a test-drive form), so homepage is the Sunbird products page. The license_model 'commercial' is inferred: the sources mention quotes, maintenance contracts and trials but do not state a license. Sunbird monitoring features (Power IQ, DCIM Monitoring) are separate products and were not claimed for dcTrack."
+  },
+  {
+    "name": "phpIPAM",
+    "publisher": "phpIPAM project",
+    "publisher_homepage": "https://phpipam.net/",
+    "publisher_source": {"url": "https://phpipam.net/", "quote": "The official open-source phpIPAM project"},
+    "homepage": "https://phpipam.net/",
+    "description": "phpIPAM is a web application for IP address management that tracks IPv4 and IPv6 subnets and addresses, VLANs, VRFs and devices, with subnet scanning and a REST API.",
+    "description_source": {"url": "https://phpipam.net/", "quote": "phpIPAM is a free, open source IP address management tool with IPv4/IPv6 support, VLAN management, REST API, and Docker deployment."},
+    "license_model": "open_source",
+    "license_source": {"url": "https://raw.githubusercontent.com/phpipam/phpipam/master/misc/gpl-3.0.txt", "quote": "GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007"},
+    "claims": [
+      {"block": "Intent", "extent": "partial", "source_url": "https://phpipam.net/documents/features/", "quote": "IPv4/IPv6 IP address management", "reasoning": "phpIPAM stores the planned IP addressing, VLANs and VRFs, which is only one part of the desired network state."},
+      {"block": "Collector", "extent": "partial", "source_url": "https://phpipam.net/documents/features/", "quote": "Automatic subnet scanning / IP status checks", "reasoning": "Scanning reads whether addresses are in use, which is a narrow side feature of retrieving actual network state."}
+    ],
+    "notes": "The GPL-3.0 text is stored in the repository at misc/gpl-3.0.txt; the GitHub API does not report a license for the repository. The phpipam.net home page states 'free, open source'. The site's news posts are written by 'MihaP'; no page found names a company behind the project."
+  },
+  {
+    "name": "ServiceNow IT Service Management",
+    "publisher": "ServiceNow",
+    "publisher_homepage": "https://www.servicenow.com/",
+    "publisher_source": {"url": "https://en.wikipedia.org/wiki/ServiceNow", "quote": "ServiceNow, Inc. is an American software company that supplies cloud computing platforms for the creation and management of automated business workflows."},
+    "homepage": "https://www.servicenow.com/products/itsm.html",
+    "description": "ServiceNow IT Service Management is a set of applications for handling IT incidents, problems, changes and service requests, with a service catalog, asset management and a CMDB.",
+    "description_source": {"url": "https://www.servicenow.com/community/itsm-articles/itsm-welcome-guide/ta-p/2304257", "quote": "In SOW you can manage incidents, changes, requests, problems and more!"},
+    "license_model": null,
+    "license_source": null,
+    "claims": [
+      {"block": "Presentation", "extent": "partial", "source_url": "https://www.servicenow.com/community/itsm-articles/itsm-welcome-guide/ta-p/2304257", "quote": "A unified and seamless experience when operating, managing and optimizing IT services. In SOW you can manage incidents, changes, requests, problems and more!", "reasoning": "The framework names ITSM as an example of a graphical user interface, but ITSM covers service processes rather than all interfaces to a network automation system."}
+    ],
+    "notes": "servicenow.com product, pricing and docs pages returned HTTP 403 or timed out for automated requests, so the homepage URL was not opened and no page stating the license was read. The ServiceNow Community 'ITSM Welcome Guide' lists paid packages ('ITSM Foundation', 'ITSM Advanced', 'ITSM Prime'), which suggests a commercial product, but license_model is left null because no opened page states it. The phrase 'seamless experience' in the Presentation quote is ServiceNow's wording. The publisher_source is Wikipedia, not a ServiceNow page."
+  },
+  {
+    "name": "Jira",
+    "publisher": "Atlassian",
+    "publisher_homepage": "https://www.atlassian.com/",
+    "publisher_source": {"url": "https://www.atlassian.com/blog/announcements/the-next-era-of-jira", "quote": "We’ve taken the best of Jira Work Management and Jira Software to make a single project management tool ready to help any team go from good to great. And (throwback alert!) we’re calling it, simply, Jira."},
+    "homepage": "https://www.atlassian.com/software/jira",
+    "description": "Jira is a project management tool in which teams plan, assign and track work items on boards, timelines and dashboards.",
+    "description_source": {"url": "https://www.atlassian.com/software/jira/guides/getting-started/introduction", "quote": "Jira is a project management tool that helps any team plan, track, and deliver work."},
+    "license_model": "commercial",
+    "license_source": {"url": "https://www.atlassian.com/software/jira/pricing", "quote": "Jira pricing: Free, Standard, Premium, Enterprise | Atlassian"},
+    "claims": [],
+    "notes": "Jira Software was merged with Jira Work Management into a single product named Jira; source: https://www.atlassian.com/blog/announcements/the-next-era-of-jira. The license quote is the page title of the pricing page; the page offers a free plan and paid plans. No claim was made: the opened pages describe tracking of work, not storage of network state, network tasks or network interfaces."
+  },
+  {
+    "name": "Backstage",
+    "publisher": "Cloud Native Computing Foundation (CNCF)",
+    "publisher_homepage": "https://www.cncf.io/",
+    "publisher_source": {"url": "https://github.com/backstage/backstage", "quote": "Backstage was created by Spotify but is now hosted by the Cloud Native Computing Foundation (CNCF) as an Incubation level project."},
+    "homepage": "https://backstage.io/",
+    "description": "Backstage is a framework for building developer portals around a catalog of software components, with project templates, documentation and plugins.",
+    "description_source": {"url": "https://github.com/backstage/backstage", "quote": "Backstage is an open source framework for building developer portals. Powered by a centralized software catalog, Backstage restores order to your microservices and infrastructure and enables your product teams to ship high-quality code quickly without compromising autonomy."},
+    "license_model": "open_source",
+    "license_source": {"url": "https://raw.githubusercontent.com/backstage/backstage/master/LICENSE", "quote": "Apache License Version 2.0, January 2004"},
+    "claims": [
+      {"block": "Presentation", "extent": "partial", "source_url": "https://github.com/backstage/backstage", "quote": "Backstage unifies all your infrastructure tooling, services, and documentation to create a streamlined development environment from end to end.", "reasoning": "Backstage builds portals through which users interact with tools and services, but it is aimed at software development rather than network automation."}
+    ],
+    "notes": "Created by Spotify; now a CNCF Incubation project (GitHub README). The backstage.io home page renders with JavaScript and WebFetch returned no text, so quotes come from the GitHub README (raw: https://raw.githubusercontent.com/backstage/backstage/master/README.md). The publisher_homepage https://www.cncf.io/ was not opened in this task."
+  }
+]

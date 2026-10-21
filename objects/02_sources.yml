@@ -30,3 +30,313 @@ spec:
     - title: SuzieQ documentation
       url: https://suzieq.readthedocs.io/en/latest/
       last_checked: "2026-10-20T00:00:00Z"
+---
+# Sources for the products added from the Network Automation Map (2026-10-21).
+apiVersion: infrahub.app/v1
+kind: Object
+spec:
+  kind: CatalogSource
+  data:
+  - title: 'Network Performance Monitor: www.solarwinds.com/network-performance-monitor'
+    url: https://www.solarwinds.com/network-performance-monitor
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Network Performance Monitor: documentation.solarwinds.com/en/success_center/npm/content/npm_licensing_model.htm'
+    url: https://documentation.solarwinds.com/en/success_center/npm/content/npm_licensing_model.htm
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Kentik: www.kentik.com/product'
+    url: https://www.kentik.com/product/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Kentik: www.kentik.com/pricing'
+    url: https://www.kentik.com/pricing/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'LibreNMS: raw.githubusercontent.com/librenms/librenms/master/README.md'
+    url: https://raw.githubusercontent.com/librenms/librenms/master/README.md
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'LibreNMS: www.librenms.org'
+    url: https://www.librenms.org/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'LibreNMS: raw.githubusercontent.com/librenms/librenms/master/LICENSE.txt'
+    url: https://raw.githubusercontent.com/librenms/librenms/master/LICENSE.txt
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Zabbix: www.zabbix.com/features'
+    url: https://www.zabbix.com/features
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Nagios Core: www.nagios.org/projects/nagios-core'
+    url: https://www.nagios.org/projects/nagios-core/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'PRTG Network Monitor: www.paessler.com/prtg/prtg-network-monitor'
+    url: https://www.paessler.com/prtg/prtg-network-monitor
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'pyATS: developer.cisco.com/pyats'
+    url: https://developer.cisco.com/pyats/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'NUTS: github.com/network-unit-testing-system/nuts/blob/master/LICENSE'
+    url: https://github.com/network-unit-testing-system/nuts/blob/master/LICENSE
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'NUTS: nuts.readthedocs.io/en/latest'
+    url: https://nuts.readthedocs.io/en/latest/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'NUTS: github.com/network-unit-testing-system/nuts'
+    url: https://github.com/network-unit-testing-system/nuts
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Netpicker: netpicker.io/about-us'
+    url: https://netpicker.io/about-us/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Netpicker: netpicker.io'
+    url: https://netpicker.io/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Netpicker: netpicker.io/pricing'
+    url: https://netpicker.io/pricing/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Containerlab: github.com/srl-labs/containerlab/blob/main/LICENSE'
+    url: https://github.com/srl-labs/containerlab/blob/main/LICENSE
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Containerlab: containerlab.dev'
+    url: https://containerlab.dev/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'GNS3: docs.gns3.com/docs-3.1-en'
+    url: https://docs.gns3.com/docs-3.1-en
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'GNS3: github.com/GNS3/gns3-server'
+    url: https://github.com/GNS3/gns3-server
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'GNS3: github.com/GNS3/gns3-server/blob/master/LICENSE'
+    url: https://github.com/GNS3/gns3-server/blob/master/LICENSE
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Event-Driven Automation (EDA): docs.eda.dev/26.8'
+    url: https://docs.eda.dev/26.8/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Event-Driven Automation (EDA): docs.eda.dev/26.8/getting-started/try-eda'
+    url: https://docs.eda.dev/26.8/getting-started/try-eda/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'netlab: github.com/ipspace/netlab/blob/dev/LICENSE.md'
+    url: https://github.com/ipspace/netlab/blob/dev/LICENSE.md
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'netlab: netlab.tools'
+    url: https://netlab.tools/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'EVE-NG: www.eve-ng.net'
+    url: https://www.eve-ng.net/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'EVE-NG: www.eve-ng.net/index.php/download'
+    url: https://www.eve-ng.net/index.php/download/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Modeling Labs: developer.cisco.com/modeling-labs'
+    url: https://developer.cisco.com/modeling-labs/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Forward Enterprise: www.forwardnetworks.com'
+    url: https://www.forwardnetworks.com/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Forward Enterprise: www.forwardnetworks.com/forward-enterprise'
+    url: https://www.forwardnetworks.com/forward-enterprise/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Forward Enterprise: www.forwardnetworks.com/pricing'
+    url: https://www.forwardnetworks.com/pricing/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'IP Fabric: ipfabric.io'
+    url: https://ipfabric.io/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Agentic NetOps Platform: www.netbrain.com/news/netbrain-hits-customer-milestone-and-introduces-simpler-software-licensing'
+    url: https://www.netbrain.com/news/netbrain-hits-customer-milestone-and-introduces-simpler-software-licensing/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Agentic NetOps Platform: www.netbrain.com/platform'
+    url: https://www.netbrain.com/platform/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Slurp''it: slurpit.io'
+    url: https://slurpit.io/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Slurp''it: slurpit.io/pricing'
+    url: https://slurpit.io/pricing/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Apstra Data Center Director: www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html'
+    url: https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'SOLIDserver DDI: efficientip.com/about-efficientip'
+    url: https://efficientip.com/about-efficientip/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'SOLIDserver DDI: efficientip.com/products/solidserver-ddi'
+    url: https://efficientip.com/products/solidserver-ddi/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'SOLIDserver DDI: efficientip.com/support-services/license-request'
+    url: https://efficientip.com/support-services/license-request/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'NIOS: www.infoblox.com/company'
+    url: https://www.infoblox.com/company/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'NIOS: www.infoblox.com/products/nios'
+    url: https://www.infoblox.com/products/nios/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'NetBox: netboxlabs.com/community'
+    url: https://netboxlabs.com/community/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'NetBox: github.com/netbox-community/netbox'
+    url: https://github.com/netbox-community/netbox
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'NetBox: netboxlabs.com/netbox-enterprise'
+    url: https://netboxlabs.com/netbox-enterprise/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Nautobot: github.com/nautobot/nautobot'
+    url: https://github.com/nautobot/nautobot
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Device42: www.device42.com/company'
+    url: https://www.device42.com/company/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Device42: www.device42.com/pricing'
+    url: https://www.device42.com/pricing/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Device42: www.device42.com'
+    url: https://www.device42.com/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'dcTrack: www.sunbirddcim.com/dcim-products'
+    url: https://www.sunbirddcim.com/dcim-products
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'dcTrack: info.sunbirddcim.com/hubfs/DS009_Sunbird_DataSheet_dcTrack9_2.pdf'
+    url: https://info.sunbirddcim.com/hubfs/DS009_Sunbird_DataSheet_dcTrack9_2.pdf
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'phpIPAM: phpipam.net'
+    url: https://phpipam.net/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'phpIPAM: raw.githubusercontent.com/phpipam/phpipam/master/misc/gpl-3.0.txt'
+    url: https://raw.githubusercontent.com/phpipam/phpipam/master/misc/gpl-3.0.txt
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'phpIPAM: phpipam.net/documents/features'
+    url: https://phpipam.net/documents/features/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'IT Service Management: en.wikipedia.org/wiki/ServiceNow'
+    url: https://en.wikipedia.org/wiki/ServiceNow
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'IT Service Management: www.servicenow.com/community/itsm-articles/itsm-welcome-guide/ta-p/2304257'
+    url: https://www.servicenow.com/community/itsm-articles/itsm-welcome-guide/ta-p/2304257
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Jira: www.atlassian.com/blog/announcements/the-next-era-of-jira'
+    url: https://www.atlassian.com/blog/announcements/the-next-era-of-jira
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Jira: www.atlassian.com/software/jira/guides/getting-started/introduction'
+    url: https://www.atlassian.com/software/jira/guides/getting-started/introduction
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Jira: www.atlassian.com/software/jira/pricing'
+    url: https://www.atlassian.com/software/jira/pricing
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Backstage: github.com/backstage/backstage'
+    url: https://github.com/backstage/backstage
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Backstage: raw.githubusercontent.com/backstage/backstage/master/LICENSE'
+    url: https://raw.githubusercontent.com/backstage/backstage/master/LICENSE
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Crosswork Network Services Orchestrator (NSO): nso-docs.cisco.com'
+    url: https://nso-docs.cisco.com/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Crosswork Network Services Orchestrator (NSO): raw.githubusercontent.com/NSO-developer/nso-gitbook/main/administration/management/system-management/cisco-smart-licensing.md'
+    url: https://raw.githubusercontent.com/NSO-developer/nso-gitbook/main/administration/management/system-management/cisco-smart-licensing.md
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Crosswork Network Services Orchestrator (NSO): raw.githubusercontent.com/NSO-developer/nso-gitbook/main/development/introduction-to-automation/cdb-and-yang.md'
+    url: https://raw.githubusercontent.com/NSO-developer/nso-gitbook/main/development/introduction-to-automation/cdb-and-yang.md
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Crosswork Network Services Orchestrator (NSO): raw.githubusercontent.com/NSO-developer/nso-gitbook/main/operation-and-usage/operations/nso-device-manager.md'
+    url: https://raw.githubusercontent.com/NSO-developer/nso-gitbook/main/operation-and-usage/operations/nso-device-manager.md
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Terraform: developer.hashicorp.com/terraform/intro'
+    url: https://developer.hashicorp.com/terraform/intro
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Platform: www.itential.com'
+    url: https://www.itential.com/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Platform: www.itential.com/pricing'
+    url: https://www.itential.com/pricing/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Gluware: gluware.com'
+    url: https://gluware.com/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Gluware: gluware.com/gluware-end-user-license-agreement'
+    url: https://gluware.com/gluware-end-user-license-agreement/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Gluware: gluware.com/gluware-company-and-product-facts'
+    url: https://gluware.com/gluware-company-and-product-facts/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Pliant: newsroom.ibm.com/Blog-IBM-Acquires-Pliant-to-Further-Enhance-Network-IT-Automation-Capabilities'
+    url: https://newsroom.ibm.com/Blog-IBM-Acquires-Pliant-to-Further-Enhance-Network-IT-Automation-Capabilities
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Pliant: www.networkworld.com/article/2069363/ibm-buys-pliant-for-network-automation.html'
+    url: https://www.networkworld.com/article/2069363/ibm-buys-pliant-for-network-automation.html
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'System Initiative: github.com/systeminit/si'
+    url: https://github.com/systeminit/si
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'System Initiative: raw.githubusercontent.com/systeminit/si/main/LICENSE'
+    url: https://raw.githubusercontent.com/systeminit/si/main/LICENSE
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'ConfigHub: confighub.com'
+    url: https://confighub.com/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'ConfigHub: docs.confighub.com'
+    url: https://docs.confighub.com/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'ConfigHub: docs.confighub.com/background/config-as-data'
+    url: https://docs.confighub.com/background/config-as-data/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Spacelift: spacelift.io'
+    url: https://spacelift.io/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Spacelift: spacelift.io/pricing'
+    url: https://spacelift.io/pricing
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Apache Airflow: airflow.apache.org'
+    url: https://airflow.apache.org/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Apache Airflow: raw.githubusercontent.com/apache/airflow/main/LICENSE'
+    url: https://raw.githubusercontent.com/apache/airflow/main/LICENSE
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Apache Airflow: airflow.apache.org/docs/apache-airflow/stable/authoring-and-scheduling/event-scheduling.html'
+    url: https://airflow.apache.org/docs/apache-airflow/stable/authoring-and-scheduling/event-scheduling.html
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Windmill: www.windmill.dev'
+    url: https://www.windmill.dev/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Windmill: raw.githubusercontent.com/windmill-labs/windmill/main/README.md'
+    url: https://raw.githubusercontent.com/windmill-labs/windmill/main/README.md
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Temporal: temporal.io'
+    url: https://temporal.io/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Temporal: raw.githubusercontent.com/temporalio/temporal/main/README.md'
+    url: https://raw.githubusercontent.com/temporalio/temporal/main/README.md
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Dagster: dagster.io'
+    url: https://dagster.io/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Dagster: dagster.io/docs/guides/automate/sensors'
+    url: https://dagster.io/docs/guides/automate/sensors
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Prefect: www.prefect.io'
+    url: https://www.prefect.io/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Horizon Security Analyzer: www.algosec.com/products/firewall-analyzer'
+    url: https://www.algosec.com/products/firewall-analyzer
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Security Manager: www.firemon.com/products/security-manager'
+    url: https://www.firemon.com/products/security-manager
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Security Manager: www.firemon.com/pricing'
+    url: https://www.firemon.com/pricing
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Orchestration Suite: www.tufin.com/tufin-orchestration-suite'
+    url: https://www.tufin.com/tufin-orchestration-suite
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Orchestration Suite: www.tufin.com'
+    url: https://www.tufin.com/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Orchestration Suite: www.tufin.com/pricing'
+    url: https://www.tufin.com/pricing
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Orchestration Suite: www.tufin.com/tufin-orchestration-suite/securechange'
+    url: https://www.tufin.com/tufin-orchestration-suite/securechange
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Firewall Assurance: web.archive.org/web/20250122112330id_/https://www.skyboxsecurity.com/products/firewall-assurance'
+    url: https://web.archive.org/web/20250122112330id_/https://www.skyboxsecurity.com/products/firewall-assurance/
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Firewall Assurance: www.tufin.com/tufin-expresspath-program'
+    url: https://www.tufin.com/tufin-expresspath-program
+    last_checked: '2026-10-21T00:00:00Z'
+  - title: 'Firewall Assurance: www.securityweek.com/skybox-security-shuts-down-lays-off-entire-workforce'
+    url: https://www.securityweek.com/skybox-security-shuts-down-lays-off-entire-workforce/
+    last_checked: '2026-10-21T00:00:00Z'

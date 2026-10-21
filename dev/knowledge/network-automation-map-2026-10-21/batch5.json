@@ -1,0 +1,313 @@
+[
+  {
+    "name": "Cisco Crosswork Network Services Orchestrator (NSO)",
+    "publisher": "Cisco Systems, Inc.",
+    "publisher_homepage": "https://www.cisco.com/",
+    "publisher_source": {
+      "url": "https://nso-docs.cisco.com/",
+      "quote": "© Copyright 2026 Cisco Systems, Inc. | This site is part of the official Cisco Crosswork NSO documentation set."
+    },
+    "homepage": "https://www.cisco.com/c/en/us/products/cloud-systems-management/network-services-orchestrator/index.html",
+    "description": "Linux-based application that stores network service intent and device configuration in a YANG-modelled database and pushes the resulting configuration changes to multivendor physical and virtual network devices.",
+    "description_source": {
+      "url": "https://nso-docs.cisco.com/",
+      "quote": "As a Linux-based application, it allows detailed control of network devices and can manage the configuration of both physical and virtual networks."
+    },
+    "license_model": "commercial",
+    "license_source": {
+      "url": "https://raw.githubusercontent.com/NSO-developer/nso-gitbook/main/administration/management/system-management/cisco-smart-licensing.md",
+      "quote": "Entitlements are purchased through a Cisco account via Cisco Commerce Workspace (CCW) and are immediately deposited into a Smart Account for usage."
+    },
+    "claims": [
+      {
+        "block": "Intent",
+        "extent": "full",
+        "source_url": "https://raw.githubusercontent.com/NSO-developer/nso-gitbook/main/development/introduction-to-automation/cdb-and-yang.md",
+        "quote": "Firstly, the CDB will store the intent, which describes what you want from the network. Traditionally we call this intent a network service since this is what the network ultimately provides to its users.",
+        "reasoning": "Storing and modelling network service intent in the CDB with YANG is a core purpose of NSO."
+      },
+      {
+        "block": "Executor",
+        "extent": "full",
+        "source_url": "https://raw.githubusercontent.com/NSO-developer/nso-gitbook/main/operation-and-usage/operations/nso-device-manager.md",
+        "quote": "Whenever a configuration change is done to the list of device configuration primary copies, the device manager will partition this network configuration change into the corresponding changes for the managed devices. The device manager passes on the required changes to the NEDs (Network Element Drivers).",
+        "reasoning": "The device manager and NEDs push intended configuration changes to devices as transactions, which is a main function of NSO."
+      },
+      {
+        "block": "Observability",
+        "extent": "partial",
+        "source_url": "https://raw.githubusercontent.com/NSO-developer/nso-gitbook/main/development/introduction-to-automation/cdb-and-yang.md",
+        "quote": "Secondly, the CDB also stores a copy of the configuration of the managed devices, that is, the network state.",
+        "reasoning": "NSO persists device configuration and some operational data, but the source does not describe broader processing of the actual network state."
+      }
+    ],
+    "notes": "The Cisco product page at www.cisco.com blocks curl (HTTP Access Denied); its content was read through WebFetch, which returned the title 'Cisco Crosswork Network Services Orchestrator'. The documentation calls the product 'Cisco Crosswork NSO' and states 'NSO began its journey as Network Control System (NCS)' and that Cisco Crosswork 'uses NSO as its core engine' (https://nso-docs.cisco.com/). The Cisco product page, read through WebFetch, offers 'a free evaluation version of Crosswork NSO'. The documentation pages on nso-docs.cisco.com render with JavaScript, so the quotes for license and claims come from the same pages' Markdown source in the NSO-developer/nso-gitbook GitHub repository ('NSO GitBook GitHub sync')."
+  },
+  {
+    "name": "Terraform",
+    "publisher": "HashiCorp",
+    "publisher_homepage": "https://www.hashicorp.com/",
+    "publisher_source": {
+      "url": "https://developer.hashicorp.com/terraform/intro",
+      "quote": "HashiCorp Terraform is an infrastructure as code tool that lets you define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share."
+    },
+    "homepage": "https://developer.hashicorp.com/terraform",
+    "description": "Infrastructure-as-code tool that reads declarative configuration files, plans the changes needed and creates, updates or deletes cloud and on-premises resources through provider APIs.",
+    "description_source": {
+      "url": "https://developer.hashicorp.com/terraform/intro",
+      "quote": "Terraform creates and manages resources on cloud platforms and other services through their application programming interfaces (APIs)."
+    },
+    "license_model": null,
+    "license_source": null,
+    "claims": [
+      {
+        "block": "Intent",
+        "extent": "partial",
+        "source_url": "https://developer.hashicorp.com/terraform/intro",
+        "quote": "Terraform configuration files are declarative, meaning that they describe the end state of your infrastructure.",
+        "reasoning": "Configuration files describe the desired configuration of resources, but not operational expectations, and Terraform is not network-specific."
+      },
+      {
+        "block": "Executor",
+        "extent": "full",
+        "source_url": "https://developer.hashicorp.com/terraform/intro",
+        "quote": "On approval, Terraform performs the proposed operations in the correct order, respecting any resource dependencies.",
+        "reasoning": "Applying planned changes to bring resources to the configured state is Terraform's main purpose."
+      }
+    ],
+    "notes": "License: Terraform 1.6.0 and later uses the Business Source License, which is source-available and not open source, so license_model is null. Source: https://raw.githubusercontent.com/hashicorp/terraform/main/LICENSE ('\"Business Source License\" is a trademark of MariaDB Corporation Ab.' and 'Licensed Work: Terraform Version 1.6.0 or later.'). Ownership: the same LICENSE file names 'Licensor: International Business Machines Corporation (IBM)'. The HashiCorp about page (https://www.hashicorp.com/en/about, read through WebFetch because it blocks curl) states 'HashiCorp, an IBM company'. Terraform works with networking resources through providers but is not specific to network devices."
+  },
+  {
+    "name": "Itential Platform",
+    "publisher": "Itential",
+    "publisher_homepage": "https://www.itential.com/",
+    "publisher_source": {
+      "url": "https://www.itential.com/",
+      "quote": "© 2026 Itential"
+    },
+    "homepage": "https://www.itential.com/",
+    "description": "Platform where infrastructure teams build workflows and AI agents that call existing tools such as Ansible, Python and OpenTofu, and run network changes with access control, approvals and audit logs.",
+    "description_source": {
+      "url": "https://www.itential.com/",
+      "quote": "Teams build agents and workflows, integrate every system in the stack, execute with full RBAC, approval gates, and audit trails whether triggered by a human, a workflow, or an AI agent, and operate with full visibility."
+    },
+    "license_model": "commercial",
+    "license_source": {
+      "url": "https://www.itential.com/pricing/",
+      "quote": "Each tier is a fixed subscription that bundles applications, usage limits, and enterprise capabilities into one number."
+    },
+    "claims": [
+      {
+        "block": "Orchestrator",
+        "extent": "full",
+        "source_url": "https://www.itential.com/",
+        "quote": "Itential is the orchestration layer that sits above your existing tools and makes them work together. Your Ansible playbooks, Python scripts, and OpenTofu plans become governed, reusable services any team can consume, without rewriting a line.",
+        "reasoning": "Coordinating automation tasks across existing tools, triggered by people, workflows or agents, is the product's main purpose."
+      },
+      {
+        "block": "Executor",
+        "extent": "partial",
+        "source_url": "https://www.itential.com/",
+        "quote": "Every action, human, workflow, or AI agent, runs through one governed engine with pre-checks, post-checks, rollback, and audit evidence built in by default.",
+        "reasoning": "Itential runs changes with checks and rollback, but the source describes it as calling existing tools such as Ansible and OpenTofu to make many of those changes."
+      },
+      {
+        "block": "Observability",
+        "extent": "partial",
+        "source_url": "https://www.itential.com/",
+        "quote": "Itential tracks lifecycle, drift, and compliance in real time, so every agent decision is grounded in live infrastructure, not stale assumptions.",
+        "reasoning": "Drift and compliance tracking covers part of processing the actual network state, as a side feature of the orchestration platform."
+      }
+    ],
+    "notes": "The pricing page also names the 'Itential Cloud Platform' and states that FlowAI is 'available as an add-on for on-prem deployments, licensed per production server'. The product name 'Itential Platform' is taken from the pricing page title 'Pricing Options | Itential Platform Pricing'."
+  },
+  {
+    "name": "Gluware",
+    "publisher": "Gluware, Inc.",
+    "publisher_homepage": "https://gluware.com/",
+    "publisher_source": {
+      "url": "https://gluware.com/",
+      "quote": "Copyright © 2026 Gluware, Inc. All rights reserved."
+    },
+    "homepage": "https://gluware.com/",
+    "description": "Network automation platform for multivendor enterprise networks that discovers existing devices, builds intent models from their configuration, detects drift and compliance issues, and applies validated changes.",
+    "description_source": {
+      "url": "https://gluware.com/",
+      "quote": "Built on the foundation of Gluware's Device Interaction and Automation Layer (DIAL) that provides semantic translation for 56 OS across 22 vendors , the platform offers discovery-based intent modeling, rapid network onboarding, validated change, and agentic enablement."
+    },
+    "license_model": "commercial",
+    "license_source": {
+      "url": "https://gluware.com/gluware-end-user-license-agreement/",
+      "quote": "are licensed, not sold, to End User by Company or its Resellers for use only under the terms of the Gluware EULA, and Company reserves all rights not expressly granted to End User."
+    },
+    "claims": [
+      {
+        "block": "Intent",
+        "extent": "full",
+        "source_url": "https://gluware.com/gluware-company-and-product-facts/",
+        "quote": "Gluware uses a declarative approach to configuration management. Teams define the desired state, and the platform reads the current configuration and applies the changes needed to reconcile it with that intent.",
+        "reasoning": "Defining and storing desired network configuration as intent is a main purpose of the platform."
+      },
+      {
+        "block": "Executor",
+        "extent": "full",
+        "source_url": "https://gluware.com/gluware-company-and-product-facts/",
+        "quote": "DIAL provides semantic translation between Gluware automation and supported infrastructure, including CLI and API interactions. It gives applications a consistent foundation for understanding device configuration and state, applying changes, and validating operations.",
+        "reasoning": "Applying configuration changes to multivendor devices through DIAL is a core function of the platform."
+      },
+      {
+        "block": "Observability",
+        "extent": "partial",
+        "source_url": "https://gluware.com/gluware-company-and-product-facts/",
+        "quote": "Detects configuration changes and assesses compliance with defined rules.",
+        "reasoning": "Drift detection and compliance checks process the actual configuration state, but the source does not describe broader processing of operational state."
+      }
+    ],
+    "notes": "The same facts page also describes orchestration ('Gluware Network RPA coordinates tasks across Gluware applications and external systems.') and discovery ('Discovers network devices and maintains inventory used by automation applications.'); these were not added as claims to keep the strongest three."
+  },
+  {
+    "name": "Pliant",
+    "publisher": "IBM",
+    "publisher_homepage": "https://www.ibm.com/",
+    "publisher_source": {
+      "url": "https://newsroom.ibm.com/Blog-IBM-Acquires-Pliant-to-Further-Enhance-Network-IT-Automation-Capabilities",
+      "quote": "Today, IBM is announcing that it has acquired Pliant, a leading provider of network and IT infrastructure automation products."
+    },
+    "homepage": null,
+    "description": "Network and IT infrastructure automation software with prebuilt integrations for third-party products that have an API or CLI, used to provision resources and manage configuration and traffic.",
+    "description_source": {
+      "url": "https://newsroom.ibm.com/Blog-IBM-Acquires-Pliant-to-Further-Enhance-Network-IT-Automation-Capabilities",
+      "quote": "These optimizations include infrastructure resource provisioning and management, traffic management and configuration management for both traditional network & IT infrastructure and public clouds."
+    },
+    "license_model": null,
+    "license_source": null,
+    "claims": [
+      {
+        "block": "Orchestrator",
+        "extent": "partial",
+        "source_url": "https://www.networkworld.com/article/2069363/ibm-buys-pliant-for-network-automation.html",
+        "quote": "Founded in 2017, Pliant is known for its IT automation and orchestration software that works to streamline communications among platforms, services and applications and simplify network and IT operations.",
+        "reasoning": "The source describes orchestration across platforms and a workflow engine, but gives no detail on event-driven execution, so the extent is partial."
+      },
+      {
+        "block": "Executor",
+        "extent": "partial",
+        "source_url": "https://newsroom.ibm.com/Blog-IBM-Acquires-Pliant-to-Further-Enhance-Network-IT-Automation-Capabilities",
+        "quote": "Founded in 2017, Pliant boasts an extensive library of out-of-the-box integrations with third party vendors and the ability to integrate technology that has an API or is command line interface (CLI) enabled.",
+        "reasoning": "Integrations with device APIs and CLIs are used to apply configuration changes, but the source does not say they are driven by an intended state."
+      }
+    ],
+    "notes": "IBM acquired Pliant (IBM newsroom post by Andrew Coward; the acquisition date is not stated in the text extracted from the pages opened). The former home page pliant.io no longer resolves (DNS lookup failed on 2026-10-21), and no current IBM product page for Pliant was found (https://www.ibm.com/products/pliant did not list it), so homepage is null and it is not known whether the product is still sold. License: the IBM post states 'Delivered as both a client managed software and SaaS product' but does not state a license model, so license_model is null. Publisher before the acquisition was Pliant (Pliant.io)."
+  },
+  {
+    "name": "System Initiative",
+    "publisher": "System Initiative",
+    "publisher_homepage": "https://github.com/systeminit",
+    "publisher_source": {
+      "url": "https://github.com/systeminit/si",
+      "quote": "This is a monolithic repository containing the System Initiative software."
+    },
+    "homepage": "https://github.com/systeminit/si",
+    "description": "Infrastructure automation platform in which AI agents discover infrastructure, propose changes and apply them, with human review and policy checks; the project is archived.",
+    "description_source": {
+      "url": "https://github.com/systeminit/si",
+      "quote": "AI agents can discover infrastructure, propose changes, and execute them safely."
+    },
+    "license_model": "open_source",
+    "license_source": {
+      "url": "https://raw.githubusercontent.com/systeminit/si/main/LICENSE",
+      "quote": "Apache License Version 2.0, January 2004"
+    },
+    "claims": [
+      {
+        "block": "Executor",
+        "extent": "partial",
+        "source_url": "https://github.com/systeminit/si",
+        "quote": "AI agents can discover infrastructure, propose changes, and execute them safely.",
+        "reasoning": "The software applies infrastructure changes, but the source describes general cloud infrastructure rather than network devices."
+      },
+      {
+        "block": "Collector",
+        "extent": "partial",
+        "source_url": "https://github.com/systeminit/si",
+        "quote": "AI agents can discover infrastructure, propose changes, and execute them safely.",
+        "reasoning": "Discovering existing infrastructure reads its actual state, but this is one step of the workflow rather than the main purpose."
+      }
+    ],
+    "notes": "Discontinued. The repository README states 'System Initiative has been archived, and is no longer being maintained. It remains here for the historical record.' and the GitHub API reports archived: true (https://github.com/systeminit/si). The listed website https://systeminit.com and https://www.systeminit.com no longer resolve (DNS lookup failed on 2026-10-21), so the GitHub repository is used as home page. A community post (https://community.tmpdir.org/t/system-initiative-is-shutting-down-and-pivoting/1654, read through WebFetch) states that the team started 'a new project (codename 'Swamp')' and that the founder 'had to lay off most of the team'."
+  },
+  {
+    "name": "ConfigHub",
+    "publisher": "ConfigHub Inc.",
+    "publisher_homepage": "https://confighub.com/",
+    "publisher_source": {
+      "url": "https://confighub.com/",
+      "quote": "The company was founded in July 2024 as ConfigHub Inc."
+    },
+    "homepage": "https://confighub.com/",
+    "description": "Service that stores Kubernetes, infrastructure and application configuration as literal YAML or JSON data in a database, with an API and CLI to query, change, validate and version it.",
+    "description_source": {
+      "url": "https://docs.confighub.com/",
+      "quote": "ConfigHub is a System of Record for Kubernetes configuration, infrastructure configuration described using the Kubernetes Resource Model, and application configuration files in standard formats like YAML, JSON, Properties, TOML, INI, Env, etc."
+    },
+    "license_model": "commercial",
+    "license_source": {
+      "url": "https://confighub.com/",
+      "quote": "The core of ConfigHub is a closed source SaaS product with support for cloud and on premise users."
+    },
+    "claims": [
+      {
+        "block": "Intent",
+        "extent": "partial",
+        "source_url": "https://docs.confighub.com/background/config-as-data/",
+        "quote": "It is serialized using standard data formats, such as YAML and JSON, and stored in a database within ConfigHub. Code that operates on configuration is separate from the data, and the data is the authoritative record of the configuration.",
+        "reasoning": "ConfigHub persists desired configuration as the authoritative record, but for Kubernetes and application configuration rather than network devices, and without operational expectations."
+      }
+    ],
+    "notes": "confighub.com is a JavaScript single-page site; the publisher and license quotes come from that page's FAQ text, read from the site's own JavaScript bundle (https://confighub.com/assets/index-rjajvJe7.js). The same FAQ states that 'a large amount of the actual functionality is implemented as open source, MIT licensed functions and bridges' and that the SDK is MIT licensed; the core is closed source, so license_model is commercial rather than open_core. The FAQ also states that an unrelated open-source project and company, ConfigHub LLC, used the name from 2014 to 2018. ConfigHub is not specific to network automation."
+  },
+  {
+    "name": "Spacelift",
+    "publisher": "Spacelift, Inc.",
+    "publisher_homepage": "https://spacelift.io/",
+    "publisher_source": {
+      "url": "https://spacelift.io/",
+      "quote": "© 2026 Spacelift, Inc. All rights reserved"
+    },
+    "homepage": "https://spacelift.io/",
+    "description": "Platform that runs and coordinates infrastructure-as-code workflows for Terraform, OpenTofu, CloudFormation, Pulumi, Kubernetes and Ansible, with policies, approvals and drift detection.",
+    "description_source": {
+      "url": "https://spacelift.io/",
+      "quote": "Standardize how Terraform, OpenTofu, CloudFormation, Pulumi, and Kubernetes run"
+    },
+    "license_model": "commercial",
+    "license_source": {
+      "url": "https://spacelift.io/pricing",
+      "quote": "The Business plan is offered as an annual subscription and includes unlimited users and 3 private workers."
+    },
+    "claims": [
+      {
+        "block": "Orchestrator",
+        "extent": "full",
+        "source_url": "https://spacelift.io/",
+        "quote": "Trigger configuration automatically after infrastructure changes",
+        "reasoning": "Coordinating and triggering infrastructure-as-code and configuration runs is the product's main purpose."
+      },
+      {
+        "block": "Observability",
+        "extent": "partial",
+        "source_url": "https://spacelift.io/",
+        "quote": "See and remediate drift before it becomes an incident",
+        "reasoning": "Drift detection compares actual and declared resources, which is a side feature of the orchestration platform."
+      },
+      {
+        "block": "Presentation",
+        "extent": "partial",
+        "source_url": "https://spacelift.io/",
+        "quote": "Use our UI or chat with our AI assistant to view resources, detect drift, and make changes so you can keep pace with modern development.",
+        "reasoning": "Spacelift provides a web interface and assistant for its own workflows, not a general interface for the whole automation system."
+      }
+    ],
+    "notes": "The pricing page also lists a free plan ('The Free plan includes 2 users and 1 public worker'); this is a hosted service tier, not an open-source edition. Spacelift is not specific to network devices."
+  }
+]

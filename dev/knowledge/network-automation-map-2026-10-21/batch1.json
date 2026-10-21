@@ -1,0 +1,266 @@
+[
+  {
+    "name": "SolarWinds Network Performance Monitor",
+    "publisher": "SolarWinds",
+    "publisher_homepage": "https://www.solarwinds.com/",
+    "publisher_source": {
+      "url": "https://www.solarwinds.com/network-performance-monitor",
+      "quote": "©2026 SolarWinds Worldwide"
+    },
+    "homepage": "https://www.solarwinds.com/network-performance-monitor",
+    "description": "Polls multi-vendor network devices to track availability, traffic and hardware health, and shows the results in dashboards, maps and threshold-based alerts.",
+    "description_source": {
+      "url": "https://www.solarwinds.com/network-performance-monitor",
+      "quote": "SolarWinds NPM uses industry-standard protocols to poll network devices and collect performance data. It monitors device and interface status, response time, packet loss, bandwidth utilization, errors, and hardware health metrics such as CPU, memory, and temperature."
+    },
+    "license_model": "commercial",
+    "license_source": {
+      "url": "https://documentation.solarwinds.com/en/success_center/npm/content/npm_licensing_model.htm",
+      "quote": "The NPM license is based on a number of items to monitor. Each license tier number provides the maximum limit of nodes, interfaces, and volumes to manage and monitor."
+    },
+    "claims": [
+      {
+        "block": "Collector",
+        "extent": "full",
+        "source_url": "https://www.solarwinds.com/network-performance-monitor",
+        "quote": "SolarWinds NPM uses industry-standard protocols to poll network devices and collect performance data.",
+        "reasoning": "Polling devices to read their performance state is the main purpose of the product."
+      },
+      {
+        "block": "Observability",
+        "extent": "full",
+        "source_url": "https://www.solarwinds.com/network-performance-monitor",
+        "quote": "Dashboards and reports let you view this information in real time and over time, drill into specific devices or interfaces, and create alerts based on thresholds and baselines that fit your environment.",
+        "reasoning": "The product keeps current and historical device state and processes it into alerts against thresholds and baselines."
+      },
+      {
+        "block": "Presentation",
+        "extent": "partial",
+        "source_url": "https://www.solarwinds.com/network-performance-monitor",
+        "quote": "Dashboards and reports let you view this information in real time and over time",
+        "reasoning": "The product offers dashboards and reports for its own monitoring data, not a general interface for an automation system."
+      }
+    ],
+    "notes": "Picked Network Performance Monitor (NPM), the self-hosted network monitoring product. The SolarWinds documentation states that 'Network monitoring capabilities are included in SolarWinds Observability Self-Hosted' (https://documentation.solarwinds.com/en/success_center/npm/content/npm_licensing_model.htm), and the NPM page says its features are 'also available as part of Observability Self-Hosted'. The licensing page names license tiers but not whether they are subscription or perpetual; 'commercial' is based on paid license tiers and the 'Get a Quote' option on the product page. The publisher name is taken from the copyright line; the legal entity name in full is not stated beyond 'SolarWinds Worldwide'."
+  },
+  {
+    "name": "Kentik",
+    "publisher": "Kentik",
+    "publisher_homepage": "https://www.kentik.com/",
+    "publisher_source": {
+      "url": "https://www.kentik.com/product/",
+      "quote": "Copyright © 2026 Kentik. All rights reserved."
+    },
+    "homepage": "https://www.kentik.com/",
+    "description": "Collects network telemetry such as flow, SNMP and streaming telemetry from data center, cloud and internet networks, stores it, and lets users query and visualize it.",
+    "description_source": {
+      "url": "https://www.kentik.com/product/",
+      "quote": "Collect telemetry input from all critical networks and forwarding elements. Visualize a unified view across all your networks, even the ones you don’t own."
+    },
+    "license_model": "commercial",
+    "license_source": {
+      "url": "https://www.kentik.com/pricing/",
+      "quote": "Pro $2,000 STARTING PRICE PER MONTH, BILLED ANNUALLY"
+    },
+    "claims": [
+      {
+        "block": "Collector",
+        "extent": "full",
+        "source_url": "https://www.kentik.com/product/",
+        "quote": "Collect telemetry input from all critical networks and forwarding elements.",
+        "reasoning": "Collecting flow, device and routing telemetry from the network is the main purpose of the product."
+      },
+      {
+        "block": "Observability",
+        "extent": "full",
+        "source_url": "https://www.kentik.com/product/",
+        "quote": "Kentik Data Engine Access and query quickly with a clustered, multi-tenant platform. Ingest high volumes of structured and unstructured data. Visualize data in real time and retain raw data for months",
+        "reasoning": "The product stores the collected network state and provides query and analysis on it."
+      },
+      {
+        "block": "Presentation",
+        "extent": "partial",
+        "source_url": "https://www.kentik.com/product/",
+        "quote": "Visualize a unified view across all your networks, even the ones you don’t own.",
+        "reasoning": "The product provides views of its own telemetry data, not a general interface for an automation system."
+      }
+    ],
+    "notes": "The product page names the platform 'Kentik' and the pricing page title calls it 'Network Intelligence Solutions'; no single formal product name was found. Acquisition: Network World reported on Jul 8, 2026 that 'Infoblox announced today that it has entered into a definitive agreement to acquire Kentik' (https://www.networkworld.com/article/4194570/infoblox-acquires-kentik-adding-network-observability-to-its-dns-and-ddi-platform.html). Whether the acquisition has closed is not known from the sources opened. The Kentik site shows an 'Infoblox + Kentik' banner linking to https://www.infoblox.com/infoblox-and-kentik/. The pricing page does not use the word SaaS, so the delivery model is not stated here."
+  },
+  {
+    "name": "LibreNMS",
+    "publisher": "LibreNMS",
+    "publisher_homepage": "https://www.librenms.org/",
+    "publisher_source": {
+      "url": "https://raw.githubusercontent.com/librenms/librenms/master/README.md",
+      "quote": "Copyright (C) 2013-2026 by individual LibreNMS contributors"
+    },
+    "homepage": "https://www.librenms.org/",
+    "description": "Network monitoring system that discovers devices with protocols such as SNMP, LLDP and CDP, collects their data, graphs it and sends alerts.",
+    "description_source": {
+      "url": "https://www.librenms.org/",
+      "quote": "Automatically discover your entire network using CDP, FDP, LLDP, OSPF, BGP, SNMP and ARP."
+    },
+    "license_model": "open_source",
+    "license_source": {
+      "url": "https://raw.githubusercontent.com/librenms/librenms/master/LICENSE.txt",
+      "quote": "LibreNMS is covered by the GPLv3, and includes exceptions for included third-party packages."
+    },
+    "claims": [
+      {
+        "block": "Collector",
+        "extent": "full",
+        "source_url": "https://raw.githubusercontent.com/librenms/librenms/master/README.md",
+        "quote": "LibreNMS is an auto-discovering PHP/MySQL/SNMP based network monitoring which includes support for a wide range of network hardware and operating systems",
+        "reasoning": "Discovering devices and reading their state over SNMP is the main purpose of the product."
+      },
+      {
+        "block": "Observability",
+        "extent": "full",
+        "source_url": "https://www.librenms.org/",
+        "quote": "Highly flexible alerting system, notify via email, irc, slack and more.",
+        "reasoning": "The product stores collected device data and processes it into alerts."
+      },
+      {
+        "block": "Presentation",
+        "extent": "partial",
+        "source_url": "https://www.librenms.org/",
+        "quote": "A full API to manage, graph and retrieve data from your install.",
+        "reasoning": "The product provides graphs, a web interface and an API for its own monitoring data."
+      }
+    ],
+    "notes": "Publisher is the LibreNMS open-source project and its contributors; no company or foundation is named on the pages opened. The project home page does not state the license; the license comes from the LICENSE.txt and README.md files in the GitHub repository github.com/librenms/librenms."
+  },
+  {
+    "name": "Zabbix",
+    "publisher": "Zabbix LLC",
+    "publisher_homepage": "https://www.zabbix.com/",
+    "publisher_source": {
+      "url": "https://www.zabbix.com/features",
+      "quote": "© 2001-2026 by Zabbix LLC. All rights reserved."
+    },
+    "homepage": "https://www.zabbix.com/",
+    "description": "Monitoring software that collects metrics from network devices, servers and applications, detects problems against thresholds, sends notifications and shows the data in dashboards and maps.",
+    "description_source": {
+      "url": "https://www.zabbix.com/features",
+      "quote": "Keep control of your infrastructure by collecting any metric from any source"
+    },
+    "license_model": "open_source",
+    "license_source": {
+      "url": "https://www.zabbix.com/features",
+      "quote": "Zabbix is 100% free and open-source, released under the GNU Affero General Public License version 3 (AGPLv3)"
+    },
+    "claims": [
+      {
+        "block": "Collector",
+        "extent": "full",
+        "source_url": "https://www.zabbix.com/features",
+        "quote": "Keep control of your infrastructure by collecting any metric from any source",
+        "reasoning": "Collecting metrics from devices with agents and agent-less methods is a main purpose of the product."
+      },
+      {
+        "block": "Observability",
+        "extent": "full",
+        "source_url": "https://www.zabbix.com/features",
+        "quote": "With Zabbix you can detect problem states within the incoming metric flow automatically: High performance problem detection in real-time",
+        "reasoning": "The product stores collected metrics and processes them into problems, trends and anomalies."
+      },
+      {
+        "block": "Presentation",
+        "extent": "partial",
+        "source_url": "https://www.zabbix.com/features",
+        "quote": "Zabbix web UI provides multiple ways of presenting a visual overview of your IT environment: Widget-based multi-page dashboards",
+        "reasoning": "The product provides dashboards and maps for its own monitoring data, not a general interface for an automation system."
+      }
+    ],
+    "notes": "The license page states that versions 7.0 and later are released under AGPLv3 and that 'All previous Zabbix software versions up to 6.4 are released under the GNU General Public License version 2 (GPLv2).' (https://www.zabbix.com/license). The features page also lists 'automatic issue remediation' and 'Proactively execute remote scripts' as alert actions; this was not claimed as Orchestrator or Executor because it is a side feature."
+  },
+  {
+    "name": "Nagios Core",
+    "publisher": "Nagios Enterprises",
+    "publisher_homepage": "https://www.nagios.org/",
+    "publisher_source": {
+      "url": "https://www.nagios.org/projects/nagios-core/",
+      "quote": "Website Copyright © 2009 - Nagios Enterprises, LLC. All rights reserved."
+    },
+    "homepage": "https://www.nagios.org/projects/nagios-core/",
+    "description": "Monitoring software that runs plugin-based checks against servers, network devices, websites and services, and alerts on problems, with a basic web interface.",
+    "description_source": {
+      "url": "https://www.nagios.org/projects/nagios-core/",
+      "quote": "Nagios Core provides complete monitoring of your entire IT infrastructure environment – including websites, DNS, servers, routers, switches, services, servers, workstations, and more."
+    },
+    "license_model": "open_source",
+    "license_source": {
+      "url": "https://www.nagios.org/projects/nagios-core/",
+      "quote": "Completely free forever under GPL v2 license."
+    },
+    "claims": [
+      {
+        "block": "Observability",
+        "extent": "partial",
+        "source_url": "https://www.nagios.org/projects/nagios-core/",
+        "quote": "Nagios Core provides complete monitoring of your entire IT infrastructure environment – including websites, DNS, servers, routers, switches, services, servers, workstations, and more.",
+        "reasoning": "The product checks the state of network devices and other IT systems, but the page does not describe how it persists that state, and networks are one of several targets."
+      },
+      {
+        "block": "Collector",
+        "extent": "partial",
+        "source_url": "https://www.nagios.org/projects/nagios-core/",
+        "quote": "Network Devices – Switches, routers, firewalls, load balancers",
+        "reasoning": "The product reads device state through plugins as part of its checks, with network devices as one of several target types."
+      },
+      {
+        "block": "Presentation",
+        "extent": "partial",
+        "source_url": "https://www.nagios.org/projects/nagios-core/",
+        "quote": "Basic web interface",
+        "reasoning": "The product page describes only a basic web interface; configuration uses text files."
+      }
+    ],
+    "notes": "Picked Nagios Core because it is the open-source product line; the logo was not available to confirm which product it refers to. Nagios XI is the commercial product from the same publisher, built as a paid alternative: the comparison table on the Nagios Core page lists 'Nagios Core (Free)' as 'Open Source (GPL v2)' and 'Nagios XI (Commercial)' as 'Paid License'. If the catalog entry means the Nagios brand as a whole (Core plus XI), 'open_core' would fit better."
+  },
+  {
+    "name": "PRTG Network Monitor",
+    "publisher": "Paessler GmbH",
+    "publisher_homepage": "https://www.paessler.com/",
+    "publisher_source": {
+      "url": "https://www.paessler.com/prtg/prtg-network-monitor",
+      "quote": "Paessler PRTG Network Monitor is a proprietary network monitoring software by Paessler GmbH."
+    },
+    "homepage": "https://www.paessler.com/prtg/prtg-network-monitor",
+    "description": "On-premises Windows software that monitors devices, systems and traffic through sensors such as SNMP, and provides maps, dashboards, alerts and reports.",
+    "description_source": {
+      "url": "https://www.paessler.com/prtg/prtg-network-monitor",
+      "quote": "One sensor usually monitors one measured value in your network, for example the traffic of a switch port, the CPU load of a server, or the free space on a disk drive."
+    },
+    "license_model": "commercial",
+    "license_source": {
+      "url": "https://www.paessler.com/prtg/prtg-network-monitor",
+      "quote": "Paessler PRTG Network Monitor is a proprietary network monitoring software by Paessler GmbH."
+    },
+    "claims": [
+      {
+        "block": "Collector",
+        "extent": "full",
+        "source_url": "https://www.paessler.com/prtg/prtg-network-monitor",
+        "quote": "In PRTG, “sensors” are the basic monitoring elements. One sensor usually monitors one measured value in your network, for example the traffic of a switch port, the CPU load of a server, or the free space on a disk drive.",
+        "reasoning": "Reading values from network devices through sensors is the main purpose of the product."
+      },
+      {
+        "block": "Observability",
+        "extent": "full",
+        "source_url": "https://www.paessler.com/prtg/prtg-network-monitor",
+        "quote": "Receive real-time alerts via the notification channel of your choice (email, push…)",
+        "reasoning": "The product stores sensor data and processes it into alerts and reports."
+      },
+      {
+        "block": "Presentation",
+        "extent": "partial",
+        "source_url": "https://www.paessler.com/prtg/prtg-network-monitor",
+        "quote": "Get an overview of your entire infrastructure with custom maps & dashboards",
+        "reasoning": "The product provides maps and dashboards for its own monitoring data, not a general interface for an automation system."
+      }
+    ],
+    "notes": "Licensing: the page states 'All license sizes are available as a subscription' and 'After 30 days PRTG reverts to the freeware edition.' The freeware edition is free of charge but proprietary, so the model is 'commercial', not 'open_core'. The page also names related products: PRTG Enterprise Monitor, PRTG Hosted Monitor, PRTG MSP Edition and PRTG OT Edition."
+  }
+]

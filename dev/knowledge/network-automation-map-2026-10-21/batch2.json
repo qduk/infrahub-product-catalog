@@ -1,0 +1,281 @@
+[
+  {
+    "name": "pyATS",
+    "publisher": "Cisco",
+    "publisher_homepage": "https://developer.cisco.com/",
+    "publisher_source": {
+      "url": "https://developer.cisco.com/pyats/",
+      "quote": "Developed originally for internal Cisco Engineering since 2014, the pyATS ecosystem is the de-facto test/validation solution used by thousands of Cisco engineers"
+    },
+    "homepage": "https://developer.cisco.com/pyats/",
+    "description": "pyATS is a Python test and validation framework that records the operational state of network devices, compares it before and after changes, and runs reusable tests against the network.",
+    "description_source": {
+      "url": "https://developer.cisco.com/pyats/",
+      "quote": "perform stateful validation of their device operational status, build a safety-net of scalable, data-driven and reusable tests around their network"
+    },
+    "license_model": null,
+    "license_source": {
+      "url": "https://github.com/CiscoTestAutomation/pyats",
+      "quote": "Yes, pyATS is 100% free to use for anyone and everyone, and available through Python Package Index."
+    },
+    "claims": [
+      {
+        "block": "Collector",
+        "extent": "partial",
+        "source_url": "https://developer.cisco.com/pyats/",
+        "quote": "Profile your network, then save a snapshot.",
+        "reasoning": "pyATS reads and stores device operational state, but it does so to support testing rather than as a general state collection service."
+      },
+      {
+        "block": "Observability",
+        "extent": "partial",
+        "source_url": "https://developer.cisco.com/pyats/",
+        "quote": "Make changes at will, and compare the state before and after. The pyATS ecosystem will tell you the exact side effects of your changes.",
+        "reasoning": "pyATS processes collected state to find differences, but it does not persist the actual network state as a continuous store."
+      }
+    ],
+    "notes": "No license category fits: pyATS is free of charge, but its core is closed source. The same GitHub page states: \"At the moment the core of pyATS is still closed-source\" and \"other packages that are developed to be used with pyATS, such as Unicon plugins, parser libraries, packages, YANG/REST connectors and etc, will be open source\". No paid edition was found. The pyATS page also names the XPRESSO dashboard (\"XPRESSO The pyATS dashboard\"), which could support a partial Presentation claim; it was not claimed because the page gives no detail. The documentation page https://developer.cisco.com/docs/pyats/ was opened through a summarizing fetch tool only, so no quotes are taken from it."
+  },
+  {
+    "name": "NUTS (Network Unit Testing System)",
+    "publisher": "Network Unit Testing System",
+    "publisher_homepage": "https://github.com/network-unit-testing-system",
+    "publisher_source": {
+      "url": "https://github.com/network-unit-testing-system/nuts/blob/master/LICENSE",
+      "quote": "Copyright (c) 2023 Institue for Network and Security (INS), Rapperswil"
+    },
+    "homepage": "https://nuts.readthedocs.io/en/latest/",
+    "description": "NUTS is a pytest plugin that reads the desired network state from YAML test bundles, queries devices through Nornir and checks whether the results match.",
+    "description_source": {
+      "url": "https://nuts.readthedocs.io/en/latest/",
+      "quote": "Pytest reads in the test bundle (step 2 above) and transforms it into test runs. In the background, nornir uses the network information provided in the inventory (step 1 above), queries the network based on the specific test bundle and passes the results of those queries to pytest."
+    },
+    "license_model": "open_source",
+    "license_source": {
+      "url": "https://github.com/network-unit-testing-system/nuts/blob/master/LICENSE",
+      "quote": "MIT License"
+    },
+    "claims": [
+      {
+        "block": "Intent",
+        "extent": "partial",
+        "source_url": "https://github.com/network-unit-testing-system/nuts",
+        "quote": "The file provides data on the desired network state and describes which test definitions should be collected and executed by pytest.",
+        "reasoning": "Test bundles store expected operational state as YAML files, but NUTS does not hold configuration intent or a persistent store of desired state."
+      },
+      {
+        "block": "Observability",
+        "extent": "partial",
+        "source_url": "https://nuts.readthedocs.io/en/latest/",
+        "quote": "Pytest then evaluates if the expectations defined in the test bundle match those results.",
+        "reasoning": "NUTS processes retrieved state against expectations, but it does not persist the actual network state."
+      },
+      {
+        "block": "Collector",
+        "extent": "partial",
+        "source_url": "https://nuts.readthedocs.io/en/latest/",
+        "quote": "nornir uses the network information provided in the inventory (step 1 above), queries the network based on the specific test bundle",
+        "reasoning": "NUTS reads device state only for the duration of a test run and only for the data its tests need."
+      }
+    ],
+    "notes": "The GitHub organization is named \"Network Unit Testing System\"; the copyright holder in the LICENSE file is the Institute for Network and Security (INS), Rapperswil (spelled \"Institue\" in the file). The documentation footer reads \"©2026, Urs Baumann, Marco Martinez.\" The GitHub repository description is \"NUTS defines a desired network state and checks it against a real network using pytest and nornir.\""
+  },
+  {
+    "name": "Netpicker",
+    "publisher": "Flock9",
+    "publisher_homepage": "https://flock9.com/",
+    "publisher_source": {
+      "url": "https://netpicker.io/about-us/",
+      "quote": "Netpicker and Slurp'it are sister products developed by Flock9."
+    },
+    "homepage": "https://netpicker.io/",
+    "description": "Netpicker backs up device configurations and runs Python and pytest tests for configuration, compliance and security against network devices, with optional automated remediation jobs.",
+    "description_source": {
+      "url": "https://netpicker.io/",
+      "quote": "Continuously validate real network state before and after changes. Test configs, compliance, security, and network behavior. Automate remediation when needed."
+    },
+    "license_model": "commercial",
+    "license_source": {
+      "url": "https://netpicker.io/pricing/",
+      "quote": "Netpicker - Professional Extend your FREE Netpicker foundation with Python based testing, validation, vulnerability management, mitigation, orchestration and AI analysis Starting at $7,500 per year"
+    },
+    "claims": [
+      {
+        "block": "Collector",
+        "extent": "partial",
+        "source_url": "https://netpicker.io/",
+        "quote": "Config Backup Automated backups and version control for all devices.",
+        "reasoning": "Netpicker retrieves and stores device configurations, which is one part of the actual network state."
+      },
+      {
+        "block": "Observability",
+        "extent": "partial",
+        "source_url": "https://netpicker.io/",
+        "quote": "Continuously validate real network state before and after changes. Test configs, compliance, security, and network behavior.",
+        "reasoning": "Netpicker processes collected state through tests and compliance rules, but it is not a general store and analysis layer for all operational state."
+      },
+      {
+        "block": "Executor",
+        "extent": "partial",
+        "source_url": "https://netpicker.io/",
+        "quote": "Network Remediation Automate fixes with guardrails and verification.",
+        "reasoning": "Netpicker applies changes to devices through remediation jobs, as an extension of its testing and backup functions."
+      }
+    ],
+    "notes": "The license category is uncertain. The pricing page lists a free tier (\"Netpicker - Foundation ... FREE for life\") and paid Professional and Enterprise tiers, and the site links an End User License Agreement. The home page states \"Open source foundation Community based. Extend, integrate and run on your terms.\", but the main GitHub repository github.com/netpicker/netpicker lists no license; only some side repositories (for example netpicker-cli) are MIT licensed. If the free Foundation tier is confirmed to be open source, open_core would apply. The home page footer reads \"©2026 NetPicker.\" The Flock9 home page (https://flock9.com/) only shows \"This site is under development\"."
+  },
+  {
+    "name": "Containerlab",
+    "publisher": "Nokia (SRL Labs)",
+    "publisher_homepage": "https://github.com/srl-labs",
+    "publisher_source": {
+      "url": "https://github.com/srl-labs/containerlab/blob/main/LICENSE",
+      "quote": "Copyright (c) 2021 Nokia. All rights reserved."
+    },
+    "homepage": "https://containerlab.dev/",
+    "description": "Containerlab is a command-line tool that starts containerized and virtual-machine network operating systems, connects them into a user-defined topology and manages the lifecycle of these labs.",
+    "description_source": {
+      "url": "https://containerlab.dev/",
+      "quote": "Containerlab provides a CLI for orchestrating and managing container-based networking labs. It starts the containers, builds a virtual wiring between them to create lab topologies of users choice and manages labs lifecycle."
+    },
+    "license_model": "open_source",
+    "license_source": {
+      "url": "https://github.com/srl-labs/containerlab/blob/main/LICENSE",
+      "quote": "Redistribution and use in source and binary forms, with or without"
+    },
+    "claims": [],
+    "notes": "No block claimed: Containerlab builds lab and test infrastructure rather than automating a production network. The repository is in the GitHub organization \"SRL Labs\" (srl-labs); the README states \"Although being kick-started by Nokia engineers, containerlab doesn't take sides and supports NOSes from other vendors and opensource projects.\" GitHub reports the license as BSD-3-Clause."
+  },
+  {
+    "name": "GNS3",
+    "publisher": "GNS3 Technologies Inc.",
+    "publisher_homepage": "https://www.gns3.com/",
+    "publisher_source": {
+      "url": "https://docs.gns3.com/docs-3.1-en",
+      "quote": "Copyright © 2026 GNS3 Technologies Inc."
+    },
+    "homepage": "https://www.gns3.com/",
+    "description": "GNS3 is a graphical network simulator whose server runs emulators such as Dynamips, VirtualBox or QEMU/KVM to build virtual network topologies, controlled from a desktop or web interface.",
+    "description_source": {
+      "url": "https://github.com/GNS3/gns3-server",
+      "quote": "The GNS3 server manages emulators such as Dynamips, VirtualBox or Qemu/KVM. Clients like the GNS3 GUI and the GNS3 Web UI control the server using an HTTP REST API."
+    },
+    "license_model": "open_source",
+    "license_source": {
+      "url": "https://github.com/GNS3/gns3-server/blob/master/LICENSE",
+      "quote": "GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007"
+    },
+    "claims": [],
+    "notes": "No block claimed: GNS3 is a network emulator for building lab and test topologies. The home page https://www.gns3.com/ returned only a browser compatibility message to both fetch methods, so no quote is taken from it. The phrase \"Graphical Network Simulator\" comes from the GitHub description of GNS3/gns3-gui (\"GNS3 Graphical Network Simulator\"). GitHub reports both gns3-server and gns3-gui as GPL-3.0."
+  },
+  {
+    "name": "Nokia Event-Driven Automation (EDA)",
+    "publisher": "Nokia",
+    "publisher_homepage": null,
+    "publisher_source": {
+      "url": "https://docs.eda.dev/26.8/",
+      "quote": "Nokia Event-Driven Automation (EDA) completes Nokia's data center portfolio"
+    },
+    "homepage": "https://docs.eda.dev/",
+    "description": "Nokia EDA is a Kubernetes-based platform where users declare the desired state of fabrics, interfaces and services, which it translates into multivendor device configuration and checks against streaming telemetry.",
+    "description_source": {
+      "url": "https://docs.eda.dev/26.8/",
+      "quote": "You describe the services and components you want in terms that abstract vendor-specific details; Nokia EDA translates that intent into device configuration and orchestrates rollout across the network."
+    },
+    "license_model": "commercial",
+    "license_source": {
+      "url": "https://docs.eda.dev/26.8/getting-started/try-eda/",
+      "quote": "No hardware nodes can be used in an unlicensed EDA mode"
+    },
+    "claims": [
+      {
+        "block": "Intent",
+        "extent": "full",
+        "source_url": "https://docs.eda.dev/26.8/",
+        "quote": "You automate by declaring desired state. Resources - units of automation expressed as Kubernetes custom resources or via the APIs - can represent fabrics, interfaces, VPNs, and more.",
+        "reasoning": "Storing and processing declared desired state is the main purpose of EDA, and it covers both configuration and expected state."
+      },
+      {
+        "block": "Executor",
+        "extent": "full",
+        "source_url": "https://docs.eda.dev/26.8/",
+        "quote": "Nokia EDA reconciles that intent and drives configuration across devices in a controlled, concurrent, and safe way.",
+        "reasoning": "EDA applies configuration changes to devices from the intended state, including validation and network-wide rollback."
+      },
+      {
+        "block": "Observability",
+        "extent": "partial",
+        "source_url": "https://docs.eda.dev/26.8/",
+        "quote": "Nokia EDA also owns runtime state for what it deploys, so you are not stitching together separate configuration and observability stories. Operational views and EQL give you fast, network-wide insight for auditing and troubleshooting - fed by streaming telemetry instead of constant polling.",
+        "reasoning": "EDA stores and queries operational state, but the page limits this to what EDA itself deploys."
+      }
+    ],
+    "notes": "The docs.eda.dev root redirects to the current version (26.8 when opened). The same page also supports possible Orchestrator and Presentation claims (\"Event-driven at the core\", \"Streaming drift control\", and a UI, CLI and APIs); these were not claimed to keep to the strongest claims. The try-EDA page states that a playground runs without a license (\"With no license and no registration required\") but that hardware nodes need a license. No Nokia corporate home page was opened, so publisher_homepage is null."
+  },
+  {
+    "name": "netlab",
+    "publisher": "ipSpace.net",
+    "publisher_homepage": "https://www.ipspace.net/",
+    "publisher_source": {
+      "url": "https://github.com/ipspace/netlab/blob/dev/LICENSE.md",
+      "quote": "Copyright (c) 2020-2025 Ivan Pepelnjak, Jeroen van Bemmel, Stefano Sasso,"
+    },
+    "homepage": "https://netlab.tools/",
+    "description": "netlab builds virtual networking labs from a high-level YAML topology: it creates addressing and routing designs, starts the lab with containerlab or Vagrant, and deploys initial device configurations.",
+    "description_source": {
+      "url": "https://netlab.tools/",
+      "quote": "Describe high-level lab topology in YAML format without worrying about the specific implementation details"
+    },
+    "license_model": "open_source",
+    "license_source": {
+      "url": "https://github.com/ipspace/netlab/blob/dev/LICENSE.md",
+      "quote": "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction"
+    },
+    "claims": [],
+    "notes": "No block claimed: netlab builds and configures lab networks, not production networks, although it does deploy configuration to lab devices and its home page states it can also use physical devices (\"Use the same lab topology with multiple virtualization providers (KVM/libvirt, Docker containers, or physical devices)\"). The publisher name comes from the GitHub account that holds the repository: the repository is under the ipspace GitHub account, and ipspace.net lists \"netlab : networking labs as code\". GitHub reports the license as NOASSERTION; the LICENSE.md text is the MIT license text."
+  },
+  {
+    "name": "EVE-NG",
+    "publisher": "EVE-NG Ltd",
+    "publisher_homepage": "https://www.eve-ng.net/",
+    "publisher_source": {
+      "url": "https://www.eve-ng.net/",
+      "quote": "© EVE-NG Ltd 2026 info@eve-ng.net Company Number 10152731 London, United Kingdom"
+    },
+    "homepage": "https://www.eve-ng.net/",
+    "description": "EVE-NG is a multivendor network emulation platform, managed through a web browser, that runs virtual routers, firewalls and containers to build lab, proof-of-concept and training environments.",
+    "description_source": {
+      "url": "https://www.eve-ng.net/",
+      "quote": "It allows enterprises, e-learning providers/centers, individuals and group collaborators to create virtual proof of concepts, solutions and training environments. EVE-NG PRO is the first clientless multivendor network emulation software"
+    },
+    "license_model": "commercial",
+    "license_source": {
+      "url": "https://www.eve-ng.net/index.php/download/",
+      "quote": "This is the Freemium edition. Full features require a paid license."
+    },
+    "claims": [],
+    "notes": "No block claimed: EVE-NG is a network emulator for lab, proof-of-concept and training environments. The download page also lists a free Community Edition with \"EOS-EOL End of Support & End of Life June, 2026\"; no source found states that the Community Edition is open source."
+  },
+  {
+    "name": "Cisco Modeling Labs",
+    "publisher": "Cisco",
+    "publisher_homepage": "https://developer.cisco.com/",
+    "publisher_source": {
+      "url": "https://developer.cisco.com/modeling-labs/",
+      "quote": "Cisco Modeling Labs is our premier platform for network simulation."
+    },
+    "homepage": "https://developer.cisco.com/modeling-labs/",
+    "description": "Cisco Modeling Labs is an on-premises network simulation platform that runs Cisco and third-party virtual network images in labs, managed through a web interface, an API and a Python client library.",
+    "description_source": {
+      "url": "https://developer.cisco.com/modeling-labs/",
+      "quote": "Cisco Modeling Labs provides you with an on-premise network simulation tool that runs on workstations and servers. You can quickly and easily simulate Cisco and non-Cisco networks, using real Cisco images"
+    },
+    "license_model": "commercial",
+    "license_source": {
+      "url": "https://developer.cisco.com/modeling-labs/",
+      "quote": "Cisco Modeling Labs Personal is focused on the entry-level network engineer, offering enough capacity to design basic networks to support certifications such as CCNA and DevNet Associate. $199.00 or 2 Cisco Learning Credits"
+    },
+    "claims": [],
+    "notes": "No block claimed: Cisco Modeling Labs is a network simulation tool for lab and test environments. Renamed from VIRL: the Cisco DevNet client library README (https://github.com/CiscoDevNet/virl2-client) states \"The product has been renamed from VIRL to Cisco Modeling Labs / CML 2.\" The same product page also mentions a free variant (\"Cisco Modeling Labs Free and Personal are perfect for your certification study.\"). The cisco.com product page returned \"Access Denied\" and was not used."
+  }
+]

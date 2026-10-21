@@ -11,3 +11,96 @@ spec:
       homepage_url: https://www.redhat.com/
     - name: Stardust Systems
       homepage_url: https://www.stardustsystems.net/
+---
+# Publishers of the products added from the Network Automation Map (2026-10-21).
+apiVersion: infrahub.app/v1
+kind: Object
+spec:
+  kind: CatalogPublisher
+  data:
+  - name: SolarWinds
+    homepage_url: https://www.solarwinds.com/
+  - name: Kentik
+    homepage_url: https://www.kentik.com/
+  - name: LibreNMS
+    homepage_url: https://www.librenms.org/
+  - name: Zabbix
+    homepage_url: https://www.zabbix.com/
+  - name: Nagios Enterprises
+    homepage_url: https://www.nagios.org/
+  - name: Paessler
+    homepage_url: https://www.paessler.com/
+  - name: Cisco
+    homepage_url: https://www.cisco.com/
+  - name: Network Unit Testing System
+    homepage_url: https://github.com/network-unit-testing-system
+  - name: Flock9
+    homepage_url: https://flock9.com/
+  - name: Nokia
+    homepage_url: https://www.nokia.com/
+  - name: GNS3 Technologies
+    homepage_url: https://www.gns3.com/
+  - name: ipSpace.net
+    homepage_url: https://www.ipspace.net/
+  - name: EVE-NG
+    homepage_url: https://www.eve-ng.net/
+  - name: Forward Networks
+    homepage_url: https://www.forwardnetworks.com/
+  - name: IP Fabric
+    homepage_url: https://ipfabric.io/
+  - name: NetBrain Technologies
+    homepage_url: https://www.netbrain.com/
+  - name: Slurp'it
+    homepage_url: https://slurpit.io/
+  - name: Juniper Networks
+    homepage_url: https://www.juniper.net/
+  - name: EfficientIP
+    homepage_url: https://efficientip.com/
+  - name: Infoblox
+    homepage_url: https://www.infoblox.com/
+  - name: NetBox Labs
+    homepage_url: https://netboxlabs.com/
+  - name: Network to Code
+    homepage_url: https://networktocode.com/
+  - name: Freshworks
+    homepage_url: https://www.freshworks.com/
+  - name: Sunbird Software
+    homepage_url: https://www.sunbirddcim.com/
+  - name: phpIPAM project
+    homepage_url: https://phpipam.net/
+  - name: ServiceNow
+    homepage_url: https://www.servicenow.com/
+  - name: Atlassian
+    homepage_url: https://www.atlassian.com/
+  - name: Cloud Native Computing Foundation (CNCF)
+    homepage_url: https://www.cncf.io/
+  - name: HashiCorp
+    homepage_url: https://www.hashicorp.com/
+  - name: Itential
+    homepage_url: https://www.itential.com/
+  - name: Gluware
+    homepage_url: https://gluware.com/
+  - name: IBM
+    homepage_url: https://www.ibm.com/
+  - name: System Initiative
+    homepage_url: https://github.com/systeminit
+  - name: ConfigHub
+    homepage_url: https://confighub.com/
+  - name: Spacelift
+    homepage_url: https://spacelift.io/
+  - name: The Apache Software Foundation
+    homepage_url: https://www.apache.org/
+  - name: Windmill Labs
+    homepage_url: https://www.windmill.dev/
+  - name: Temporal Technologies
+    homepage_url: https://temporal.io/
+  - name: Prefect Technologies
+    homepage_url: https://www.prefect.io/
+  - name: AlgoSec
+    homepage_url: https://www.algosec.com/
+  - name: FireMon
+    homepage_url: https://www.firemon.com/
+  - name: Tufin
+    homepage_url: https://www.tufin.com/
+  - name: Skybox Security
+    homepage_url: https://www.skyboxsecurity.com/
