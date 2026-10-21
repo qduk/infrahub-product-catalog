@@ -25,3 +25,14 @@ products from the Network Automation Map are loaded, which follows this feature.
 ## Results
 
 To be filled in when the arc is run.
+
+### Results (2026-10-21)
+
+| # | Outcome |
+|---|---|
+| 1 | Pass. After the schema loaded on `product-status`, the three existing products read `status: active`, with no date and no status sources. `objects/04_products.yml` was not changed. |
+| 2 | Pass. 37 tests passed, and the four existing report outputs were unchanged. |
+| 3 | Pass. On a throwaway branch, Red Hat Ansible set to `discontinued` with no status source made the check exit with status 1: "Red Hat Ansible: the status is discontinued but has no source. Add a status source." |
+| 4 | Pass. After a status source was added, the check exited with status 0. |
+| 5 | Pass. The fixture `catalog_report_status` gives the row `Closed Corp Old Tool (discontinued)`. On `product-status`, the report is identical to `tests/fixtures/catalog_report_current/output.md`. |
+| 6 | Pass. The proposed change "Product status fields (feature 004)" merged after Data Integrity, Schema Integrity, `catalog_source_check` and the artifact validator passed. Commit `0a752c7` was pushed and imported (`in-sync`, `online`), and the report rebuilt on `main` is identical to `tests/fixtures/catalog_report_current/output.md`. |

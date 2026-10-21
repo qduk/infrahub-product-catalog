@@ -127,9 +127,9 @@ products, the report is unchanged.
 
 - [X] T014 Open a proposed change from `product-status` to `main`, confirm its checks pass, and
   merge it
-- [ ] T015 Commit on the Git branch `004-product-status`, merge into `main` with
+- [X] T015 Commit on the Git branch `004-product-status`, merge into `main` with
   `git merge --ff-only`, and ask the user for the go-ahead to push; push only if they agree
-- [ ] T016 Run **Import latest commit** on the repository, rebuild the report on `main`, confirm it
+- [X] T016 Run **Import latest commit** on the repository, rebuild the report on `main`, confirm it
   equals `tests/fixtures/catalog_report_current/output.md`, record the results in
   `specs/004-product-status/quickstart.md`, and mark the completed tasks in
   `specs/004-product-status/tasks.md`
