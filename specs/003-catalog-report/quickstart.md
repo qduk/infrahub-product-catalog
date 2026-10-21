@@ -62,3 +62,6 @@ Run on 2026-10-21 on the Infrahub branch `demo-report`, through Infrahub's Graph
   bar chart and the product map were removed from the transform, the tests and the expected
   outputs (spec, "Scope change"). Rows 4 and 5 above were run with both charts present. Their
   table results still apply.
+- After the scope change, commit `3f04474` was pushed and imported (`in-sync`, `online`). The
+  report rebuilt on `main` is identical to `tests/fixtures/catalog_report_current/output.md`: the
+  summary line and the coverage table only.

@@ -241,7 +241,7 @@ the proposed change includes it while the report on `main` does not.
 - [X] T027 Update `dev/guides/record-a-product.md` with a step that says where to view the report
   and that a proposed change shows the updated report; commit the results on a new Git branch,
   merge it into `main`, and ask the user before pushing
-- [ ] T028 Mark the completed tasks in `specs/003-catalog-report/tasks.md` and record any task
+- [X] T028 Mark the completed tasks in `specs/003-catalog-report/tasks.md` and record any task
   left open, with the reason, under it
 
 ---
