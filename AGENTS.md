@@ -31,4 +31,11 @@ The instance reads this repository from GitHub as a read-only repository (`CoreR
 - To run the check by hand before opening a proposed change: `uv run infrahubctl check catalog_source_check --branch <branch> --format-json`. Without `--format-json`, sources that are due for review are not shown when the check passes.
 - Run the check's tests with `uv run pytest tests/`.
 
+## Web app
+
+`frontend/` holds the public catalog web app: a React app in `frontend/web/` and a Python service in
+`frontend/api/` that is the only part talking to Infrahub. See `frontend/README.md` for how to run
+it and for the two problems that must be fixed before it is reachable from the internet. Never
+commit `frontend/api/.env`: it holds the service account token.
+
 <!-- TODO: author the rest of the project instructions here. -->

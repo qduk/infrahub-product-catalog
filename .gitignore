@@ -10,3 +10,9 @@ __pycache__/
 
 # Operating system files
 .DS_Store
+
+# Catalog web app
+frontend/api/.env
+frontend/api/.venv/
+node_modules/
+frontend/web/dist/

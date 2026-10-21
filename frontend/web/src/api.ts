@@ -1,0 +1,98 @@
+// Types and calls for the catalog web service (specs/005-catalog-web-app/contracts/api.md).
+
+export type Status = 'active' | 'discontinued' | 'acquired'
+export type Extent = 'full' | 'partial'
+export type LicenseModel = 'open_source' | 'open_core' | 'commercial'
+
+export interface Source {
+  title: string
+  url: string
+}
+
+export interface Claim {
+  block: string
+  extent: Extent
+  note: string | null
+  sources: Source[]
+}
+
+export interface Product {
+  id: string
+  name: string
+  full_name: string
+  publisher: string
+  description: string
+  homepage_url: string
+  license_model: LicenseModel | null
+  status: Status
+  status_date: string | null
+  sources: {
+    publisher: Source[]
+    description: Source[]
+    license_model: Source[]
+    status: Source[]
+  }
+  claims: Claim[]
+}
+
+export interface Block {
+  name: string
+  description: string
+  definition_url: string
+}
+
+export interface Publisher {
+  name: string
+  homepage_url: string
+}
+
+export interface Catalog {
+  blocks: Block[]
+  publishers: Publisher[]
+  products: Product[]
+}
+
+export async function fetchCatalog(): Promise<Catalog> {
+  const response = await fetch('/api/catalog')
+  if (!response.ok) {
+    throw new Error('The catalog is not available right now. Try again later.')
+  }
+  return response.json()
+}
+
+export interface SubmissionResult {
+  ok: boolean
+  reference?: string
+  message?: string
+}
+
+export async function submitProduct(body: unknown): Promise<SubmissionResult> {
+  const response = await fetch('/api/submissions', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  })
+  const data = await response.json().catch(() => ({}))
+  if (response.ok) {
+    return { ok: true, reference: data.reference }
+  }
+  const detail = data.detail
+  const message = Array.isArray(detail)
+    ? detail.map((item: { msg?: string }) => item.msg).join(' ')
+    : typeof detail === 'string'
+      ? detail
+      : 'Your submission was not saved. Please try again.'
+  return { ok: false, message }
+}
+
+export const STATUS_LABELS: Record<Status, string> = {
+  active: 'Active',
+  discontinued: 'Discontinued',
+  acquired: 'Acquired',
+}
+
+export const LICENSE_LABELS: Record<LicenseModel, string> = {
+  open_source: 'Open source',
+  open_core: 'Open core',
+  commercial: 'Commercial',
+}
