@@ -1,0 +1,55 @@
+# Data for the catalog coverage report (transforms/catalog_report.py).
+query catalog_report($report: String!) {
+  CatalogReport(name__value: $report) {
+    edges {
+      node {
+        id
+        __typename
+        name {
+          value
+        }
+      }
+    }
+  }
+  CatalogBuildingBlock {
+    edges {
+      node {
+        id
+        __typename
+        name {
+          value
+        }
+      }
+    }
+  }
+  CatalogProduct {
+    edges {
+      node {
+        id
+        __typename
+        full_name {
+          value
+        }
+        coverage_claims {
+          edges {
+            node {
+              id
+              __typename
+              extent {
+                value
+              }
+              building_block {
+                node {
+                  id
+                  name {
+                    value
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

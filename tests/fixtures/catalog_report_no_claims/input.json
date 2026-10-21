@@ -1,0 +1,53 @@
+{
+  "CatalogReport": {
+    "edges": [
+      {
+        "node": {
+          "id": "report-1",
+          "__typename": "CatalogReport",
+          "name": {
+            "value": "Catalog coverage report"
+          }
+        }
+      }
+    ]
+  },
+  "CatalogBuildingBlock": {
+    "edges": [
+      {
+        "node": {
+          "id": "block-1",
+          "__typename": "CatalogBuildingBlock",
+          "name": {
+            "value": "Intent"
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "block-2",
+          "__typename": "CatalogBuildingBlock",
+          "name": {
+            "value": "Executor"
+          }
+        }
+      }
+    ]
+  },
+  "CatalogProduct": {
+    "edges": [
+      {
+        "node": {
+          "id": "product-1",
+          "__typename": "CatalogProduct",
+          "full_name": {
+            "value": "Example Corp Example Tool"
+          },
+          "coverage_claims": {
+            "edges": []
+          }
+        }
+      }
+    ]
+  }
+}

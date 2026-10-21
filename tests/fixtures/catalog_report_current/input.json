@@ -1,0 +1,201 @@
+{
+  "CatalogReport": {
+    "edges": [
+      {
+        "node": {
+          "id": "18e08f37-feac-890d-3867-c51a594cab69",
+          "__typename": "CatalogReport",
+          "name": {
+            "value": "Catalog coverage report"
+          }
+        }
+      }
+    ]
+  },
+  "CatalogBuildingBlock": {
+    "edges": [
+      {
+        "node": {
+          "id": "18e05988-42f3-9508-3860-c513699444e7",
+          "__typename": "CatalogBuildingBlock",
+          "name": {
+            "value": "Collector"
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "18e05988-3eab-bb6f-3866-c515781621da",
+          "__typename": "CatalogBuildingBlock",
+          "name": {
+            "value": "Executor"
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "18e05988-25ea-5e33-386b-c510ae06685d",
+          "__typename": "CatalogBuildingBlock",
+          "name": {
+            "value": "Intent"
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "18e05988-371f-44d2-3869-c510fb1235e2",
+          "__typename": "CatalogBuildingBlock",
+          "name": {
+            "value": "Observability"
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "18e05988-3d41-8e79-3867-c51a75474e31",
+          "__typename": "CatalogBuildingBlock",
+          "name": {
+            "value": "Orchestrator"
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "18e05988-4472-a9b7-386f-c5126d56be86",
+          "__typename": "CatalogBuildingBlock",
+          "name": {
+            "value": "Presentation"
+          }
+        }
+      }
+    ]
+  },
+  "CatalogProduct": {
+    "edges": [
+      {
+        "node": {
+          "id": "18e05a54-f203-d95e-386d-c51ad220c23b",
+          "__typename": "CatalogProduct",
+          "full_name": {
+            "value": "OpsMill Infrahub"
+          },
+          "coverage_claims": {
+            "edges": [
+              {
+                "node": {
+                  "id": "18e05a55-138f-f298-3860-c51eb135bae6",
+                  "__typename": "CatalogCoverageClaim",
+                  "extent": {
+                    "value": "full"
+                  },
+                  "building_block": {
+                    "node": {
+                      "id": "18e05988-25ea-5e33-386b-c510ae06685d",
+                      "name": {
+                        "value": "Intent"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "18e05a55-2cb2-2be3-3861-c51c8c56a4b1",
+          "__typename": "CatalogProduct",
+          "full_name": {
+            "value": "Red Hat Ansible"
+          },
+          "coverage_claims": {
+            "edges": [
+              {
+                "node": {
+                  "id": "18e05a55-3518-d0d4-3864-c518ba265e01",
+                  "__typename": "CatalogCoverageClaim",
+                  "extent": {
+                    "value": "full"
+                  },
+                  "building_block": {
+                    "node": {
+                      "id": "18e05988-3eab-bb6f-3866-c515781621da",
+                      "name": {
+                        "value": "Executor"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "node": {
+                  "id": "18e05a55-3ccb-0626-386b-c51c40dcc11e",
+                  "__typename": "CatalogCoverageClaim",
+                  "extent": {
+                    "value": "partial"
+                  },
+                  "building_block": {
+                    "node": {
+                      "id": "18e05988-42f3-9508-3860-c513699444e7",
+                      "name": {
+                        "value": "Collector"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "18e05a55-3ede-a821-3861-c5126489f1c5",
+          "__typename": "CatalogProduct",
+          "full_name": {
+            "value": "Stardust Systems SuzieQ"
+          },
+          "coverage_claims": {
+            "edges": [
+              {
+                "node": {
+                  "id": "18e05a55-4107-d41c-3866-c51f093f34d1",
+                  "__typename": "CatalogCoverageClaim",
+                  "extent": {
+                    "value": "full"
+                  },
+                  "building_block": {
+                    "node": {
+                      "id": "18e05988-42f3-9508-3860-c513699444e7",
+                      "name": {
+                        "value": "Collector"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "node": {
+                  "id": "18e05a55-42a4-df5e-386d-c51b9cac8f2f",
+                  "__typename": "CatalogCoverageClaim",
+                  "extent": {
+                    "value": "full"
+                  },
+                  "building_block": {
+                    "node": {
+                      "id": "18e05988-371f-44d2-3869-c510fb1235e2",
+                      "name": {
+                        "value": "Observability"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

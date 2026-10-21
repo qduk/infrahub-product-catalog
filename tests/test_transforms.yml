@@ -1,0 +1,33 @@
+---
+version: "1.0"
+infrahub_tests:
+  - resource: PythonTransform
+    resource_name: catalog_report
+    tests:
+      - name: smoke_catalog_report
+        spec:
+          kind: python-transform-smoke
+      - name: unit_catalog_report_current
+        spec:
+          kind: python-transform-unit-process
+          directory: fixtures/catalog_report_current
+          output: output.md
+        expect: PASS
+      - name: unit_catalog_report_empty
+        spec:
+          kind: python-transform-unit-process
+          directory: fixtures/catalog_report_empty
+          output: output.md
+        expect: PASS
+      - name: unit_catalog_report_no_claims
+        spec:
+          kind: python-transform-unit-process
+          directory: fixtures/catalog_report_no_claims
+          output: output.md
+        expect: PASS
+      - name: unit_catalog_report_special_names
+        spec:
+          kind: python-transform-unit-process
+          directory: fixtures/catalog_report_special_names
+          output: output.md
+        expect: PASS

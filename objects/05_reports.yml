@@ -1,0 +1,23 @@
+---
+# The group Infrahub builds catalog reports for. The artifact definition in .infrahub.yml targets it.
+apiVersion: infrahub.app/v1
+kind: Object
+spec:
+  kind: CoreStandardGroup
+  data:
+    - name: catalog_reports
+      label: Catalog reports
+      description: Reports that Infrahub builds as artifacts from the catalog data.
+---
+# The report that covers the whole catalog. See specs/003-catalog-report.
+apiVersion: infrahub.app/v1
+kind: Object
+spec:
+  kind: CatalogReport
+  data:
+    - name: Catalog coverage report
+      description: >-
+        Coverage table, products per building block and a map of products to the building blocks
+        they cover.
+      member_of_groups:
+        - catalog_reports

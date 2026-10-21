@@ -250,3 +250,24 @@ nodes:
         identifier: coverage_claim__sources
         min_count: 1
         description: Sources that support the coverage and its extent.
+
+  - name: Report
+    namespace: Catalog
+    description: A report about the whole catalog, built by Infrahub as an artifact.
+    icon: mdi:chart-bar
+    include_in_menu: true
+    inherit_from:
+      - CoreArtifactTarget
+    human_friendly_id:
+      - name__value
+    display_label: name__value
+    generate_profile: false
+    attributes:
+      - name: name
+        kind: Text
+        unique: true
+        order_weight: 1000
+      - name: description
+        kind: TextArea
+        optional: true
+        order_weight: 1100

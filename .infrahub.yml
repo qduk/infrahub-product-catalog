@@ -5,8 +5,24 @@
 queries:
   - name: catalog_source_check
     file_path: queries/catalog_source_check.gql
+  - name: catalog_report
+    file_path: queries/catalog_report.gql
 
 check_definitions:
   - name: catalog_source_check
     class_name: CatalogSourceCheck
     file_path: checks/catalog_source_check.py
+
+python_transforms:
+  - name: catalog_report
+    class_name: CatalogReportTransform
+    file_path: transforms/catalog_report.py
+
+artifact_definitions:
+  - name: catalog_coverage_report
+    artifact_name: catalog-coverage-report
+    content_type: text/markdown
+    targets: catalog_reports
+    transformation: catalog_report
+    parameters:
+      report: name__value

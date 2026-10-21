@@ -1,0 +1,76 @@
+{
+  "CatalogReport": {
+    "edges": [
+      {
+        "node": {
+          "id": "report-1",
+          "__typename": "CatalogReport",
+          "name": {
+            "value": "Catalog coverage report"
+          }
+        }
+      }
+    ]
+  },
+  "CatalogBuildingBlock": {
+    "edges": [
+      {
+        "node": {
+          "id": "block-1",
+          "__typename": "CatalogBuildingBlock",
+          "name": {
+            "value": "Intent"
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "block-2",
+          "__typename": "CatalogBuildingBlock",
+          "name": {
+            "value": "Observability"
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "block-3",
+          "__typename": "CatalogBuildingBlock",
+          "name": {
+            "value": "Orchestrator"
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "block-4",
+          "__typename": "CatalogBuildingBlock",
+          "name": {
+            "value": "Executor"
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "block-5",
+          "__typename": "CatalogBuildingBlock",
+          "name": {
+            "value": "Collector"
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "block-6",
+          "__typename": "CatalogBuildingBlock",
+          "name": {
+            "value": "Presentation"
+          }
+        }
+      }
+    ]
+  },
+  "CatalogProduct": {
+    "edges": []
+  }
+}
