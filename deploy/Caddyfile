@@ -1,0 +1,32 @@
+{
+	email {$ACME_EMAIL}
+}
+
+# The web app and its service, for the beta group only.
+{$SITE_HOST} {
+	import /etc/caddy/basic_auth.caddy
+	encode zstd gzip
+
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options nosniff
+		X-Frame-Options DENY
+		Referrer-Policy strict-origin-when-cross-origin
+	}
+
+	handle /api/* {
+		reverse_proxy catalog-api:8200
+	}
+
+	handle {
+		root * /srv
+		try_files {path} /index.html
+		file_server
+	}
+}
+
+# Infrahub's web interface and API, behind Infrahub's own login.
+{$INFRAHUB_HOST} {
+	encode zstd gzip
+	reverse_proxy infrahub-server:8000
+}

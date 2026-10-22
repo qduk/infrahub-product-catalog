@@ -18,6 +18,9 @@ Do not make this app reachable from the internet until both of these are resolve
 Also replace Infrahub's default admin password and API token before any deployment. They are
 published in Infrahub's `docker-compose.yml`.
 
+The beta deployment in [`deploy/`](../deploy/README.md) keeps the app behind a shared password for a
+small group, and replaces Infrahub's default passwords and tokens. It does not fix items 1 and 2.
+
 ## Parts
 
 | Part | What it does |

@@ -16,3 +16,8 @@ frontend/api/.env
 frontend/api/.venv/
 node_modules/
 frontend/web/dist/
+
+# Beta deployment secrets, created on the virtual machine by deploy/setup-vm.sh
+deploy/.env
+deploy/secrets/
+deploy/infrahubctl.beta.toml

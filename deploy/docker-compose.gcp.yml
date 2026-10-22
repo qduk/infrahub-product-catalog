@@ -1,0 +1,50 @@
+---
+# Settings for the beta deployment on a GCP virtual machine. Used with the unmodified
+# docker-compose.yml from the repository root, instead of docker-compose.override.yml:
+#
+#   docker compose -f docker-compose.yml -f deploy/docker-compose.gcp.yml --env-file deploy/.env up -d
+#
+# Only Caddy (the web service) is published. It serves the web app behind a shared password, and
+# Infrahub's web interface on its own host name behind Infrahub's login.
+name: infrahub-product-catalog
+
+services:
+  message-queue:
+    ports: !reset []
+  database:
+    ports: !reset []
+  infrahub-server:
+    ports: !reset []
+
+  catalog-api:
+    build: frontend/api
+    restart: unless-stopped
+    environment:
+      INFRAHUB_ADDRESS: http://infrahub-server:8000
+      INFRAHUB_API_TOKEN: ${CATALOG_API_TOKEN:-}
+    depends_on:
+      infrahub-server:
+        condition: service_healthy
+
+  web:
+    build: frontend/web
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+      - 443:443/udp
+    environment:
+      SITE_HOST: ${SITE_HOST:?set SITE_HOST in deploy/.env}
+      INFRAHUB_HOST: ${INFRAHUB_HOST:?set INFRAHUB_HOST in deploy/.env}
+      ACME_EMAIL: ${ACME_EMAIL:?set ACME_EMAIL in deploy/.env}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./deploy/secrets/basic_auth.caddy:/etc/caddy/basic_auth.caddy:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - catalog-api
+
+volumes:
+  caddy_data:
+  caddy_config:

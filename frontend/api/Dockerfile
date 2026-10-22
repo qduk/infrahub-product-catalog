@@ -1,0 +1,14 @@
+# The catalog service for the deployed web app. Runs with the service account token from the
+# INFRAHUB_API_TOKEN environment variable; no token is stored in the image.
+FROM ghcr.io/astral-sh/uv:python3.13-bookworm-slim
+
+WORKDIR /app
+COPY pyproject.toml uv.lock ./
+RUN uv sync --frozen --no-dev --no-install-project
+COPY catalog_web ./catalog_web
+
+RUN useradd --system --no-create-home catalog
+USER catalog
+
+EXPOSE 8200
+CMD [".venv/bin/uvicorn", "catalog_web.main:app", "--host", "0.0.0.0", "--port", "8200"]
