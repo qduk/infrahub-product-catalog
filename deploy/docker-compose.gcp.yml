@@ -16,6 +16,16 @@ services:
   infrahub-server:
     ports: !reset []
 
+  # One worker, with its copy of the Git repository on a volume. On Infrahub 1.11.8, a worker that
+  # has no copy of a read-only repository cannot run the repository's checks: run_user_check looks
+  # the repository up as a CoreRepository and fails with NodeNotFoundError. The copy is made by
+  # "Import latest commit"; with one worker and a volume, it is always the one the checks use.
+  task-worker:
+    deploy:
+      replicas: 1
+    volumes:
+      - git_data:/opt/infrahub/git
+
   catalog-api:
     build: frontend/api
     restart: unless-stopped
@@ -46,5 +56,6 @@ services:
       - catalog-api
 
 volumes:
+  git_data:
   caddy_data:
   caddy_config:
