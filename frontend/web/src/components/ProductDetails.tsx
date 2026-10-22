@@ -1,12 +1,23 @@
+import type { CSSProperties } from 'react'
 import { LICENSE_LABELS, STATUS_LABELS, type Product, type Source } from '../api'
+import { blockStyle } from '../graph/blockStyle'
+import { Logo } from '../graph/Logo'
+
+function hostOf(url: string): string {
+  try {
+    return new URL(url).hostname.replace(/^www\./, '')
+  } catch {
+    return url
+  }
+}
 
 function SourceLinks({ sources }: { sources: Source[] }) {
   if (!sources.length) return null
   return (
-    <span className="sources">
+    <span className="source-pills">
       {sources.map((source) => (
-        <a key={source.url} href={source.url} target="_blank" rel="noopener noreferrer nofollow">
-          {source.title}
+        <a key={source.url} className="source-pill" href={source.url} target="_blank" rel="noopener noreferrer nofollow" title={source.title}>
+          {hostOf(source.url)}
         </a>
       ))}
     </span>
@@ -19,48 +30,76 @@ interface Props {
 }
 
 export function ProductDetails({ product, onClose }: Props) {
+  const claims = [...product.claims].sort((a, b) =>
+    a.extent === b.extent ? a.block.localeCompare(b.block) : a.extent === 'full' ? -1 : 1,
+  )
   return (
     <aside className="details" aria-label={`Details for ${product.full_name}`}>
       <button type="button" className="details-close" onClick={onClose} aria-label="Close details">
         ×
       </button>
-      <h2>{product.full_name}</h2>
-      <dl>
-        <dt>Publisher</dt>
-        <dd>
-          {product.publisher} <SourceLinks sources={product.sources.publisher} />
-        </dd>
-        <dt>Description</dt>
-        <dd>
-          {product.description} <SourceLinks sources={product.sources.description} />
-        </dd>
-        <dt>Home page</dt>
-        <dd>
-          <a href={product.homepage_url} target="_blank" rel="noopener noreferrer nofollow">
-            {product.homepage_url}
-          </a>
-        </dd>
-        <dt>License model</dt>
-        <dd>
-          {product.license_model ? LICENSE_LABELS[product.license_model] : 'Not stated by any source'}{' '}
-          <SourceLinks sources={product.sources.license_model} />
-        </dd>
-        <dt>Status</dt>
-        <dd>
+      <header className="details-header">
+        <Logo fullName={product.full_name} size="large" />
+        <div className="details-title">
+          <h2>{product.name}</h2>
+          <p className="details-publisher">
+            by {product.publisher} <SourceLinks sources={product.sources.publisher} />
+          </p>
+        </div>
+      </header>
+
+      <div className="badges">
+        <span className={`badge badge-status-${product.status}`}>
           {STATUS_LABELS[product.status]}
-          {product.status_date && ` since ${product.status_date.slice(0, 10)}`} <SourceLinks sources={product.sources.status} />
-        </dd>
-      </dl>
-      <h3>Coverage</h3>
-      <ul className="claims">
-        {product.claims.map((claim) => (
-          <li key={claim.block}>
-            <strong>{claim.block}</strong>: {claim.extent === 'full' ? 'full' : 'partial'}
-            {claim.note && <p className="claim-note">{claim.note}</p>}
-            <SourceLinks sources={claim.sources} />
-          </li>
-        ))}
-      </ul>
+          {product.status_date && ` · ${product.status_date.slice(0, 10)}`}
+        </span>
+        <span className={`badge badge-license${product.license_model ? '' : ' badge-muted'}`}>
+          {product.license_model ? LICENSE_LABELS[product.license_model] : 'License not stated'}
+        </span>
+        <a className="badge badge-link" href={product.homepage_url} target="_blank" rel="noopener noreferrer nofollow">
+          Home page ↗
+        </a>
+      </div>
+      {(product.sources.status.length > 0 || product.sources.license_model.length > 0) && (
+        <p className="details-row-sources">
+          {product.sources.status.length > 0 && (
+            <span>
+              Status: <SourceLinks sources={product.sources.status} />
+            </span>
+          )}
+          {product.sources.license_model.length > 0 && (
+            <span>
+              License: <SourceLinks sources={product.sources.license_model} />
+            </span>
+          )}
+        </p>
+      )}
+
+      <section className="details-section">
+        <h3>What it does</h3>
+        <p className="details-description">{product.description}</p>
+        <SourceLinks sources={product.sources.description} />
+      </section>
+
+      <section className="details-section">
+        <h3>Building blocks covered</h3>
+        <ul className="coverage-list">
+          {claims.map((claim) => (
+            <li
+              key={claim.block}
+              className={`coverage-item coverage-${claim.extent}`}
+              style={{ '--block-color': blockStyle(claim.block).color } as CSSProperties}
+            >
+              <div className="coverage-head">
+                <span className="coverage-block">{claim.block}</span>
+                <span className="coverage-extent">{claim.extent === 'full' ? 'Full' : 'Partial'}</span>
+              </div>
+              {claim.note && <p className="coverage-note">{claim.note}</p>}
+              <SourceLinks sources={claim.sources} />
+            </li>
+          ))}
+        </ul>
+      </section>
     </aside>
   )
 }

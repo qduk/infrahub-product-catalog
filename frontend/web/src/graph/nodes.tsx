@@ -1,9 +1,9 @@
 import { BaseEdge, getBezierPath, Handle, Position, type EdgeProps, type NodeProps } from '@xyflow/react'
-import { useState, type CSSProperties } from 'react'
+import type { CSSProperties } from 'react'
 import { STATUS_LABELS } from '../api'
 import { blockStyle } from './blockStyle'
 import type { BlockNode as BlockNodeType, CoverageEdge, ProductNode as ProductNodeType } from './buildGraph'
-import { initials, logoFor } from './logos'
+import { Logo } from './Logo'
 
 // Edges attach to the centre of each node, so lines can arrive from any side.
 const centreHandles = (
@@ -21,17 +21,6 @@ export function BlockNode({ data }: NodeProps<BlockNodeType>) {
       <div className="graph-block-name">{data.name}</div>
       {style.tagline && <div className="graph-block-tagline">{style.tagline}</div>}
     </div>
-  )
-}
-
-function Logo({ fullName }: { fullName: string }) {
-  const logo = logoFor(fullName)
-  const [failed, setFailed] = useState(false)
-  if (!logo || failed) return <span className="logo-tile logo-initials">{initials(fullName)}</span>
-  return (
-    <span className={`logo-tile logo-tile-${logo.tile}`}>
-      <img src={logo.url} alt="" loading="lazy" draggable={false} onError={() => setFailed(true)} />
-    </span>
   )
 }
 

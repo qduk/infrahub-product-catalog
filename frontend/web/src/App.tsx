@@ -6,6 +6,7 @@ import { ProductDetails } from './components/ProductDetails'
 import { parseFilters, serializeFilters, type Filters } from './filters'
 import type { Focus } from './graph/buildGraph'
 import { CatalogGraph } from './graph/CatalogGraph'
+import { slugify } from './graph/logos'
 import { SubmitForm } from './submit/SubmitForm'
 
 const isSubmitView = () => window.location.hash === '#submit'
@@ -14,22 +15,33 @@ export default function App() {
   const catalog = useQuery({ queryKey: ['catalog'], queryFn: fetchCatalog, staleTime: 60_000 })
   const [filters, setFilters] = useState<Filters>(() => parseFilters(window.location.search))
   const [focus, setFocus] = useState<Focus>(null)
+  const [pendingProduct, setPendingProduct] = useState(() => new URLSearchParams(window.location.search).get('product'))
+
+  // Open the product named in the page address once the catalog has loaded.
+  useEffect(() => {
+    if (!pendingProduct || !catalog.data) return
+    const product = catalog.data.products.find((item) => slugify(item.full_name) === pendingProduct)
+    if (product) setFocus({ kind: 'product', id: product.id })
+    setPendingProduct(null)
+  }, [pendingProduct, catalog.data])
   const [submitView, setSubmitView] = useState(isSubmitView)
 
+  const selectedId = focus?.kind === 'product' ? focus.id : null
+  const selected = catalog.data?.products.find((product) => product.id === selectedId) ?? null
+
   useEffect(() => {
-    const search = serializeFilters(filters)
-    const url = `${window.location.pathname}${search ? `?${search}` : ''}${window.location.hash}`
-    window.history.replaceState(null, '', url)
-  }, [filters])
+    if (pendingProduct) return
+    const params = new URLSearchParams(serializeFilters(filters))
+    if (selected) params.set('product', slugify(selected.full_name))
+    const search = params.toString()
+    window.history.replaceState(null, '', `${window.location.pathname}${search ? `?${search}` : ''}${window.location.hash}`)
+  }, [filters, selected, pendingProduct])
 
   useEffect(() => {
     const onHash = () => setSubmitView(isSubmitView())
     window.addEventListener('hashchange', onHash)
     return () => window.removeEventListener('hashchange', onHash)
   }, [])
-
-  const selectedId = focus?.kind === 'product' ? focus.id : null
-  const selected = catalog.data?.products.find((product) => product.id === selectedId) ?? null
 
   return (
     <div className="app">
@@ -63,8 +75,8 @@ export default function App() {
       {catalog.data && !submitView && (
         <main>
           <FilterBar
+            catalog={catalog.data}
             filters={filters}
-            blocks={catalog.data.blocks.map((block) => block.name)}
             onChange={(next) => {
               setFilters(next)
               setFocus(null)
@@ -74,7 +86,7 @@ export default function App() {
             Drag to move, scroll to zoom. Click a product or a building block to highlight its links. Solid lines
             are full coverage, dashed lines partial coverage.
           </p>
-          <div className="layout">
+          <div className="graph-stage">
             <CatalogGraph catalog={catalog.data} filters={filters} focus={focus} onFocus={setFocus} />
             {selected && <ProductDetails product={selected} onClose={() => setFocus(null)} />}
           </div>

@@ -1,4 +1,4 @@
-import { Background, Controls, MiniMap, ReactFlow, ReactFlowProvider, useReactFlow } from '@xyflow/react'
+import { Background, BackgroundVariant, Controls, MiniMap, ReactFlow, ReactFlowProvider, useReactFlow } from '@xyflow/react'
 import { useEffect, useMemo } from 'react'
 import type { Catalog } from '../api'
 import type { Filters } from '../filters'
@@ -51,7 +51,7 @@ function Graph({ catalog, filters, focus, onFocus }: Props) {
       proOptions={{ hideAttribution: false }}
       colorMode="dark"
     >
-      <Background gap={24} size={1} color="#1f2937" />
+      <Background variant={BackgroundVariant.Dots} gap={22} size={1.4} color="#2b3548" />
       <Controls showInteractive={false} position="bottom-left" />
       <MiniMap
         pannable

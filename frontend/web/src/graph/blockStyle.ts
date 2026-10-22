@@ -12,3 +12,9 @@ export const BLOCK_STYLE: Record<string, { color: string; tagline: string }> = {
 export const OTHER_BLOCK = { color: '#a3a3a3', tagline: '' }
 
 export const blockStyle = (name: string) => BLOCK_STYLE[name] ?? OTHER_BLOCK
+
+// Framework order, used wherever blocks are listed.
+const ORDER = Object.keys(BLOCK_STYLE)
+export const byFrameworkOrder = (a: string, b: string) =>
+  (ORDER.indexOf(a) === -1 ? ORDER.length : ORDER.indexOf(a)) -
+    (ORDER.indexOf(b) === -1 ? ORDER.length : ORDER.indexOf(b)) || a.localeCompare(b)
