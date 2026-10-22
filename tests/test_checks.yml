@@ -42,3 +42,27 @@ infrahub_tests:
           kind: check-unit-process
           directory: fixtures/status_with_source
         expect: PASS
+  - resource: Check
+    resource_name: catalog_submission_check
+    tests:
+      - name: smoke_catalog_submission_check
+        spec:
+          kind: check-smoke
+  - resource: Check
+    resource_name: catalog_duplicate_check
+    tests:
+      - name: smoke_catalog_duplicate_check
+        spec:
+          kind: check-smoke
+  - resource: Check
+    resource_name: catalog_coverage_check
+    tests:
+      - name: smoke_catalog_coverage_check
+        spec:
+          kind: check-smoke
+  - resource: Check
+    resource_name: catalog_unused_source_check
+    tests:
+      - name: smoke_catalog_unused_source_check
+        spec:
+          kind: check-smoke

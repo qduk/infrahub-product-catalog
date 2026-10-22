@@ -19,17 +19,22 @@ This repository runs its own Infrahub instance with Docker Compose.
 - `infrahubctl.toml` sets the address to `http://localhost:8100`.
 - Commands that change data need an API token. For the local instance, use the default admin token from `docker-compose.yml`: `export INFRAHUB_API_TOKEN=06438eb2-8019-4776-878c-0941b1f1d1ec`.
 - Load files from this working copy with commands such as `uv run infrahubctl schema load schemas/`, `uv run infrahubctl menu load`, `uv run infrahubctl object load`, `uv run infrahubctl transform <name>`, `uv run infrahubctl render <name>`, `uv run infrahubctl generator <name>` and `uv run infrahubctl check <name>`.
-- Load schema and object files on an Infrahub branch, for example `uv run infrahubctl schema load --branch <branch> schemas/` and `uv run infrahubctl object load --branch <branch> objects/`. Merge the branch into `main` through a proposed change, never with a direct branch merge, so that the source check runs.
+- Load schema and object files on an Infrahub branch, for example `uv run infrahubctl schema load --branch <branch> schemas/` and `uv run infrahubctl object load --branch <branch> objects/`. Merge the branch into `main` through a proposed change, never with a direct branch merge, so that the checks run.
 
 ## Git repository connection
 
 The instance reads this repository from GitHub as a read-only repository (`CoreReadOnlyRepository`, location `https://github.com/qduk/infrahub-product-catalog.git`, ref `main`). The registration is in `bootstrap/repository.yml`. See `dev/adr/0002-connect-repository-read-only.md`.
 
-- `.infrahub.yml` lists only checks and their queries. Infrahub runs `catalog_source_check` on every proposed change, and a failed check blocks the merge.
+- `.infrahub.yml` lists checks and their queries, plus the coverage report transform and artifact. Infrahub runs these checks on every proposed change, and a failed check blocks the merge:
+  - `catalog_source_check`: facts without a source, and sources due for review;
+  - `catalog_submission_check`: on branches named `submission-*`, any record on `main` that was changed or deleted, and any added building block;
+  - `catalog_duplicate_check`: publishers, products of one publisher, and source links whose names or links are the same once case, spaces, punctuation, `http`/`https` and a trailing `/` are ignored;
+  - `catalog_coverage_check`: products that cover no building block, reported as warnings that do not block the merge;
+  - `catalog_unused_source_check`: sources that support no product fact or coverage claim.
 - Schemas and object files are not in `.infrahub.yml`, so the repository import never writes them to `main`. Load them with `infrahubctl` as described above.
 - Infrahub reads only what is pushed to `main` on GitHub. After a change to `checks/`, `queries/` or `.infrahub.yml` is pushed, open the repository in the Infrahub web interface and run **Import latest commit**.
-- To run the check by hand before opening a proposed change: `uv run infrahubctl check catalog_source_check --branch <branch> --format-json`. Without `--format-json`, sources that are due for review are not shown when the check passes.
-- Run the check's tests with `uv run pytest tests/`.
+- To run a check by hand before opening a proposed change: `uv run infrahubctl check <name> --branch <branch> --format-json`. Without `--format-json`, information messages (sources due for review, products with no coverage) are not shown when the check passes.
+- Run the checks' tests with `uv run pytest tests/`.
 
 ## Web app
 

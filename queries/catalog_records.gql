@@ -1,0 +1,168 @@
+# Data for the catalog record checks (checks/catalog_record_checks.py): every catalog record, the
+# facts the submission check compares with main, and what each source and product is linked to.
+query catalog_records {
+  CatalogPublisher {
+    edges {
+      node {
+        id
+        __typename
+        display_label
+        name {
+          value
+        }
+        homepage_url {
+          value
+        }
+      }
+    }
+  }
+  CatalogProduct {
+    edges {
+      node {
+        id
+        __typename
+        display_label
+        name {
+          value
+        }
+        full_name {
+          value
+        }
+        description {
+          value
+        }
+        homepage_url {
+          value
+        }
+        license_model {
+          value
+        }
+        status {
+          value
+        }
+        status_date {
+          value
+        }
+        publisher {
+          node {
+            id
+          }
+        }
+        publisher_sources {
+          edges {
+            node {
+              id
+            }
+          }
+        }
+        description_sources {
+          edges {
+            node {
+              id
+            }
+          }
+        }
+        license_model_sources {
+          edges {
+            node {
+              id
+            }
+          }
+        }
+        status_sources {
+          edges {
+            node {
+              id
+            }
+          }
+        }
+        coverage_claims {
+          count
+        }
+      }
+    }
+  }
+  CatalogSource {
+    edges {
+      node {
+        id
+        __typename
+        display_label
+        title {
+          value
+        }
+        url {
+          value
+        }
+        last_checked {
+          value
+        }
+        publisher_of_products {
+          count
+        }
+        description_of_products {
+          count
+        }
+        license_model_of_products {
+          count
+        }
+        status_of_products {
+          count
+        }
+        coverage_claims {
+          count
+        }
+      }
+    }
+  }
+  CatalogCoverageClaim {
+    edges {
+      node {
+        id
+        __typename
+        display_label
+        extent {
+          value
+        }
+        note {
+          value
+        }
+        product {
+          node {
+            id
+          }
+        }
+        building_block {
+          node {
+            id
+          }
+        }
+        sources {
+          edges {
+            node {
+              id
+            }
+          }
+        }
+      }
+    }
+  }
+  CatalogBuildingBlock {
+    edges {
+      node {
+        id
+        __typename
+        display_label
+        name {
+          value
+        }
+        description {
+          value
+        }
+        definition_url {
+          value
+        }
+      }
+    }
+  }
+}
