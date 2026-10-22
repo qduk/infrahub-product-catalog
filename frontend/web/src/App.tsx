@@ -52,7 +52,9 @@ export default function App() {
         </div>
         <nav>
           {submitView ? (
-            <a href="#">Back to the catalog</a>
+            <a className="button" href="#">
+              ← Back to the catalog
+            </a>
           ) : (
             <a className="button" href="#submit">
               Submit a product

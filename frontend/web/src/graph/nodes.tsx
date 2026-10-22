@@ -34,7 +34,7 @@ export function ProductNode({ data }: NodeProps<ProductNodeType>) {
       {centreHandles}
       <Logo fullName={product.full_name} />
       <span className="graph-product-text">
-        <span className="graph-product-name">{product.full_name}</span>
+        <span className="graph-product-name">{product.name}</span>
         {product.status !== 'active' && <span className="graph-product-status">{STATUS_LABELS[product.status]}</span>}
       </span>
     </div>
