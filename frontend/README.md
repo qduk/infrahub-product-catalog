@@ -72,3 +72,22 @@ Each submission is an Infrahub branch named `submission-<date>-<code>` with a pr
 "Submission: <publisher> <product>". The visitor gets the branch name as their reference. Check
 each fact against its source, then merge the proposed change or close it. Delete the branch after
 closing.
+
+## Logos
+
+Product logos are files in `web/public/logos/`, listed in `web/src/graph/logos.json` with the page each
+logo came from (`source_page`), the address it was downloaded from (`file_url`) and the tile colour it
+needs on the dark page (`tile`: `light` for dark logos, `dark` for white logos). A product without an
+entry shows its initials.
+
+To add a logo:
+
+1. Take it from the publisher's own press kit, repository or website, not from logo aggregator sites.
+2. Save it as `web/public/logos/<slug>.<svg|png|webp>`. The slug is the product's full name in lower
+   case, with other characters replaced by `-` (see `slugify` in `web/src/graph/logos.ts`).
+3. Add an entry to `logos.json` with its source page.
+4. Run `npm test` in `web/`: it fails if a file has no manifest entry, an entry has no source, or an
+   SVG contains scripts, event handlers, embedded content or external links.
+
+Logos are shown only with `<img>`, and the page states that names and logos are trademarks of their
+owners. Visitors cannot upload logos.

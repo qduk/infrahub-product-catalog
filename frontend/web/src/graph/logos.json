@@ -1,0 +1,502 @@
+[
+  {
+    "slug": "algosec-horizon-security-analyzer",
+    "file": "algosec-horizon-security-analyzer.svg",
+    "logo_of": "publisher",
+    "source_page": "https://www.algosec.com/",
+    "file_url": "https://www.algosec.com/",
+    "brand_guidelines_url": null,
+    "notes": "AlgoSec company logo. The header logo is an inline SVG on a Wix page, so there is no separate file URL; the SVG was extracted from the page and its fixed width and height were removed (viewBox kept). White and light-blue colours, visible on a dark background. No separate Horizon or Security Analyzer product logo found. No press kit found (algosec.com/press-kit returns 404).",
+    "tile": "dark"
+  },
+  {
+    "slug": "atlassian-jira",
+    "file": "atlassian-jira.svg",
+    "logo_of": "product",
+    "source_page": "https://atlassian.design/foundations/logos",
+    "file_url": "https://atlassian.design/assets/a13657c7ab32/logos/jira_app.zip",
+    "brand_guidelines_url": "https://www.atlassian.com/legal/trademark",
+    "notes": "Official Jira logo bundle from the Atlassian Design System. File extracted from the ZIP: jira/SVG/Jira_logo_dark.svg (dark-background variant: blue icon, white wordmark). The bundle also contains light, centred and icon-only SVG and PNG variants.",
+    "tile": "dark"
+  },
+  {
+    "slug": "cisco-crosswork-network-services-orchestrator-nso",
+    "file": "cisco-crosswork-network-services-orchestrator-nso.png",
+    "logo_of": "publisher",
+    "source_page": "https://nso-docs.cisco.com/",
+    "file_url": "https://2879437962-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/organizations%2FzCWEO4HUVOjwxqT5Hla6%2Fsites%2Fsite_yCTIC%2Flogo%2FFiWqHfzLXJWPVpkZsukV%2FCisco_Logo_no_TM_Sky_Blue-RGB-601x319-7105232.png?alt=media&token=b943dc9e-5455-4766-8ac7-83bc972b2548",
+    "brand_guidelines_url": null,
+    "notes": "Cisco logo (sky blue, 'no TM' variant) used as the dark-mode header logo on Cisco's NSO documentation site. No separate NSO product logo found. cisco.com returns 403 to scripted requests, so the Cisco brand page and the NSO product page could not be checked. The NSO-developer GitHub organisation has no avatar. PNG, 461x319, transparent.",
+    "tile": "light"
+  },
+  {
+    "slug": "cisco-modeling-labs",
+    "file": "cisco-modeling-labs.png",
+    "logo_of": "publisher",
+    "source_page": "https://nso-docs.cisco.com/",
+    "file_url": "https://2879437962-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/organizations%2FzCWEO4HUVOjwxqT5Hla6%2Fsites%2Fsite_yCTIC%2Flogo%2FFiWqHfzLXJWPVpkZsukV%2FCisco_Logo_no_TM_Sky_Blue-RGB-601x319-7105232.png?alt=media&token=b943dc9e-5455-4766-8ac7-83bc972b2548",
+    "brand_guidelines_url": null,
+    "notes": "No CML product logo found: the CML page header at developer.cisco.com/modeling-labs/ has no logo image, and the DevNet header is built by JavaScript. Uses the same Cisco publisher logo as NSO (sky blue, from Cisco's NSO documentation site). The Cisco GitHub organisation avatar (https://avatars.githubusercontent.com/u/1376999) is a JPEG on a blue square, so it was not used.",
+    "tile": "light"
+  },
+  {
+    "slug": "cisco-pyats",
+    "file": "cisco-pyats.png",
+    "logo_of": "product",
+    "source_page": "https://developer.cisco.com/pyats/",
+    "file_url": "https://pubhub.devnetcloud.com/media/pyats-genie/site/images/pyats-logo.png",
+    "brand_guidelines_url": null,
+    "notes": "pyATS product logo from the page header. PNG, 386x135. Visibility on a dark background has not been checked.",
+    "tile": "light"
+  },
+  {
+    "slug": "cloud-native-computing-foundation-cncf-backstage",
+    "file": "cloud-native-computing-foundation-cncf-backstage.svg",
+    "logo_of": "product",
+    "source_page": "https://github.com/cncf/artwork/tree/main/projects/backstage",
+    "file_url": "https://raw.githubusercontent.com/cncf/artwork/main/projects/backstage/horizontal/white/backstage-horizontal-white.svg",
+    "brand_guidelines_url": "https://www.cncf.io/brand-guidelines/",
+    "notes": "Backstage horizontal logo, all-white variant, from the official CNCF artwork repository. The colour variant has dark (#121212) text and is suited only to light backgrounds. The trademark policy is at https://www.linuxfoundation.org/trademark-usage.",
+    "tile": "dark"
+  },
+  {
+    "slug": "confighub-confighub",
+    "file": "confighub-confighub.svg",
+    "logo_of": "product",
+    "source_page": "https://confighub.com/",
+    "file_url": "https://confighub.com/logo.svg",
+    "brand_guidelines_url": null,
+    "notes": "Header logo referenced in the site JavaScript bundle (/assets/index-rjajvJe7.js). The SVG uses white fills, so it is visible on a dark background. ConfigHub product and company share the name.",
+    "tile": "dark"
+  },
+  {
+    "slug": "efficientip-solidserver-ddi",
+    "file": "efficientip-solidserver-ddi.svg",
+    "logo_of": "publisher",
+    "source_page": "https://efficientip.com/",
+    "file_url": "https://efficientip.com/wp-content/uploads/2023/09/EIP-Logo_BlueWhite.svg",
+    "brand_guidelines_url": null,
+    "notes": "EfficientIP company logo, blue and white variant, for dark backgrounds. A BlueGrey variant for light backgrounds is at https://efficientip.com/wp-content/uploads/2023/09/EIP-Logo_BlueGrey.svg. No separate SOLIDserver DDI logo found.",
+    "tile": "dark"
+  },
+  {
+    "slug": "eve-ng-eve-ng",
+    "file": "eve-ng-eve-ng.png",
+    "logo_of": "product",
+    "source_page": "https://www.eve-ng.net/",
+    "file_url": "https://www.eve-ng.net/wp-content/uploads/2019/11/Logo_EVE_Color-1-e1573260071537.png",
+    "brand_guidelines_url": null,
+    "notes": "EVE-NG colour logo from the home page. PNG, 512x205. The other header PNG on the page is only 60 px high. Visibility on a dark background has not been checked.",
+    "tile": "light"
+  },
+  {
+    "slug": "firemon-security-manager",
+    "file": "firemon-security-manager.svg",
+    "logo_of": "publisher",
+    "source_page": "https://www.firemon.com/",
+    "file_url": "https://www.firemon.com/",
+    "brand_guidelines_url": null,
+    "notes": "FireMon company logo, extracted from the inline SVG in the home page header (link labelled 'FireMon home'), so there is no separate file URL. Dark-only: the wordmark is #2C2C2C with an orange (#FF5B00) 'o' and is hard to read on a dark background. No Security Manager product logo or press kit found (firemon.com/press-kit and /media-kit return 404).",
+    "tile": "light"
+  },
+  {
+    "slug": "flock9-netpicker",
+    "file": "flock9-netpicker.png",
+    "logo_of": "product",
+    "source_page": "https://netpicker.io/",
+    "file_url": "https://netpicker.io/wp-content/uploads/2026/01/Netpicker_by_Flock9_logo.png",
+    "brand_guidelines_url": null,
+    "notes": "'Netpicker by Flock9' logo from the page header. PNG, 407x84. Visibility on a dark background has not been checked.",
+    "tile": "light"
+  },
+  {
+    "slug": "forward-networks-forward-enterprise",
+    "file": "forward-networks-forward-enterprise.svg",
+    "logo_of": "publisher",
+    "source_page": "https://www.forwardnetworks.com/",
+    "file_url": "https://www.forwardnetworks.com/wp-content/uploads/2026/04/header-logo.svg",
+    "brand_guidelines_url": null,
+    "notes": "Forward Networks company logo from the page header: white with orange (#FF3506), visible on a dark background. No separate Forward Enterprise product logo found.",
+    "tile": "dark"
+  },
+  {
+    "slug": "freshworks-device42",
+    "file": "freshworks-device42.webp",
+    "logo_of": "product",
+    "source_page": "https://www.device42.com/",
+    "file_url": "https://www.device42.com/wp-content/uploads/2024/05/device42-fw-white.webp",
+    "brand_guidelines_url": null,
+    "notes": "Device42 white wordmark ('device42 by Freshworks'). WebP, 1042x321, because the site offers the wordmark only as WebP. The site has a black header variant (device42-fw-black.webp) and a 180x180 icon PNG (https://www.device42.com/wp-content/uploads/2024/05/D42-180x180-1.png) as an alternative.",
+    "tile": "dark"
+  },
+  {
+    "slug": "gluware-gluware",
+    "file": "gluware-gluware.png",
+    "logo_of": "product",
+    "source_page": "https://gluware.com/",
+    "file_url": "https://gluware.com/wp-content/uploads/2022/07/GluwareLogoNoTagWhite.png",
+    "brand_guidelines_url": null,
+    "notes": "Gluware logo without the tagline, white variant for dark backgrounds. PNG, 1367x358.",
+    "tile": "dark"
+  },
+  {
+    "slug": "gns3-technologies-gns3",
+    "file": "gns3-technologies-gns3.svg",
+    "logo_of": "product",
+    "source_page": "https://github.com/GNS3/gns3-web-ui/tree/master/src/assets",
+    "file_url": "https://raw.githubusercontent.com/GNS3/gns3-web-ui/master/src/assets/gns3_icon.svg",
+    "brand_guidelines_url": null,
+    "notes": "GNS3 icon only, with no wordmark, from the official GNS3 web UI repository. All-white fill, visible on a dark background. gns3.com is a JavaScript-only page with no logo in its HTML. The GNS3 GitHub organisation lists solarwinds.com as its website.",
+    "tile": "dark"
+  },
+  {
+    "slug": "hashicorp-terraform",
+    "file": "hashicorp-terraform.svg",
+    "logo_of": "product",
+    "source_page": "https://developer.hashicorp.com/terraform",
+    "file_url": "https://developer.hashicorp.com/terraform",
+    "brand_guidelines_url": null,
+    "notes": "Terraform logo, dark-theme variant (purple mark, white wordmark), extracted from the inline SVG in the page header, so there is no separate file URL. The HashiCorp brand page (https://www.hashicorp.com/brand) returned a 429 response with a Vercel security checkpoint and could not be checked.",
+    "tile": "dark"
+  },
+  {
+    "slug": "ibm-pliant",
+    "file": "ibm-pliant.svg",
+    "logo_of": "publisher",
+    "source_page": "https://newsroom.ibm.com/Blog-IBM-Acquires-Pliant-to-Further-Enhance-Network-IT-Automation-Capabilities",
+    "file_url": "https://newsroom.ibm.com/Blog-IBM-Acquires-Pliant-to-Further-Enhance-Network-IT-Automation-Capabilities",
+    "brand_guidelines_url": null,
+    "notes": "IBM 8-bar logo extracted from the inline SVG in the newsroom page header, so there is no separate file URL. Dark-only: fill #161616 is not visible on a dark background. No Pliant product logo was found; the page has only a banner image (/image/Pliant_banner.jpg).",
+    "tile": "light"
+  },
+  {
+    "slug": "infoblox-nios",
+    "file": "infoblox-nios.svg",
+    "logo_of": "publisher",
+    "source_page": "https://www.infoblox.com/",
+    "file_url": "https://www.infoblox.com/wp-content/uploads/infoblox-logo-2.svg",
+    "brand_guidelines_url": null,
+    "notes": "Infoblox company logo, taken from the Organization 'logo' entry in the home page's structured data. The header uses an icon font. Dark-only: the wordmark is #101820 with green (#00BD4D). No NIOS product logo or press kit found.",
+    "tile": "light"
+  },
+  {
+    "slug": "ip-fabric-ip-fabric",
+    "file": "ip-fabric-ip-fabric.svg",
+    "logo_of": "product",
+    "source_page": "https://ipfabric.io/",
+    "file_url": "https://ipfabric.io/wp-content/themes/ipfabric/assets/svg/header-logo-white.svg",
+    "brand_guidelines_url": null,
+    "notes": "IP Fabric white header logo for dark backgrounds. A standard variant is at /wp-content/themes/ipfabric/assets/svg/header-logo.svg.",
+    "tile": "dark"
+  },
+  {
+    "slug": "ipspace-net-netlab",
+    "file": "ipspace-net-netlab.png",
+    "logo_of": "product",
+    "source_page": "https://netlab.tools/",
+    "file_url": "https://netlab.tools/_static/favicon.png",
+    "brand_guidelines_url": null,
+    "notes": "netlab's own image (a router with arrows and a cloud), used as the site icon on netlab.tools. PNG, 256x256. It is an icon, not a wordmark; the netlab docs have no header logo. The ipSpace.net publisher logo is at https://www.ipspace.net/v3/images/IP_Space_Logo.svg (not downloaded).",
+    "tile": "light"
+  },
+  {
+    "slug": "itential-platform",
+    "file": "itential-platform.svg",
+    "logo_of": "publisher",
+    "source_page": "https://www.itential.com/",
+    "file_url": "https://www.itential.com/wp-content/uploads/2026/03/itential-logo-dark-hp.svg",
+    "brand_guidelines_url": null,
+    "notes": "Itential company logo, variant for dark backgrounds: white text with orange and blue accents. No separate Itential Platform logo found.",
+    "tile": "dark"
+  },
+  {
+    "slug": "juniper-networks-apstra-data-center-director",
+    "file": "juniper-networks-apstra-data-center-director.png",
+    "logo_of": "publisher",
+    "source_page": "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html",
+    "file_url": "https://juniper-prod.scene7.com/is/image/junipernetworks/wordmark?fmt=png8-alpha&network=on",
+    "brand_guidelines_url": null,
+    "notes": "'HPE Juniper Networking' wordmark from the page header. PNG, 1280x251. Dark-only: the page's alt text reads 'logo in black font'. Two SVGs were not kept because both contain an Adobe Illustrator <foreignObject> element: the white footer SVG (https://www.juniper.net/content/dam/www/assets/images/global/juniper_white-rgb-footer.svg, which would otherwise suit a dark background) and the black header SVG. No Apstra product logo found. The juniper.net page header shows the HPE logo, as Juniper is now part of HPE.",
+    "tile": "light"
+  },
+  {
+    "slug": "kentik-kentik",
+    "file": "kentik-kentik.svg",
+    "logo_of": "product",
+    "source_page": "https://www.kentik.com/",
+    "file_url": "https://www.kentik.com/",
+    "brand_guidelines_url": null,
+    "notes": "'Kentik - An Infoblox Company' logo extracted from the inline SVG in the home page header, so there is no separate file URL. Dark-only: the wordmark is #17181B with an orange (#e05420) accent. No press kit or brand page found (/press-kit and /brand return 404).",
+    "tile": "light"
+  },
+  {
+    "slug": "librenms-librenms",
+    "file": "librenms-librenms.svg",
+    "logo_of": "product",
+    "source_page": "https://www.librenms.org/",
+    "file_url": "https://www.librenms.org/images/LibreNMS-Logo.svg",
+    "brand_guidelines_url": null,
+    "notes": "LibreNMS logo: white text with red accents, visible on a dark background. The page also uses a black PNG variant (/images/LibreNMS-Logo-Black.png).",
+    "tile": "dark"
+  },
+  {
+    "slug": "nagios-enterprises-nagios-core",
+    "file": "nagios-enterprises-nagios-core.svg",
+    "logo_of": "publisher",
+    "source_page": "https://www.nagios.org/",
+    "file_url": "https://www.nagios.org/wp-content/uploads/2023/01/NAGIOS-LOGO-WHITE-.svg",
+    "brand_guidelines_url": "https://www.nagios.com/legal/trademarks/",
+    "notes": "Nagios white logo from the nagios.org header, visible on a dark background. This is the Nagios brand logo; no Nagios Core-specific logo was found.",
+    "tile": "dark"
+  },
+  {
+    "slug": "netbox-labs-netbox",
+    "file": "netbox-labs-netbox.svg",
+    "logo_of": "product",
+    "source_page": "https://github.com/netbox-community/netbox/tree/main/docs",
+    "file_url": "https://raw.githubusercontent.com/netbox-community/netbox/main/docs/netbox_logo_dark.svg",
+    "brand_guidelines_url": null,
+    "notes": "Official NetBox repository (netbox-community/netbox). 'dark' variant is for dark backgrounds: white mark and wordmark with bright teal. A light-background variant is docs/netbox_logo_light.svg. NetBox Labs has no brand page at netboxlabs.com/brand (404).",
+    "tile": "dark"
+  },
+  {
+    "slug": "netbrain-technologies-agentic-netops-platform",
+    "file": "netbrain-technologies-agentic-netops-platform.svg",
+    "logo_of": "publisher",
+    "source_page": "https://www.netbrain.com/platform/",
+    "file_url": "https://www.netbrain.com/wp-content/themes/netbrain/logo.svg",
+    "brand_guidelines_url": null,
+    "notes": "Site header logo. NetBrain company logo; no separate logo for the Agentic NetOps Platform was found. Dark-only: single fill #2F3F49 (dark slate), low contrast on a dark background. The media page (https://www.netbrain.com/about/media/) has no logo kit.",
+    "tile": "light"
+  },
+  {
+    "slug": "network-to-code-nautobot",
+    "file": "network-to-code-nautobot.svg",
+    "logo_of": "product",
+    "source_page": "https://github.com/nautobot/nautobot/tree/develop/nautobot/docs/assets",
+    "file_url": "https://raw.githubusercontent.com/nautobot/nautobot/develop/nautobot/docs/assets/nautobot_logo.svg",
+    "brand_guidelines_url": null,
+    "notes": "Official Nautobot repository. Orange chevrons plus white 'nautobot' text on a blue rounded box; visible on dark.",
+    "tile": "dark"
+  },
+  {
+    "slug": "network-unit-testing-system-nuts",
+    "file": "network-unit-testing-system-nuts.png",
+    "logo_of": "product",
+    "source_page": "https://github.com/network-unit-testing-system",
+    "file_url": "https://avatars.githubusercontent.com/u/83457975?v=4&s=460",
+    "brand_guidelines_url": null,
+    "notes": "GitHub organisation avatar of network-unit-testing-system (the org lists nuts.readthedocs.io as its site). 360x360 PNG, black acorn icon and 'NUTS' on a solid yellow square; visible on dark. No logo file exists in the repository or on the documentation site.",
+    "tile": "light"
+  },
+  {
+    "slug": "nokia-containerlab",
+    "file": "nokia-containerlab.svg",
+    "logo_of": "product",
+    "source_page": "https://github.com/srl-labs/containerlab/tree/main/docs/images",
+    "file_url": "https://raw.githubusercontent.com/srl-labs/containerlab/main/docs/images/clabnew.svg",
+    "brand_guidelines_url": null,
+    "notes": "Official containerlab repository; same flask mark as the animated wordmark in the containerlab.dev header (docs/images/containerlab-animated-wordmark.svg, which contains 18 <animate> elements, so a static file was chosen). Icon only, grey #828282 and cyan #00c9ff; visible on dark. Static wordmark only: docs/images/coloured_wordmark.svg.",
+    "tile": "light"
+  },
+  {
+    "slug": "nokia-event-driven-automation-eda",
+    "file": "nokia-event-driven-automation-eda.svg",
+    "logo_of": "product",
+    "source_page": "https://github.com/nokia-eda/docs/tree/main/docs/images",
+    "file_url": "https://raw.githubusercontent.com/nokia-eda/docs/main/docs/images/eda.svg",
+    "brand_guidelines_url": null,
+    "notes": "EDA mascot icon from the official nokia-eda/docs repository (the source of docs.eda.dev); same image as the nokia-eda GitHub org avatar. Multicolour, visible on dark. The docs.eda.dev header uses an inline SVG wordmark that is not available as a separate file. Icon only, no text.",
+    "tile": "light"
+  },
+  {
+    "slug": "opsmill-infrahub",
+    "file": "opsmill-infrahub.svg",
+    "logo_of": "product",
+    "source_page": "https://github.com/opsmill/infrahub/tree/stable/docs/static/img",
+    "file_url": "https://raw.githubusercontent.com/opsmill/infrahub/stable/docs/static/img/infrahub-logo-color-white.svg",
+    "brand_guidelines_url": null,
+    "notes": "Official Infrahub repository. Colour mark with white 'Infrahub' wordmark, made for dark backgrounds. A light-background variant is infrahub-logo-color.svg.",
+    "tile": "dark"
+  },
+  {
+    "slug": "paessler-prtg-network-monitor",
+    "file": "paessler-prtg-network-monitor.svg",
+    "logo_of": "product",
+    "source_page": "https://www.paessler.com/prtg/prtg-network-monitor",
+    "file_url": "https://www-assets.paessler.com/stopaeneos-target-container-prod/4b14d7e9b0e475ff4675c0df9b8c29a6636dc006/Paessler-PRTG-Network-Monitor-Logo_white.svg",
+    "brand_guidelines_url": "https://www.paessler.com/press/media-kit",
+    "notes": "Product logo from the PRTG product page, white variant (single fill #fff) for dark backgrounds. Stacked layout (viewBox 990x618). The brand_guidelines_url is the Paessler press media kit page; it has no direct logo download that could be parsed.",
+    "tile": "dark"
+  },
+  {
+    "slug": "phpipam-project-phpipam",
+    "file": "phpipam-project-phpipam.png",
+    "logo_of": "product",
+    "source_page": "https://phpipam.net/",
+    "file_url": "https://phpipam.net/css/images/phpipam_logo_small@2x.png",
+    "brand_guidelines_url": null,
+    "notes": "Header logo on phpipam.net, 650x160 PNG with tagline. Dark blue-grey text (low contrast on a dark background); green tagline is visible. No SVG found; the repository only contains a smaller PNG (css/images/phpipam_logo_smal.png).",
+    "tile": "light"
+  },
+  {
+    "slug": "prefect-technologies-dagster",
+    "file": "prefect-technologies-dagster.svg",
+    "logo_of": "product",
+    "source_page": "https://dagster.io/brand",
+    "file_url": "https://dagster.io/company-pages/brand/dagster-logo-reversed.svg",
+    "brand_guidelines_url": "https://dagster.io/brand",
+    "notes": "Official Dagster brand page. 'Reversed' variant for dark backgrounds (light lavender #B9B4F1 mark and white text). A light-background version is /company-pages/brand/dagster-logo.svg.",
+    "tile": "dark"
+  },
+  {
+    "slug": "prefect-technologies-prefect",
+    "file": "prefect-technologies-prefect.svg",
+    "logo_of": "product",
+    "source_page": "https://www.prefect.io/",
+    "file_url": "https://www.prefect.io/logos/brands/prefect-logo-reverse-wordmark.svg",
+    "brand_guidelines_url": null,
+    "notes": "Linked from the prefect.io home page. White 'Prefect' wordmark (reverse) for dark backgrounds; no icon. A mark-only file is prefect-logo-reverse-mark.svg. prefect.io/brand returns 404.",
+    "tile": "dark"
+  },
+  {
+    "slug": "red-hat-ansible",
+    "file": "red-hat-ansible.svg",
+    "logo_of": "product",
+    "source_page": "https://www.ansible.com/",
+    "file_url": "https://redhat.com/rhdc/managed-files/ansible-logo_white.svg",
+    "brand_guidelines_url": "https://www.redhat.com/en/about/trademark-guidelines-and-policies",
+    "notes": "Ansible wordmark in white, shown on the ansible.com page (served from redhat.com). Visible on dark, wordmark only. Other official sources: the Red Hat Ansible Automation Platform logo on the same page (Logo-Red_Hat-Ansible_Automation_Platform-A-Standard-RGB_0.svg) and the ansible/logos GitHub repository (www.ansible.com/logos redirects to it). Red Hat brand standards: https://www.redhat.com/en/about/brand/standards.",
+    "tile": "dark"
+  },
+  {
+    "slug": "servicenow-it-service-management",
+    "file": "servicenow-it-service-management.png",
+    "logo_of": "publisher",
+    "source_page": "https://github.com/ServiceNow",
+    "file_url": "https://avatars.githubusercontent.com/u/6577392?v=4&s=460",
+    "brand_guidelines_url": null,
+    "notes": "servicenow.com returns 'Access Denied' (Akamai) to curl and headless Chrome, so neither the product page nor a brand page could be opened. Used the avatar of the official ServiceNow GitHub organisation (its site field is www.servicenow.com): 'now' logo on a white square, 400x400 PNG. Publisher logo, not an ITSM product logo. Replace with a file from the ServiceNow brand site if someone can open it in a browser.",
+    "tile": "light"
+  },
+  {
+    "slug": "skybox-security-firewall-assurance",
+    "file": "skybox-security-firewall-assurance.svg",
+    "logo_of": "publisher",
+    "source_page": "https://web.archive.org/web/20240618183917/https://www.skyboxsecurity.com/products/firewall-assurance/",
+    "file_url": "https://web.archive.org/web/20240618183917im_/https://www.skyboxsecurity.com/wp-content/uploads/2021/08/skybox-registered-logo.svg",
+    "brand_guidelines_url": null,
+    "notes": "Discontinued: the original homepage URL now redirects to tufin.com. Logo taken from a Wayback Machine copy (18 June 2024) of the official product page. Skybox Security company logo, no separate Firewall Assurance logo. Green/blue mark with dark grey #454D51 text (text has low contrast on dark). The same snapshot has a white footer variant: https://web.archive.org/web/20240618183917im_/https://www.skyboxsecurity.com/wp-content/uploads/2021/08/logo-footer.svg (three #fff fills, not inspected visually).",
+    "tile": "light"
+  },
+  {
+    "slug": "slurp-it-slurp-it",
+    "file": "slurp-it-slurp-it.png",
+    "logo_of": "product",
+    "source_page": "https://slurpit.io/",
+    "file_url": "https://slurpit.io/wp-content/uploads/2023/09/white_logo-300x71.png",
+    "brand_guidelines_url": null,
+    "notes": "Header logo, white variant for dark backgrounds (orange-red icon, white text). 300x71 PNG; no SVG or larger file found. slurpit.io/brand and /press-kit return 404.",
+    "tile": "dark"
+  },
+  {
+    "slug": "solarwinds-network-performance-monitor",
+    "file": "solarwinds-network-performance-monitor.svg",
+    "logo_of": "publisher",
+    "source_page": "https://www.solarwinds.com/network-performance-monitor",
+    "file_url": "https://p1.aprimocdn.net/solarwinds/b0a24941-e427-43df-ab04-b2420142eddf/SW_Logo_Flame_Web_Orange_Original%20file.svg",
+    "brand_guidelines_url": "https://www.solarwinds.com/legal/trademarks",
+    "notes": "SolarWinds flame mark only (orange #ff6200), referenced by the NPM product page; visible on dark. No separate NPM product logo. The header wordmark is only available as PNG at 328x56 (https://p1.aprimocdn.net/solarwinds/94ce9bf7-6584-478a-bca6-b23400fa3359/SW_Logo_Web_Orange_XS_downloadPNG.png), below the 64 px minimum, so the SVG mark was kept; the wordmark PNG is orange and visible on dark if a wordmark is preferred.",
+    "tile": "light"
+  },
+  {
+    "slug": "spacelift-spacelift",
+    "file": "spacelift-spacelift.png",
+    "logo_of": "product",
+    "source_page": "https://github.com/spacelift-io",
+    "file_url": "https://avatars.githubusercontent.com/u/53318513?v=4&s=460",
+    "brand_guidelines_url": null,
+    "notes": "Avatar of the official spacelift-io GitHub organisation: astronaut mark on a near-black square, 460x460 PNG; visible on dark. The spacelift.io header logo is an inline SVG with fill=currentColor, not a downloadable file. spacelift.io/brand did not respond; /media-kit returns 404.",
+    "tile": "light"
+  },
+  {
+    "slug": "stardust-systems-suzieq",
+    "file": "stardust-systems-suzieq.png",
+    "logo_of": "product",
+    "source_page": "https://github.com/netenglabs",
+    "file_url": "https://avatars.githubusercontent.com/u/63813752?v=4&s=460",
+    "brand_guidelines_url": null,
+    "notes": "Avatar of the netenglabs GitHub organisation (owner of the suzieq repository; its site field is stardustsystems.net): purple owl with 'suzieq' text, 374x374 PNG with transparency; visible on dark. No logo file in the repository; the docs site has only a favicon. stardustsystems.net shows a separate company owl logo.",
+    "tile": "light"
+  },
+  {
+    "slug": "sunbird-software-dctrack",
+    "file": "sunbird-software-dctrack.png",
+    "logo_of": "publisher",
+    "source_page": "https://www.sunbirddcim.com/dcim-products",
+    "file_url": "https://www.sunbirddcim.com/sites/all/themes/sunbirddcim/build/images/2021/sunbird-logo-footer.png",
+    "brand_guidelines_url": null,
+    "notes": "Sunbird company logo from the site footer, 326x98 PNG with tagline 'DCIM that's easy, fast, and complete'. No separate dcTrack logo found. Orange mark is visible on dark; grey text has low contrast.",
+    "tile": "light"
+  },
+  {
+    "slug": "system-initiative-system-initiative",
+    "file": "system-initiative-system-initiative.svg",
+    "logo_of": "product",
+    "source_page": "https://github.com/systeminit/si/tree/main/app/auth-portal/public/logos",
+    "file_url": "https://raw.githubusercontent.com/systeminit/si/main/app/auth-portal/public/logos/SI_Logo_StrokeWhite.svg",
+    "brand_guidelines_url": null,
+    "notes": "Discontinued: logo taken from the archived systeminit/si GitHub repository. White-stroke square mark for dark backgrounds, icon only. A wordmark is in lib/vue-lib/src/brand-assets/si-logo-wordmark.svg, but it has no fill set (renders black), so it is dark-only.",
+    "tile": "dark"
+  },
+  {
+    "slug": "temporal-technologies-temporal",
+    "file": "temporal-technologies-temporal.svg",
+    "logo_of": "product",
+    "source_page": "https://temporal.io/brand",
+    "file_url": "https://images.ctfassets.net/0uuz8ydxyd9p/PxaOnuShCYwyX58rxnhrj/ac10c21a73d4f35f9c852348581dd9f1/Temporal_LogoLockup_Horizontal_light_1.svg",
+    "brand_guidelines_url": "https://temporal.io/brand",
+    "notes": "Official Temporal brand page. Horizontal lockup, 'light' variant (#F2F2F2) for dark backgrounds. The viewBox (2400x1200) has large padding around the logo, so it renders small unless cropped. Dark-on-light variant: Temporal_LogoLockup_Horizontal_dark_1.svg.",
+    "tile": "dark"
+  },
+  {
+    "slug": "the-apache-software-foundation-apache-airflow",
+    "file": "the-apache-software-foundation-apache-airflow.svg",
+    "logo_of": "product",
+    "source_page": "https://github.com/apache/airflow/tree/main/airflow-core/docs/img/logos",
+    "file_url": "https://raw.githubusercontent.com/apache/airflow/main/airflow-core/docs/img/logos/wordmark_1.svg",
+    "brand_guidelines_url": "https://www.apache.org/foundation/marks/",
+    "notes": "Official Apache Airflow repository, horizontal wordmark. Multicolour pinwheel is visible on dark, but the 'Apache Airflow' text is dark grey (#51504F), low contrast on dark. The repository also has airflow_dark_bg.png (1200x1200), made for dark backgrounds.",
+    "tile": "light"
+  },
+  {
+    "slug": "tufin-orchestration-suite",
+    "file": "tufin-orchestration-suite.svg",
+    "logo_of": "publisher",
+    "source_page": "https://www.tufin.com/tufin-orchestration-suite",
+    "file_url": "https://www.tufin.com/wp-content/themes/tufin-wp/resources/img/logo-tufin.svg",
+    "brand_guidelines_url": null,
+    "notes": "Tufin company logo from the site header (orange #EC7700); visible on dark. No separate logo for Tufin Orchestration Suite found.",
+    "tile": "light"
+  },
+  {
+    "slug": "windmill-labs-windmill",
+    "file": "windmill-labs-windmill.svg",
+    "logo_of": "product",
+    "source_page": "https://www.windmill.dev/brand",
+    "file_url": "https://www.windmill.dev/img/windmill.svg",
+    "brand_guidelines_url": "https://www.windmill.dev/brand",
+    "notes": "Logo shown on the Windmill brand page and site header: blue and white windmill mark, icon only; visible on dark. The brand page links to a Google Drive folder of logos (https://drive.google.com/drive/folders/1Zqu-xhVlss1h03idNSWjBSGtJEKqrakc) that was not downloaded.",
+    "tile": "dark"
+  },
+  {
+    "slug": "zabbix-zabbix",
+    "file": "zabbix-zabbix.svg",
+    "logo_of": "product",
+    "source_page": "https://www.zabbix.com/",
+    "file_url": "https://assets.zabbix.com/img/logo/zabbix.svg",
+    "brand_guidelines_url": null,
+    "notes": "Site header logo: white 'ZABBIX' on a red #D40000 box; visible on dark. No brand or trademark page found (zabbix.com/brand and /trademark_policy redirect to a 404 page).",
+    "tile": "dark"
+  }
+]

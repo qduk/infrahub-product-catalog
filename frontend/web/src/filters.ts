@@ -1,6 +1,6 @@
-// Filter state, how it is stored in the page address, and how it narrows the catalog.
+// Filter state and how it is stored in the page address. src/graph/buildGraph.ts applies it.
 
-import type { Block, Catalog, Claim, Extent, Product, Status } from './api'
+import type { Extent, Status } from './api'
 
 export interface Filters {
   statuses: Status[]
@@ -12,16 +12,6 @@ export const ALL_STATUSES: Status[] = ['active', 'discontinued', 'acquired']
 export const ALL_EXTENTS: Extent[] = ['full', 'partial']
 
 export const DEFAULT_FILTERS: Filters = { statuses: ['active'], extents: ['full', 'partial'], block: null }
-
-export interface BlockEntry {
-  product: Product
-  claim: Claim
-}
-
-export interface BlockView {
-  block: Block
-  entries: BlockEntry[]
-}
 
 function pick<T extends string>(value: string | null, allowed: T[], fallback: T[]): T[] {
   if (!value) return fallback
@@ -50,21 +40,4 @@ export function serializeFilters(filters: Filters): string {
   }
   if (filters.block) params.set('block', filters.block)
   return params.toString()
-}
-
-export function applyFilters(catalog: Catalog, filters: Filters): BlockView[] {
-  const blocks = filters.block ? catalog.blocks.filter((block) => block.name === filters.block) : catalog.blocks
-  return blocks.map((block) => ({
-    block,
-    entries: catalog.products.flatMap((product) =>
-      product.claims
-        .filter(
-          (claim) =>
-            claim.block === block.name &&
-            filters.statuses.includes(product.status) &&
-            filters.extents.includes(claim.extent),
-        )
-        .map((claim) => ({ product, claim })),
-    ),
-  }))
 }

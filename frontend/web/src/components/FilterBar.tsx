@@ -3,6 +3,7 @@ import { ALL_EXTENTS, ALL_STATUSES, type Filters } from '../filters'
 
 interface Props {
   filters: Filters
+  blocks: string[]
   onChange: (filters: Filters) => void
 }
 
@@ -11,7 +12,7 @@ function toggle<T>(list: T[], item: T): T[] {
   return next.length ? next : list
 }
 
-export function FilterBar({ filters, onChange }: Props) {
+export function FilterBar({ filters, blocks, onChange }: Props) {
   return (
     <div className="filters" role="group" aria-label="Filters">
       <fieldset>
@@ -40,11 +41,17 @@ export function FilterBar({ filters, onChange }: Props) {
           </label>
         ))}
       </fieldset>
-      {filters.block && (
-        <button type="button" className="show-all" onClick={() => onChange({ ...filters, block: null })}>
-          Show all blocks
-        </button>
-      )}
+      <label className="block-select">
+        Building block
+        <select value={filters.block ?? ''} onChange={(event) => onChange({ ...filters, block: event.target.value || null })}>
+          <option value="">All building blocks</option>
+          {blocks.map((block) => (
+            <option key={block} value={block}>
+              {block}
+            </option>
+          ))}
+        </select>
+      </label>
     </div>
   )
 }
