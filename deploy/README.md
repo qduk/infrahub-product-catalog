@@ -28,7 +28,7 @@ are still open and must be fixed before the password is removed:
 |-------|---------|
 | Project | `naf-product-catalog` |
 | Region and zone | `us-central1`, `us-central1-a` |
-| Machine | `e2-standard-4` (4 vCPU, 16 GB). The local stack uses about 7 GB. |
+| Machine | `e2-highmem-2` (2 vCPU, 16 GB) as a Spot VM. The local stack uses about 7 GB. |
 | Disk | 50 GB, Debian 12 |
 
 ## 1. Create the machine (on your computer)
@@ -51,13 +51,24 @@ gcloud compute addresses create catalog-beta-ip --region us-central1
 gcloud compute firewall-rules create catalog-beta-web \
   --allow tcp:80,tcp:443,udp:443 --target-tags catalog-beta-web
 gcloud compute instances create catalog-beta \
-  --machine-type e2-standard-4 \
+  --machine-type e2-highmem-2 \
+  --provisioning-model SPOT --instance-termination-action STOP \
   --image-family debian-12 --image-project debian-cloud \
   --boot-disk-size 50GB --boot-disk-type pd-balanced \
   --address catalog-beta-ip --tags catalog-beta-web
 ```
 
 SSH uses the `default-allow-ssh` rule of the default network.
+
+A Spot VM costs less, but Google can stop it at any time. The disk, the data and the static
+address are kept, and every container starts again on its own when the machine starts. Google does
+not start the machine again by itself. To start it:
+
+```bash
+gcloud compute instances start catalog-beta
+```
+
+To check whether it is running: `gcloud compute instances describe catalog-beta --format='value(status)'`.
 
 ## 2. Start the stack (on the machine)
 
