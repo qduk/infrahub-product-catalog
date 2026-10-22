@@ -29,6 +29,7 @@ are still open and must be fixed before the password is removed:
 | Project | `naf-product-catalog` |
 | Region and zone | `us-central1`, `us-central1-a` |
 | Machine | `e2-highmem-2` (2 vCPU, 16 GB) as a Spot VM. The local stack uses about 7 GB. |
+| Task workers | 1 (see "Checks stuck in progress") |
 | Disk | 50 GB, Debian 12 |
 
 ## 1. Create the machine (on your computer)
@@ -116,8 +117,9 @@ The repository's queries read the catalog schema, so the schema must be on `main
 uv run infrahubctl object load bootstrap/repository.yml
 ```
 
-Wait until the repository shows as in sync in Infrahub (**Integrations > Repositories**). Then
-load the catalog on a branch:
+Infrahub imports the five checks, then shows the repository as `error-import`, because the coverage
+report's target group (`catalog_reports`) is part of the catalog and is not loaded yet. Check that
+the five checks exist (**Proposed changes > Check definitions**), then load the catalog on a branch:
 
 ```bash
 uv run infrahubctl branch create load-catalog
@@ -127,13 +129,16 @@ uv run infrahubctl object load --branch load-catalog objects/
 Open a proposed change from `load-catalog` to `main`. Wait for the checks: all must pass, and
 `catalog_coverage_check` lists the products with no coverage claim as warnings. Then merge it.
 
+Run **Import latest commit** on the repository again. It now shows as in sync, and the coverage
+report definition exists. Delete the `load-schema` and `load-catalog` branches.
+
 ## 5. Connect the catalog service (on your computer, then on the machine)
 
 Create the service account on the deployed Infrahub:
 
 ```bash
 cd frontend/api
-INFRAHUB_ADDRESS=https://infrahub.<SITE_HOST> INFRAHUB_ADMIN_TOKEN=<admin token> \
+INFRAHUB_TIMEOUT=300 INFRAHUB_ADDRESS=https://infrahub.<SITE_HOST> INFRAHUB_ADMIN_TOKEN=<admin token> \
   uv run python bootstrap_service_account.py
 ```
 
@@ -145,6 +150,9 @@ cd /opt/catalog
 sudo nano deploy/.env
 sudo docker compose -f docker-compose.yml -f deploy/docker-compose.gcp.yml --env-file deploy/.env up -d catalog-api
 ```
+
+The longer timeout is needed: with the default of 60 seconds, the script timed out against the
+2 vCPU machine. Running it again is safe.
 
 ## 6. Give the beta group access
 
@@ -168,6 +176,13 @@ branch was created from: rebase them to run the new checks.
 sudo rm /opt/catalog/deploy/secrets/basic_auth.caddy /opt/catalog/deploy/secrets/beta-login.txt
 cd /opt/catalog && sudo deploy/setup-vm.sh <your email>
 ```
+
+## Checks stuck "in progress"
+
+On Infrahub 1.11.8, a task worker that has no copy of the repository cannot run its checks: it
+looks the repository up as a `CoreRepository` and fails with `NodeNotFoundError`. The deployment
+runs one worker with its copy on the `git_data` volume, and **Import latest commit** makes the copy.
+If the volume is ever deleted, run **Import latest commit** once, then **Retry** the checks.
 
 ## If the HTTPS certificate is not issued
 
