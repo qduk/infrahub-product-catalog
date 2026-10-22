@@ -32,7 +32,7 @@ export function ProductNode({ data }: NodeProps<ProductNodeType>) {
       title={product.full_name}
     >
       {centreHandles}
-      <Logo fullName={product.full_name} />
+      <Logo fullName={product.full_name} name={product.name} />
       <span className="graph-product-text">
         <span className="graph-product-name">{product.name}</span>
         {product.status !== 'active' && <span className="graph-product-status">{STATUS_LABELS[product.status]}</span>}

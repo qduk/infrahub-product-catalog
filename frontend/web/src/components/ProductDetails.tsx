@@ -39,7 +39,7 @@ export function ProductDetails({ product, onClose }: Props) {
         ×
       </button>
       <header className="details-header">
-        <Logo fullName={product.full_name} size="large" />
+        <Logo fullName={product.full_name} name={product.name} size="large" />
         <div className="details-title">
           <h2>{product.name}</h2>
           <p className="details-publisher">
