@@ -7,6 +7,7 @@ import { parseFilters, serializeFilters, type Filters } from './filters'
 import type { Focus } from './graph/buildGraph'
 import { CatalogGraph } from './graph/CatalogGraph'
 import { slugify } from './graph/logos'
+import { MadeBy } from './components/MadeBy'
 import { SubmitForm } from './submit/SubmitForm'
 
 const isSubmitView = () => window.location.hash === '#submit'
@@ -71,7 +72,12 @@ export default function App() {
       )}
 
       {catalog.data && submitView && (
-        <SubmitForm catalog={catalog.data} onDone={() => (window.location.hash = '')} />
+        <>
+          <SubmitForm catalog={catalog.data} onDone={() => (window.location.hash = '')} />
+          <div className="made-by-row">
+            <MadeBy />
+          </div>
+        </>
       )}
 
       {catalog.data && !submitView && (
@@ -93,6 +99,7 @@ export default function App() {
             {selected && <ProductDetails product={selected} onClose={() => setFocus(null)} />}
           </div>
           <footer className="app-footer">
+            <p className="footer-notes">
             Building blocks from the{' '}
             <a href="https://reference.networkautomation.forum/Framework/Framework/" target="_blank" rel="noopener noreferrer">
               Network Automation Framework
@@ -101,6 +108,8 @@ export default function App() {
             <br />
             Product names and logos are trademarks of their respective owners. They are used only to identify the
             products. Their use does not imply endorsement.
+            </p>
+            <MadeBy />
           </footer>
         </main>
       )}
