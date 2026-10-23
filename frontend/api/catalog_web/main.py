@@ -3,12 +3,13 @@
 import logging
 
 import httpx
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import JSONResponse
 from infrahub_sdk.exceptions import Error as InfrahubError
 
 from catalog_web.catalog import CatalogCache
 from catalog_web.infrahub import get_client
+from catalog_web.limits import SubmissionLimit
 from catalog_web.submissions import Submission, SubmissionError, submit
 
 logging.basicConfig(level=logging.INFO)
@@ -16,8 +17,10 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI(title="Catalog web service", docs_url=None, redoc_url=None, openapi_url=None)
 cache = CatalogCache()
+limit = SubmissionLimit()
 
 UNAVAILABLE = "The catalog is not available right now. Try again later."
+TOO_MANY = "Too many submissions were sent in the last hour. Nothing was created. Please try again later."
 
 
 @app.get("/api/health")
@@ -35,7 +38,11 @@ async def catalog() -> dict:
 
 
 @app.post("/api/submissions", status_code=201)
-async def submissions(submission: Submission) -> dict[str, str]:
+async def submissions(submission: Submission, request: Request) -> dict[str, str]:
+    address = request.client.host if request.client else "unknown"
+    if not limit.allow(address):
+        logger.warning("submission refused: over the limit for %s or in total", address)
+        return JSONResponse(status_code=429, content={"detail": TOO_MANY})
     try:
         reference = await submit(get_client(), submission)
     except SubmissionError as error:

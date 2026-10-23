@@ -10,15 +10,19 @@ Only Caddy is reachable from the internet (`deploy/docker-compose.gcp.yml`):
 
 | Address | Who can open it |
 |---------|-----------------|
-| `https://<ip-with-dashes>.sslip.io` | The beta group, with one shared user name and password |
+| `https://<ip-with-dashes>.sslip.io` | Anyone. No login. |
 | `https://infrahub.<ip-with-dashes>.sslip.io` | Maintainers, with Infrahub's login. Anonymous access is turned off. |
 
-## Before a public launch
+## Open problems
 
-The shared password limits submissions to the beta group. These items from `frontend/README.md`
-are still open and must be fixed before the password is removed:
-1. Spam protection on `POST /api/submissions` (spec 005, FR-019).
-2. The service account can merge its own proposed changes (spec 005, FR-020).
+The web app is open to anyone, by the user's decision on 2026-10-22. These items from
+`frontend/README.md` are only partly addressed:
+1. Spam protection on `POST /api/submissions` (spec 005, FR-019). The catalog service accepts at
+   most 5 submissions per visitor address and 50 in total in any hour
+   (`SUBMISSIONS_PER_ADDRESS_PER_HOUR` and `SUBMISSIONS_PER_HOUR` in `deploy/.env`). There is no
+   human verification, and the counts are kept in memory, so a restart clears them.
+2. The service account can merge its own proposed changes (spec 005, FR-020). Not addressed. The
+   public service only creates proposed changes; the risk applies if its token is exposed.
 
 `deploy/setup-vm.sh` replaces Infrahub's published default passwords, tokens and secret key.
 
@@ -81,15 +85,14 @@ cd /opt/catalog
 sudo deploy/setup-vm.sh <your email, for certificate notices>
 ```
 
-The script installs Docker, writes `deploy/.env` with new Infrahub passwords and tokens, creates
-the beta password in `deploy/secrets/`, and starts everything. Both files are readable only by
-root, and Git ignores them. The first start takes several minutes.
+The script installs Docker, writes `deploy/.env` with new Infrahub passwords and tokens, and starts
+everything. The file is readable only by root, and Git ignores it. The first start takes several
+minutes.
 
 Read the values you need next:
 
 ```bash
 sudo grep -E 'SITE_HOST|INFRAHUB_INITIAL_ADMIN_(PASSWORD|TOKEN)' deploy/.env
-sudo cat deploy/secrets/beta-login.txt
 ```
 
 ## 3. Load the schema (on your computer)
@@ -154,10 +157,9 @@ sudo docker compose -f docker-compose.yml -f deploy/docker-compose.gcp.yml --env
 The longer timeout is needed: with the default of 60 seconds, the script timed out against the
 2 vCPU machine. Running it again is safe.
 
-## 6. Give the beta group access
+## 6. Share the address
 
-Send the group `https://<SITE_HOST>` and the user name and password from
-`deploy/secrets/beta-login.txt`.
+Send the group `https://<SITE_HOST>`. No login is needed.
 
 ## Updating
 
@@ -170,11 +172,14 @@ After a change to `checks/`, `queries/` or `.infrahub.yml`, also run **Import la
 the repository in the deployed Infrahub. Open proposed changes keep the checks of the commit their
 branch was created from: rebase them to run the new checks.
 
-## Changing the beta password
+## Changing the submission limits
+
+Set `SUBMISSIONS_PER_ADDRESS_PER_HOUR` and `SUBMISSIONS_PER_HOUR` in `deploy/.env`, then restart
+the service:
 
 ```bash
-sudo rm /opt/catalog/deploy/secrets/basic_auth.caddy /opt/catalog/deploy/secrets/beta-login.txt
-cd /opt/catalog && sudo deploy/setup-vm.sh <your email>
+cd /opt/catalog
+sudo docker compose -f docker-compose.yml -f deploy/docker-compose.gcp.yml --env-file deploy/.env up -d catalog-api
 ```
 
 ## Checks stuck "in progress"

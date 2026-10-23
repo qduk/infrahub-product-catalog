@@ -50,19 +50,8 @@ CATALOG_API_TOKEN=
 ENV
 fi
 
-# The shared password for the beta group.
-mkdir -p deploy/secrets
-chmod 700 deploy/secrets
-if [ ! -f deploy/secrets/basic_auth.caddy ]; then
-  PASSWORD=$(openssl rand -base64 18 | tr -d '/+=')
-  HASH=$(docker run --rm caddy:2-alpine caddy hash-password --plaintext "$PASSWORD")
-  printf 'basic_auth {\n\tbeta %s\n}\n' "$HASH" > deploy/secrets/basic_auth.caddy
-  printf 'user: beta\npassword: %s\n' "$PASSWORD" > deploy/secrets/beta-login.txt
-  chmod 600 deploy/secrets/basic_auth.caddy deploy/secrets/beta-login.txt
-fi
-
 docker compose -f docker-compose.yml -f deploy/docker-compose.gcp.yml --env-file deploy/.env up -d --build
 
 echo
-echo "Web app:   https://${SITE_HOST}  (login in deploy/secrets/beta-login.txt)"
+echo "Web app:   https://${SITE_HOST}"
 echo "Infrahub:  https://infrahub.${SITE_HOST}  (user admin, password INFRAHUB_INITIAL_ADMIN_PASSWORD in deploy/.env)"

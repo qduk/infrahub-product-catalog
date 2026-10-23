@@ -4,8 +4,8 @@
 #
 #   docker compose -f docker-compose.yml -f deploy/docker-compose.gcp.yml --env-file deploy/.env up -d
 #
-# Only Caddy (the web service) is published. It serves the web app behind a shared password, and
-# Infrahub's web interface on its own host name behind Infrahub's login.
+# Only Caddy (the web service) is published. It serves the web app to anyone, and Infrahub's web
+# interface on its own host name behind Infrahub's login.
 name: infrahub-product-catalog
 
 services:
@@ -32,6 +32,8 @@ services:
     environment:
       INFRAHUB_ADDRESS: http://infrahub-server:8000
       INFRAHUB_API_TOKEN: ${CATALOG_API_TOKEN:-}
+      SUBMISSIONS_PER_ADDRESS_PER_HOUR: ${SUBMISSIONS_PER_ADDRESS_PER_HOUR:-5}
+      SUBMISSIONS_PER_HOUR: ${SUBMISSIONS_PER_HOUR:-50}
     depends_on:
       infrahub-server:
         condition: service_healthy
@@ -49,7 +51,6 @@ services:
       ACME_EMAIL: ${ACME_EMAIL:?set ACME_EMAIL in deploy/.env}
     volumes:
       - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
-      - ./deploy/secrets/basic_auth.caddy:/etc/caddy/basic_auth.caddy:ro
       - caddy_data:/data
       - caddy_config:/config
     depends_on:

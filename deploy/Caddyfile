@@ -2,9 +2,8 @@
 	email {$ACME_EMAIL}
 }
 
-# The web app and its service, for the beta group only.
+# The web app and its service, open to anyone. The catalog service limits submissions.
 {$SITE_HOST} {
-	import /etc/caddy/basic_auth.caddy
 	encode zstd gzip
 
 	header {
