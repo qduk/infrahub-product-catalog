@@ -1,0 +1,215 @@
+{
+  "block": "Presentation",
+  "requirements": [
+    {
+      "identifier": "presentation-must-1",
+      "block": "Presentation",
+      "level": "must",
+      "position": 32,
+      "summary": "Provides robust authentication and authorization",
+      "statement": "It MUST provide robust and flexible authentication and authorization capabilities.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#presentation"
+    },
+    {
+      "identifier": "presentation-may-1",
+      "block": "Presentation",
+      "level": "may",
+      "position": 33,
+      "summary": "Takes forms such as GUIs, ITSM, chat, portals or dashboards",
+      "statement": "This component MAY take various forms depending on the needs of the end user, including graphical user interfaces, ITSM, change management systems, messaging platforms, documentation portals, or reporting dashboards.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#presentation"
+    },
+    {
+      "identifier": "presentation-may-2",
+      "block": "Presentation",
+      "level": "may",
+      "position": 34,
+      "summary": "Supports both read and write interactions",
+      "statement": "It MAY support both read and write interactions, enabling users to view data, initiate tasks, or approve changes.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#presentation"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "SolarWinds Network Performance Monitor - Presentation",
+      "product": "SolarWinds Network Performance Monitor",
+      "homepage_url": "https://www.solarwinds.com/network-performance-monitor",
+      "description": "Polls multi-vendor network devices to track availability, traffic and hardware health, and shows the results in dashboards, maps and threshold-based alerts.",
+      "claim_note": "The product offers dashboards and reports for its own monitoring data, not a general interface for an automation system.",
+      "claim_sources": [
+        "https://www.solarwinds.com/network-performance-monitor"
+      ],
+      "other_catalog_sources": [
+        "https://documentation.solarwinds.com/en/success_center/npm/content/npm_licensing_model.htm",
+        "https://www.solarwinds.com/network-performance-monitor"
+      ]
+    },
+    {
+      "claim": "Kentik Kentik - Presentation",
+      "product": "Kentik Kentik",
+      "homepage_url": "https://www.kentik.com/",
+      "description": "Collects network telemetry such as flow, SNMP and streaming telemetry from data center, cloud and internet networks, stores it, and lets users query and visualize it.",
+      "claim_note": "The product provides views of its own telemetry data, not a general interface for an automation system.",
+      "claim_sources": [
+        "https://www.kentik.com/product/"
+      ],
+      "other_catalog_sources": [
+        "https://www.kentik.com/pricing/",
+        "https://www.kentik.com/product/"
+      ]
+    },
+    {
+      "claim": "LibreNMS LibreNMS - Presentation",
+      "product": "LibreNMS LibreNMS",
+      "homepage_url": "https://www.librenms.org/",
+      "description": "Network monitoring system that discovers devices with protocols such as SNMP, LLDP and CDP, collects their data, graphs it and sends alerts.",
+      "claim_note": "The product provides graphs, a web interface and an API for its own monitoring data.",
+      "claim_sources": [
+        "https://www.librenms.org/"
+      ],
+      "other_catalog_sources": [
+        "https://raw.githubusercontent.com/librenms/librenms/master/LICENSE.txt",
+        "https://raw.githubusercontent.com/librenms/librenms/master/README.md",
+        "https://www.librenms.org/"
+      ]
+    },
+    {
+      "claim": "Zabbix Zabbix - Presentation",
+      "product": "Zabbix Zabbix",
+      "homepage_url": "https://www.zabbix.com/",
+      "description": "Monitoring software that collects metrics from network devices, servers and applications, detects problems against thresholds, sends notifications and shows the data in dashboards and maps.",
+      "claim_note": "The product provides dashboards and maps for its own monitoring data, not a general interface for an automation system.",
+      "claim_sources": [
+        "https://www.zabbix.com/features"
+      ],
+      "other_catalog_sources": [
+        "https://www.zabbix.com/features"
+      ]
+    },
+    {
+      "claim": "Nagios Enterprises Nagios Core - Presentation",
+      "product": "Nagios Enterprises Nagios Core",
+      "homepage_url": "https://www.nagios.org/projects/nagios-core/",
+      "description": "Monitoring software that runs plugin-based checks against servers, network devices, websites and services, and alerts on problems, with a basic web interface.",
+      "claim_note": "The product page describes only a basic web interface; configuration uses text files.",
+      "claim_sources": [
+        "https://www.nagios.org/projects/nagios-core/"
+      ],
+      "other_catalog_sources": [
+        "https://www.nagios.org/projects/nagios-core/"
+      ]
+    },
+    {
+      "claim": "Paessler PRTG Network Monitor - Presentation",
+      "product": "Paessler PRTG Network Monitor",
+      "homepage_url": "https://www.paessler.com/prtg/prtg-network-monitor",
+      "description": "On-premises Windows software that monitors devices, systems and traffic through sensors such as SNMP, and provides maps, dashboards, alerts and reports.",
+      "claim_note": "The product provides maps and dashboards for its own monitoring data, not a general interface for an automation system.",
+      "claim_sources": [
+        "https://www.paessler.com/prtg/prtg-network-monitor"
+      ],
+      "other_catalog_sources": [
+        "https://www.paessler.com/prtg/prtg-network-monitor"
+      ]
+    },
+    {
+      "claim": "NetBox Labs NetBox - Presentation",
+      "product": "NetBox Labs NetBox",
+      "homepage_url": "https://netboxlabs.com/products/netbox/",
+      "description": "NetBox models and documents network infrastructure, defines its intended state and makes that data available to automation tools through APIs and a web interface.",
+      "claim_note": "NetBox provides a user interface for its own data, but not dashboards or interfaces for the rest of an automation system.",
+      "claim_sources": [
+        "https://github.com/netbox-community/netbox"
+      ],
+      "other_catalog_sources": [
+        "https://github.com/netbox-community/netbox",
+        "https://netboxlabs.com/community/",
+        "https://netboxlabs.com/netbox-enterprise/"
+      ]
+    },
+    {
+      "claim": "Sunbird Software dcTrack - Presentation",
+      "product": "Sunbird Software dcTrack",
+      "homepage_url": "https://www.sunbirddcim.com/dcim-products",
+      "description": "dcTrack is data center infrastructure management software that records physical assets, capacity and power and network connections, and manages change requests for data center equipment.",
+      "claim_note": "dcTrack provides 3D views and dashboards for its own data center data, not an interface for a whole network automation system.",
+      "claim_sources": [
+        "https://info.sunbirddcim.com/hubfs/DS009_Sunbird_DataSheet_dcTrack9_2.pdf"
+      ],
+      "other_catalog_sources": [
+        "https://info.sunbirddcim.com/hubfs/DS009_Sunbird_DataSheet_dcTrack9_2.pdf",
+        "https://www.sunbirddcim.com/dcim-products"
+      ]
+    },
+    {
+      "claim": "ServiceNow IT Service Management - Presentation",
+      "product": "ServiceNow IT Service Management",
+      "homepage_url": "https://www.servicenow.com/products/itsm.html",
+      "description": "ServiceNow IT Service Management is a set of applications for handling IT incidents, problems, changes and service requests, with a service catalog, asset management and a CMDB.",
+      "claim_note": "The framework names ITSM as an example of a graphical user interface, but ITSM covers service processes rather than all interfaces to a network automation system.",
+      "claim_sources": [
+        "https://www.servicenow.com/community/itsm-articles/itsm-welcome-guide/ta-p/2304257"
+      ],
+      "other_catalog_sources": [
+        "https://en.wikipedia.org/wiki/ServiceNow",
+        "https://www.servicenow.com/community/itsm-articles/itsm-welcome-guide/ta-p/2304257"
+      ]
+    },
+    {
+      "claim": "Cloud Native Computing Foundation (CNCF) Backstage - Presentation",
+      "product": "Cloud Native Computing Foundation (CNCF) Backstage",
+      "homepage_url": "https://backstage.io/",
+      "description": "Backstage is a framework for building developer portals around a catalog of software components, with project templates, documentation and plugins.",
+      "claim_note": "Backstage builds portals through which users interact with tools and services, but it is aimed at software development rather than network automation.",
+      "claim_sources": [
+        "https://github.com/backstage/backstage"
+      ],
+      "other_catalog_sources": [
+        "https://github.com/backstage/backstage",
+        "https://raw.githubusercontent.com/backstage/backstage/master/LICENSE"
+      ]
+    },
+    {
+      "claim": "Spacelift Spacelift - Presentation",
+      "product": "Spacelift Spacelift",
+      "homepage_url": "https://spacelift.io/",
+      "description": "Platform that runs and coordinates infrastructure-as-code workflows for Terraform, OpenTofu, CloudFormation, Pulumi, Kubernetes and Ansible, with policies, approvals and drift detection.",
+      "claim_note": "Spacelift provides a web interface and assistant for its own workflows, not a general interface for the whole automation system.",
+      "claim_sources": [
+        "https://spacelift.io/"
+      ],
+      "other_catalog_sources": [
+        "https://spacelift.io/",
+        "https://spacelift.io/pricing"
+      ]
+    },
+    {
+      "claim": "The Apache Software Foundation Apache Airflow - Presentation",
+      "product": "The Apache Software Foundation Apache Airflow",
+      "homepage_url": "https://airflow.apache.org/",
+      "description": "Platform for writing workflows as Python code and for scheduling and monitoring them.",
+      "claim_note": "The web application presents only the workflows and their runs, not the network state or intent.",
+      "claim_sources": [
+        "https://airflow.apache.org/"
+      ],
+      "other_catalog_sources": [
+        "https://airflow.apache.org/",
+        "https://raw.githubusercontent.com/apache/airflow/main/LICENSE"
+      ]
+    },
+    {
+      "claim": "Windmill Labs Windmill - Presentation",
+      "product": "Windmill Labs Windmill",
+      "homepage_url": "https://www.windmill.dev/",
+      "description": "Platform for building and running scripts, workflows, internal apps and data pipelines, with schedules, webhooks and generated user interfaces.",
+      "claim_note": "The generated user interfaces and app builder give users a way to run automation, but Windmill provides no network-specific dashboards.",
+      "claim_sources": [
+        "https://www.windmill.dev/"
+      ],
+      "other_catalog_sources": [
+        "https://raw.githubusercontent.com/windmill-labs/windmill/main/README.md",
+        "https://www.windmill.dev/"
+      ]
+    }
+  ]
+}

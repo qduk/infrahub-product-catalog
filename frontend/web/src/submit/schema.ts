@@ -54,7 +54,6 @@ export const submissionSchema = z
       .array(
         z.object({
           block: z.string().min(1, 'Pick a building block.'),
-          extent: z.enum(['full', 'partial']),
           note: z.string().max(TEXT_MAX, `Use at most ${TEXT_MAX} characters.`),
           sources: sourceKeys.min(1, 'Pick the source that supports this claim.'),
         }),
@@ -110,7 +109,7 @@ export function emptyForm(): SubmissionForm {
     publisherNew: { name: '', homepage_url: '' },
     sources: [{ key: newSourceKey(), title: '', url: '' }],
     factSources: { publisher: [], description: [], license_model: [], status: [] },
-    claims: [{ block: '', extent: 'full', note: '', sources: [] }],
+    claims: [{ block: '', note: '', sources: [] }],
   }
 }
 
@@ -137,7 +136,6 @@ export function toPayload(form: SubmissionForm) {
     },
     claims: form.claims.map((claim) => ({
       block: claim.block,
-      extent: claim.extent,
       note: claim.note.trim() || null,
       sources: claim.sources,
     })),

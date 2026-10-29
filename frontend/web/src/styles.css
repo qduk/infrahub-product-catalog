@@ -595,6 +595,124 @@ button:disabled {
   color: var(--text-muted);
 }
 
+/* Framework requirements of a coverage claim (specs/008-naf-requirements) */
+.requirements {
+  margin-top: 0.5rem;
+}
+
+.requirements-status {
+  margin: 0.5rem 0 0.35rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.requirements-warning {
+  color: var(--warn);
+  font-weight: 600;
+}
+
+.requirement-list {
+  list-style: none;
+  margin: 0.35rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.requirement {
+  padding: 0.4rem 0.5rem;
+  border-radius: 8px;
+  background: rgba(5, 7, 13, 0.45);
+  border: 1px solid var(--border);
+}
+
+.requirement-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.level {
+  flex-shrink: 0;
+  padding: 0.05rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  border: 1px solid var(--border-strong);
+}
+
+.level-must {
+  color: var(--text);
+  border-color: var(--text-muted);
+}
+
+.requirement-summary {
+  flex: 1;
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.verdict {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.verdict-met {
+  color: var(--ok);
+}
+
+.verdict-partly_met {
+  color: var(--warn);
+}
+
+.verdict-not_met {
+  color: var(--error);
+}
+
+.verdict-not_shown {
+  color: var(--text-muted);
+}
+
+.requirement-note {
+  margin: 0.3rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.requirement-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.3rem;
+}
+
+.requirement-ref {
+  font-size: 0.72rem;
+  color: var(--accent);
+}
+
+.requirements-toggle {
+  margin-top: 0.4rem;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.requirements-toggle:hover {
+  text-decoration: underline;
+}
+
 .coverage-note {
   margin: 0.3rem 0;
   font-size: 0.85rem;

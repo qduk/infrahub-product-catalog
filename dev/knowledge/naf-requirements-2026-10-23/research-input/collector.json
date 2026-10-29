@@ -1,0 +1,302 @@
+{
+  "block": "Collector",
+  "requirements": [
+    {
+      "identifier": "collector-must-1",
+      "block": "Collector",
+      "level": "must",
+      "position": 18,
+      "summary": "Reads live network data, including SNMP, Syslog, flows and packets",
+      "statement": "It MUST includes capabilities for retrieving live data from the network using read interfaces\u2014similar to the Executor component\u2014but extends support to additional protocols to capture metrics and log, such as SNMP, Syslog, and other data such as flow-based telemetry (e.g., NetFlow, sFlow), packet capturing, traces, and others.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#collector"
+    },
+    {
+      "identifier": "collector-should-1",
+      "block": "Collector",
+      "level": "should",
+      "position": 19,
+      "summary": "Normalizes data across vendors and collection methods",
+      "statement": "The data values SHOULD be normalized from different vendors and method specifics.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#collector"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "Red Hat Ansible - Collector",
+      "product": "Red Hat Ansible",
+      "homepage_url": "https://www.ansible.com/",
+      "description": "An agentless automation tool that manages network devices from many vendors over SSH or HTTPS, using playbooks and vendor modules.",
+      "claim_note": "Gathers device facts when a playbook runs. It does not poll devices on its own.",
+      "claim_sources": [
+        "https://docs.ansible.com/ansible/latest/network/getting_started/first_playbook.html"
+      ],
+      "other_catalog_sources": [
+        "https://docs.ansible.com/ansible/latest/network/getting_started/index.html",
+        "https://github.com/ansible/ansible"
+      ]
+    },
+    {
+      "claim": "Stardust Systems SuzieQ - Collector",
+      "product": "Stardust Systems SuzieQ",
+      "homepage_url": "https://suzieq.readthedocs.io/en/latest/",
+      "description": "A multi-vendor network observability application that collects device state over SSH or REST API, stores it in Parquet files and answers questions about it through a CLI, GUI, REST API or Python.",
+      "claim_note": "The poller gathers data from devices over SSH or REST API.",
+      "claim_sources": [
+        "https://suzieq.readthedocs.io/en/latest/"
+      ],
+      "other_catalog_sources": [
+        "https://github.com/netenglabs/suzieq",
+        "https://suzieq.readthedocs.io/en/latest/"
+      ]
+    },
+    {
+      "claim": "SolarWinds Network Performance Monitor - Collector",
+      "product": "SolarWinds Network Performance Monitor",
+      "homepage_url": "https://www.solarwinds.com/network-performance-monitor",
+      "description": "Polls multi-vendor network devices to track availability, traffic and hardware health, and shows the results in dashboards, maps and threshold-based alerts.",
+      "claim_note": "Polling devices to read their performance state is the main purpose of the product.",
+      "claim_sources": [
+        "https://www.solarwinds.com/network-performance-monitor"
+      ],
+      "other_catalog_sources": [
+        "https://documentation.solarwinds.com/en/success_center/npm/content/npm_licensing_model.htm",
+        "https://www.solarwinds.com/network-performance-monitor"
+      ]
+    },
+    {
+      "claim": "Kentik Kentik - Collector",
+      "product": "Kentik Kentik",
+      "homepage_url": "https://www.kentik.com/",
+      "description": "Collects network telemetry such as flow, SNMP and streaming telemetry from data center, cloud and internet networks, stores it, and lets users query and visualize it.",
+      "claim_note": "Collecting flow, device and routing telemetry from the network is the main purpose of the product.",
+      "claim_sources": [
+        "https://www.kentik.com/product/"
+      ],
+      "other_catalog_sources": [
+        "https://www.kentik.com/pricing/",
+        "https://www.kentik.com/product/"
+      ]
+    },
+    {
+      "claim": "LibreNMS LibreNMS - Collector",
+      "product": "LibreNMS LibreNMS",
+      "homepage_url": "https://www.librenms.org/",
+      "description": "Network monitoring system that discovers devices with protocols such as SNMP, LLDP and CDP, collects their data, graphs it and sends alerts.",
+      "claim_note": "Discovering devices and reading their state over SNMP is the main purpose of the product.",
+      "claim_sources": [
+        "https://raw.githubusercontent.com/librenms/librenms/master/README.md"
+      ],
+      "other_catalog_sources": [
+        "https://raw.githubusercontent.com/librenms/librenms/master/LICENSE.txt",
+        "https://raw.githubusercontent.com/librenms/librenms/master/README.md",
+        "https://www.librenms.org/"
+      ]
+    },
+    {
+      "claim": "Zabbix Zabbix - Collector",
+      "product": "Zabbix Zabbix",
+      "homepage_url": "https://www.zabbix.com/",
+      "description": "Monitoring software that collects metrics from network devices, servers and applications, detects problems against thresholds, sends notifications and shows the data in dashboards and maps.",
+      "claim_note": "Collecting metrics from devices with agents and agent-less methods is a main purpose of the product.",
+      "claim_sources": [
+        "https://www.zabbix.com/features"
+      ],
+      "other_catalog_sources": [
+        "https://www.zabbix.com/features"
+      ]
+    },
+    {
+      "claim": "Nagios Enterprises Nagios Core - Collector",
+      "product": "Nagios Enterprises Nagios Core",
+      "homepage_url": "https://www.nagios.org/projects/nagios-core/",
+      "description": "Monitoring software that runs plugin-based checks against servers, network devices, websites and services, and alerts on problems, with a basic web interface.",
+      "claim_note": "The product reads device state through plugins as part of its checks, with network devices as one of several target types.",
+      "claim_sources": [
+        "https://www.nagios.org/projects/nagios-core/"
+      ],
+      "other_catalog_sources": [
+        "https://www.nagios.org/projects/nagios-core/"
+      ]
+    },
+    {
+      "claim": "Paessler PRTG Network Monitor - Collector",
+      "product": "Paessler PRTG Network Monitor",
+      "homepage_url": "https://www.paessler.com/prtg/prtg-network-monitor",
+      "description": "On-premises Windows software that monitors devices, systems and traffic through sensors such as SNMP, and provides maps, dashboards, alerts and reports.",
+      "claim_note": "Reading values from network devices through sensors is the main purpose of the product.",
+      "claim_sources": [
+        "https://www.paessler.com/prtg/prtg-network-monitor"
+      ],
+      "other_catalog_sources": [
+        "https://www.paessler.com/prtg/prtg-network-monitor"
+      ]
+    },
+    {
+      "claim": "Cisco pyATS - Collector",
+      "product": "Cisco pyATS",
+      "homepage_url": "https://developer.cisco.com/pyats/",
+      "description": "pyATS is a Python test and validation framework that records the operational state of network devices, compares it before and after changes, and runs reusable tests against the network.",
+      "claim_note": "pyATS reads and stores device operational state, but it does so to support testing rather than as a general state collection service.",
+      "claim_sources": [
+        "https://developer.cisco.com/pyats/"
+      ],
+      "other_catalog_sources": [
+        "https://developer.cisco.com/pyats/"
+      ]
+    },
+    {
+      "claim": "Network Unit Testing System NUTS - Collector",
+      "product": "Network Unit Testing System NUTS",
+      "homepage_url": "https://nuts.readthedocs.io/en/latest/",
+      "description": "NUTS is a pytest plugin that reads the desired network state from YAML test bundles, queries devices through Nornir and checks whether the results match.",
+      "claim_note": "NUTS reads device state only for the duration of a test run and only for the data its tests need.",
+      "claim_sources": [
+        "https://nuts.readthedocs.io/en/latest/"
+      ],
+      "other_catalog_sources": [
+        "https://github.com/network-unit-testing-system/nuts/blob/master/LICENSE",
+        "https://nuts.readthedocs.io/en/latest/"
+      ]
+    },
+    {
+      "claim": "Flock9 Netpicker - Collector",
+      "product": "Flock9 Netpicker",
+      "homepage_url": "https://netpicker.io/",
+      "description": "Netpicker backs up device configurations and runs Python and pytest tests for configuration, compliance and security against network devices, with optional automated remediation jobs.",
+      "claim_note": "Netpicker retrieves and stores device configurations, which is one part of the actual network state.",
+      "claim_sources": [
+        "https://netpicker.io/"
+      ],
+      "other_catalog_sources": [
+        "https://netpicker.io/",
+        "https://netpicker.io/about-us/",
+        "https://netpicker.io/pricing/"
+      ]
+    },
+    {
+      "claim": "Forward Networks Forward Enterprise - Collector",
+      "product": "Forward Networks Forward Enterprise",
+      "homepage_url": "https://www.forwardnetworks.com/forward-enterprise/",
+      "description": "Builds a model of a hybrid network from device and cloud state and configuration, so teams can search it, verify its behavior and test proposed changes before deployment.",
+      "claim_note": "The product reads state and configuration from network devices and cloud instances to build its model.",
+      "claim_sources": [
+        "https://www.forwardnetworks.com/forward-enterprise/"
+      ],
+      "other_catalog_sources": [
+        "https://www.forwardnetworks.com/",
+        "https://www.forwardnetworks.com/forward-enterprise/",
+        "https://www.forwardnetworks.com/pricing/"
+      ]
+    },
+    {
+      "claim": "IP Fabric IP Fabric - Collector",
+      "product": "IP Fabric IP Fabric",
+      "homepage_url": "https://ipfabric.io/",
+      "description": "Discovers on-premises and cloud network devices through CLI and API calls and builds a read-only, point-in-time model of the network for analysis, compliance checks and integration.",
+      "claim_note": "Reading the actual state of every device with read-only access is a core function of the product.",
+      "claim_sources": [
+        "https://ipfabric.io/"
+      ],
+      "other_catalog_sources": [
+        "https://ipfabric.io/"
+      ]
+    },
+    {
+      "claim": "Slurp'it Slurp'it - Collector",
+      "product": "Slurp'it Slurp'it",
+      "homepage_url": "https://slurpit.io/",
+      "description": "Discovers network devices, collects command output from them and turns it into structured inventory data that can be exported or synchronised to NetBox, Nautobot or Infrahub.",
+      "claim_note": "Reading data from network devices is the main purpose of the product.",
+      "claim_sources": [
+        "https://slurpit.io/"
+      ],
+      "other_catalog_sources": [
+        "https://slurpit.io/",
+        "https://slurpit.io/pricing/"
+      ]
+    },
+    {
+      "claim": "Infoblox NIOS - Collector",
+      "product": "Infoblox NIOS",
+      "homepage_url": "https://www.infoblox.com/products/nios/",
+      "description": "Provides DNS, DHCP and IP address management for on-premises and cloud networks, with optional discovery, reporting and integrations with automation tools.",
+      "claim_note": "Discovery is an add-on to the product, not its main purpose.",
+      "claim_sources": [
+        "https://www.infoblox.com/products/nios/"
+      ],
+      "other_catalog_sources": [
+        "https://www.infoblox.com/company/",
+        "https://www.infoblox.com/products/nios/"
+      ]
+    },
+    {
+      "claim": "Freshworks Device42 - Collector",
+      "product": "Freshworks Device42",
+      "homepage_url": "https://www.device42.com/",
+      "description": "Device42 discovers and maps IT infrastructure and application dependencies across data centers and cloud, and records the results in a CMDB with DCIM, IPAM and asset management features.",
+      "claim_note": "Discovery of the actual state is the main purpose, but it covers hybrid IT inventory and dependencies rather than the full operational state of the network.",
+      "claim_sources": [
+        "https://www.device42.com/company/"
+      ],
+      "other_catalog_sources": [
+        "https://www.device42.com/company/",
+        "https://www.device42.com/pricing/"
+      ]
+    },
+    {
+      "claim": "phpIPAM project phpIPAM - Collector",
+      "product": "phpIPAM project phpIPAM",
+      "homepage_url": "https://phpipam.net/",
+      "description": "phpIPAM is a web application for IP address management that tracks IPv4 and IPv6 subnets and addresses, VLANs, VRFs and devices, with subnet scanning and a REST API.",
+      "claim_note": "Scanning reads whether addresses are in use, which is a narrow side feature of retrieving actual network state.",
+      "claim_sources": [
+        "https://phpipam.net/documents/features/"
+      ],
+      "other_catalog_sources": [
+        "https://phpipam.net/",
+        "https://raw.githubusercontent.com/phpipam/phpipam/master/misc/gpl-3.0.txt"
+      ]
+    },
+    {
+      "claim": "System Initiative System Initiative - Collector",
+      "product": "System Initiative System Initiative",
+      "homepage_url": "https://github.com/systeminit/si",
+      "description": "Infrastructure automation platform in which AI agents discover infrastructure, propose changes and apply them, with human review and policy checks; the project is archived.",
+      "claim_note": "Discovering existing infrastructure reads its actual state, but this is one step of the workflow rather than the main purpose.",
+      "claim_sources": [
+        "https://github.com/systeminit/si"
+      ],
+      "other_catalog_sources": [
+        "https://github.com/systeminit/si",
+        "https://raw.githubusercontent.com/systeminit/si/main/LICENSE"
+      ]
+    },
+    {
+      "claim": "AlgoSec Horizon Security Analyzer - Collector",
+      "product": "AlgoSec Horizon Security Analyzer",
+      "homepage_url": "https://www.algosec.com/products/firewall-analyzer",
+      "description": "Firewall policy analysis tool that maps hybrid network security topology, analyzes rules for risk and compliance, and recommends rule cleanup.",
+      "claim_note": "The product reads configuration from firewalls and related devices, which covers only the security-policy part of network state.",
+      "claim_sources": [
+        "https://www.algosec.com/products/firewall-analyzer"
+      ],
+      "other_catalog_sources": [
+        "https://www.algosec.com/products/firewall-analyzer"
+      ]
+    },
+    {
+      "claim": "FireMon Security Manager - Collector",
+      "product": "FireMon Security Manager",
+      "homepage_url": "https://www.firemon.com/products/security-manager",
+      "description": "Network security policy management product that collects and normalizes firewall and cloud security configurations into one policy database and detects rule changes.",
+      "claim_note": "The product reads the actual configuration of firewalls and cloud security controls, which is only the security-policy part of network state.",
+      "claim_sources": [
+        "https://www.firemon.com/products/security-manager"
+      ],
+      "other_catalog_sources": [
+        "https://www.firemon.com/pricing",
+        "https://www.firemon.com/products/security-manager"
+      ]
+    }
+  ]
+}

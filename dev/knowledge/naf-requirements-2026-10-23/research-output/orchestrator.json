@@ -1,0 +1,807 @@
+[
+  {
+    "claim": "Network to Code Nautobot - Orchestrator",
+    "requirement": "orchestrator-must-1",
+    "verdict": "partly_met",
+    "note": "Jobs run custom Python code that creates, changes and validates Nautobot data and can import data from external sources. The documentation does not describe coordinating processes across other building blocks into end-to-end workflows.",
+    "sources": [
+      {
+        "title": "Nautobot Jobs (user guide)",
+        "url": "https://docs.nautobot.com/projects/core/en/stable/user-guide/platform-functionality/jobs/"
+      }
+    ]
+  },
+  {
+    "claim": "Network to Code Nautobot - Orchestrator",
+    "requirement": "orchestrator-should-1",
+    "verdict": "partly_met",
+    "note": "Jobs run from the web interface, the REST API, the command line, on a schedule, and from Job Hooks that run when Nautobot objects change. Events from outside Nautobot are not described as triggers.",
+    "sources": [
+      {
+        "title": "Nautobot Jobs (user guide)",
+        "url": "https://docs.nautobot.com/projects/core/en/stable/user-guide/platform-functionality/jobs/"
+      }
+    ]
+  },
+  {
+    "claim": "Network to Code Nautobot - Orchestrator",
+    "requirement": "orchestrator-should-2",
+    "verdict": "partly_met",
+    "note": "A job can define an on_failure() method that runs when the job raises an unhandled exception, where the job author can write compensating logic. The automatic rollback of database changes on failure was removed in Nautobot 2.0.",
+    "sources": [
+      {
+        "title": "Nautobot Job Structure",
+        "url": "https://docs.nautobot.com/projects/core/en/stable/development/jobs/job-structure/"
+      }
+    ]
+  },
+  {
+    "claim": "Network to Code Nautobot - Orchestrator",
+    "requirement": "orchestrator-should-3",
+    "verdict": "partly_met",
+    "note": "A job can declare a DryRunVar so that the user can run it in dry-run mode; what the job does in that mode is written by the job author.",
+    "sources": [
+      {
+        "title": "Nautobot Job Structure",
+        "url": "https://docs.nautobot.com/projects/core/en/stable/development/jobs/job-structure/"
+      }
+    ]
+  },
+  {
+    "claim": "Network to Code Nautobot - Orchestrator",
+    "requirement": "orchestrator-should-4",
+    "verdict": "met",
+    "note": "The documentation states that jobs can be scheduled to run in the future or regularly.",
+    "sources": [
+      {
+        "title": "Nautobot Jobs (user guide)",
+        "url": "https://docs.nautobot.com/projects/core/en/stable/user-guide/platform-functionality/jobs/"
+      }
+    ]
+  },
+  {
+    "claim": "Network to Code Nautobot - Orchestrator",
+    "requirement": "orchestrator-should-5",
+    "verdict": "met",
+    "note": "Each run produces a JobResult that records the outcome, and log messages from the job appear in the JobResult view.",
+    "sources": [
+      {
+        "title": "Nautobot Jobs (user guide)",
+        "url": "https://docs.nautobot.com/projects/core/en/stable/user-guide/platform-functionality/jobs/"
+      },
+      {
+        "title": "Nautobot Job Structure",
+        "url": "https://docs.nautobot.com/projects/core/en/stable/development/jobs/job-structure/"
+      }
+    ]
+  },
+  {
+    "claim": "Network to Code Nautobot - Orchestrator",
+    "requirement": "orchestrator-may-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Itential Platform - Orchestrator",
+    "requirement": "orchestrator-must-1",
+    "verdict": "met",
+    "note": "The vendor states that users design and run low-code automations that orchestrate end-to-end network infrastructure, and workflows can call child workflows.",
+    "sources": [
+      {
+        "title": "Itential Documentation",
+        "url": "https://docs.itential.com/"
+      },
+      {
+        "title": "Itential Workflow best practices",
+        "url": "https://docs.itential.com/docs/workflow-best-practices"
+      }
+    ]
+  },
+  {
+    "claim": "Itential Platform - Orchestrator",
+    "requirement": "orchestrator-should-1",
+    "verdict": "met",
+    "note": "Operations Manager runs an automation from four trigger types: manual, an API endpoint called with HTTP POST, a schedule, and a system event.",
+    "sources": [
+      {
+        "title": "Itential Operations Manager: Triggers",
+        "url": "https://docs.itential.com/docs/triggers-ops-manager-itential-platform"
+      }
+    ]
+  },
+  {
+    "claim": "Itential Platform - Orchestrator",
+    "requirement": "orchestrator-should-2",
+    "verdict": "met",
+    "note": "Workflows have error and failure transitions to other tasks and revert transitions that move execution back to an earlier task; the vendor recommends an error transition from every automated task.",
+    "sources": [
+      {
+        "title": "Itential Workflow best practices",
+        "url": "https://docs.itential.com/docs/workflow-best-practices"
+      }
+    ]
+  },
+  {
+    "claim": "Itential Platform - Orchestrator",
+    "requirement": "orchestrator-should-3",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Itential Platform - Orchestrator",
+    "requirement": "orchestrator-should-4",
+    "verdict": "met",
+    "note": "A schedule trigger runs the automation at a set future date and time, with an optional repeating frequency.",
+    "sources": [
+      {
+        "title": "Itential Operations Manager: Triggers",
+        "url": "https://docs.itential.com/docs/triggers-ops-manager-itential-platform"
+      }
+    ]
+  },
+  {
+    "claim": "Itential Platform - Orchestrator",
+    "requirement": "orchestrator-should-5",
+    "verdict": "met",
+    "note": "Operations Manager lists all jobs with their status, and each job has a Job Details view with the workflow diagram, task details and an error history.",
+    "sources": [
+      {
+        "title": "Itential Jobs and metrics",
+        "url": "https://docs.itential.com/itential-platform/operations-manager/jobs-and-job-metrics"
+      }
+    ]
+  },
+  {
+    "claim": "Itential Platform - Orchestrator",
+    "requirement": "orchestrator-may-1",
+    "verdict": "partly_met",
+    "note": "An event trigger validates the event payload against a JSON Schema filter before it runs the automation. Correlating several events is not described.",
+    "sources": [
+      {
+        "title": "Itential Operations Manager: Triggers",
+        "url": "https://docs.itential.com/docs/triggers-ops-manager-itential-platform"
+      }
+    ]
+  },
+  {
+    "claim": "IBM Pliant - Orchestrator",
+    "requirement": "orchestrator-must-1",
+    "verdict": "met",
+    "note": "IBM states that Pliant automates, integrates and connects platforms, services and applications through integrations with products that have an API or CLI, and Datadog documents Pliant workflows that perform infrastructure automation actions.",
+    "sources": [
+      {
+        "title": "IBM Acquires Pliant to Further Enhance Network and IT Automation Capabilities",
+        "url": "https://newsroom.ibm.com/Blog-IBM-Acquires-Pliant-to-Further-Enhance-Network-IT-Automation-Capabilities"
+      },
+      {
+        "title": "Datadog integrations: Pliant",
+        "url": "https://docs.datadoghq.com/integrations/pliant/"
+      }
+    ]
+  },
+  {
+    "claim": "IBM Pliant - Orchestrator",
+    "requirement": "orchestrator-should-1",
+    "verdict": "partly_met",
+    "note": "Datadog documents a webhook from a Datadog alert that starts a Pliant workflow with the alert data as input. Scheduled runs and other event sources are not described in the opened pages.",
+    "sources": [
+      {
+        "title": "Datadog integrations: Pliant",
+        "url": "https://docs.datadoghq.com/integrations/pliant/"
+      }
+    ]
+  },
+  {
+    "claim": "IBM Pliant - Orchestrator",
+    "requirement": "orchestrator-should-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "IBM Pliant - Orchestrator",
+    "requirement": "orchestrator-should-3",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "IBM Pliant - Orchestrator",
+    "requirement": "orchestrator-should-4",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "IBM Pliant - Orchestrator",
+    "requirement": "orchestrator-should-5",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "IBM Pliant - Orchestrator",
+    "requirement": "orchestrator-may-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Spacelift Spacelift - Orchestrator",
+    "requirement": "orchestrator-must-1",
+    "verdict": "partly_met",
+    "note": "Spacelift runs infrastructure-as-code runs and coordinates runs across dependent stacks, and trigger policies decide which stacks run after a run finishes. Its scope is infrastructure-as-code and configuration tools rather than all building blocks.",
+    "sources": [
+      {
+        "title": "Spacelift: Run",
+        "url": "https://docs.spacelift.io/concepts/run/"
+      },
+      {
+        "title": "Spacelift: Trigger policy",
+        "url": "https://docs.spacelift.io/concepts/policy/trigger-policy"
+      }
+    ]
+  },
+  {
+    "claim": "Spacelift Spacelift - Orchestrator",
+    "requirement": "orchestrator-should-1",
+    "verdict": "partly_met",
+    "note": "Runs start when code changes reach the repository, through the API, manually, or from a schedule. Schedules are available only on the Business plan and above.",
+    "sources": [
+      {
+        "title": "Spacelift: Run",
+        "url": "https://docs.spacelift.io/concepts/run/"
+      },
+      {
+        "title": "Spacelift: Scheduling",
+        "url": "https://docs.spacelift.io/concepts/stack/scheduling"
+      }
+    ]
+  },
+  {
+    "claim": "Spacelift Spacelift - Orchestrator",
+    "requirement": "orchestrator-should-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Spacelift Spacelift - Orchestrator",
+    "requirement": "orchestrator-should-3",
+    "verdict": "met",
+    "note": "A proposed run serves as a preview of the changes before a tracked run deploys them.",
+    "sources": [
+      {
+        "title": "Spacelift: Run",
+        "url": "https://docs.spacelift.io/concepts/run/"
+      }
+    ]
+  },
+  {
+    "claim": "Spacelift Spacelift - Orchestrator",
+    "requirement": "orchestrator-should-4",
+    "verdict": "partly_met",
+    "note": "Tracked runs and tasks can be scheduled once or on a recurring cron rule, but only on the Business plan and above and with private workers.",
+    "sources": [
+      {
+        "title": "Spacelift: Scheduling",
+        "url": "https://docs.spacelift.io/concepts/stack/scheduling"
+      }
+    ]
+  },
+  {
+    "claim": "Spacelift Spacelift - Orchestrator",
+    "requirement": "orchestrator-should-5",
+    "verdict": "met",
+    "note": "Run logs are kept for 60 days by default, extendable to up to 730 days, and runs move through recorded states.",
+    "sources": [
+      {
+        "title": "Spacelift: Run",
+        "url": "https://docs.spacelift.io/concepts/run/"
+      }
+    ]
+  },
+  {
+    "claim": "Spacelift Spacelift - Orchestrator",
+    "requirement": "orchestrator-may-1",
+    "verdict": "partly_met",
+    "note": "Trigger policies receive the finished run, its stack and the whole workflow of runs, and decide which tracked runs to start, for example only when both predecessor stacks finish. Events from outside Spacelift are not covered.",
+    "sources": [
+      {
+        "title": "Spacelift: Trigger policy",
+        "url": "https://docs.spacelift.io/concepts/policy/trigger-policy"
+      }
+    ]
+  },
+  {
+    "claim": "The Apache Software Foundation Apache Airflow - Orchestrator",
+    "requirement": "orchestrator-must-1",
+    "verdict": "met",
+    "note": "Airflow workflows are DAGs of tasks with declared dependencies, written in Python, so a DAG can call any system; the documentation lists microservices orchestration as a use case.",
+    "sources": [
+      {
+        "title": "Airflow: Dags",
+        "url": "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html"
+      },
+      {
+        "title": "Airflow: Event-driven scheduling",
+        "url": "https://airflow.apache.org/docs/apache-airflow/stable/authoring-and-scheduling/event-scheduling.html"
+      }
+    ]
+  },
+  {
+    "claim": "The Apache Software Foundation Apache Airflow - Orchestrator",
+    "requirement": "orchestrator-should-1",
+    "verdict": "met",
+    "note": "DAGs run on a schedule, manually or through the REST API and CLI, and from external events such as message queue messages through AssetWatcher.",
+    "sources": [
+      {
+        "title": "Airflow: Dags",
+        "url": "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html"
+      },
+      {
+        "title": "Airflow: Dag Runs",
+        "url": "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dag-run.html"
+      },
+      {
+        "title": "Airflow: Event-driven scheduling",
+        "url": "https://airflow.apache.org/docs/apache-airflow/stable/authoring-and-scheduling/event-scheduling.html"
+      }
+    ]
+  },
+  {
+    "claim": "The Apache Software Foundation Apache Airflow - Orchestrator",
+    "requirement": "orchestrator-should-2",
+    "verdict": "met",
+    "note": "Trigger rules such as one_failed and all_failed let a task run when upstream tasks fail, which allows compensating tasks.",
+    "sources": [
+      {
+        "title": "Airflow: Dags",
+        "url": "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html"
+      }
+    ]
+  },
+  {
+    "claim": "The Apache Software Foundation Apache Airflow - Orchestrator",
+    "requirement": "orchestrator-should-3",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "The Apache Software Foundation Apache Airflow - Orchestrator",
+    "requirement": "orchestrator-should-4",
+    "verdict": "met",
+    "note": "DAGs run on cron expressions or presets such as @daily and @once.",
+    "sources": [
+      {
+        "title": "Airflow: Dags",
+        "url": "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html"
+      }
+    ]
+  },
+  {
+    "claim": "The Apache Software Foundation Apache Airflow - Orchestrator",
+    "requirement": "orchestrator-should-5",
+    "verdict": "met",
+    "note": "The Grid view shows task instance history and the logs of each attempt, including retried or cleared tasks.",
+    "sources": [
+      {
+        "title": "Airflow: Dag Runs",
+        "url": "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dag-run.html"
+      }
+    ]
+  },
+  {
+    "claim": "The Apache Software Foundation Apache Airflow - Orchestrator",
+    "requirement": "orchestrator-may-1",
+    "verdict": "partly_met",
+    "note": "A DAG can be triggered by AND/OR combinations of several asset updates and can read the triggering asset events. Inferring relationships between events is not described.",
+    "sources": [
+      {
+        "title": "Airflow: Asset-aware scheduling",
+        "url": "https://airflow.apache.org/docs/apache-airflow/stable/authoring-and-scheduling/asset-scheduling.html"
+      }
+    ]
+  },
+  {
+    "claim": "Windmill Labs Windmill - Orchestrator",
+    "requirement": "orchestrator-must-1",
+    "verdict": "met",
+    "note": "Scripts can be chained and composed into flows, and scripts can be written in Python, TypeScript, Go, Bash and other languages.",
+    "sources": [
+      {
+        "title": "Windmill README",
+        "url": "https://raw.githubusercontent.com/windmill-labs/windmill/main/README.md"
+      }
+    ]
+  },
+  {
+    "claim": "Windmill Labs Windmill - Orchestrator",
+    "requirement": "orchestrator-should-1",
+    "verdict": "met",
+    "note": "Flows run from schedules, webhooks, HTTP routes, Kafka, WebSockets and email, and webhooks have synchronous and asynchronous endpoints.",
+    "sources": [
+      {
+        "title": "Windmill README",
+        "url": "https://raw.githubusercontent.com/windmill-labs/windmill/main/README.md"
+      },
+      {
+        "title": "Windmill: Webhooks",
+        "url": "https://www.windmill.dev/docs/core_concepts/webhooks"
+      }
+    ]
+  },
+  {
+    "claim": "Windmill Labs Windmill - Orchestrator",
+    "requirement": "orchestrator-should-2",
+    "verdict": "met",
+    "note": "A flow can have an error handler step that runs when a step fails and receives the failed step's error, and it can mark the flow as recovered.",
+    "sources": [
+      {
+        "title": "Windmill: Error handler",
+        "url": "https://www.windmill.dev/docs/flows/flow_error_handler"
+      }
+    ]
+  },
+  {
+    "claim": "Windmill Labs Windmill - Orchestrator",
+    "requirement": "orchestrator-should-3",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Windmill Labs Windmill - Orchestrator",
+    "requirement": "orchestrator-should-4",
+    "verdict": "met",
+    "note": "Schedules use cron expressions, and a script or flow can be scheduled to run once at a given time.",
+    "sources": [
+      {
+        "title": "Windmill: Schedules",
+        "url": "https://www.windmill.dev/docs/core_concepts/scheduling"
+      }
+    ]
+  },
+  {
+    "claim": "Windmill Labs Windmill - Orchestrator",
+    "requirement": "orchestrator-should-5",
+    "verdict": "met",
+    "note": "The Runs page shows past and future runs, with status, inputs, logs, the flow graph with each step's details and the trigger source.",
+    "sources": [
+      {
+        "title": "Windmill: Monitor past and future runs",
+        "url": "https://www.windmill.dev/docs/core_concepts/monitor_past_and_future_runs"
+      }
+    ]
+  },
+  {
+    "claim": "Windmill Labs Windmill - Orchestrator",
+    "requirement": "orchestrator-may-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Temporal Technologies Temporal - Orchestrator",
+    "requirement": "orchestrator-must-1",
+    "verdict": "met",
+    "note": "The Temporal server runs units of application logic called Workflows, handles intermittent failures and retries failed operations.",
+    "sources": [
+      {
+        "title": "Temporal README",
+        "url": "https://raw.githubusercontent.com/temporalio/temporal/main/README.md"
+      }
+    ]
+  },
+  {
+    "claim": "Temporal Technologies Temporal - Orchestrator",
+    "requirement": "orchestrator-should-1",
+    "verdict": "met",
+    "note": "Running workflows receive asynchronous Signals and synchronous Updates, Signal-With-Start starts a workflow from a message, and Schedules start workflows at set times.",
+    "sources": [
+      {
+        "title": "Temporal: Sending messages",
+        "url": "https://docs.temporal.io/sending-messages"
+      },
+      {
+        "title": "Temporal: Schedule",
+        "url": "https://docs.temporal.io/schedule"
+      }
+    ]
+  },
+  {
+    "claim": "Temporal Technologies Temporal - Orchestrator",
+    "requirement": "orchestrator-should-2",
+    "verdict": "met",
+    "note": "The documented Saga pattern runs compensation steps in reverse order to undo completed steps when a later step fails.",
+    "sources": [
+      {
+        "title": "Temporal: Saga pattern",
+        "url": "https://docs.temporal.io/design-patterns/saga-pattern"
+      }
+    ]
+  },
+  {
+    "claim": "Temporal Technologies Temporal - Orchestrator",
+    "requirement": "orchestrator-should-3",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Temporal Technologies Temporal - Orchestrator",
+    "requirement": "orchestrator-should-4",
+    "verdict": "met",
+    "note": "Schedules start workflows on an interval or a calendar expression, and the Start Delay option starts a workflow at a one-time future point.",
+    "sources": [
+      {
+        "title": "Temporal: Schedule",
+        "url": "https://docs.temporal.io/schedule"
+      }
+    ]
+  },
+  {
+    "claim": "Temporal Technologies Temporal - Orchestrator",
+    "requirement": "orchestrator-should-5",
+    "verdict": "met",
+    "note": "Each workflow execution has an append-only Event History, and the Event History records who started a workflow or sent a Signal.",
+    "sources": [
+      {
+        "title": "Temporal: Events and Event History",
+        "url": "https://docs.temporal.io/workflow-execution/event"
+      }
+    ]
+  },
+  {
+    "claim": "Temporal Technologies Temporal - Orchestrator",
+    "requirement": "orchestrator-may-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Prefect Technologies Dagster - Orchestrator",
+    "requirement": "orchestrator-must-1",
+    "verdict": "met",
+    "note": "Sensors take action in response to events inside Dagster or in external systems, such as starting a run, and schedules run jobs at set intervals.",
+    "sources": [
+      {
+        "title": "Dagster: Sensors",
+        "url": "https://dagster.io/docs/guides/automate/sensors"
+      },
+      {
+        "title": "Dagster: Schedules",
+        "url": "https://dagster.io/docs/guides/automate/schedules"
+      }
+    ]
+  },
+  {
+    "claim": "Prefect Technologies Dagster - Orchestrator",
+    "requirement": "orchestrator-should-1",
+    "verdict": "partly_met",
+    "note": "Sensors check for events at regular intervals and schedules start runs. Receiving events synchronously is not described in the opened pages.",
+    "sources": [
+      {
+        "title": "Dagster: Sensors",
+        "url": "https://dagster.io/docs/guides/automate/sensors"
+      },
+      {
+        "title": "Dagster: Schedules",
+        "url": "https://dagster.io/docs/guides/automate/schedules"
+      }
+    ]
+  },
+  {
+    "claim": "Prefect Technologies Dagster - Orchestrator",
+    "requirement": "orchestrator-should-2",
+    "verdict": "met",
+    "note": "A failure hook runs when an op fails, receives the exception and can be applied to all ops in a job or to specific ops.",
+    "sources": [
+      {
+        "title": "Dagster: Op hooks",
+        "url": "https://dagster.io/docs/guides/build/ops/op-hooks"
+      }
+    ]
+  },
+  {
+    "claim": "Prefect Technologies Dagster - Orchestrator",
+    "requirement": "orchestrator-should-3",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Prefect Technologies Dagster - Orchestrator",
+    "requirement": "orchestrator-should-4",
+    "verdict": "partly_met",
+    "note": "Schedules run jobs at intervals defined by presets or cron expressions. A one-time run at a future time is not described.",
+    "sources": [
+      {
+        "title": "Dagster: Schedules",
+        "url": "https://dagster.io/docs/guides/automate/schedules"
+      }
+    ]
+  },
+  {
+    "claim": "Prefect Technologies Dagster - Orchestrator",
+    "requirement": "orchestrator-should-5",
+    "verdict": "met",
+    "note": "Dagster captures all execution events and user log messages, and they appear on the Run details page in the UI, where they can be filtered and downloaded.",
+    "sources": [
+      {
+        "title": "Dagster: Logging",
+        "url": "https://dagster.io/docs/guides/monitor/logging"
+      }
+    ]
+  },
+  {
+    "claim": "Prefect Technologies Dagster - Orchestrator",
+    "requirement": "orchestrator-may-1",
+    "verdict": "partly_met",
+    "note": "Sensors can keep state between evaluations with cursors and read data from earlier runs, so custom code can decide whether to start a run. Built-in event correlation is not described.",
+    "sources": [
+      {
+        "title": "Dagster: Sensors",
+        "url": "https://dagster.io/docs/guides/automate/sensors"
+      }
+    ]
+  },
+  {
+    "claim": "Prefect Technologies Prefect - Orchestrator",
+    "requirement": "orchestrator-must-1",
+    "verdict": "met",
+    "note": "Prefect is an open-source orchestration engine that runs Python functions as workflows, triggered by schedules, external events or the API.",
+    "sources": [
+      {
+        "title": "Prefect: Get started",
+        "url": "https://docs.prefect.io/v3/get-started"
+      }
+    ]
+  },
+  {
+    "claim": "Prefect Technologies Prefect - Orchestrator",
+    "requirement": "orchestrator-should-1",
+    "verdict": "met",
+    "note": "Flows run from schedules, from external events through event triggers, and through the API.",
+    "sources": [
+      {
+        "title": "Prefect: Get started",
+        "url": "https://docs.prefect.io/v3/get-started"
+      },
+      {
+        "title": "Prefect: Event triggers",
+        "url": "https://docs.prefect.io/v3/concepts/event-triggers"
+      }
+    ]
+  },
+  {
+    "claim": "Prefect Technologies Prefect - Orchestrator",
+    "requirement": "orchestrator-should-2",
+    "verdict": "met",
+    "note": "Tasks in a transaction can have on_rollback hooks that run when the transaction fails, including when a later task in the transaction fails.",
+    "sources": [
+      {
+        "title": "Prefect: Transactions",
+        "url": "https://docs.prefect.io/v3/advanced/transactions"
+      }
+    ]
+  },
+  {
+    "claim": "Prefect Technologies Prefect - Orchestrator",
+    "requirement": "orchestrator-should-3",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Prefect Technologies Prefect - Orchestrator",
+    "requirement": "orchestrator-should-4",
+    "verdict": "partly_met",
+    "note": "Deployments run on cron, interval and RRule schedules. Scheduling a single run at a future time is not described on the opened page.",
+    "sources": [
+      {
+        "title": "Prefect: Schedules",
+        "url": "https://docs.prefect.io/v3/concepts/schedules"
+      }
+    ]
+  },
+  {
+    "claim": "Prefect Technologies Prefect - Orchestrator",
+    "requirement": "orchestrator-should-5",
+    "verdict": "met",
+    "note": "Logs are associated with their flow run or task run, stored in the Prefect backend, shown in the UI and retrievable for past runs with the CLI.",
+    "sources": [
+      {
+        "title": "Prefect: Logging",
+        "url": "https://docs.prefect.io/v3/develop/logging"
+      }
+    ]
+  },
+  {
+    "claim": "Prefect Technologies Prefect - Orchestrator",
+    "requirement": "orchestrator-may-1",
+    "verdict": "met",
+    "note": "Compound and sequence triggers combine several kinds of events, and proactive triggers fire when expected events do not occur, in both Prefect Open Source and Prefect Cloud.",
+    "sources": [
+      {
+        "title": "Prefect: Event triggers",
+        "url": "https://docs.prefect.io/v3/concepts/event-triggers"
+      }
+    ]
+  },
+  {
+    "claim": "Tufin Orchestration Suite - Orchestrator",
+    "requirement": "orchestrator-must-1",
+    "verdict": "partly_met",
+    "note": "SecureChange runs configurable workflows for security policy change requests, from request through design, risk check, approval, provisioning and verification. Its scope is security policy changes only.",
+    "sources": [
+      {
+        "title": "Tufin Knowledge Center: SecureChange Overview",
+        "url": "https://forum.tufin.com/support/kc/latest/Content/Suite/856.htm"
+      },
+      {
+        "title": "Tufin SecureChange+",
+        "url": "https://www.tufin.com/tufin-orchestration-suite/securechange"
+      }
+    ]
+  },
+  {
+    "claim": "Tufin Orchestration Suite - Orchestrator",
+    "requirement": "orchestrator-should-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Tufin Orchestration Suite - Orchestrator",
+    "requirement": "orchestrator-should-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Tufin Orchestration Suite - Orchestrator",
+    "requirement": "orchestrator-should-3",
+    "verdict": "partly_met",
+    "note": "SecureChange checks a change request against the security policy and risk data and designs vendor-specific changes before they are provisioned. A dry run of the whole workflow is not described.",
+    "sources": [
+      {
+        "title": "Tufin SecureChange+",
+        "url": "https://www.tufin.com/tufin-orchestration-suite/securechange"
+      },
+      {
+        "title": "Tufin Knowledge Center: SecureChange Overview",
+        "url": "https://forum.tufin.com/support/kc/latest/Content/Suite/856.htm"
+      }
+    ]
+  },
+  {
+    "claim": "Tufin Orchestration Suite - Orchestrator",
+    "requirement": "orchestrator-should-4",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Tufin Orchestration Suite - Orchestrator",
+    "requirement": "orchestrator-should-5",
+    "verdict": "met",
+    "note": "The vendor states that SecureChange keeps ticket and process documentation for each change throughout its lifecycle for audits.",
+    "sources": [
+      {
+        "title": "Tufin Knowledge Center: SecureChange Overview",
+        "url": "https://forum.tufin.com/support/kc/latest/Content/Suite/856.htm"
+      }
+    ]
+  },
+  {
+    "claim": "Tufin Orchestration Suite - Orchestrator",
+    "requirement": "orchestrator-may-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  }
+]

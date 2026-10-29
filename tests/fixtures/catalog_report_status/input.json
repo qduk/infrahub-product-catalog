@@ -67,9 +67,6 @@
                 "node": {
                   "id": "claim-1",
                   "__typename": "CatalogCoverageClaim",
-                  "extent": {
-                    "value": "full"
-                  },
                   "building_block": {
                     "node": {
                       "id": "block-1",
@@ -77,10 +74,72 @@
                         "value": "Intent"
                       }
                     }
+                  },
+                  "verdicts": {
+                    "edges": [
+                      {
+                        "node": {
+                          "verdict": {
+                            "value": "met"
+                          },
+                          "requirement": {
+                            "node": {
+                              "identifier": {
+                                "value": "intent-must-1"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
                   }
                 }
               }
             ]
+          }
+        }
+      }
+    ]
+  },
+  "CatalogRequirement": {
+    "edges": [
+      {
+        "node": {
+          "id": "req-intent",
+          "__typename": "CatalogRequirement",
+          "identifier": {
+            "value": "intent-must-1"
+          },
+          "level": {
+            "value": "must"
+          },
+          "building_block": {
+            "node": {
+              "id": "block-intent",
+              "name": {
+                "value": "Intent"
+              }
+            }
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "req-executor",
+          "__typename": "CatalogRequirement",
+          "identifier": {
+            "value": "executor-must-1"
+          },
+          "level": {
+            "value": "must"
+          },
+          "building_block": {
+            "node": {
+              "id": "block-executor",
+              "name": {
+                "value": "Executor"
+              }
+            }
           }
         }
       }

@@ -1,0 +1,576 @@
+[
+  {
+    "claim": "AlgoSec Horizon Security Analyzer - Collector",
+    "product": "AlgoSec Horizon Security Analyzer",
+    "block": "Collector",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "AlgoSec Horizon Security Analyzer - Observability",
+    "product": "AlgoSec Horizon Security Analyzer",
+    "block": "Observability",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Executor",
+    "product": "Cisco Crosswork Network Services Orchestrator (NSO)",
+    "block": "Executor",
+    "before": "full",
+    "after": "full"
+  },
+  {
+    "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Intent",
+    "product": "Cisco Crosswork Network Services Orchestrator (NSO)",
+    "block": "Intent",
+    "before": "full",
+    "after": "partial"
+  },
+  {
+    "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Observability",
+    "product": "Cisco Crosswork Network Services Orchestrator (NSO)",
+    "block": "Observability",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "Cisco pyATS - Collector",
+    "product": "Cisco pyATS",
+    "block": "Collector",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "Cisco pyATS - Observability",
+    "product": "Cisco pyATS",
+    "block": "Observability",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "Cloud Native Computing Foundation (CNCF) Backstage - Presentation",
+    "product": "Cloud Native Computing Foundation (CNCF) Backstage",
+    "block": "Presentation",
+    "before": "partial",
+    "after": "full"
+  },
+  {
+    "claim": "ConfigHub ConfigHub - Intent",
+    "product": "ConfigHub ConfigHub",
+    "block": "Intent",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "EfficientIP SOLIDserver DDI - Intent",
+    "product": "EfficientIP SOLIDserver DDI",
+    "block": "Intent",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "FireMon Security Manager - Collector",
+    "product": "FireMon Security Manager",
+    "block": "Collector",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "FireMon Security Manager - Observability",
+    "product": "FireMon Security Manager",
+    "block": "Observability",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "Flock9 Netpicker - Collector",
+    "product": "Flock9 Netpicker",
+    "block": "Collector",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "Flock9 Netpicker - Executor",
+    "product": "Flock9 Netpicker",
+    "block": "Executor",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "Flock9 Netpicker - Observability",
+    "product": "Flock9 Netpicker",
+    "block": "Observability",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "Forward Networks Forward Enterprise - Collector",
+    "product": "Forward Networks Forward Enterprise",
+    "block": "Collector",
+    "before": "full",
+    "after": "full"
+  },
+  {
+    "claim": "Forward Networks Forward Enterprise - Observability",
+    "product": "Forward Networks Forward Enterprise",
+    "block": "Observability",
+    "before": "full",
+    "after": "full"
+  },
+  {
+    "claim": "Freshworks Device42 - Collector",
+    "product": "Freshworks Device42",
+    "block": "Collector",
+    "before": "partial",
+    "after": "full"
+  },
+  {
+    "claim": "Gluware Gluware - Executor",
+    "product": "Gluware Gluware",
+    "block": "Executor",
+    "before": "full",
+    "after": "partial"
+  },
+  {
+    "claim": "Gluware Gluware - Intent",
+    "product": "Gluware Gluware",
+    "block": "Intent",
+    "before": "full",
+    "after": "partial"
+  },
+  {
+    "claim": "Gluware Gluware - Observability",
+    "product": "Gluware Gluware",
+    "block": "Observability",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "HashiCorp Terraform - Executor",
+    "product": "HashiCorp Terraform",
+    "block": "Executor",
+    "before": "full",
+    "after": "partial"
+  },
+  {
+    "claim": "HashiCorp Terraform - Intent",
+    "product": "HashiCorp Terraform",
+    "block": "Intent",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "IBM Pliant - Executor",
+    "product": "IBM Pliant",
+    "block": "Executor",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "IBM Pliant - Orchestrator",
+    "product": "IBM Pliant",
+    "block": "Orchestrator",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "IP Fabric IP Fabric - Collector",
+    "product": "IP Fabric IP Fabric",
+    "block": "Collector",
+    "before": "full",
+    "after": "partial"
+  },
+  {
+    "claim": "IP Fabric IP Fabric - Observability",
+    "product": "IP Fabric IP Fabric",
+    "block": "Observability",
+    "before": "full",
+    "after": "partial"
+  },
+  {
+    "claim": "Itential Platform - Executor",
+    "product": "Itential Platform",
+    "block": "Executor",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "Itential Platform - Observability",
+    "product": "Itential Platform",
+    "block": "Observability",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "Itential Platform - Orchestrator",
+    "product": "Itential Platform",
+    "block": "Orchestrator",
+    "before": "full",
+    "after": "full"
+  },
+  {
+    "claim": "Juniper Networks Apstra Data Center Director - Executor",
+    "product": "Juniper Networks Apstra Data Center Director",
+    "block": "Executor",
+    "before": "full",
+    "after": "partial"
+  },
+  {
+    "claim": "Juniper Networks Apstra Data Center Director - Intent",
+    "product": "Juniper Networks Apstra Data Center Director",
+    "block": "Intent",
+    "before": "full",
+    "after": "partial"
+  },
+  {
+    "claim": "Juniper Networks Apstra Data Center Director - Observability",
+    "product": "Juniper Networks Apstra Data Center Director",
+    "block": "Observability",
+    "before": "partial",
+    "after": "full"
+  },
+  {
+    "claim": "Kentik Kentik - Collector",
+    "product": "Kentik Kentik",
+    "block": "Collector",
+    "before": "full",
+    "after": "full"
+  },
+  {
+    "claim": "Kentik Kentik - Observability",
+    "product": "Kentik Kentik",
+    "block": "Observability",
+    "before": "full",
+    "after": "partial"
+  },
+  {
+    "claim": "Kentik Kentik - Presentation",
+    "product": "Kentik Kentik",
+    "block": "Presentation",
+    "before": "partial",
+    "after": "full"
+  },
+  {
+    "claim": "LibreNMS LibreNMS - Collector",
+    "product": "LibreNMS LibreNMS",
+    "block": "Collector",
+    "before": "full",
+    "after": "full"
+  },
+  {
+    "claim": "LibreNMS LibreNMS - Observability",
+    "product": "LibreNMS LibreNMS",
+    "block": "Observability",
+    "before": "full",
+    "after": "partial"
+  },
+  {
+    "claim": "LibreNMS LibreNMS - Presentation",
+    "product": "LibreNMS LibreNMS",
+    "block": "Presentation",
+    "before": "partial",
+    "after": "full"
+  },
+  {
+    "claim": "Nagios Enterprises Nagios Core - Collector",
+    "product": "Nagios Enterprises Nagios Core",
+    "block": "Collector",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "Nagios Enterprises Nagios Core - Observability",
+    "product": "Nagios Enterprises Nagios Core",
+    "block": "Observability",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "Nagios Enterprises Nagios Core - Presentation",
+    "product": "Nagios Enterprises Nagios Core",
+    "block": "Presentation",
+    "before": "partial",
+    "after": "full"
+  },
+  {
+    "claim": "NetBox Labs NetBox - Intent",
+    "product": "NetBox Labs NetBox",
+    "block": "Intent",
+    "before": "full",
+    "after": "partial"
+  },
+  {
+    "claim": "NetBox Labs NetBox - Presentation",
+    "product": "NetBox Labs NetBox",
+    "block": "Presentation",
+    "before": "partial",
+    "after": "full"
+  },
+  {
+    "claim": "NetBrain Technologies Agentic NetOps Platform - Executor",
+    "product": "NetBrain Technologies Agentic NetOps Platform",
+    "block": "Executor",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "NetBrain Technologies Agentic NetOps Platform - Observability",
+    "product": "NetBrain Technologies Agentic NetOps Platform",
+    "block": "Observability",
+    "before": "full",
+    "after": "partial"
+  },
+  {
+    "claim": "Network to Code Nautobot - Intent",
+    "product": "Network to Code Nautobot",
+    "block": "Intent",
+    "before": "full",
+    "after": "partial"
+  },
+  {
+    "claim": "Network to Code Nautobot - Orchestrator",
+    "product": "Network to Code Nautobot",
+    "block": "Orchestrator",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "Nokia Event-Driven Automation (EDA) - Executor",
+    "product": "Nokia Event-Driven Automation (EDA)",
+    "block": "Executor",
+    "before": "full",
+    "after": "full"
+  },
+  {
+    "claim": "Nokia Event-Driven Automation (EDA) - Intent",
+    "product": "Nokia Event-Driven Automation (EDA)",
+    "block": "Intent",
+    "before": "full",
+    "after": "partial"
+  },
+  {
+    "claim": "Nokia Event-Driven Automation (EDA) - Observability",
+    "product": "Nokia Event-Driven Automation (EDA)",
+    "block": "Observability",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "OpsMill Infrahub - Intent",
+    "product": "OpsMill Infrahub",
+    "block": "Intent",
+    "before": "full",
+    "after": "partial"
+  },
+  {
+    "claim": "Paessler PRTG Network Monitor - Collector",
+    "product": "Paessler PRTG Network Monitor",
+    "block": "Collector",
+    "before": "full",
+    "after": "partial"
+  },
+  {
+    "claim": "Paessler PRTG Network Monitor - Observability",
+    "product": "Paessler PRTG Network Monitor",
+    "block": "Observability",
+    "before": "full",
+    "after": "partial"
+  },
+  {
+    "claim": "Paessler PRTG Network Monitor - Presentation",
+    "product": "Paessler PRTG Network Monitor",
+    "block": "Presentation",
+    "before": "partial",
+    "after": "full"
+  },
+  {
+    "claim": "Prefect Technologies Dagster - Orchestrator",
+    "product": "Prefect Technologies Dagster",
+    "block": "Orchestrator",
+    "before": "full",
+    "after": "partial"
+  },
+  {
+    "claim": "Prefect Technologies Prefect - Orchestrator",
+    "product": "Prefect Technologies Prefect",
+    "block": "Orchestrator",
+    "before": "full",
+    "after": "partial"
+  },
+  {
+    "claim": "Red Hat Ansible - Collector",
+    "product": "Red Hat Ansible",
+    "block": "Collector",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "Red Hat Ansible - Executor",
+    "product": "Red Hat Ansible",
+    "block": "Executor",
+    "before": "full",
+    "after": "partial"
+  },
+  {
+    "claim": "ServiceNow IT Service Management - Presentation",
+    "product": "ServiceNow IT Service Management",
+    "block": "Presentation",
+    "before": "partial",
+    "after": "full"
+  },
+  {
+    "claim": "Skybox Security Firewall Assurance - Observability",
+    "product": "Skybox Security Firewall Assurance",
+    "block": "Observability",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "Slurp'it Slurp'it - Collector",
+    "product": "Slurp'it Slurp'it",
+    "block": "Collector",
+    "before": "full",
+    "after": "full"
+  },
+  {
+    "claim": "Slurp'it Slurp'it - Observability",
+    "product": "Slurp'it Slurp'it",
+    "block": "Observability",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "SolarWinds Network Performance Monitor - Collector",
+    "product": "SolarWinds Network Performance Monitor",
+    "block": "Collector",
+    "before": "full",
+    "after": "full"
+  },
+  {
+    "claim": "SolarWinds Network Performance Monitor - Observability",
+    "product": "SolarWinds Network Performance Monitor",
+    "block": "Observability",
+    "before": "full",
+    "after": "partial"
+  },
+  {
+    "claim": "SolarWinds Network Performance Monitor - Presentation",
+    "product": "SolarWinds Network Performance Monitor",
+    "block": "Presentation",
+    "before": "partial",
+    "after": "full"
+  },
+  {
+    "claim": "Stardust Systems SuzieQ - Collector",
+    "product": "Stardust Systems SuzieQ",
+    "block": "Collector",
+    "before": "full",
+    "after": "full"
+  },
+  {
+    "claim": "Stardust Systems SuzieQ - Observability",
+    "product": "Stardust Systems SuzieQ",
+    "block": "Observability",
+    "before": "full",
+    "after": "partial"
+  },
+  {
+    "claim": "Sunbird Software dcTrack - Intent",
+    "product": "Sunbird Software dcTrack",
+    "block": "Intent",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "Sunbird Software dcTrack - Presentation",
+    "product": "Sunbird Software dcTrack",
+    "block": "Presentation",
+    "before": "partial",
+    "after": "full"
+  },
+  {
+    "claim": "System Initiative System Initiative - Collector",
+    "product": "System Initiative System Initiative",
+    "block": "Collector",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "Temporal Technologies Temporal - Orchestrator",
+    "product": "Temporal Technologies Temporal",
+    "block": "Orchestrator",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "The Apache Software Foundation Apache Airflow - Orchestrator",
+    "product": "The Apache Software Foundation Apache Airflow",
+    "block": "Orchestrator",
+    "before": "full",
+    "after": "full"
+  },
+  {
+    "claim": "The Apache Software Foundation Apache Airflow - Presentation",
+    "product": "The Apache Software Foundation Apache Airflow",
+    "block": "Presentation",
+    "before": "partial",
+    "after": "full"
+  },
+  {
+    "claim": "Tufin Orchestration Suite - Intent",
+    "product": "Tufin Orchestration Suite",
+    "block": "Intent",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "Tufin Orchestration Suite - Observability",
+    "product": "Tufin Orchestration Suite",
+    "block": "Observability",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "Tufin Orchestration Suite - Orchestrator",
+    "product": "Tufin Orchestration Suite",
+    "block": "Orchestrator",
+    "before": "partial",
+    "after": "partial"
+  },
+  {
+    "claim": "Windmill Labs Windmill - Orchestrator",
+    "product": "Windmill Labs Windmill",
+    "block": "Orchestrator",
+    "before": "full",
+    "after": "full"
+  },
+  {
+    "claim": "Windmill Labs Windmill - Presentation",
+    "product": "Windmill Labs Windmill",
+    "block": "Presentation",
+    "before": "partial",
+    "after": "full"
+  },
+  {
+    "claim": "Zabbix Zabbix - Collector",
+    "product": "Zabbix Zabbix",
+    "block": "Collector",
+    "before": "full",
+    "after": "full"
+  },
+  {
+    "claim": "Zabbix Zabbix - Observability",
+    "product": "Zabbix Zabbix",
+    "block": "Observability",
+    "before": "full",
+    "after": "partial"
+  },
+  {
+    "claim": "Zabbix Zabbix - Presentation",
+    "product": "Zabbix Zabbix",
+    "block": "Presentation",
+    "before": "partial",
+    "after": "full"
+  }
+]

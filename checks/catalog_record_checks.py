@@ -67,7 +67,28 @@ FACTS: dict[str, tuple[str, dict[str, Callable[[dict], object]]]] = {
         {
             "product": peer("product"),
             "building block": peer("building_block"),
-            "extent": attribute("extent"),
+            "note": attribute("note"),
+            "sources": peers("sources"),
+        },
+    ),
+    "CatalogRequirement": (
+        "Requirement",
+        {
+            "identifier": attribute("identifier"),
+            "level": attribute("level"),
+            "position": attribute("position"),
+            "summary": attribute("summary"),
+            "statement": attribute("statement"),
+            "reference link": attribute("reference_url"),
+            "building block": peer("building_block"),
+        },
+    ),
+    "CatalogRequirementVerdict": (
+        "Requirement verdict",
+        {
+            "claim": peer("claim"),
+            "requirement": peer("requirement"),
+            "verdict": attribute("verdict"),
             "note": attribute("note"),
             "sources": peers("sources"),
         },
@@ -82,12 +103,16 @@ FACTS: dict[str, tuple[str, dict[str, Callable[[dict], object]]]] = {
     ),
 }
 
+# Records that come from the framework itself; a submission may not add them.
+FRAMEWORK_KINDS = {"CatalogBuildingBlock", "CatalogRequirement"}
+
 SOURCE_USES = (
     "publisher_of_products",
     "description_of_products",
     "license_model_of_products",
     "status_of_products",
     "coverage_claims",
+    "verdicts",
 )
 
 
@@ -162,12 +187,13 @@ class CatalogSubmissionCheck(InfrahubCheck):
                             object_id=record_id,
                             object_type=kind,
                         )
-            if kind == "CatalogBuildingBlock":
+            if kind in FRAMEWORK_KINDS:
                 for record_id in on_branch.keys() - on_main.keys():
                     self.log_error(
                         message=(
-                            f"Building block {on_branch[record_id]['display_label']} was added. Building blocks "
-                            "come from the framework and are not added by submissions; delete it."
+                            f"{kind_label} {on_branch[record_id]['display_label']} was added. Building blocks "
+                            "and requirements come from the framework and are not added by submissions; "
+                            "delete it."
                         ),
                         object_id=record_id,
                         object_type=kind,
@@ -248,7 +274,7 @@ class CatalogCoverageCheck(InfrahubCheck):
 
 
 class CatalogUnusedSourceCheck(InfrahubCheck):
-    """Fail on sources that support no product fact and no coverage claim."""
+    """Fail on sources that support no product fact, coverage claim or requirement verdict."""
 
     query = QUERY
 
@@ -258,8 +284,8 @@ class CatalogUnusedSourceCheck(InfrahubCheck):
                 continue
             self.log_error(
                 message=(
-                    f"Source {source['title']['value']} ({source['url']['value']}) supports no product fact or "
-                    "coverage claim. Link it to the fact it supports, or delete it."
+                    f"Source {source['title']['value']} ({source['url']['value']}) supports no product fact, "
+                    "coverage claim or requirement verdict. Link it to the fact it supports, or delete it."
                 ),
                 object_id=source["id"],
                 object_type=source["__typename"],

@@ -1,0 +1,45 @@
+# Data for the requirement verdict check (checks/catalog_verdict_check.py).
+query catalog_verdict_check {
+  CatalogRequirementVerdict {
+    edges {
+      node {
+        id
+        __typename
+        verdict {
+          value
+        }
+        sources {
+          count
+        }
+        requirement {
+          node {
+            identifier {
+              value
+            }
+            building_block {
+              node {
+                name {
+                  value
+                }
+              }
+            }
+          }
+        }
+        claim {
+          node {
+            name {
+              value
+            }
+            building_block {
+              node {
+                name {
+                  value
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

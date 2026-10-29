@@ -9,6 +9,8 @@ queries:
     file_path: queries/catalog_report.gql
   - name: catalog_records
     file_path: queries/catalog_records.gql
+  - name: catalog_verdict_check
+    file_path: queries/catalog_verdict_check.gql
 
 check_definitions:
   - name: catalog_source_check
@@ -26,6 +28,9 @@ check_definitions:
   - name: catalog_unused_source_check
     class_name: CatalogUnusedSourceCheck
     file_path: checks/catalog_record_checks.py
+  - name: catalog_verdict_check
+    class_name: CatalogVerdictCheck
+    file_path: checks/catalog_verdict_check.py
 
 python_transforms:
   - name: catalog_report

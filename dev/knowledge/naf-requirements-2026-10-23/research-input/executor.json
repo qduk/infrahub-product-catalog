@@ -1,0 +1,237 @@
+{
+  "block": "Executor",
+  "requirements": [
+    {
+      "identifier": "executor-must-1",
+      "block": "Executor",
+      "level": "must",
+      "position": 11,
+      "summary": "Writes to the network over SSH, NETCONF, gNMI/gNOI and REST APIs",
+      "statement": "It MUST be capable of interacting with any of the supported network write interfaces, including SSH, NETCONF, gNMI/gNOI, and REST APIs.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#executor"
+    },
+    {
+      "identifier": "executor-should-1",
+      "block": "Executor",
+      "level": "should",
+      "position": 12,
+      "summary": "Supports any operation that changes the network state",
+      "statement": "It SHOULD support any network operation that alters the network state, such as deploying a full or partial configuration artifact or performing device actions like reboots and software updates.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#executor"
+    },
+    {
+      "identifier": "executor-should-2",
+      "block": "Executor",
+      "level": "should",
+      "position": 13,
+      "summary": "Takes task input from the intended state",
+      "statement": "The task input SHOULD come from the intended state or be derived from it through data originating from the Observability component.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#executor"
+    },
+    {
+      "identifier": "executor-should-3",
+      "block": "Executor",
+      "level": "should",
+      "position": 14,
+      "summary": "Offers a dry run of an execution",
+      "statement": "It SHOULD provide a dry-run operation to check the expected result of the execution without actually executing it.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#executor"
+    },
+    {
+      "identifier": "executor-should-4",
+      "block": "Executor",
+      "level": "should",
+      "position": 15,
+      "summary": "Applies changes as a transaction",
+      "statement": "It SHOULD support transactional execution of the changes.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#executor"
+    },
+    {
+      "identifier": "executor-may-1",
+      "block": "Executor",
+      "level": "may",
+      "position": 16,
+      "summary": "Supports both imperative and declarative tasks",
+      "statement": "It MAY support both imperative approaches (where the task defines how to operate) and declarative approaches (where the task defines what the desired outcome is, and the system determines how to achieve it). In both cases, the operation SHOULD be idempotent; rerunning it should produce the same result.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#executor"
+    },
+    {
+      "identifier": "executor-should-5",
+      "block": "Executor",
+      "level": "should",
+      "position": 17,
+      "summary": "Runs operations idempotently",
+      "statement": "It MAY support both imperative approaches (where the task defines how to operate) and declarative approaches (where the task defines what the desired outcome is, and the system determines how to achieve it). In both cases, the operation SHOULD be idempotent; rerunning it should produce the same result.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#executor"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "Red Hat Ansible - Executor",
+      "product": "Red Hat Ansible",
+      "homepage_url": "https://www.ansible.com/",
+      "description": "An agentless automation tool that manages network devices from many vendors over SSH or HTTPS, using playbooks and vendor modules.",
+      "claim_note": "Network resource modules merge, replace, override or delete device configuration.",
+      "claim_sources": [
+        "https://docs.ansible.com/ansible/latest/network/user_guide/network_resource_modules.html"
+      ],
+      "other_catalog_sources": [
+        "https://docs.ansible.com/ansible/latest/network/getting_started/index.html",
+        "https://github.com/ansible/ansible"
+      ]
+    },
+    {
+      "claim": "Flock9 Netpicker - Executor",
+      "product": "Flock9 Netpicker",
+      "homepage_url": "https://netpicker.io/",
+      "description": "Netpicker backs up device configurations and runs Python and pytest tests for configuration, compliance and security against network devices, with optional automated remediation jobs.",
+      "claim_note": "Netpicker applies changes to devices through remediation jobs, as an extension of its testing and backup functions.",
+      "claim_sources": [
+        "https://netpicker.io/"
+      ],
+      "other_catalog_sources": [
+        "https://netpicker.io/",
+        "https://netpicker.io/about-us/",
+        "https://netpicker.io/pricing/"
+      ]
+    },
+    {
+      "claim": "Nokia Event-Driven Automation (EDA) - Executor",
+      "product": "Nokia Event-Driven Automation (EDA)",
+      "homepage_url": "https://docs.eda.dev/",
+      "description": "Nokia EDA is a Kubernetes-based platform where users declare the desired state of fabrics, interfaces and services, which it translates into multivendor device configuration and checks against streaming telemetry.",
+      "claim_note": "EDA applies configuration changes to devices from the intended state, including validation and network-wide rollback.",
+      "claim_sources": [
+        "https://docs.eda.dev/26.8/"
+      ],
+      "other_catalog_sources": [
+        "https://docs.eda.dev/26.8/",
+        "https://docs.eda.dev/26.8/getting-started/try-eda/"
+      ]
+    },
+    {
+      "claim": "NetBrain Technologies Agentic NetOps Platform - Executor",
+      "product": "NetBrain Technologies Agentic NetOps Platform",
+      "homepage_url": "https://www.netbrain.com/platform/",
+      "description": "Collects device, topology and path data from multi-vendor networks and uses it for AI-assisted diagnosis, compliance assessment and change runbooks with pre-checks and post-checks.",
+      "claim_note": "The product runs changes through runbooks, but change execution is one of several functions.",
+      "claim_sources": [
+        "https://www.netbrain.com/platform/"
+      ],
+      "other_catalog_sources": [
+        "https://www.netbrain.com/news/netbrain-hits-customer-milestone-and-introduces-simpler-software-licensing/",
+        "https://www.netbrain.com/platform/"
+      ]
+    },
+    {
+      "claim": "Juniper Networks Apstra Data Center Director - Executor",
+      "product": "Juniper Networks Apstra Data Center Director",
+      "homepage_url": "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html",
+      "description": "Manages data center fabrics across vendors: stores the intended design in a graph database, generates device configurations from it and validates the network state against it.",
+      "claim_note": "Generating and deploying configuration from the intended state is a main function of the product.",
+      "claim_sources": [
+        "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html"
+      ],
+      "other_catalog_sources": [
+        "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html"
+      ]
+    },
+    {
+      "claim": "EfficientIP SOLIDserver DDI - Executor",
+      "product": "EfficientIP SOLIDserver DDI",
+      "homepage_url": "https://efficientip.com/products/solidserver-ddi/",
+      "description": "Provides DNS, DHCP and IP address management on hardware or virtual appliances, and pushes IP address changes to DNS and DHCP servers from a central repository.",
+      "claim_note": "The product applies changes to DNS and DHCP services only.",
+      "claim_sources": [
+        "https://efficientip.com/products/solidserver-ddi/"
+      ],
+      "other_catalog_sources": [
+        "https://efficientip.com/about-efficientip/",
+        "https://efficientip.com/products/solidserver-ddi/",
+        "https://efficientip.com/support-services/license-request/"
+      ]
+    },
+    {
+      "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Executor",
+      "product": "Cisco Crosswork Network Services Orchestrator (NSO)",
+      "homepage_url": "https://www.cisco.com/c/en/us/products/cloud-systems-management/network-services-orchestrator/index.html",
+      "description": "Linux-based application that stores network service intent and device configuration in a YANG-modelled database and pushes the resulting configuration changes to multivendor physical and virtual network devices.",
+      "claim_note": "The device manager and NEDs push intended configuration changes to devices as transactions, which is a main function of NSO.",
+      "claim_sources": [
+        "https://raw.githubusercontent.com/NSO-developer/nso-gitbook/main/operation-and-usage/operations/nso-device-manager.md"
+      ],
+      "other_catalog_sources": [
+        "https://nso-docs.cisco.com/",
+        "https://raw.githubusercontent.com/NSO-developer/nso-gitbook/main/administration/management/system-management/cisco-smart-licensing.md"
+      ]
+    },
+    {
+      "claim": "HashiCorp Terraform - Executor",
+      "product": "HashiCorp Terraform",
+      "homepage_url": "https://developer.hashicorp.com/terraform",
+      "description": "Infrastructure-as-code tool that reads declarative configuration files, plans the changes needed and creates, updates or deletes cloud and on-premises resources through provider APIs.",
+      "claim_note": "Applying planned changes to bring resources to the configured state is Terraform's main purpose.",
+      "claim_sources": [
+        "https://developer.hashicorp.com/terraform/intro"
+      ],
+      "other_catalog_sources": [
+        "https://developer.hashicorp.com/terraform/intro"
+      ]
+    },
+    {
+      "claim": "Itential Platform - Executor",
+      "product": "Itential Platform",
+      "homepage_url": "https://www.itential.com/",
+      "description": "Platform where infrastructure teams build workflows and AI agents that call existing tools such as Ansible, Python and OpenTofu, and run network changes with access control, approvals and audit logs.",
+      "claim_note": "Itential runs changes with checks and rollback, but the source describes it as calling existing tools such as Ansible and OpenTofu to make many of those changes.",
+      "claim_sources": [
+        "https://www.itential.com/"
+      ],
+      "other_catalog_sources": [
+        "https://www.itential.com/",
+        "https://www.itential.com/pricing/"
+      ]
+    },
+    {
+      "claim": "Gluware Gluware - Executor",
+      "product": "Gluware Gluware",
+      "homepage_url": "https://gluware.com/",
+      "description": "Network automation platform for multivendor enterprise networks that discovers existing devices, builds intent models from their configuration, detects drift and compliance issues, and applies validated changes.",
+      "claim_note": "Applying configuration changes to multivendor devices through DIAL is a core function of the platform.",
+      "claim_sources": [
+        "https://gluware.com/gluware-company-and-product-facts/"
+      ],
+      "other_catalog_sources": [
+        "https://gluware.com/",
+        "https://gluware.com/gluware-end-user-license-agreement/"
+      ]
+    },
+    {
+      "claim": "IBM Pliant - Executor",
+      "product": "IBM Pliant",
+      "homepage_url": "https://newsroom.ibm.com/Blog-IBM-Acquires-Pliant-to-Further-Enhance-Network-IT-Automation-Capabilities",
+      "description": "Network and IT infrastructure automation software with prebuilt integrations for third-party products that have an API or CLI, used to provision resources and manage configuration and traffic.",
+      "claim_note": "Integrations with device APIs and CLIs are used to apply configuration changes, but the source does not say they are driven by an intended state.",
+      "claim_sources": [
+        "https://newsroom.ibm.com/Blog-IBM-Acquires-Pliant-to-Further-Enhance-Network-IT-Automation-Capabilities"
+      ],
+      "other_catalog_sources": [
+        "https://newsroom.ibm.com/Blog-IBM-Acquires-Pliant-to-Further-Enhance-Network-IT-Automation-Capabilities"
+      ]
+    },
+    {
+      "claim": "System Initiative System Initiative - Executor",
+      "product": "System Initiative System Initiative",
+      "homepage_url": "https://github.com/systeminit/si",
+      "description": "Infrastructure automation platform in which AI agents discover infrastructure, propose changes and apply them, with human review and policy checks; the project is archived.",
+      "claim_note": "The software applies infrastructure changes, but the source describes general cloud infrastructure rather than network devices.",
+      "claim_sources": [
+        "https://github.com/systeminit/si"
+      ],
+      "other_catalog_sources": [
+        "https://github.com/systeminit/si",
+        "https://raw.githubusercontent.com/systeminit/si/main/LICENSE"
+      ]
+    }
+  ]
+}

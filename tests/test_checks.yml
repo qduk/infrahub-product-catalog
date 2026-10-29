@@ -66,3 +66,9 @@ infrahub_tests:
       - name: smoke_catalog_unused_source_check
         spec:
           kind: check-smoke
+  - resource: Check
+    resource_name: catalog_verdict_check
+    tests:
+      - name: smoke_catalog_verdict_check
+        spec:
+          kind: check-smoke

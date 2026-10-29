@@ -1,0 +1,989 @@
+[
+  {
+    "product": "OpsMill Infrahub",
+    "requirement": "framework-should-1",
+    "verdict": "met",
+    "note": "The vendor states that a connected Git repository keeps schemas, transformations, generators, checks and GraphQL queries under version control, and that the product has built-in CI workflows and peer review.",
+    "sources": [
+      {
+        "title": "Git integration overview",
+        "url": "https://docs.infrahub.app/git-integration/overview"
+      },
+      {
+        "title": "What is Infrahub",
+        "url": "https://docs.infrahub.app/overview"
+      }
+    ]
+  },
+  {
+    "product": "OpsMill Infrahub",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "The GraphQL API schema is generated from the core and user-defined schema and can be downloaded per branch from the schema.graphql endpoint; a REST API is also documented.",
+    "sources": [
+      {
+        "title": "GraphQL overview",
+        "url": "https://docs.infrahub.app/development-resources/graphql/overview"
+      },
+      {
+        "title": "What is Infrahub",
+        "url": "https://docs.infrahub.app/overview"
+      }
+    ]
+  },
+  {
+    "product": "Red Hat Ansible",
+    "requirement": "framework-should-1",
+    "verdict": "met",
+    "note": "In Ansible Automation Platform, automation controller projects pull playbooks from Git or Subversion, and GitHub and GitLab webhooks can start job templates on repository events.",
+    "sources": [
+      {
+        "title": "Automation controller user guide (AAP 2.4)",
+        "url": "https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.4/html-single/automation_controller_user_guide/index"
+      }
+    ]
+  },
+  {
+    "product": "Red Hat Ansible",
+    "requirement": "framework-should-2",
+    "verdict": "partly_met",
+    "note": "Automation controller in Ansible Automation Platform has a versioned REST API with a browsable, self-documenting interface; the page opened does not mention a published schema such as OpenAPI. Ansible itself (the command-line tool) has no service API stated.",
+    "sources": [
+      {
+        "title": "Automation controller API overview (AAP 2.4)",
+        "url": "https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/2.4/html-single/automation_controller_api_overview/index"
+      }
+    ]
+  },
+  {
+    "product": "Stardust Systems SuzieQ",
+    "requirement": "framework-should-1",
+    "verdict": "not_shown",
+    "note": "No source found that states support for managing SuzieQ configuration or inventory with version control or CI/CD.",
+    "sources": []
+  },
+  {
+    "product": "Stardust Systems SuzieQ",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "The REST API server publishes an OpenAPI specification at /api/openapi.json, with Swagger UI and ReDoc documentation.",
+    "sources": [
+      {
+        "title": "SuzieQ REST server",
+        "url": "https://suzieq.readthedocs.io/en/latest/rest-server/"
+      }
+    ]
+  },
+  {
+    "product": "SolarWinds Network Performance Monitor",
+    "requirement": "framework-should-1",
+    "verdict": "not_shown",
+    "note": "No source found that states support for managing the product's configuration with version control or CI/CD.",
+    "sources": []
+  },
+  {
+    "product": "SolarWinds Network Performance Monitor",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "The SolarWinds Information Service (SWIS) REST/JSON API is documented, and its entity schema, with properties and verbs, is published per release.",
+    "sources": [
+      {
+        "title": "SWIS REST/JSON API",
+        "url": "http://solarwinds.github.io/OrionSDK/docs/rest/"
+      },
+      {
+        "title": "SolarWinds Information Service schema",
+        "url": "https://solarwinds.github.io/OrionSDK/2024.4/schema/index.html"
+      }
+    ]
+  },
+  {
+    "product": "Kentik Kentik",
+    "requirement": "framework-should-1",
+    "verdict": "partly_met",
+    "note": "Kentik publishes Terraform providers, so synthetic tests can be defined in Terraform configuration files; no source found that covers the rest of the product's configuration.",
+    "sources": [
+      {
+        "title": "Kentik Synthetics Terraform provider documentation",
+        "url": "https://github.com/kentik/terraform-provider-kentik-synthetics/blob/master/docs/index.md"
+      }
+    ]
+  },
+  {
+    "product": "Kentik Kentik",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "Kentik defines its version 6 APIs in Protocol Buffers files and publishes OpenAPI version 2 and 3 specifications for them.",
+    "sources": [
+      {
+        "title": "kentik/api-schema-public",
+        "url": "https://github.com/kentik/api-schema-public"
+      }
+    ]
+  },
+  {
+    "product": "LibreNMS LibreNMS",
+    "requirement": "framework-should-1",
+    "verdict": "not_shown",
+    "note": "No source found that states support for managing LibreNMS configuration with version control or CI/CD.",
+    "sources": []
+  },
+  {
+    "product": "LibreNMS LibreNMS",
+    "requirement": "framework-should-2",
+    "verdict": "partly_met",
+    "note": "LibreNMS has a documented, versioned HTTP API that returns JSON; the documentation does not mention an OpenAPI or other machine-readable schema.",
+    "sources": [
+      {
+        "title": "LibreNMS API",
+        "url": "https://docs.librenms.org/API/"
+      }
+    ]
+  },
+  {
+    "product": "Zabbix Zabbix",
+    "requirement": "framework-should-1",
+    "verdict": "not_shown",
+    "note": "No source found that states support for managing Zabbix configuration with version control or CI/CD.",
+    "sources": []
+  },
+  {
+    "product": "Zabbix Zabbix",
+    "requirement": "framework-should-2",
+    "verdict": "partly_met",
+    "note": "Zabbix has an HTTP API that uses JSON-RPC 2.0, with each method documented in the manual; the documentation does not mention an OpenAPI or other machine-readable schema.",
+    "sources": [
+      {
+        "title": "Zabbix API manual",
+        "url": "https://www.zabbix.com/documentation/current/en/manual/api"
+      }
+    ]
+  },
+  {
+    "product": "Nagios Enterprises Nagios Core",
+    "requirement": "framework-should-1",
+    "verdict": "not_shown",
+    "note": "The vendor states that Nagios Core is configured with text files, but no source found that states support for version control or CI/CD of that configuration.",
+    "sources": []
+  },
+  {
+    "product": "Nagios Enterprises Nagios Core",
+    "requirement": "framework-should-2",
+    "verdict": "partly_met",
+    "note": "The vendor lists a Plugin API and an Event Broker API for extending Nagios Core; the page does not describe a data API documented by a schema.",
+    "sources": [
+      {
+        "title": "Nagios Core",
+        "url": "https://www.nagios.org/projects/nagios-core/"
+      }
+    ]
+  },
+  {
+    "product": "Paessler PRTG Network Monitor",
+    "requirement": "framework-should-1",
+    "verdict": "not_shown",
+    "note": "No source found that states support for managing PRTG configuration with version control or CI/CD.",
+    "sources": []
+  },
+  {
+    "product": "Paessler PRTG Network Monitor",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "PRTG API v2 is a REST API whose endpoints are documented in a Swagger UI reference; some endpoints are marked experimental and may change.",
+    "sources": [
+      {
+        "title": "PRTG API v2 overview",
+        "url": "https://www.paessler.com/support/prtg/api/v2/overview"
+      }
+    ]
+  },
+  {
+    "product": "Cisco pyATS",
+    "requirement": "framework-should-1",
+    "verdict": "partly_met",
+    "note": "The vendor states that pyATS supports development teams in a continuous integration environment; the pages opened do not mention version control.",
+    "sources": [
+      {
+        "title": "pyATS documentation overview",
+        "url": "https://pubhub.devnetcloud.com/media/pyats/docs/overview/index.html"
+      }
+    ]
+  },
+  {
+    "product": "Cisco pyATS",
+    "requirement": "framework-should-2",
+    "verdict": "not_shown",
+    "note": "No source found that states pyATS exposes an API documented by a machine-readable schema.",
+    "sources": []
+  },
+  {
+    "product": "Network Unit Testing System NUTS",
+    "requirement": "framework-should-1",
+    "verdict": "not_shown",
+    "note": "The documentation states that tests are defined in YAML test bundles, but no source found that states support for version control or CI/CD.",
+    "sources": []
+  },
+  {
+    "product": "Network Unit Testing System NUTS",
+    "requirement": "framework-should-2",
+    "verdict": "not_shown",
+    "note": "No source found that states NUTS exposes an API documented by a schema.",
+    "sources": []
+  },
+  {
+    "product": "Flock9 Netpicker",
+    "requirement": "framework-should-1",
+    "verdict": "met",
+    "note": "The vendor states that Netpicker is Git-based and built for version control, peer review and an audit trail.",
+    "sources": [
+      {
+        "title": "Netpicker home page",
+        "url": "https://netpicker.io/"
+      }
+    ]
+  },
+  {
+    "product": "Flock9 Netpicker",
+    "requirement": "framework-should-2",
+    "verdict": "partly_met",
+    "note": "The vendor states that Netpicker is fully API based; no source found that names the API type or a published schema.",
+    "sources": [
+      {
+        "title": "Netpicker home page",
+        "url": "https://netpicker.io/"
+      }
+    ]
+  },
+  {
+    "product": "Nokia Event-Driven Automation (EDA)",
+    "requirement": "framework-should-1",
+    "verdict": "met",
+    "note": "The documentation states that every committed EDA transaction is stored in a Git repository, which keeps the change history and lets operators revert to any earlier state.",
+    "sources": [
+      {
+        "title": "Transactions - Nokia Event Driven Automation",
+        "url": "https://docs.eda.dev/25.12/tour-of-eda/transactions/"
+      }
+    ]
+  },
+  {
+    "product": "Nokia Event-Driven Automation (EDA)",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "The documentation states that EDA has an HTTP REST API and that all endpoints and parameters are described in OpenAPI v3 files, which can be downloaded from the EDA UI.",
+    "sources": [
+      {
+        "title": "API - Event-Driven Automation",
+        "url": "https://docs.eda.dev/26.8/development/api/"
+      }
+    ]
+  },
+  {
+    "product": "Forward Networks Forward Enterprise",
+    "requirement": "framework-should-1",
+    "verdict": "met",
+    "note": "The vendor states that requests to the Forward Networks API can be integrated into Jenkins pipelines. No source was found about managing the product's own configuration in version control.",
+    "sources": [
+      {
+        "title": "Forward Networks API: Automate Network Monitoring & Response",
+        "url": "https://www.forwardnetworks.com/blog/2025/09/16/automate-network-intelligence-with-the-forward-networks-api/"
+      }
+    ]
+  },
+  {
+    "product": "Forward Networks Forward Enterprise",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "The API documentation provides an OpenAPI description, in YAML and JSON, for each section of the REST API and a combined specification.",
+    "sources": [
+      {
+        "title": "Forward Networks API - Forward Networks Docs",
+        "url": "https://docs.fwd.app/25.12/api-doc/"
+      }
+    ]
+  },
+  {
+    "product": "IP Fabric IP Fabric",
+    "requirement": "framework-should-1",
+    "verdict": "not_shown",
+    "note": "No source was found that states the product supports version control or CI/CD for its own configuration or content. The documentation lists automation integrations such as Ansible, Nornir and a Python SDK, but does not describe use from CI pipelines.",
+    "sources": []
+  },
+  {
+    "product": "IP Fabric IP Fabric",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "The documentation states that IP Fabric has a REST API with interactive documentation served by each instance, and the release notes refer to the OpenAPI specification (OAS) of the API endpoints.",
+    "sources": [
+      {
+        "title": "Overview - IP Fabric API",
+        "url": "https://docs.ipfabric.io/main/IP_Fabric_API/"
+      },
+      {
+        "title": "LLRN 7.2 - IP Fabric Documentation Portal",
+        "url": "https://docs.ipfabric.io/main/releases/release_notes_low-level/7.x/7.2/"
+      }
+    ]
+  },
+  {
+    "product": "NetBrain Technologies Agentic NetOps Platform",
+    "requirement": "framework-should-1",
+    "verdict": "not_shown",
+    "note": "No source was found that states the product supports version control or CI/CD. The integrations page mentions REST APIs and webhooks for ticketing and monitoring tools only.",
+    "sources": []
+  },
+  {
+    "product": "NetBrain Technologies Agentic NetOps Platform",
+    "requirement": "framework-should-2",
+    "verdict": "partly_met",
+    "note": "The vendor publishes REST API documentation as Markdown guides on GitHub. No machine-readable schema such as an OpenAPI file was found in that documentation.",
+    "sources": [
+      {
+        "title": "NetBrainAPI/NetBrain-REST-API-R12.3 - GitHub",
+        "url": "https://github.com/NetBrainAPI/NetBrain-REST-API-R12.3"
+      }
+    ]
+  },
+  {
+    "product": "Slurp'it Slurp'it",
+    "requirement": "framework-should-1",
+    "verdict": "not_shown",
+    "note": "No source was found that states the product supports version control or CI/CD for its own configuration. The vendor states that collected data is stored and can be compared, which concerns device data rather than the product's configuration.",
+    "sources": []
+  },
+  {
+    "product": "Slurp'it Slurp'it",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "The vendor states that data is available through a REST API, and the changelog lists an option to download the Swagger file of the API for use in API test tools.",
+    "sources": [
+      {
+        "title": "Slurp'it",
+        "url": "https://slurpit.io/"
+      },
+      {
+        "title": "Changelog - Slurp'it",
+        "url": "https://slurpit.io/knowledge-base/changelog/"
+      }
+    ]
+  },
+  {
+    "product": "Juniper Networks Apstra Data Center Director",
+    "requirement": "framework-should-1",
+    "verdict": "partly_met",
+    "note": "Juniper publishes a Terraform provider that manages Apstra fabrics as infrastructure as code. No source was found that describes storing that configuration in version control or running it from CI/CD.",
+    "sources": [
+      {
+        "title": "Juniper/terraform-provider-apstra - GitHub",
+        "url": "https://github.com/Juniper/terraform-provider-apstra"
+      }
+    ]
+  },
+  {
+    "product": "Juniper Networks Apstra Data Center Director",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "The user guide describes a REST API explorer that lists each endpoint's URL, method, parameters and responses, and the Juniper lab guide uses the Swagger UI of the Apstra API docs.",
+    "sources": [
+      {
+        "title": "REST API Explorer - Apstra User Guide",
+        "url": "https://www.juniper.net/documentation/us/en/software/apstra5.0/apstra-user-guide/topics/concept/rest-api-explorer.html"
+      },
+      {
+        "title": "Using The Apstra API Docs - Apstra Cloudlabs Exercise Guides",
+        "url": "https://cloudlabs.apstra.com/labguide/Cloudlabs/6.2.0/labapi/labapiswagger-1.html"
+      }
+    ]
+  },
+  {
+    "product": "EfficientIP SOLIDserver DDI",
+    "requirement": "framework-should-1",
+    "verdict": "partly_met",
+    "note": "The vendor states that SOLIDserver can be managed through a Terraform provider and Ansible. No source was found that describes version control or CI/CD use.",
+    "sources": [
+      {
+        "title": "SOLIDserver DDI, DNS, DHCP, IPAM API for IT Automation",
+        "url": "https://efficientip.com/solutions/solidserver-api-for-it-automation/"
+      }
+    ]
+  },
+  {
+    "product": "EfficientIP SOLIDserver DDI",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "The vendor states that SOLIDserver has SOAP and REST APIs and that the APIs are also offered in OpenAPI format.",
+    "sources": [
+      {
+        "title": "SOLIDserver DDI, DNS, DHCP, IPAM API for IT Automation",
+        "url": "https://efficientip.com/solutions/solidserver-api-for-it-automation/"
+      }
+    ]
+  },
+  {
+    "product": "Infoblox NIOS",
+    "requirement": "framework-should-1",
+    "verdict": "partly_met",
+    "note": "Infoblox documents an Ansible collection that creates, updates and deletes NIOS objects such as networks, IP addresses and DNS records through the API. No source was found that describes version control or CI/CD use.",
+    "sources": [
+      {
+        "title": "Overview of Infoblox NIOS Modules for Ansible Collections",
+        "url": "https://docs.infoblox.com/space/niosmodulesansible/45074703/Overview+of+Infoblox+NIOS+Modules+for+Ansible+Collections"
+      }
+    ]
+  },
+  {
+    "product": "Infoblox NIOS",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "The vendor states that the NIOS WAPI is REST-based and provides parameters that return the schema of the WAPI. No OpenAPI file was found in the source.",
+    "sources": [
+      {
+        "title": "Get more value out of Infoblox NIOS APIs",
+        "url": "https://www.infoblox.com/blog/community/get-more-value-out-of-infoblox-nios-apis/"
+      }
+    ]
+  },
+  {
+    "product": "NetBox Labs NetBox",
+    "requirement": "framework-should-1",
+    "verdict": "met",
+    "note": "The documentation states that NetBox can sync files from a Git repository configured as a data source, either on a schedule or by hand.",
+    "sources": [
+      {
+        "title": "Data Sources - NetBox Documentation",
+        "url": "https://netboxlabs.com/docs/netbox/models/core/datasource/"
+      }
+    ]
+  },
+  {
+    "product": "NetBox Labs NetBox",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "The documentation states that each NetBox instance serves interactive documentation of all REST API endpoints at /api/schema/swagger-ui/.",
+    "sources": [
+      {
+        "title": "REST API - NetBox Documentation",
+        "url": "https://netboxlabs.com/docs/netbox/integrations/rest-api/"
+      }
+    ]
+  },
+  {
+    "product": "Network to Code Nautobot",
+    "requirement": "framework-should-1",
+    "verdict": "met",
+    "note": "The documentation states that jobs, configuration context data, configuration context schemas and export templates can be stored in a Git repository that Nautobot clones and syncs.",
+    "sources": [
+      {
+        "title": "Git Repositories - Nautobot Documentation",
+        "url": "https://docs.nautobot.com/projects/core/en/stable/user-guide/platform-functionality/gitrepository/"
+      }
+    ]
+  },
+  {
+    "product": "Network to Code Nautobot",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "The release notes state that the REST API documentation at /api/docs/ uses the OpenAPI 3.0 format. Nautobot also has a GraphQL API.",
+    "sources": [
+      {
+        "title": "Version 1.3 - Nautobot Documentation",
+        "url": "https://docs.nautobot.com/projects/core/en/stable/release-notes/version-1.3/"
+      }
+    ]
+  },
+  {
+    "product": "Freshworks Device42",
+    "requirement": "framework-should-1",
+    "verdict": "partly_met",
+    "note": "The vendor describes managing Device42 VLANs, subnets and IP addresses with a community Terraform provider. No source was found that describes version control or CI/CD use.",
+    "sources": [
+      {
+        "title": "Managing Device42 Resources Using Terraform",
+        "url": "https://www.device42.com/blog/2023/02/14/managing-device42-resources-using-terraform/"
+      }
+    ]
+  },
+  {
+    "product": "Freshworks Device42",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "The documentation states that Device42 has RESTful APIs to create, update and retrieve data, and offers Swagger (OpenAPI) YAML files for current and earlier versions.",
+    "sources": [
+      {
+        "title": "API Overview - Device42 Documentation",
+        "url": "https://docs.device42.com/integration/api-overview/"
+      }
+    ]
+  },
+  {
+    "product": "Sunbird Software dcTrack",
+    "requirement": "framework-should-1",
+    "verdict": "not_shown",
+    "note": "No source found that states dcTrack configuration can be managed with version control or CI/CD pipelines.",
+    "sources": []
+  },
+  {
+    "product": "Sunbird Software dcTrack",
+    "requirement": "framework-should-2",
+    "verdict": "partly_met",
+    "note": "The vendor documents a JSON REST API that reads and changes item data under the same access controls as the web interface. The fetched documentation does not mention a published OpenAPI or other machine-readable schema.",
+    "sources": [
+      {
+        "title": "General REST API Information (dcTrack API Guide)",
+        "url": "https://www.sunbirddcim.com/help/dcTrack/v601/API/en/Content/APIGuide/General_REST_API_Information.htm"
+      }
+    ]
+  },
+  {
+    "product": "phpIPAM project phpIPAM",
+    "requirement": "framework-should-1",
+    "verdict": "not_shown",
+    "note": "No source found that states phpIPAM data or configuration can be managed with version control or CI/CD pipelines.",
+    "sources": []
+  },
+  {
+    "product": "phpIPAM project phpIPAM",
+    "requirement": "framework-should-2",
+    "verdict": "partly_met",
+    "note": "The project documents a REST API with JSON and XML responses as an HTML reference. The documentation does not mention an OpenAPI or other machine-readable schema.",
+    "sources": [
+      {
+        "title": "phpIPAM API documentation",
+        "url": "https://phpipam.net/api/api_documentation/"
+      }
+    ]
+  },
+  {
+    "product": "ServiceNow IT Service Management",
+    "requirement": "framework-should-1",
+    "verdict": "met",
+    "note": "ServiceNow publishes an Azure Pipelines extension that calls its CI/CD APIs to apply changes from a remote source control repository to a ServiceNow application.",
+    "sources": [
+      {
+        "title": "ServiceNow/servicenow-cicd-azure-extension (GitHub)",
+        "url": "https://github.com/ServiceNow/servicenow-cicd-azure-extension"
+      }
+    ]
+  },
+  {
+    "product": "ServiceNow IT Service Management",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "A ServiceNow community post states that since the Tokyo release, REST APIs can be exported as an OpenAPI specification in YAML or JSON. The post does not list which APIs support the export.",
+    "sources": [
+      {
+        "title": "OpenAPI specification - ServiceNow Scripted APIs (ServiceNow Community)",
+        "url": "https://www.servicenow.com/community/app-development-blog/openapi-specification-servicenow-scripted-apis/ba-p/3410891"
+      }
+    ]
+  },
+  {
+    "product": "Cloud Native Computing Foundation (CNCF) Backstage",
+    "requirement": "framework-should-1",
+    "verdict": "met",
+    "note": "The documentation states that catalog entities are defined in metadata YAML files stored in source control such as GitHub or GitLab, and that owners maintain them with Git workflows.",
+    "sources": [
+      {
+        "title": "Backstage Software Catalog",
+        "url": "https://backstage.io/docs/features/software-catalog/"
+      }
+    ]
+  },
+  {
+    "product": "Cloud Native Computing Foundation (CNCF) Backstage",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "The catalog backend has a JSON REST API, and the documentation links to its OpenAPI specification in the Backstage repository.",
+    "sources": [
+      {
+        "title": "Backstage Software Catalog API",
+        "url": "https://backstage.io/docs/features/software-catalog/software-catalog-api/"
+      }
+    ]
+  },
+  {
+    "product": "Cisco Crosswork Network Services Orchestrator (NSO)",
+    "requirement": "framework-should-1",
+    "verdict": "met",
+    "note": "Cisco DevNet publishes sample code, a Dockerfile and GitLab pipeline examples for building and testing NSO packages in CI/CD pipelines.",
+    "sources": [
+      {
+        "title": "CiscoDevNet/nso_cicd_setup (GitHub)",
+        "url": "https://github.com/CiscoDevNet/nso_cicd_setup"
+      }
+    ]
+  },
+  {
+    "product": "Cisco Crosswork Network Services Orchestrator (NSO)",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "The NSO RESTCONF API provides create, read, update and delete operations on a datastore of YANG-defined data, so the YANG models describe the API.",
+    "sources": [
+      {
+        "title": "RESTCONF API (NSO documentation)",
+        "url": "https://nso-docs.cisco.com/guides/development/core-concepts/northbound-apis/restconf-api"
+      }
+    ]
+  },
+  {
+    "product": "HashiCorp Terraform",
+    "requirement": "framework-should-1",
+    "verdict": "met",
+    "note": "The documentation states that Terraform configuration files are human-readable and can be committed to a version control system.",
+    "sources": [
+      {
+        "title": "What is Terraform",
+        "url": "https://developer.hashicorp.com/terraform/intro"
+      }
+    ]
+  },
+  {
+    "product": "HashiCorp Terraform",
+    "requirement": "framework-should-2",
+    "verdict": "partly_met",
+    "note": "Terraform outputs plans and state as JSON with a versioned format, documented through commented examples. The fetched page does not provide a formal schema such as JSON Schema or OpenAPI.",
+    "sources": [
+      {
+        "title": "JSON Output Format",
+        "url": "https://developer.hashicorp.com/terraform/internals/json-format"
+      }
+    ]
+  },
+  {
+    "product": "Itential Platform",
+    "requirement": "framework-should-1",
+    "verdict": "met",
+    "note": "The documentation states that projects can be connected to a GitHub or GitLab repository and synchronized with fetch, push, pull and clone operations.",
+    "sources": [
+      {
+        "title": "Connect a project to Git",
+        "url": "https://docs.itential.com/docs/git-integration-for-projects"
+      }
+    ]
+  },
+  {
+    "product": "Itential Platform",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "The API reference states that the Itential Platform API uses OpenAPI 3.1.0 specifications.",
+    "sources": [
+      {
+        "title": "Itential Platform 6 API introduction",
+        "url": "https://docs.itential.com/itential-platform/6/api-reference/introduction"
+      }
+    ]
+  },
+  {
+    "product": "Gluware Gluware",
+    "requirement": "framework-should-1",
+    "verdict": "partly_met",
+    "note": "Gluware representatives state that a GitHub integration lets teams store and manage Gluware-related code in Git. The source does not describe how the product runs in CI/CD pipelines.",
+    "sources": [
+      {
+        "title": "Gluware expands network automation platform with AI copilots, GitHub integration (Network World)",
+        "url": "https://www.networkworld.com/article/3568506/gluware-expands-network-automation-platform-with-ai-copilots-github-integration.html"
+      }
+    ]
+  },
+  {
+    "product": "Gluware Gluware",
+    "requirement": "framework-should-2",
+    "verdict": "partly_met",
+    "note": "The vendor states that GluAPI is a REST API with a JSON data model and built-in documentation. The fetched page does not mention an OpenAPI or other machine-readable schema.",
+    "sources": [
+      {
+        "title": "GluAPI",
+        "url": "https://gluware.com/platform/gluapi/"
+      }
+    ]
+  },
+  {
+    "product": "IBM Pliant",
+    "requirement": "framework-should-1",
+    "verdict": "not_shown",
+    "note": "No source found that states Pliant content can be managed with version control or CI/CD pipelines.",
+    "sources": []
+  },
+  {
+    "product": "IBM Pliant",
+    "requirement": "framework-should-2",
+    "verdict": "not_shown",
+    "note": "No source found that describes an API of Pliant itself or a schema for it; the IBM announcement only mentions integrations with third-party products that have an API or CLI.",
+    "sources": []
+  },
+  {
+    "product": "System Initiative System Initiative",
+    "requirement": "framework-should-1",
+    "verdict": "met",
+    "note": "System Initiative publishes a GitHub Action that updates component properties and runs management functions in a change set, so changes can be made from CI pipelines. The project was archived in February 2026.",
+    "sources": [
+      {
+        "title": "systeminit/actions (GitHub)",
+        "url": "https://github.com/systeminit/actions"
+      },
+      {
+        "title": "systeminit/si (GitHub)",
+        "url": "https://github.com/systeminit/si"
+      }
+    ]
+  },
+  {
+    "product": "System Initiative System Initiative",
+    "requirement": "framework-should-2",
+    "verdict": "partly_met",
+    "note": "System Initiative publishes a TypeScript and JavaScript SDK for its Public API. The documentation site that describes the API could not be reached, so a published schema could not be confirmed.",
+    "sources": [
+      {
+        "title": "@systeminit/api-client (JSR)",
+        "url": "https://jsr.io/@systeminit/api-client"
+      }
+    ]
+  },
+  {
+    "product": "ConfigHub ConfigHub",
+    "requirement": "framework-should-1",
+    "verdict": "partly_met",
+    "note": "The documentation states that each change to a unit's configuration through the API creates a revision, so configuration has a version history. The fetched page does not describe Git or CI/CD pipeline integration.",
+    "sources": [
+      {
+        "title": "API Overview (ConfigHub docs)",
+        "url": "https://docs.confighub.com/developer/api-overview/"
+      }
+    ]
+  },
+  {
+    "product": "ConfigHub ConfigHub",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "The documentation states that the complete API reference is published as an OpenAPI specification.",
+    "sources": [
+      {
+        "title": "API Overview (ConfigHub docs)",
+        "url": "https://docs.confighub.com/developer/api-overview/"
+      }
+    ]
+  },
+  {
+    "product": "Spacelift Spacelift",
+    "requirement": "framework-should-1",
+    "verdict": "met",
+    "note": "The vendor states that stacks, contexts, integrations and other Spacelift settings can be managed with its Terraform provider, so the configuration can be kept as code.",
+    "sources": [
+      {
+        "title": "Spacelift documentation: Terraform provider",
+        "url": "https://docs.spacelift.io/vendors/terraform/terraform-provider"
+      }
+    ]
+  },
+  {
+    "product": "Spacelift Spacelift",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "Spacelift exposes a GraphQL API at the /graphql endpoint, and the documentation states that its schema is self-documenting and can be read in a GraphQL client.",
+    "sources": [
+      {
+        "title": "Spacelift documentation: Spacelift API",
+        "url": "https://docs.spacelift.io/integrations/api"
+      }
+    ]
+  },
+  {
+    "product": "The Apache Software Foundation Apache Airflow",
+    "requirement": "framework-should-1",
+    "verdict": "met",
+    "note": "Airflow can load DAG code from a Git repository through the Git DAG bundle, and each DAG run records the Git commit it used.",
+    "sources": [
+      {
+        "title": "Airflow documentation: Dag bundles",
+        "url": "https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/dag-bundles.html"
+      }
+    ]
+  },
+  {
+    "product": "The Apache Software Foundation Apache Airflow",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "Airflow publishes a REST API under /api/v2, and the project repository contains its OpenAPI 3.1 specification.",
+    "sources": [
+      {
+        "title": "Airflow public REST API reference",
+        "url": "https://airflow.apache.org/docs/apache-airflow/stable/stable-rest-api-ref.html"
+      },
+      {
+        "title": "Airflow repository: v2-rest-api-generated.yaml (OpenAPI specification)",
+        "url": "https://raw.githubusercontent.com/apache/airflow/main/airflow-core/src/airflow/api_fastapi/core_api/openapi/v2-rest-api-generated.yaml"
+      }
+    ]
+  },
+  {
+    "product": "Windmill Labs Windmill",
+    "requirement": "framework-should-1",
+    "verdict": "partly_met",
+    "note": "Windmill pushes a commit to a Git repository each time an item is deployed, and documents GitHub Actions and GitLab CI workflows that push repository content to a workspace. In the Community Edition, Git sync is limited to workspaces with up to 2 users, and automatic deployment from Git is Enterprise Edition only.",
+    "sources": [
+      {
+        "title": "Windmill documentation: Git sync",
+        "url": "https://www.windmill.dev/docs/advanced/git_sync"
+      }
+    ]
+  },
+  {
+    "product": "Windmill Labs Windmill",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "The Windmill repository contains an OpenAPI 3.0.3 specification titled \"Windmill API\" for its REST API.",
+    "sources": [
+      {
+        "title": "Windmill repository: openapi.yaml",
+        "url": "https://raw.githubusercontent.com/windmill-labs/windmill/main/backend/windmill-api/openapi.yaml"
+      }
+    ]
+  },
+  {
+    "product": "Temporal Technologies Temporal",
+    "requirement": "framework-should-1",
+    "verdict": "partly_met",
+    "note": "For Temporal Cloud, a Terraform provider can create, update and delete namespaces, users, service accounts and API keys as code. No source was found that describes the same for self-hosted Temporal.",
+    "sources": [
+      {
+        "title": "Temporal documentation: Temporal Cloud Terraform provider",
+        "url": "https://docs.temporal.io/production-deployment/cloud/terraform-provider"
+      }
+    ]
+  },
+  {
+    "product": "Temporal Technologies Temporal",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "Temporal's gRPC API is defined in protobuf files, and the same repository contains OpenAPI documentation for the HTTP API.",
+    "sources": [
+      {
+        "title": "temporalio/api: Temporal gRPC API and proto files",
+        "url": "https://github.com/temporalio/api"
+      }
+    ]
+  },
+  {
+    "product": "Prefect Technologies Dagster",
+    "requirement": "framework-should-1",
+    "verdict": "partly_met",
+    "note": "Dagster+ redeploys the code in a Git branch for each open pull or merge request and provides GitHub Actions and GitLab CI/CD workflows. The source describes this for the paid Dagster+ service only.",
+    "sources": [
+      {
+        "title": "Dagster documentation: Branch deployments",
+        "url": "https://dagster.io/docs/deployment/dagster-plus/ci-cd/branch-deployments"
+      }
+    ]
+  },
+  {
+    "product": "Prefect Technologies Dagster",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "Dagster has a GraphQL API whose schema can be viewed in an interactive playground. The documentation states that this API is still changing and can have breaking changes.",
+    "sources": [
+      {
+        "title": "Dagster documentation: GraphQL API",
+        "url": "https://dagster.io/docs/api/graphql"
+      }
+    ]
+  },
+  {
+    "product": "Prefect Technologies Prefect",
+    "requirement": "framework-should-1",
+    "verdict": "met",
+    "note": "The documentation describes deploying flows from a CI/CD pipeline such as GitHub Actions, with the prefect.yaml deployment file stored in the repository next to the flow code.",
+    "sources": [
+      {
+        "title": "Prefect documentation: How to build deployments via CI/CD",
+        "url": "https://docs.prefect.io/v3/advanced/deploy-ci-cd"
+      }
+    ]
+  },
+  {
+    "product": "Prefect Technologies Prefect",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "Prefect has a REST API for Prefect Cloud and self-hosted servers, and publishes the OpenAPI schema of the self-hosted server; a running server also serves it at /openapi.json.",
+    "sources": [
+      {
+        "title": "Prefect documentation: REST API overview",
+        "url": "https://docs.prefect.io/v3/api-ref/rest-api"
+      }
+    ]
+  },
+  {
+    "product": "AlgoSec Horizon Security Analyzer",
+    "requirement": "framework-should-1",
+    "verdict": "not_shown",
+    "note": "No source was found that describes managing the product's configuration with version control or CI/CD.",
+    "sources": []
+  },
+  {
+    "product": "AlgoSec Horizon Security Analyzer",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "The Firewall Analyzer REST API is documented in Swagger, which lists the request parameters. Some older requests under /fa/server are not shown in Swagger.",
+    "sources": [
+      {
+        "title": "AlgoSec documentation: AFA REST web services",
+        "url": "https://techdocs.algosec.com/en/asms/a32.60/asms-help/content/api-guide/afa-rest-web-services.htm"
+      }
+    ]
+  },
+  {
+    "product": "FireMon Security Manager",
+    "requirement": "framework-should-1",
+    "verdict": "not_shown",
+    "note": "No source was found that describes managing the product's configuration with version control or CI/CD.",
+    "sources": []
+  },
+  {
+    "product": "FireMon Security Manager",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "The API endpoints are documented in a Swagger UI in the Administration module, which shows the model schema and parameters for each call.",
+    "sources": [
+      {
+        "title": "FireMon documentation: View API Endpoints",
+        "url": "https://docs.firemon.com/enterprise/Content/ADMINISTRATION/API/View_API_Endpoints.htm"
+      }
+    ]
+  },
+  {
+    "product": "Tufin Orchestration Suite",
+    "requirement": "framework-should-1",
+    "verdict": "not_shown",
+    "note": "No source from Tufin was found that describes managing the product's configuration with version control or CI/CD. A Terraform provider exists on GitHub, but the source does not show that Tufin maintains it.",
+    "sources": []
+  },
+  {
+    "product": "Tufin Orchestration Suite",
+    "requirement": "framework-should-2",
+    "verdict": "met",
+    "note": "The TOS REST APIs cover SecureTrack, SecureChange and SecureApp, and the SecureTrack API reference is published as a Swagger UI.",
+    "sources": [
+      {
+        "title": "Tufin Knowledge Center: Introducing REST APIs",
+        "url": "https://forum.tufin.com/support/kc/latest/Content/Suite/RESTAPI/securetrack_api.htm"
+      },
+      {
+        "title": "SecureTrack REST API Documentation (Swagger UI, R22-2)",
+        "url": "https://forum.tufin.com/support/kc/rest-api/R22-2/securetrack/apidoc/"
+      }
+    ]
+  },
+  {
+    "product": "Skybox Security Firewall Assurance",
+    "requirement": "framework-should-1",
+    "verdict": "not_shown",
+    "note": "The product is discontinued, and no source was found that describes managing its configuration with version control or CI/CD.",
+    "sources": []
+  },
+  {
+    "product": "Skybox Security Firewall Assurance",
+    "requirement": "framework-should-2",
+    "verdict": "not_shown",
+    "note": "The product is discontinued, and no public page was found that documents its API or an API schema.",
+    "sources": []
+  }
+]

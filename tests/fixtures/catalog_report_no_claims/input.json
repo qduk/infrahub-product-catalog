@@ -52,5 +52,49 @@
         }
       }
     ]
+  },
+  "CatalogRequirement": {
+    "edges": [
+      {
+        "node": {
+          "id": "req-intent",
+          "__typename": "CatalogRequirement",
+          "identifier": {
+            "value": "intent-must-1"
+          },
+          "level": {
+            "value": "must"
+          },
+          "building_block": {
+            "node": {
+              "id": "block-intent",
+              "name": {
+                "value": "Intent"
+              }
+            }
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "req-executor",
+          "__typename": "CatalogRequirement",
+          "identifier": {
+            "value": "executor-must-1"
+          },
+          "level": {
+            "value": "must"
+          },
+          "building_block": {
+            "node": {
+              "id": "block-executor",
+              "name": {
+                "value": "Executor"
+              }
+            }
+          }
+        }
+      }
+    ]
   }
 }

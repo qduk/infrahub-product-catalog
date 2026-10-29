@@ -1,0 +1,22 @@
+[
+  {
+    "claim": "Freshworks Device42 - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "met",
+    "note": "The vendor states that its data normalization and enrichment service replaces the raw vendor, operating system and software values that discovery jobs collect with standardized names and version numbers. The page does not describe normalization rules for each discovery method or for hardware models.",
+    "sources": [
+      {"title": "Device42 documentation: Enriched Data", "url": "https://docs.device42.com/auto-discovery/enriched-data/"}
+    ],
+    "found": true
+  },
+  {
+    "claim": "Juniper Networks Apstra Data Center Director - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "met",
+    "note": "The vendor states that users run graph queries on the Apstra graph to find patterns of nodes and relationships, with a query language based on Gremlin, and that Apstra also parses queries written in Cypher. Query results return the matched graph elements and can notify applications when results change.",
+    "sources": [
+      {"title": "Juniper Apstra User Guide: Graph", "url": "https://www.juniper.net/documentation/us/en/software/apstra6.1/apstra-user-guide/topics/topic-map/graph.html"}
+    ],
+    "found": true
+  }
+]

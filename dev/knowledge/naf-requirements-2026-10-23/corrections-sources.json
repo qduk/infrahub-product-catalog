@@ -1,0 +1,67 @@
+[
+  {
+    "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Executor",
+    "requirement": "executor-should-5",
+    "note": "The vendor states that the service re-deploy action is idempotent, so nothing is done when no configuration diff exists. The same page states that sync-to pushes a minimal diff, which NSO calculates by reading the device configuration and comparing it with the configuration in NSO.",
+    "sources": [
+      {"title": "NSO 6.4 Lifecycle Operations", "url": "https://nso-docs.cisco.com/guides/nso-6.4/operation-and-usage/operations/lifecycle-operations"}
+    ],
+    "found": true
+  },
+  {
+    "claim": "Cloud Native Computing Foundation (CNCF) Backstage - Presentation",
+    "requirement": "presentation-must-1",
+    "note": "The Backstage documentation lists built-in sign-in providers, including GitHub, GitLab, Google, Okta, Keycloak and Azure, and generic OAuth2 and SAML providers. The permission framework documentation states that Backstage can authorize access to data, APIs and interface actions through an integrator-defined permission policy, which can be role-based, attribute-based or delegated to an external authorization provider.",
+    "sources": [
+      {"title": "Backstage Authentication and identity", "url": "https://backstage.io/docs/auth/"},
+      {"title": "Backstage Permission framework overview", "url": "https://backstage.io/docs/permissions/overview"}
+    ],
+    "found": true
+  },
+  {
+    "claim": "Forward Networks Forward Enterprise - Collector",
+    "requirement": "collector-must-1",
+    "note": "The vendor's community guide states that Forward can discover and report on any device it can authenticate to through CLI, SNMP or API, and that SNMP profiles define which OIDs Forward collects from matching devices during collection.",
+    "sources": [
+      {"title": "Getting Started with SNMP Endpoints in Forward", "url": "https://community.forwardnetworks.com/nqe-discussions-39/getting-started-with-snmp-endpoints-in-forward-591"}
+    ],
+    "found": true
+  },
+  {
+    "claim": "Forward Networks Forward Enterprise - Observability",
+    "requirement": "observability-should-2",
+    "note": "The vendor states that Forward Enterprise verifies network compliance with custom intent checks, continuously audits the network and sends alerts for noncompliance. The same page states that engineers can compare snapshots of the network over time to find changes.",
+    "sources": [
+      {"title": "Automatic Noncompliance Detection Alerts", "url": "https://www.forwardnetworks.com/blog/lf/automatic-noncompliance-detection-alerts/"}
+    ],
+    "found": true
+  },
+  {
+    "claim": "Itential Platform - Orchestrator",
+    "requirement": "orchestrator-should-3",
+    "note": "The Itential documentation states that workflow canvas debug mode simulates workflow execution with mock data instead of calls to external systems. The 2023.2 release notes state that the testInstances task calculates the minimum device configuration commands for a service change, as the replacement for the removed dryRun task; this applies to NSO-backed services, not to every workflow.",
+    "sources": [
+      {"title": "Itential Use canvas debug mode", "url": "https://docs.itential.com/itential-platform/studio/workflows/canvas-debug-mode"},
+      {"title": "Itential 2023.2 DryRun and View DryRun manual tasks removed", "url": "https://docs.itential.com/itential-platform/2023-2/release-notes/breaking-changes/dryrun-view-dryrun-manual-tasks-removed"}
+    ],
+    "found": true
+  },
+  {
+    "claim": "Kentik Kentik - Presentation",
+    "requirement": "framework-should-1",
+    "note": "Kentik publishes a Terraform provider that creates, updates and removes Kentik synthetic tests and agents from Terraform configuration files. The page does not mention version control or CI/CD pipelines directly, and it covers synthetic monitoring configuration only.",
+    "sources": [
+      {"title": "Kentik Synthetics Terraform provider documentation", "url": "https://github.com/kentik/terraform-provider-kentik-synthetics/blob/master/docs/index.md"}
+    ],
+    "found": true
+  },
+  {
+    "claim": "Nokia Event-Driven Automation (EDA) - Executor",
+    "requirement": "executor-must-1",
+    "note": "The vendor states that gNMI is currently the only supported protocol for device management in EDA, and that support for other management protocols is planned. The same page states that EDA is the source of truth for node configuration.",
+    "sources": [
+      {"title": "Nokia EDA 26.8 Tour of EDA: Nodes", "url": "https://docs.eda.dev/26.8/tour-of-eda/nodes/"}
+    ],
+    "found": true
+  }
+]

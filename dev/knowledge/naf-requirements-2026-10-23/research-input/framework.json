@@ -1,0 +1,416 @@
+{
+  "block": null,
+  "requirements": [
+    {
+      "identifier": "framework-should-1",
+      "block": null,
+      "level": "should",
+      "position": 1,
+      "summary": "Follows software engineering practices such as version control and CI/CD",
+      "statement": "All components SHOULD follow modern software engineering practices, such as version control and CI/CD, and expose machine-friendly APIs (documented via schema). This ensures seamless integration with internal systems and external tooling for security, logging, observability, and traceability.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#context"
+    },
+    {
+      "identifier": "framework-should-2",
+      "block": null,
+      "level": "should",
+      "position": 2,
+      "summary": "Exposes machine-friendly APIs documented by a schema",
+      "statement": "All components SHOULD follow modern software engineering practices, such as version control and CI/CD, and expose machine-friendly APIs (documented via schema). This ensures seamless integration with internal systems and external tooling for security, logging, observability, and traceability.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#context"
+    }
+  ],
+  "products": [
+    {
+      "product": "OpsMill Infrahub",
+      "homepage_url": "https://docs.infrahub.app/",
+      "description": "A graph-based data management platform with built-in version control, CI workflows, peer review and API access.",
+      "catalog_sources": [
+        "https://docs.infrahub.app/overview",
+        "https://github.com/opsmill/infrahub"
+      ]
+    },
+    {
+      "product": "Red Hat Ansible",
+      "homepage_url": "https://www.ansible.com/",
+      "description": "An agentless automation tool that manages network devices from many vendors over SSH or HTTPS, using playbooks and vendor modules.",
+      "catalog_sources": [
+        "https://docs.ansible.com/ansible/latest/network/getting_started/index.html",
+        "https://github.com/ansible/ansible"
+      ]
+    },
+    {
+      "product": "Stardust Systems SuzieQ",
+      "homepage_url": "https://suzieq.readthedocs.io/en/latest/",
+      "description": "A multi-vendor network observability application that collects device state over SSH or REST API, stores it in Parquet files and answers questions about it through a CLI, GUI, REST API or Python.",
+      "catalog_sources": [
+        "https://github.com/netenglabs/suzieq",
+        "https://suzieq.readthedocs.io/en/latest/"
+      ]
+    },
+    {
+      "product": "SolarWinds Network Performance Monitor",
+      "homepage_url": "https://www.solarwinds.com/network-performance-monitor",
+      "description": "Polls multi-vendor network devices to track availability, traffic and hardware health, and shows the results in dashboards, maps and threshold-based alerts.",
+      "catalog_sources": [
+        "https://documentation.solarwinds.com/en/success_center/npm/content/npm_licensing_model.htm",
+        "https://www.solarwinds.com/network-performance-monitor"
+      ]
+    },
+    {
+      "product": "Kentik Kentik",
+      "homepage_url": "https://www.kentik.com/",
+      "description": "Collects network telemetry such as flow, SNMP and streaming telemetry from data center, cloud and internet networks, stores it, and lets users query and visualize it.",
+      "catalog_sources": [
+        "https://www.kentik.com/pricing/",
+        "https://www.kentik.com/product/"
+      ]
+    },
+    {
+      "product": "LibreNMS LibreNMS",
+      "homepage_url": "https://www.librenms.org/",
+      "description": "Network monitoring system that discovers devices with protocols such as SNMP, LLDP and CDP, collects their data, graphs it and sends alerts.",
+      "catalog_sources": [
+        "https://raw.githubusercontent.com/librenms/librenms/master/LICENSE.txt",
+        "https://raw.githubusercontent.com/librenms/librenms/master/README.md",
+        "https://www.librenms.org/"
+      ]
+    },
+    {
+      "product": "Zabbix Zabbix",
+      "homepage_url": "https://www.zabbix.com/",
+      "description": "Monitoring software that collects metrics from network devices, servers and applications, detects problems against thresholds, sends notifications and shows the data in dashboards and maps.",
+      "catalog_sources": [
+        "https://www.zabbix.com/features"
+      ]
+    },
+    {
+      "product": "Nagios Enterprises Nagios Core",
+      "homepage_url": "https://www.nagios.org/projects/nagios-core/",
+      "description": "Monitoring software that runs plugin-based checks against servers, network devices, websites and services, and alerts on problems, with a basic web interface.",
+      "catalog_sources": [
+        "https://www.nagios.org/projects/nagios-core/"
+      ]
+    },
+    {
+      "product": "Paessler PRTG Network Monitor",
+      "homepage_url": "https://www.paessler.com/prtg/prtg-network-monitor",
+      "description": "On-premises Windows software that monitors devices, systems and traffic through sensors such as SNMP, and provides maps, dashboards, alerts and reports.",
+      "catalog_sources": [
+        "https://www.paessler.com/prtg/prtg-network-monitor"
+      ]
+    },
+    {
+      "product": "Cisco pyATS",
+      "homepage_url": "https://developer.cisco.com/pyats/",
+      "description": "pyATS is a Python test and validation framework that records the operational state of network devices, compares it before and after changes, and runs reusable tests against the network.",
+      "catalog_sources": [
+        "https://developer.cisco.com/pyats/"
+      ]
+    },
+    {
+      "product": "Network Unit Testing System NUTS",
+      "homepage_url": "https://nuts.readthedocs.io/en/latest/",
+      "description": "NUTS is a pytest plugin that reads the desired network state from YAML test bundles, queries devices through Nornir and checks whether the results match.",
+      "catalog_sources": [
+        "https://github.com/network-unit-testing-system/nuts/blob/master/LICENSE",
+        "https://nuts.readthedocs.io/en/latest/"
+      ]
+    },
+    {
+      "product": "Flock9 Netpicker",
+      "homepage_url": "https://netpicker.io/",
+      "description": "Netpicker backs up device configurations and runs Python and pytest tests for configuration, compliance and security against network devices, with optional automated remediation jobs.",
+      "catalog_sources": [
+        "https://netpicker.io/",
+        "https://netpicker.io/about-us/",
+        "https://netpicker.io/pricing/"
+      ]
+    },
+    {
+      "product": "Nokia Event-Driven Automation (EDA)",
+      "homepage_url": "https://docs.eda.dev/",
+      "description": "Nokia EDA is a Kubernetes-based platform where users declare the desired state of fabrics, interfaces and services, which it translates into multivendor device configuration and checks against streaming telemetry.",
+      "catalog_sources": [
+        "https://docs.eda.dev/26.8/",
+        "https://docs.eda.dev/26.8/getting-started/try-eda/"
+      ]
+    },
+    {
+      "product": "Forward Networks Forward Enterprise",
+      "homepage_url": "https://www.forwardnetworks.com/forward-enterprise/",
+      "description": "Builds a model of a hybrid network from device and cloud state and configuration, so teams can search it, verify its behavior and test proposed changes before deployment.",
+      "catalog_sources": [
+        "https://www.forwardnetworks.com/",
+        "https://www.forwardnetworks.com/forward-enterprise/",
+        "https://www.forwardnetworks.com/pricing/"
+      ]
+    },
+    {
+      "product": "IP Fabric IP Fabric",
+      "homepage_url": "https://ipfabric.io/",
+      "description": "Discovers on-premises and cloud network devices through CLI and API calls and builds a read-only, point-in-time model of the network for analysis, compliance checks and integration.",
+      "catalog_sources": [
+        "https://ipfabric.io/"
+      ]
+    },
+    {
+      "product": "NetBrain Technologies Agentic NetOps Platform",
+      "homepage_url": "https://www.netbrain.com/platform/",
+      "description": "Collects device, topology and path data from multi-vendor networks and uses it for AI-assisted diagnosis, compliance assessment and change runbooks with pre-checks and post-checks.",
+      "catalog_sources": [
+        "https://www.netbrain.com/news/netbrain-hits-customer-milestone-and-introduces-simpler-software-licensing/",
+        "https://www.netbrain.com/platform/"
+      ]
+    },
+    {
+      "product": "Slurp'it Slurp'it",
+      "homepage_url": "https://slurpit.io/",
+      "description": "Discovers network devices, collects command output from them and turns it into structured inventory data that can be exported or synchronised to NetBox, Nautobot or Infrahub.",
+      "catalog_sources": [
+        "https://slurpit.io/",
+        "https://slurpit.io/pricing/"
+      ]
+    },
+    {
+      "product": "Juniper Networks Apstra Data Center Director",
+      "homepage_url": "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html",
+      "description": "Manages data center fabrics across vendors: stores the intended design in a graph database, generates device configurations from it and validates the network state against it.",
+      "catalog_sources": [
+        "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html"
+      ]
+    },
+    {
+      "product": "EfficientIP SOLIDserver DDI",
+      "homepage_url": "https://efficientip.com/products/solidserver-ddi/",
+      "description": "Provides DNS, DHCP and IP address management on hardware or virtual appliances, and pushes IP address changes to DNS and DHCP servers from a central repository.",
+      "catalog_sources": [
+        "https://efficientip.com/about-efficientip/",
+        "https://efficientip.com/products/solidserver-ddi/",
+        "https://efficientip.com/support-services/license-request/"
+      ]
+    },
+    {
+      "product": "Infoblox NIOS",
+      "homepage_url": "https://www.infoblox.com/products/nios/",
+      "description": "Provides DNS, DHCP and IP address management for on-premises and cloud networks, with optional discovery, reporting and integrations with automation tools.",
+      "catalog_sources": [
+        "https://www.infoblox.com/company/",
+        "https://www.infoblox.com/products/nios/"
+      ]
+    },
+    {
+      "product": "NetBox Labs NetBox",
+      "homepage_url": "https://netboxlabs.com/products/netbox/",
+      "description": "NetBox models and documents network infrastructure, defines its intended state and makes that data available to automation tools through APIs and a web interface.",
+      "catalog_sources": [
+        "https://github.com/netbox-community/netbox",
+        "https://netboxlabs.com/community/",
+        "https://netboxlabs.com/netbox-enterprise/"
+      ]
+    },
+    {
+      "product": "Network to Code Nautobot",
+      "homepage_url": "https://networktocode.com/nautobot/",
+      "description": "Nautobot stores the intended state of a network in extensible data models and runs automation jobs against that data, with REST and GraphQL APIs and an app framework.",
+      "catalog_sources": [
+        "https://github.com/nautobot/nautobot"
+      ]
+    },
+    {
+      "product": "Freshworks Device42",
+      "homepage_url": "https://www.device42.com/",
+      "description": "Device42 discovers and maps IT infrastructure and application dependencies across data centers and cloud, and records the results in a CMDB with DCIM, IPAM and asset management features.",
+      "catalog_sources": [
+        "https://www.device42.com/company/",
+        "https://www.device42.com/pricing/"
+      ]
+    },
+    {
+      "product": "Sunbird Software dcTrack",
+      "homepage_url": "https://www.sunbirddcim.com/dcim-products",
+      "description": "dcTrack is data center infrastructure management software that records physical assets, capacity and power and network connections, and manages change requests for data center equipment.",
+      "catalog_sources": [
+        "https://info.sunbirddcim.com/hubfs/DS009_Sunbird_DataSheet_dcTrack9_2.pdf",
+        "https://www.sunbirddcim.com/dcim-products"
+      ]
+    },
+    {
+      "product": "phpIPAM project phpIPAM",
+      "homepage_url": "https://phpipam.net/",
+      "description": "phpIPAM is a web application for IP address management that tracks IPv4 and IPv6 subnets and addresses, VLANs, VRFs and devices, with subnet scanning and a REST API.",
+      "catalog_sources": [
+        "https://phpipam.net/",
+        "https://raw.githubusercontent.com/phpipam/phpipam/master/misc/gpl-3.0.txt"
+      ]
+    },
+    {
+      "product": "ServiceNow IT Service Management",
+      "homepage_url": "https://www.servicenow.com/products/itsm.html",
+      "description": "ServiceNow IT Service Management is a set of applications for handling IT incidents, problems, changes and service requests, with a service catalog, asset management and a CMDB.",
+      "catalog_sources": [
+        "https://en.wikipedia.org/wiki/ServiceNow",
+        "https://www.servicenow.com/community/itsm-articles/itsm-welcome-guide/ta-p/2304257"
+      ]
+    },
+    {
+      "product": "Cloud Native Computing Foundation (CNCF) Backstage",
+      "homepage_url": "https://backstage.io/",
+      "description": "Backstage is a framework for building developer portals around a catalog of software components, with project templates, documentation and plugins.",
+      "catalog_sources": [
+        "https://github.com/backstage/backstage",
+        "https://raw.githubusercontent.com/backstage/backstage/master/LICENSE"
+      ]
+    },
+    {
+      "product": "Cisco Crosswork Network Services Orchestrator (NSO)",
+      "homepage_url": "https://www.cisco.com/c/en/us/products/cloud-systems-management/network-services-orchestrator/index.html",
+      "description": "Linux-based application that stores network service intent and device configuration in a YANG-modelled database and pushes the resulting configuration changes to multivendor physical and virtual network devices.",
+      "catalog_sources": [
+        "https://nso-docs.cisco.com/",
+        "https://raw.githubusercontent.com/NSO-developer/nso-gitbook/main/administration/management/system-management/cisco-smart-licensing.md"
+      ]
+    },
+    {
+      "product": "HashiCorp Terraform",
+      "homepage_url": "https://developer.hashicorp.com/terraform",
+      "description": "Infrastructure-as-code tool that reads declarative configuration files, plans the changes needed and creates, updates or deletes cloud and on-premises resources through provider APIs.",
+      "catalog_sources": [
+        "https://developer.hashicorp.com/terraform/intro"
+      ]
+    },
+    {
+      "product": "Itential Platform",
+      "homepage_url": "https://www.itential.com/",
+      "description": "Platform where infrastructure teams build workflows and AI agents that call existing tools such as Ansible, Python and OpenTofu, and run network changes with access control, approvals and audit logs.",
+      "catalog_sources": [
+        "https://www.itential.com/",
+        "https://www.itential.com/pricing/"
+      ]
+    },
+    {
+      "product": "Gluware Gluware",
+      "homepage_url": "https://gluware.com/",
+      "description": "Network automation platform for multivendor enterprise networks that discovers existing devices, builds intent models from their configuration, detects drift and compliance issues, and applies validated changes.",
+      "catalog_sources": [
+        "https://gluware.com/",
+        "https://gluware.com/gluware-end-user-license-agreement/"
+      ]
+    },
+    {
+      "product": "IBM Pliant",
+      "homepage_url": "https://newsroom.ibm.com/Blog-IBM-Acquires-Pliant-to-Further-Enhance-Network-IT-Automation-Capabilities",
+      "description": "Network and IT infrastructure automation software with prebuilt integrations for third-party products that have an API or CLI, used to provision resources and manage configuration and traffic.",
+      "catalog_sources": [
+        "https://newsroom.ibm.com/Blog-IBM-Acquires-Pliant-to-Further-Enhance-Network-IT-Automation-Capabilities"
+      ]
+    },
+    {
+      "product": "System Initiative System Initiative",
+      "homepage_url": "https://github.com/systeminit/si",
+      "description": "Infrastructure automation platform in which AI agents discover infrastructure, propose changes and apply them, with human review and policy checks; the project is archived.",
+      "catalog_sources": [
+        "https://github.com/systeminit/si",
+        "https://raw.githubusercontent.com/systeminit/si/main/LICENSE"
+      ]
+    },
+    {
+      "product": "ConfigHub ConfigHub",
+      "homepage_url": "https://confighub.com/",
+      "description": "Service that stores Kubernetes, infrastructure and application configuration as literal YAML or JSON data in a database, with an API and CLI to query, change, validate and version it.",
+      "catalog_sources": [
+        "https://confighub.com/",
+        "https://docs.confighub.com/"
+      ]
+    },
+    {
+      "product": "Spacelift Spacelift",
+      "homepage_url": "https://spacelift.io/",
+      "description": "Platform that runs and coordinates infrastructure-as-code workflows for Terraform, OpenTofu, CloudFormation, Pulumi, Kubernetes and Ansible, with policies, approvals and drift detection.",
+      "catalog_sources": [
+        "https://spacelift.io/",
+        "https://spacelift.io/pricing"
+      ]
+    },
+    {
+      "product": "The Apache Software Foundation Apache Airflow",
+      "homepage_url": "https://airflow.apache.org/",
+      "description": "Platform for writing workflows as Python code and for scheduling and monitoring them.",
+      "catalog_sources": [
+        "https://airflow.apache.org/",
+        "https://raw.githubusercontent.com/apache/airflow/main/LICENSE"
+      ]
+    },
+    {
+      "product": "Windmill Labs Windmill",
+      "homepage_url": "https://www.windmill.dev/",
+      "description": "Platform for building and running scripts, workflows, internal apps and data pipelines, with schedules, webhooks and generated user interfaces.",
+      "catalog_sources": [
+        "https://raw.githubusercontent.com/windmill-labs/windmill/main/README.md",
+        "https://www.windmill.dev/"
+      ]
+    },
+    {
+      "product": "Temporal Technologies Temporal",
+      "homepage_url": "https://temporal.io/",
+      "description": "Durable execution platform that runs application code as workflows, records each step and resumes workflows after failures.",
+      "catalog_sources": [
+        "https://raw.githubusercontent.com/temporalio/temporal/main/README.md",
+        "https://temporal.io/"
+      ]
+    },
+    {
+      "product": "Prefect Technologies Dagster",
+      "homepage_url": "https://dagster.io/",
+      "description": "Data orchestration platform that defines pipelines around the data assets they produce and tracks their lineage, quality and dependencies.",
+      "catalog_sources": [
+        "https://dagster.io/"
+      ]
+    },
+    {
+      "product": "Prefect Technologies Prefect",
+      "homepage_url": "https://www.prefect.io/",
+      "description": "Workflow orchestration platform that runs Python workflows with scheduling, retries, caching and recovery.",
+      "catalog_sources": [
+        "https://www.prefect.io/"
+      ]
+    },
+    {
+      "product": "AlgoSec Horizon Security Analyzer",
+      "homepage_url": "https://www.algosec.com/products/firewall-analyzer",
+      "description": "Firewall policy analysis tool that maps hybrid network security topology, analyzes rules for risk and compliance, and recommends rule cleanup.",
+      "catalog_sources": [
+        "https://www.algosec.com/products/firewall-analyzer"
+      ]
+    },
+    {
+      "product": "FireMon Security Manager",
+      "homepage_url": "https://www.firemon.com/products/security-manager",
+      "description": "Network security policy management product that collects and normalizes firewall and cloud security configurations into one policy database and detects rule changes.",
+      "catalog_sources": [
+        "https://www.firemon.com/pricing",
+        "https://www.firemon.com/products/security-manager"
+      ]
+    },
+    {
+      "product": "Tufin Orchestration Suite",
+      "homepage_url": "https://www.tufin.com/tufin-orchestration-suite",
+      "description": "Network security policy management suite that analyzes firewall, cloud and SASE policies against a defined zone policy and automates access change requests.",
+      "catalog_sources": [
+        "https://www.tufin.com/",
+        "https://www.tufin.com/pricing",
+        "https://www.tufin.com/tufin-orchestration-suite"
+      ]
+    },
+    {
+      "product": "Skybox Security Firewall Assurance",
+      "homepage_url": "https://www.skyboxsecurity.com/products/firewall-assurance/",
+      "description": "Discontinued firewall management product that analyzed multi-vendor firewall rule bases for risk, compliance and cleanup, and tracked firewall changes.",
+      "catalog_sources": [
+        "https://web.archive.org/web/20250122112330id_/https://www.skyboxsecurity.com/products/firewall-assurance/",
+        "https://www.securityweek.com/skybox-security-shuts-down-lays-off-entire-workforce/",
+        "https://www.tufin.com/tufin-expresspath-program"
+      ]
+    }
+  ]
+}

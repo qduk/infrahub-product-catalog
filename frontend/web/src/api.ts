@@ -9,11 +9,34 @@ export interface Source {
   url: string
 }
 
-export interface Claim {
-  block: string
-  extent: Extent
+export type Level = 'must' | 'should' | 'may'
+export type VerdictValue = 'met' | 'partly_met' | 'not_met' | 'not_shown'
+
+// A requirement of the Network Automation Framework (specs/008-naf-requirements).
+export interface Requirement {
+  identifier: string
+  level: Level
+  position: number
+  summary: string
+  statement: string
+  reference_url: string
+  block: string | null // null: applies to every building block
+}
+
+export interface Verdict {
+  requirement: string
+  verdict: VerdictValue
   note: string | null
   sources: Source[]
+}
+
+export interface Claim {
+  block: string
+  extent: Extent // computed by the service from the verdicts
+  assessed: boolean
+  note: string | null
+  sources: Source[]
+  verdicts: Verdict[]
 }
 
 export interface Product {
@@ -49,6 +72,7 @@ export interface Publisher {
 export interface Catalog {
   blocks: Block[]
   publishers: Publisher[]
+  requirements: Requirement[]
   products: Product[]
 }
 

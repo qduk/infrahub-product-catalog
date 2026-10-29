@@ -1,0 +1,836 @@
+[
+  {
+    "claim": "OpsMill Infrahub - Intent",
+    "requirement": "intent-must-1",
+    "verdict": "met",
+    "note": "The README states that users define their own data models for devices, services, topologies and business context, and lists devices, services, IP addresses, VLANs and circuits as data held in Infrahub.",
+    "sources": [
+      {
+        "title": "opsmill/infrahub README on GitHub",
+        "url": "https://github.com/opsmill/infrahub"
+      },
+      {
+        "title": "What is Infrahub",
+        "url": "https://docs.infrahub.app/overview"
+      }
+    ]
+  },
+  {
+    "claim": "OpsMill Infrahub - Intent",
+    "requirement": "intent-must-2",
+    "verdict": "met",
+    "note": "The documentation states that GraphQL mutations create, update, upsert and delete nodes, and that GraphQL queries read them.",
+    "sources": [
+      {
+        "title": "Queries & mutations",
+        "url": "https://docs.infrahub.app/development-resources/graphql/queries-and-mutations"
+      }
+    ]
+  },
+  {
+    "claim": "OpsMill Infrahub - Intent",
+    "requirement": "intent-must-3",
+    "verdict": "met",
+    "note": "The documentation states that GraphQL is the main API for all data defined by the schema, and that a REST API handles schema loading, artifact retrieval and saved queries.",
+    "sources": [
+      {
+        "title": "What is Infrahub",
+        "url": "https://docs.infrahub.app/overview"
+      },
+      {
+        "title": "Queries & mutations",
+        "url": "https://docs.infrahub.app/development-resources/graphql/queries-and-mutations"
+      }
+    ]
+  },
+  {
+    "claim": "OpsMill Infrahub - Intent",
+    "requirement": "intent-should-1",
+    "verdict": "met",
+    "note": "The README states that Infrahub renders configurations from its data with Jinja2 or Python transformations, and that teams generate configurations across vendors; the data model is defined by the user.",
+    "sources": [
+      {
+        "title": "opsmill/infrahub README on GitHub",
+        "url": "https://github.com/opsmill/infrahub"
+      },
+      {
+        "title": "Transformations overview",
+        "url": "https://docs.infrahub.app/transformations/overview"
+      }
+    ]
+  },
+  {
+    "claim": "OpsMill Infrahub - Intent",
+    "requirement": "intent-should-2",
+    "verdict": "met",
+    "note": "The README states that Infrahub is one source of truth for devices, services, IP addresses, VLANs and circuits, and that Infrahub Sync brings in data from NetBox, Nautobot and IP Fabric.",
+    "sources": [
+      {
+        "title": "opsmill/infrahub README on GitHub",
+        "url": "https://github.com/opsmill/infrahub"
+      },
+      {
+        "title": "What is Infrahub",
+        "url": "https://docs.infrahub.app/overview"
+      }
+    ]
+  },
+  {
+    "claim": "OpsMill Infrahub - Intent",
+    "requirement": "intent-should-3",
+    "verdict": "partly_met",
+    "note": "The documentation states that Infrahub records the source, owner and protection flag of attributes, and created and updated timestamps and accounts of nodes. Valid periods are not mentioned.",
+    "sources": [
+      {
+        "title": "Data lineage and metadata",
+        "url": "https://docs.infrahub.app/objects/metadata"
+      }
+    ]
+  },
+  {
+    "claim": "OpsMill Infrahub - Intent",
+    "requirement": "intent-should-4",
+    "verdict": "partly_met",
+    "note": "The documentation states that Infrahub offers branches, diffs, merges and a queryable history, and that user-defined checks block the merge of a proposed change when they fail. The sources do not state that changes are transactional.",
+    "sources": [
+      {
+        "title": "What is Infrahub",
+        "url": "https://docs.infrahub.app/overview"
+      },
+      {
+        "title": "opsmill/infrahub README on GitHub",
+        "url": "https://github.com/opsmill/infrahub"
+      },
+      {
+        "title": "Checks & Validation",
+        "url": "https://docs.infrahub.app/checks/overview"
+      }
+    ]
+  },
+  {
+    "claim": "OpsMill Infrahub - Intent",
+    "requirement": "intent-may-1",
+    "verdict": "met",
+    "note": "The documentation states that checks validate data in proposed changes, that generators create nodes from abstract service objects, that transformations render configuration artifacts, and that Infrahub Sync brings in data from other systems.",
+    "sources": [
+      {
+        "title": "Checks & Validation",
+        "url": "https://docs.infrahub.app/checks/overview"
+      },
+      {
+        "title": "Generators overview",
+        "url": "https://docs.infrahub.app/generators/overview"
+      },
+      {
+        "title": "Transformations overview",
+        "url": "https://docs.infrahub.app/transformations/overview"
+      },
+      {
+        "title": "What is Infrahub",
+        "url": "https://docs.infrahub.app/overview"
+      }
+    ]
+  },
+  {
+    "claim": "Network Unit Testing System NUTS - Intent",
+    "requirement": "intent-must-1",
+    "verdict": "partly_met",
+    "note": "Test bundles in YAML describe the expected state for a fixed set of test classes, such as BGP, OSPF, LLDP and CDP neighbors, VLANs, interfaces and ping results. NUTS does not describe a general model of network data.",
+    "sources": [
+      {
+        "title": "NUTS documentation",
+        "url": "https://nuts.readthedocs.io/en/latest/"
+      },
+      {
+        "title": "network-unit-testing-system/nuts README on GitHub",
+        "url": "https://github.com/network-unit-testing-system/nuts"
+      }
+    ]
+  },
+  {
+    "claim": "Network Unit Testing System NUTS - Intent",
+    "requirement": "intent-must-2",
+    "verdict": "not_shown",
+    "note": "The sources state that test bundles are YAML files, but do not describe create, read, update or delete operations on them.",
+    "sources": []
+  },
+  {
+    "claim": "Network Unit Testing System NUTS - Intent",
+    "requirement": "intent-must-3",
+    "verdict": "not_met",
+    "note": "The README states that test bundles are currently YAML files read by a pytest plugin; it describes no API for accessing them.",
+    "sources": [
+      {
+        "title": "network-unit-testing-system/nuts README on GitHub",
+        "url": "https://github.com/network-unit-testing-system/nuts"
+      }
+    ]
+  },
+  {
+    "claim": "Network Unit Testing System NUTS - Intent",
+    "requirement": "intent-should-1",
+    "verdict": "not_met",
+    "note": "The README states that NUTS only reads and checks device state and does not write configuration.",
+    "sources": [
+      {
+        "title": "network-unit-testing-system/nuts README on GitHub",
+        "url": "https://github.com/network-unit-testing-system/nuts"
+      }
+    ]
+  },
+  {
+    "claim": "Network Unit Testing System NUTS - Intent",
+    "requirement": "intent-should-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Network Unit Testing System NUTS - Intent",
+    "requirement": "intent-should-3",
+    "verdict": "not_shown",
+    "note": "The README states that test bundles can carry optional metadata, but does not say that it covers timestamps, origin, ownership or valid periods.",
+    "sources": []
+  },
+  {
+    "claim": "Network Unit Testing System NUTS - Intent",
+    "requirement": "intent-should-4",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Network Unit Testing System NUTS - Intent",
+    "requirement": "intent-may-1",
+    "verdict": "not_met",
+    "note": "The sources state that NUTS compares device state with the test bundles and does not generate or change configuration.",
+    "sources": [
+      {
+        "title": "NUTS documentation",
+        "url": "https://nuts.readthedocs.io/en/latest/"
+      },
+      {
+        "title": "network-unit-testing-system/nuts README on GitHub",
+        "url": "https://github.com/network-unit-testing-system/nuts"
+      }
+    ]
+  },
+  {
+    "claim": "Nokia Event-Driven Automation (EDA) - Intent",
+    "requirement": "intent-must-1",
+    "verdict": "met",
+    "note": "The documentation states that a resource is a declarative intent that can represent nearly anything, including interfaces, fabrics, network services, user accounts and DNS records, and that applications add new resource types.",
+    "sources": [
+      {
+        "title": "Resource Model - Nokia EDA",
+        "url": "https://docs.eda.dev/25.12/tour-of-eda/resource-model/"
+      },
+      {
+        "title": "Nokia EDA documentation 26.8",
+        "url": "https://docs.eda.dev/26.8/"
+      }
+    ]
+  },
+  {
+    "claim": "Nokia Event-Driven Automation (EDA) - Intent",
+    "requirement": "intent-must-2",
+    "verdict": "met",
+    "note": "The documentation states that users list, read, create, change and delete resources through the Kubernetes API, the EDA REST API or the web interface.",
+    "sources": [
+      {
+        "title": "Resource Model - Nokia EDA",
+        "url": "https://docs.eda.dev/25.12/tour-of-eda/resource-model/"
+      }
+    ]
+  },
+  {
+    "claim": "Nokia Event-Driven Automation (EDA) - Intent",
+    "requirement": "intent-must-3",
+    "verdict": "met",
+    "note": "The documentation states that resources are accessed through the Kubernetes API and the EDA REST API.",
+    "sources": [
+      {
+        "title": "Resource Model - Nokia EDA",
+        "url": "https://docs.eda.dev/25.12/tour-of-eda/resource-model/"
+      }
+    ]
+  },
+  {
+    "claim": "Nokia Event-Driven Automation (EDA) - Intent",
+    "requirement": "intent-should-1",
+    "verdict": "met",
+    "note": "The vendor states that EDA keeps the same resource meaning for interfaces, fabrics and services across operating systems and vendors, and the documentation states that abstract resources are turned into device configuration.",
+    "sources": [
+      {
+        "title": "Nokia EDA documentation 26.8",
+        "url": "https://docs.eda.dev/26.8/"
+      },
+      {
+        "title": "Resource Model - Nokia EDA",
+        "url": "https://docs.eda.dev/25.12/tour-of-eda/resource-model/"
+      }
+    ]
+  },
+  {
+    "claim": "Nokia Event-Driven Automation (EDA) - Intent",
+    "requirement": "intent-should-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Nokia Event-Driven Automation (EDA) - Intent",
+    "requirement": "intent-should-3",
+    "verdict": "partly_met",
+    "note": "The documentation states that resources carry names, namespaces, labels, annotations and timestamps. Data origin, ownership and valid periods are not mentioned.",
+    "sources": [
+      {
+        "title": "Resource Model - Nokia EDA",
+        "url": "https://docs.eda.dev/25.12/tour-of-eda/resource-model/"
+      }
+    ]
+  },
+  {
+    "claim": "Nokia Event-Driven Automation (EDA) - Intent",
+    "requirement": "intent-should-4",
+    "verdict": "partly_met",
+    "note": "The documentation states that transactions are applied all-or-nothing, are recorded in a Git repository, can be reverted or restored, and are validated against schemas and dependencies before deployment. User-defined validation rules are not described.",
+    "sources": [
+      {
+        "title": "Transactions - Nokia EDA",
+        "url": "https://docs.eda.dev/26.4/tour-of-eda/transactions/"
+      }
+    ]
+  },
+  {
+    "claim": "Nokia Event-Driven Automation (EDA) - Intent",
+    "requirement": "intent-may-1",
+    "verdict": "met",
+    "note": "The documentation states that a Fabric resource produces lower-level resources that become device configuration, and that EDA validates resources and their dependencies before deployment.",
+    "sources": [
+      {
+        "title": "Resource Model - Nokia EDA",
+        "url": "https://docs.eda.dev/25.12/tour-of-eda/resource-model/"
+      },
+      {
+        "title": "Transactions - Nokia EDA",
+        "url": "https://docs.eda.dev/26.4/tour-of-eda/transactions/"
+      }
+    ]
+  },
+  {
+    "claim": "Forward Networks Forward Enterprise - Intent",
+    "requirement": "intent-must-1",
+    "verdict": "partly_met",
+    "note": "The vendor states that custom intent checks express expected forwarding behavior, segmentation and policy. The rest of the model is built from state and configuration collected from devices and cloud, not from a defined desired state.",
+    "sources": [
+      {
+        "title": "Forward Enterprise",
+        "url": "https://www.forwardnetworks.com/forward-enterprise/"
+      },
+      {
+        "title": "Forward Networks API",
+        "url": "https://docs.fwd.app/25.12/api-doc/"
+      }
+    ]
+  },
+  {
+    "claim": "Forward Networks Forward Enterprise - Intent",
+    "requirement": "intent-must-2",
+    "verdict": "partly_met",
+    "note": "The API documentation lists create, list and delete operations for intent checks. An update operation for checks is not described.",
+    "sources": [
+      {
+        "title": "Forward Networks API",
+        "url": "https://docs.fwd.app/25.12/api-doc/"
+      }
+    ]
+  },
+  {
+    "claim": "Forward Networks Forward Enterprise - Intent",
+    "requirement": "intent-must-3",
+    "verdict": "met",
+    "note": "The API documentation describes a REST API with OpenAPI descriptions in YAML and JSON, including a Checks section.",
+    "sources": [
+      {
+        "title": "Forward Networks API",
+        "url": "https://docs.fwd.app/25.12/api-doc/"
+      }
+    ]
+  },
+  {
+    "claim": "Forward Networks Forward Enterprise - Intent",
+    "requirement": "intent-should-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Forward Networks Forward Enterprise - Intent",
+    "requirement": "intent-should-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Forward Networks Forward Enterprise - Intent",
+    "requirement": "intent-should-3",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Forward Networks Forward Enterprise - Intent",
+    "requirement": "intent-should-4",
+    "verdict": "not_shown",
+    "note": "The API documentation states that check creation and deletion carry forward to later snapshots, but does not describe transactions, validation of the check data or versioned access.",
+    "sources": []
+  },
+  {
+    "claim": "Forward Networks Forward Enterprise - Intent",
+    "requirement": "intent-may-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "NetBrain Technologies Agentic NetOps Platform - Intent",
+    "requirement": "intent-must-1",
+    "verdict": "partly_met",
+    "note": "The vendor states that Network Intent holds design rules, golden configurations and baselines; the other data is device, topology and path data collected from the network.",
+    "sources": [
+      {
+        "title": "NetBrain platform",
+        "url": "https://www.netbrain.com/platform/"
+      }
+    ]
+  },
+  {
+    "claim": "NetBrain Technologies Agentic NetOps Platform - Intent",
+    "requirement": "intent-must-2",
+    "verdict": "not_shown",
+    "note": "The sources do not describe create, read, update and delete operations on intent data.",
+    "sources": []
+  },
+  {
+    "claim": "NetBrain Technologies Agentic NetOps Platform - Intent",
+    "requirement": "intent-must-3",
+    "verdict": "not_shown",
+    "note": "The vendor states that a REST API exists, but the R12.3 REST API documentation lists no section for Network Intent, golden configurations or design rules.",
+    "sources": []
+  },
+  {
+    "claim": "NetBrain Technologies Agentic NetOps Platform - Intent",
+    "requirement": "intent-should-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "NetBrain Technologies Agentic NetOps Platform - Intent",
+    "requirement": "intent-should-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "NetBrain Technologies Agentic NetOps Platform - Intent",
+    "requirement": "intent-should-3",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "NetBrain Technologies Agentic NetOps Platform - Intent",
+    "requirement": "intent-should-4",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "NetBrain Technologies Agentic NetOps Platform - Intent",
+    "requirement": "intent-may-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Juniper Networks Apstra Data Center Director - Intent",
+    "requirement": "intent-must-1",
+    "verdict": "partly_met",
+    "note": "The documentation states that a graph holds infrastructure, policies and constraints as nodes and relationships defined by a graph schema. The vendor states that the product is for data center networks, so other network areas are outside its scope.",
+    "sources": [
+      {
+        "title": "Apstra User Guide: Graph",
+        "url": "https://www.juniper.net/documentation/us/en/software/apstra4.2/apstra-user-guide/topics/topic-map/graph.html"
+      },
+      {
+        "title": "Apstra Data Center Director",
+        "url": "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html"
+      }
+    ]
+  },
+  {
+    "claim": "Juniper Networks Apstra Data Center Director - Intent",
+    "requirement": "intent-must-2",
+    "verdict": "met",
+    "note": "The documentation states that the Graph API adds, updates, deletes and reads nodes and relationships.",
+    "sources": [
+      {
+        "title": "Apstra User Guide: Graph",
+        "url": "https://www.juniper.net/documentation/us/en/software/apstra4.2/apstra-user-guide/topics/topic-map/graph.html"
+      }
+    ]
+  },
+  {
+    "claim": "Juniper Networks Apstra Data Center Director - Intent",
+    "requirement": "intent-must-3",
+    "verdict": "met",
+    "note": "The documentation states that the REST API Explorer lists each REST API endpoint with its URL, method, parameters and responses.",
+    "sources": [
+      {
+        "title": "Apstra User Guide: REST API Explorer",
+        "url": "https://www.juniper.net/documentation/us/en/software/apstra5.0/apstra-user-guide/topics/concept/rest-api-explorer.html"
+      }
+    ]
+  },
+  {
+    "claim": "Juniper Networks Apstra Data Center Director - Intent",
+    "requirement": "intent-should-1",
+    "verdict": "met",
+    "note": "The vendor states that the product generates vendor-specific configurations from the user's intent and supports vendor-independent operations.",
+    "sources": [
+      {
+        "title": "Apstra Data Center Director",
+        "url": "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html"
+      }
+    ]
+  },
+  {
+    "claim": "Juniper Networks Apstra Data Center Director - Intent",
+    "requirement": "intent-should-2",
+    "verdict": "not_shown",
+    "note": "The documentation describes the graph as a single source of truth, but does not describe combining data from several sources.",
+    "sources": []
+  },
+  {
+    "claim": "Juniper Networks Apstra Data Center Director - Intent",
+    "requirement": "intent-should-3",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Juniper Networks Apstra Data Center Director - Intent",
+    "requirement": "intent-should-4",
+    "verdict": "partly_met",
+    "note": "The documentation states that committing staged changes creates a revision, that Apstra validates every commit, and that changes can be reverted. Transactional behavior and user-defined validation are not described.",
+    "sources": [
+      {
+        "title": "Apstra User Guide: Commit / Revert Changes to Blueprint",
+        "url": "https://www.juniper.net/documentation/us/en/software/apstra5.0/apstra-user-guide/topics/task/blueprint-commit-revert.html"
+      }
+    ]
+  },
+  {
+    "claim": "Juniper Networks Apstra Data Center Director - Intent",
+    "requirement": "intent-may-1",
+    "verdict": "met",
+    "note": "The vendor states that the product builds the data center design in software, generates device configurations from intent and validates the network continuously; the documentation states that commits are validated.",
+    "sources": [
+      {
+        "title": "Apstra Data Center Director",
+        "url": "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html"
+      },
+      {
+        "title": "Apstra User Guide: Commit / Revert Changes to Blueprint",
+        "url": "https://www.juniper.net/documentation/us/en/software/apstra5.0/apstra-user-guide/topics/task/blueprint-commit-revert.html"
+      }
+    ]
+  },
+  {
+    "claim": "EfficientIP SOLIDserver DDI - Intent",
+    "requirement": "intent-must-1",
+    "verdict": "partly_met",
+    "note": "The vendor states that the product holds IP addresses, DNS, DHCP, VLAN, VXLAN, VRF, application and device records in a central repository. Other network areas are not covered.",
+    "sources": [
+      {
+        "title": "SOLIDserver DDI",
+        "url": "https://efficientip.com/products/solidserver-ddi/"
+      }
+    ]
+  },
+  {
+    "claim": "EfficientIP SOLIDserver DDI - Intent",
+    "requirement": "intent-must-2",
+    "verdict": "met",
+    "note": "The vendor's API guide describes adding, listing, reading, editing and deleting IPAM and DNS objects through the REST API.",
+    "sources": [
+      {
+        "title": "Getting Started with SOLIDserver REST APIs",
+        "url": "https://efficientip.com/blog/getting-started-with-solidserver-rest-apis/"
+      }
+    ]
+  },
+  {
+    "claim": "EfficientIP SOLIDserver DDI - Intent",
+    "requirement": "intent-must-3",
+    "verdict": "met",
+    "note": "The vendor's API guide describes a REST API whose parameters are documented in a Swagger interface.",
+    "sources": [
+      {
+        "title": "Getting Started with SOLIDserver REST APIs",
+        "url": "https://efficientip.com/blog/getting-started-with-solidserver-rest-apis/"
+      }
+    ]
+  },
+  {
+    "claim": "EfficientIP SOLIDserver DDI - Intent",
+    "requirement": "intent-should-1",
+    "verdict": "partly_met",
+    "note": "The vendor states that IP address changes are pushed automatically to multi-vendor DNS and DHCP servers. Configuration for other device types is not described.",
+    "sources": [
+      {
+        "title": "SOLIDserver DDI",
+        "url": "https://efficientip.com/products/solidserver-ddi/"
+      }
+    ]
+  },
+  {
+    "claim": "EfficientIP SOLIDserver DDI - Intent",
+    "requirement": "intent-should-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "EfficientIP SOLIDserver DDI - Intent",
+    "requirement": "intent-should-3",
+    "verdict": "partly_met",
+    "note": "The vendor states that objects such as IP addresses can carry metadata and that the product tracks changes. Timestamps, data origin, ownership and valid periods are not named.",
+    "sources": [
+      {
+        "title": "Getting Started with SOLIDserver REST APIs",
+        "url": "https://efficientip.com/blog/getting-started-with-solidserver-rest-apis/"
+      },
+      {
+        "title": "SOLIDserver DDI",
+        "url": "https://efficientip.com/products/solidserver-ddi/"
+      }
+    ]
+  },
+  {
+    "claim": "EfficientIP SOLIDserver DDI - Intent",
+    "requirement": "intent-should-4",
+    "verdict": "not_shown",
+    "note": "The vendor states that the product offers consistency control and change tracking, but does not describe transactions, user-defined validation or versioned access.",
+    "sources": []
+  },
+  {
+    "claim": "EfficientIP SOLIDserver DDI - Intent",
+    "requirement": "intent-may-1",
+    "verdict": "partly_met",
+    "note": "The vendor states that the product offers consistency control, resource templates and workflows, and pushes IP address changes to DNS and DHCP servers. Configuration artifacts for other devices are not described.",
+    "sources": [
+      {
+        "title": "SOLIDserver DDI",
+        "url": "https://efficientip.com/products/solidserver-ddi/"
+      }
+    ]
+  },
+  {
+    "claim": "Infoblox NIOS - Intent",
+    "requirement": "intent-must-1",
+    "verdict": "partly_met",
+    "note": "The vendor states that NIOS manages DNS, DHCP and IP address management. Other network areas are not covered.",
+    "sources": [
+      {
+        "title": "Infoblox NIOS",
+        "url": "https://www.infoblox.com/products/nios/"
+      }
+    ]
+  },
+  {
+    "claim": "Infoblox NIOS - Intent",
+    "requirement": "intent-must-2",
+    "verdict": "met",
+    "note": "The WAPI documentation states that GET reads or searches objects, POST creates, PUT updates and DELETE removes them.",
+    "sources": [
+      {
+        "title": "Infoblox WAPI documentation (WAPI 2.13.7, copy hosted by the University of Illinois)",
+        "url": "https://ipam.illinois.edu/wapidoc/index.html"
+      }
+    ]
+  },
+  {
+    "claim": "Infoblox NIOS - Intent",
+    "requirement": "intent-must-3",
+    "verdict": "met",
+    "note": "The WAPI documentation describes a REST API with documented methods and object types, and the vendor states that OpenAPI specifications are provided.",
+    "sources": [
+      {
+        "title": "Infoblox WAPI documentation (WAPI 2.13.7, copy hosted by the University of Illinois)",
+        "url": "https://ipam.illinois.edu/wapidoc/index.html"
+      },
+      {
+        "title": "Infoblox NIOS",
+        "url": "https://www.infoblox.com/products/nios/"
+      }
+    ]
+  },
+  {
+    "claim": "Infoblox NIOS - Intent",
+    "requirement": "intent-should-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Infoblox NIOS - Intent",
+    "requirement": "intent-should-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Infoblox NIOS - Intent",
+    "requirement": "intent-should-3",
+    "verdict": "partly_met",
+    "note": "The documentation states that objects can carry extensible attributes, which are user-defined name and value pairs. Timestamps, data origin, ownership and valid periods are not named.",
+    "sources": [
+      {
+        "title": "Infoblox WAPI documentation (WAPI 2.13.7, copy hosted by the University of Illinois)",
+        "url": "https://ipam.illinois.edu/wapidoc/index.html"
+      },
+      {
+        "title": "Infoblox NIOS",
+        "url": "https://www.infoblox.com/products/nios/"
+      }
+    ]
+  },
+  {
+    "claim": "Infoblox NIOS - Intent",
+    "requirement": "intent-should-4",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Infoblox NIOS - Intent",
+    "requirement": "intent-may-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "NetBox Labs NetBox - Intent",
+    "requirement": "intent-must-1",
+    "verdict": "partly_met",
+    "note": "The README states that NetBox models racks, devices, cables, IP addresses, VLANs, circuits, power and VPNs, and can be extended with custom fields and tags. New object types require the NetBox Custom Objects plugin.",
+    "sources": [
+      {
+        "title": "netbox-community/netbox README on GitHub",
+        "url": "https://github.com/netbox-community/netbox"
+      },
+      {
+        "title": "NetBox documentation: Introduction",
+        "url": "https://netboxlabs.com/docs/netbox/"
+      }
+    ]
+  },
+  {
+    "claim": "NetBox Labs NetBox - Intent",
+    "requirement": "intent-must-2",
+    "verdict": "met",
+    "note": "The REST API documentation states that GET, POST, PUT/PATCH and DELETE retrieve, create, change and delete objects.",
+    "sources": [
+      {
+        "title": "NetBox documentation: REST API",
+        "url": "https://netboxlabs.com/docs/netbox/integrations/rest-api/"
+      }
+    ]
+  },
+  {
+    "claim": "NetBox Labs NetBox - Intent",
+    "requirement": "intent-must-3",
+    "verdict": "met",
+    "note": "The documentation describes REST and GraphQL APIs, with interactive OpenAPI documentation of all REST endpoints.",
+    "sources": [
+      {
+        "title": "NetBox documentation: REST API",
+        "url": "https://netboxlabs.com/docs/netbox/integrations/rest-api/"
+      },
+      {
+        "title": "NetBox documentation: Introduction",
+        "url": "https://netboxlabs.com/docs/netbox/"
+      }
+    ]
+  },
+  {
+    "claim": "NetBox Labs NetBox - Intent",
+    "requirement": "intent-should-1",
+    "verdict": "met",
+    "note": "The README states that NetBox renders user-created Jinja2 templates to generate device configurations from its own data.",
+    "sources": [
+      {
+        "title": "netbox-community/netbox README on GitHub",
+        "url": "https://github.com/netbox-community/netbox"
+      }
+    ]
+  },
+  {
+    "claim": "NetBox Labs NetBox - Intent",
+    "requirement": "intent-should-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "NetBox Labs NetBox - Intent",
+    "requirement": "intent-should-3",
+    "verdict": "partly_met",
+    "note": "The documentation states that change records store a timestamp, the user and the data before and after each change, and NetBox 4.5 adds an optional owner field to most models. Data origin and valid periods are not mentioned.",
+    "sources": [
+      {
+        "title": "NetBox documentation: Change Logging",
+        "url": "https://netboxlabs.com/docs/netbox/features/change-logging/"
+      },
+      {
+        "title": "NetBox v4.5 release notes",
+        "url": "https://netboxlabs.com/docs/netbox/release-notes/version-4.5"
+      }
+    ]
+  },
+  {
+    "claim": "NetBox Labs NetBox - Intent",
+    "requirement": "intent-should-4",
+    "verdict": "partly_met",
+    "note": "The documentation states that bulk operations are all-or-none and that administrators can define custom validation rules. Versioned branches of the data require the NetBox Branching plugin; the change log keeps the history of each change.",
+    "sources": [
+      {
+        "title": "NetBox documentation: REST API",
+        "url": "https://netboxlabs.com/docs/netbox/integrations/rest-api/"
+      },
+      {
+        "title": "netbox-community/netbox README on GitHub",
+        "url": "https://github.com/netbox-community/netbox"
+      },
+      {
+        "title": "NetBox documentation: Change Logging",
+        "url": "https://netboxlabs.com/docs/netbox/features/change-logging/"
+      }
+    ]
+  },
+  {
+    "claim": "NetBox Labs NetBox - Intent",
+    "requirement": "intent-may-1",
+    "verdict": "partly_met",
+    "note": "The README states that NetBox applies native and custom validation rules and renders configuration templates. Breaking down abstract services into concrete objects is not described.",
+    "sources": [
+      {
+        "title": "netbox-community/netbox README on GitHub",
+        "url": "https://github.com/netbox-community/netbox"
+      }
+    ]
+  }
+]

@@ -28,8 +28,15 @@ it covers. The file format is in
    - Refer to the publisher by name and to sources by URL.
    - Write a description that states what the product does, without marketing language.
    - Leave out `license_model` when no source states it.
-   - Add one entry under `coverage_claims` for each building block, with `extent` set to `full`
-     or `partial`, an optional `note` and at least one source.
+   - Add one entry under `coverage_claims` for each building block, with an optional `note` and at
+     least one source. There is no `extent`: the catalog computes full or partial coverage from the
+     requirement verdicts.
+   - Add the claim's requirement verdicts to `objects/06_requirement_verdicts.yml`: one for each
+     MUST, SHOULD and MAY requirement of the block and for the two framework-wide requirements.
+     Each verdict is `met`, `partly_met`, `not_met` or `not_shown`, with a note and, unless it is
+     `not_shown`, the source that states it. Refer to the claim as `["<publisher> <product>", "<block>"]`.
+     A claim is full only when every MUST and SHOULD of its block is `met`; framework-wide
+     requirements are shown but do not count.
    - If the product is no longer sold, set `status` to `discontinued`, or to `acquired` when it
      was absorbed into another company and is no longer sold on its own. Add the source that
      states it under `status_sources`, and `status_date` when the source gives a date. Leave all

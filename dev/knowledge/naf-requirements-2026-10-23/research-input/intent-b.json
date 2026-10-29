@@ -1,0 +1,190 @@
+{
+  "block": "Intent",
+  "requirements": [
+    {
+      "identifier": "intent-must-1",
+      "block": "Intent",
+      "level": "must",
+      "position": 3,
+      "summary": "Represents any network-related aspect in a structured form",
+      "statement": "It MUST be capable of representing, in a structured form, any network-related aspect. This broad scope includes, but is not limited to, data such as IP addressing, data center infrastructure (e.g., racks, cabling), routing protocols, virtualized services, secrets, operational levels (such as maximum CPU), configuration templates or data mappings, and artifacts, as well as service abstraction or policy definitions.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#intent"
+    },
+    {
+      "identifier": "intent-must-2",
+      "block": "Intent",
+      "level": "must",
+      "position": 4,
+      "summary": "Supports create, read, update and delete on the data",
+      "statement": "The data MUST support create, read, update, and delete operations.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#intent"
+    },
+    {
+      "identifier": "intent-must-3",
+      "block": "Intent",
+      "level": "must",
+      "position": 5,
+      "summary": "Exposes the data through a standardized, documented API",
+      "statement": "Access to this information MUST be exposed through a standardized, well-documented Application Programming Interface (API) (e.g., REST, GraphQL, etc.).",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#intent"
+    },
+    {
+      "identifier": "intent-should-1",
+      "block": "Intent",
+      "level": "should",
+      "position": 6,
+      "summary": "Uses a vendor-neutral model that is turned into vendor configuration",
+      "statement": "The modeling SHOULD use a neutral representation that will be derived into vendor-specific configuration artifacts.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#intent"
+    },
+    {
+      "identifier": "intent-should-2",
+      "block": "Intent",
+      "level": "should",
+      "position": 7,
+      "summary": "Gives one consistent view of the desired state across data sources",
+      "statement": "It SHOULD provide a consistent and unified view of the desired state, even when the data is distributed across multiple data sources.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#intent"
+    },
+    {
+      "identifier": "intent-should-3",
+      "block": "Intent",
+      "level": "should",
+      "position": 8,
+      "summary": "Records governance metadata: timestamps, origin, ownership, validity",
+      "statement": "In addition to the core network data, it SHOULD include metadata that supports effective data governance, such as timestamps, data origin, data ownership, and valid periods.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#intent"
+    },
+    {
+      "identifier": "intent-should-4",
+      "block": "Intent",
+      "level": "should",
+      "position": 9,
+      "summary": "Offers transactional changes, custom validation and versioned data",
+      "statement": "Ideally, these operations SHOULD be transactional, offer custom validation, and provide a versioned access to data.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#intent"
+    },
+    {
+      "identifier": "intent-may-1",
+      "block": "Intent",
+      "level": "may",
+      "position": 10,
+      "summary": "Includes intended-state logic such as validation and artifact generation",
+      "statement": "It MAY include all the logic related to intended state management, such as data validation, data aggregation or replication, breaking down abstract services into concrete objects, and combining data to generate configuration artifacts.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#intent"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "Network to Code Nautobot - Intent",
+      "product": "Network to Code Nautobot",
+      "homepage_url": "https://networktocode.com/nautobot/",
+      "description": "Nautobot stores the intended state of a network in extensible data models and runs automation jobs against that data, with REST and GraphQL APIs and an app framework.",
+      "claim_note": "Defining and storing the intended network state, with validation rules, is the main purpose of Nautobot.",
+      "claim_sources": [
+        "https://github.com/nautobot/nautobot"
+      ],
+      "other_catalog_sources": [
+        "https://github.com/nautobot/nautobot"
+      ]
+    },
+    {
+      "claim": "Sunbird Software dcTrack - Intent",
+      "product": "Sunbird Software dcTrack",
+      "homepage_url": "https://www.sunbirddcim.com/dcim-products",
+      "description": "dcTrack is data center infrastructure management software that records physical assets, capacity and power and network connections, and manages change requests for data center equipment.",
+      "claim_note": "dcTrack stores the planned physical layer (racks, power, cabling, ports) but not logical network configuration or operational expectations.",
+      "claim_sources": [
+        "https://www.sunbirddcim.com/dcim-products"
+      ],
+      "other_catalog_sources": [
+        "https://info.sunbirddcim.com/hubfs/DS009_Sunbird_DataSheet_dcTrack9_2.pdf",
+        "https://www.sunbirddcim.com/dcim-products"
+      ]
+    },
+    {
+      "claim": "phpIPAM project phpIPAM - Intent",
+      "product": "phpIPAM project phpIPAM",
+      "homepage_url": "https://phpipam.net/",
+      "description": "phpIPAM is a web application for IP address management that tracks IPv4 and IPv6 subnets and addresses, VLANs, VRFs and devices, with subnet scanning and a REST API.",
+      "claim_note": "phpIPAM stores the planned IP addressing, VLANs and VRFs, which is only one part of the desired network state.",
+      "claim_sources": [
+        "https://phpipam.net/documents/features/"
+      ],
+      "other_catalog_sources": [
+        "https://phpipam.net/",
+        "https://raw.githubusercontent.com/phpipam/phpipam/master/misc/gpl-3.0.txt"
+      ]
+    },
+    {
+      "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Intent",
+      "product": "Cisco Crosswork Network Services Orchestrator (NSO)",
+      "homepage_url": "https://www.cisco.com/c/en/us/products/cloud-systems-management/network-services-orchestrator/index.html",
+      "description": "Linux-based application that stores network service intent and device configuration in a YANG-modelled database and pushes the resulting configuration changes to multivendor physical and virtual network devices.",
+      "claim_note": "Storing and modelling network service intent in the CDB with YANG is a core purpose of NSO.",
+      "claim_sources": [
+        "https://raw.githubusercontent.com/NSO-developer/nso-gitbook/main/development/introduction-to-automation/cdb-and-yang.md"
+      ],
+      "other_catalog_sources": [
+        "https://nso-docs.cisco.com/",
+        "https://raw.githubusercontent.com/NSO-developer/nso-gitbook/main/administration/management/system-management/cisco-smart-licensing.md"
+      ]
+    },
+    {
+      "claim": "HashiCorp Terraform - Intent",
+      "product": "HashiCorp Terraform",
+      "homepage_url": "https://developer.hashicorp.com/terraform",
+      "description": "Infrastructure-as-code tool that reads declarative configuration files, plans the changes needed and creates, updates or deletes cloud and on-premises resources through provider APIs.",
+      "claim_note": "Configuration files describe the desired configuration of resources, but not operational expectations, and Terraform is not network-specific.",
+      "claim_sources": [
+        "https://developer.hashicorp.com/terraform/intro"
+      ],
+      "other_catalog_sources": [
+        "https://developer.hashicorp.com/terraform/intro"
+      ]
+    },
+    {
+      "claim": "Gluware Gluware - Intent",
+      "product": "Gluware Gluware",
+      "homepage_url": "https://gluware.com/",
+      "description": "Network automation platform for multivendor enterprise networks that discovers existing devices, builds intent models from their configuration, detects drift and compliance issues, and applies validated changes.",
+      "claim_note": "Defining and storing desired network configuration as intent is a main purpose of the platform.",
+      "claim_sources": [
+        "https://gluware.com/gluware-company-and-product-facts/"
+      ],
+      "other_catalog_sources": [
+        "https://gluware.com/",
+        "https://gluware.com/gluware-end-user-license-agreement/"
+      ]
+    },
+    {
+      "claim": "ConfigHub ConfigHub - Intent",
+      "product": "ConfigHub ConfigHub",
+      "homepage_url": "https://confighub.com/",
+      "description": "Service that stores Kubernetes, infrastructure and application configuration as literal YAML or JSON data in a database, with an API and CLI to query, change, validate and version it.",
+      "claim_note": "ConfigHub persists desired configuration as the authoritative record, but for Kubernetes and application configuration rather than network devices, and without operational expectations.",
+      "claim_sources": [
+        "https://docs.confighub.com/background/config-as-data/"
+      ],
+      "other_catalog_sources": [
+        "https://confighub.com/",
+        "https://docs.confighub.com/"
+      ]
+    },
+    {
+      "claim": "Tufin Orchestration Suite - Intent",
+      "product": "Tufin Orchestration Suite",
+      "homepage_url": "https://www.tufin.com/tufin-orchestration-suite",
+      "description": "Network security policy management suite that analyzes firewall, cloud and SASE policies against a defined zone policy and automates access change requests.",
+      "claim_note": "The suite stores intended state only for allowed traffic between security zones, not for the full network configuration.",
+      "claim_sources": [
+        "https://www.tufin.com/tufin-orchestration-suite/securechange"
+      ],
+      "other_catalog_sources": [
+        "https://www.tufin.com/",
+        "https://www.tufin.com/pricing",
+        "https://www.tufin.com/tufin-orchestration-suite"
+      ]
+    }
+  ]
+}

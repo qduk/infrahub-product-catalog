@@ -22,6 +22,28 @@ query catalog_report($report: String!) {
       }
     }
   }
+  CatalogRequirement {
+    edges {
+      node {
+        id
+        __typename
+        identifier {
+          value
+        }
+        level {
+          value
+        }
+        building_block {
+          node {
+            id
+            name {
+              value
+            }
+          }
+        }
+      }
+    }
+  }
   CatalogProduct {
     edges {
       node {
@@ -38,8 +60,21 @@ query catalog_report($report: String!) {
             node {
               id
               __typename
-              extent {
-                value
+              verdicts {
+                edges {
+                  node {
+                    verdict {
+                      value
+                    }
+                    requirement {
+                      node {
+                        identifier {
+                          value
+                        }
+                      }
+                    }
+                  }
+                }
               }
               building_block {
                 node {

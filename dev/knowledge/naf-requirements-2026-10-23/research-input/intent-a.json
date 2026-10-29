@@ -1,0 +1,207 @@
+{
+  "block": "Intent",
+  "requirements": [
+    {
+      "identifier": "intent-must-1",
+      "block": "Intent",
+      "level": "must",
+      "position": 3,
+      "summary": "Represents any network-related aspect in a structured form",
+      "statement": "It MUST be capable of representing, in a structured form, any network-related aspect. This broad scope includes, but is not limited to, data such as IP addressing, data center infrastructure (e.g., racks, cabling), routing protocols, virtualized services, secrets, operational levels (such as maximum CPU), configuration templates or data mappings, and artifacts, as well as service abstraction or policy definitions.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#intent"
+    },
+    {
+      "identifier": "intent-must-2",
+      "block": "Intent",
+      "level": "must",
+      "position": 4,
+      "summary": "Supports create, read, update and delete on the data",
+      "statement": "The data MUST support create, read, update, and delete operations.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#intent"
+    },
+    {
+      "identifier": "intent-must-3",
+      "block": "Intent",
+      "level": "must",
+      "position": 5,
+      "summary": "Exposes the data through a standardized, documented API",
+      "statement": "Access to this information MUST be exposed through a standardized, well-documented Application Programming Interface (API) (e.g., REST, GraphQL, etc.).",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#intent"
+    },
+    {
+      "identifier": "intent-should-1",
+      "block": "Intent",
+      "level": "should",
+      "position": 6,
+      "summary": "Uses a vendor-neutral model that is turned into vendor configuration",
+      "statement": "The modeling SHOULD use a neutral representation that will be derived into vendor-specific configuration artifacts.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#intent"
+    },
+    {
+      "identifier": "intent-should-2",
+      "block": "Intent",
+      "level": "should",
+      "position": 7,
+      "summary": "Gives one consistent view of the desired state across data sources",
+      "statement": "It SHOULD provide a consistent and unified view of the desired state, even when the data is distributed across multiple data sources.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#intent"
+    },
+    {
+      "identifier": "intent-should-3",
+      "block": "Intent",
+      "level": "should",
+      "position": 8,
+      "summary": "Records governance metadata: timestamps, origin, ownership, validity",
+      "statement": "In addition to the core network data, it SHOULD include metadata that supports effective data governance, such as timestamps, data origin, data ownership, and valid periods.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#intent"
+    },
+    {
+      "identifier": "intent-should-4",
+      "block": "Intent",
+      "level": "should",
+      "position": 9,
+      "summary": "Offers transactional changes, custom validation and versioned data",
+      "statement": "Ideally, these operations SHOULD be transactional, offer custom validation, and provide a versioned access to data.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#intent"
+    },
+    {
+      "identifier": "intent-may-1",
+      "block": "Intent",
+      "level": "may",
+      "position": 10,
+      "summary": "Includes intended-state logic such as validation and artifact generation",
+      "statement": "It MAY include all the logic related to intended state management, such as data validation, data aggregation or replication, breaking down abstract services into concrete objects, and combining data to generate configuration artifacts.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#intent"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "OpsMill Infrahub - Intent",
+      "product": "OpsMill Infrahub",
+      "homepage_url": "https://docs.infrahub.app/",
+      "description": "A graph-based data management platform with built-in version control, CI workflows, peer review and API access.",
+      "claim_note": "The README describes Infrahub as one source of truth for infrastructure data.",
+      "claim_sources": [
+        "https://github.com/opsmill/infrahub"
+      ],
+      "other_catalog_sources": [
+        "https://docs.infrahub.app/overview",
+        "https://github.com/opsmill/infrahub"
+      ]
+    },
+    {
+      "claim": "Network Unit Testing System NUTS - Intent",
+      "product": "Network Unit Testing System NUTS",
+      "homepage_url": "https://nuts.readthedocs.io/en/latest/",
+      "description": "NUTS is a pytest plugin that reads the desired network state from YAML test bundles, queries devices through Nornir and checks whether the results match.",
+      "claim_note": "Test bundles store expected operational state as YAML files, but NUTS does not hold configuration intent or a persistent store of desired state.",
+      "claim_sources": [
+        "https://github.com/network-unit-testing-system/nuts"
+      ],
+      "other_catalog_sources": [
+        "https://github.com/network-unit-testing-system/nuts/blob/master/LICENSE",
+        "https://nuts.readthedocs.io/en/latest/"
+      ]
+    },
+    {
+      "claim": "Nokia Event-Driven Automation (EDA) - Intent",
+      "product": "Nokia Event-Driven Automation (EDA)",
+      "homepage_url": "https://docs.eda.dev/",
+      "description": "Nokia EDA is a Kubernetes-based platform where users declare the desired state of fabrics, interfaces and services, which it translates into multivendor device configuration and checks against streaming telemetry.",
+      "claim_note": "Storing and processing declared desired state is the main purpose of EDA, and it covers both configuration and expected state.",
+      "claim_sources": [
+        "https://docs.eda.dev/26.8/"
+      ],
+      "other_catalog_sources": [
+        "https://docs.eda.dev/26.8/",
+        "https://docs.eda.dev/26.8/getting-started/try-eda/"
+      ]
+    },
+    {
+      "claim": "Forward Networks Forward Enterprise - Intent",
+      "product": "Forward Networks Forward Enterprise",
+      "homepage_url": "https://www.forwardnetworks.com/forward-enterprise/",
+      "description": "Builds a model of a hybrid network from device and cloud state and configuration, so teams can search it, verify its behavior and test proposed changes before deployment.",
+      "claim_note": "The product stores and checks operational expectations (intent checks), but it is not where the desired configuration of the network is defined.",
+      "claim_sources": [
+        "https://www.forwardnetworks.com/forward-enterprise/"
+      ],
+      "other_catalog_sources": [
+        "https://www.forwardnetworks.com/",
+        "https://www.forwardnetworks.com/forward-enterprise/",
+        "https://www.forwardnetworks.com/pricing/"
+      ]
+    },
+    {
+      "claim": "NetBrain Technologies Agentic NetOps Platform - Intent",
+      "product": "NetBrain Technologies Agentic NetOps Platform",
+      "homepage_url": "https://www.netbrain.com/platform/",
+      "description": "Collects device, topology and path data from multi-vendor networks and uses it for AI-assisted diagnosis, compliance assessment and change runbooks with pre-checks and post-checks.",
+      "claim_note": "The product stores design rules and golden configurations as expectations to check against, but it is not presented as the main store of the desired network state.",
+      "claim_sources": [
+        "https://www.netbrain.com/platform/"
+      ],
+      "other_catalog_sources": [
+        "https://www.netbrain.com/news/netbrain-hits-customer-milestone-and-introduces-simpler-software-licensing/",
+        "https://www.netbrain.com/platform/"
+      ]
+    },
+    {
+      "claim": "Juniper Networks Apstra Data Center Director - Intent",
+      "product": "Juniper Networks Apstra Data Center Director",
+      "homepage_url": "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html",
+      "description": "Manages data center fabrics across vendors: stores the intended design in a graph database, generates device configurations from it and validates the network state against it.",
+      "claim_note": "Storing the desired state of the fabric, including the expectations that must be met, is the main purpose of the product; the scope is data center fabrics only.",
+      "claim_sources": [
+        "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html"
+      ],
+      "other_catalog_sources": [
+        "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html"
+      ]
+    },
+    {
+      "claim": "EfficientIP SOLIDserver DDI - Intent",
+      "product": "EfficientIP SOLIDserver DDI",
+      "homepage_url": "https://efficientip.com/products/solidserver-ddi/",
+      "description": "Provides DNS, DHCP and IP address management on hardware or virtual appliances, and pushes IP address changes to DNS and DHCP servers from a central repository.",
+      "claim_note": "The product stores the desired state for IP addressing, DNS and DHCP only, not for the whole network.",
+      "claim_sources": [
+        "https://efficientip.com/products/solidserver-ddi/"
+      ],
+      "other_catalog_sources": [
+        "https://efficientip.com/about-efficientip/",
+        "https://efficientip.com/products/solidserver-ddi/",
+        "https://efficientip.com/support-services/license-request/"
+      ]
+    },
+    {
+      "claim": "Infoblox NIOS - Intent",
+      "product": "Infoblox NIOS",
+      "homepage_url": "https://www.infoblox.com/products/nios/",
+      "description": "Provides DNS, DHCP and IP address management for on-premises and cloud networks, with optional discovery, reporting and integrations with automation tools.",
+      "claim_note": "The product stores the desired state for IP addressing, DNS and DHCP only, not for the whole network.",
+      "claim_sources": [
+        "https://www.infoblox.com/products/nios/"
+      ],
+      "other_catalog_sources": [
+        "https://www.infoblox.com/company/",
+        "https://www.infoblox.com/products/nios/"
+      ]
+    },
+    {
+      "claim": "NetBox Labs NetBox - Intent",
+      "product": "NetBox Labs NetBox",
+      "homepage_url": "https://netboxlabs.com/products/netbox/",
+      "description": "NetBox models and documents network infrastructure, defines its intended state and makes that data available to automation tools through APIs and a web interface.",
+      "claim_note": "Storing and validating the intended state of the network is the stated main purpose of NetBox.",
+      "claim_sources": [
+        "https://github.com/netbox-community/netbox"
+      ],
+      "other_catalog_sources": [
+        "https://github.com/netbox-community/netbox",
+        "https://netboxlabs.com/community/",
+        "https://netboxlabs.com/netbox-enterprise/"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "block": "Observability",
+  "requirements": [
+    {
+      "identifier": "observability-must-1",
+      "block": "Observability",
+      "level": "must",
+      "position": 20,
+      "summary": "Stores historical data with powerful programmatic access",
+      "statement": "It MUST support historical data persistence and offer powerful programmatic access to this data\u2014enabling advanced analytics, reporting, and troubleshooting workflows.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#observability"
+    },
+    {
+      "identifier": "observability-should-1",
+      "block": "Observability",
+      "level": "should",
+      "position": 21,
+      "summary": "Offers a capable query language",
+      "statement": "It SHOULD offer a capable query language to extract the data.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#observability"
+    },
+    {
+      "identifier": "observability-should-2",
+      "block": "Observability",
+      "level": "should",
+      "position": 22,
+      "summary": "Detects drift from the intended state and generates events",
+      "statement": "It SHOULD expose relevant insights into the current network state and automatically generate events when discrepancies are detected between the actual state (configuration or operational) and the intended state. These events MAY be processed by humans or connected to the Orchestration block to be automatically processed.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#observability"
+    },
+    {
+      "identifier": "observability-may-1",
+      "block": "Observability",
+      "level": "may",
+      "position": 23,
+      "summary": "Sends drift events to people or to the Orchestrator",
+      "statement": "It SHOULD expose relevant insights into the current network state and automatically generate events when discrepancies are detected between the actual state (configuration or operational) and the intended state. These events MAY be processed by humans or connected to the Orchestration block to be automatically processed.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#observability"
+    },
+    {
+      "identifier": "observability-may-2",
+      "block": "Observability",
+      "level": "may",
+      "position": 24,
+      "summary": "Enriches data with intended state and third-party context",
+      "statement": "Retrieved data MAY be enriched with contextual information from the intended state, including other third-party sources (e.g., EoL information, CVEs, maintenance notifications, etc.), enhancing analysis and enabling more accurate data correlation.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#observability"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "NetBrain Technologies Agentic NetOps Platform - Observability",
+      "product": "NetBrain Technologies Agentic NetOps Platform",
+      "homepage_url": "https://www.netbrain.com/platform/",
+      "description": "Collects device, topology and path data from multi-vendor networks and uses it for AI-assisted diagnosis, compliance assessment and change runbooks with pre-checks and post-checks.",
+      "claim_note": "Holding and analysing the live device, topology and path data of the network is the base of the product.",
+      "claim_sources": [
+        "https://www.netbrain.com/platform/"
+      ],
+      "other_catalog_sources": [
+        "https://www.netbrain.com/news/netbrain-hits-customer-milestone-and-introduces-simpler-software-licensing/",
+        "https://www.netbrain.com/platform/"
+      ]
+    },
+    {
+      "claim": "Slurp'it Slurp'it - Observability",
+      "product": "Slurp'it Slurp'it",
+      "homepage_url": "https://slurpit.io/",
+      "description": "Discovers network devices, collects command output from them and turns it into structured inventory data that can be exported or synchronised to NetBox, Nautobot or Infrahub.",
+      "claim_note": "The product stores collected data and its history, but analysis is limited to inventory search and reports.",
+      "claim_sources": [
+        "https://slurpit.io/"
+      ],
+      "other_catalog_sources": [
+        "https://slurpit.io/",
+        "https://slurpit.io/pricing/"
+      ]
+    },
+    {
+      "claim": "Juniper Networks Apstra Data Center Director - Observability",
+      "product": "Juniper Networks Apstra Data Center Director",
+      "homepage_url": "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html",
+      "description": "Manages data center fabrics across vendors: stores the intended design in a graph database, generates device configurations from it and validates the network state against it.",
+      "claim_note": "The product collects and analyses telemetry, but mainly to validate its own intent; deeper analytics are placed in a separate product, Juniper Data Center Assurance.",
+      "claim_sources": [
+        "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html"
+      ],
+      "other_catalog_sources": [
+        "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html"
+      ]
+    },
+    {
+      "claim": "Freshworks Device42 - Observability",
+      "product": "Freshworks Device42",
+      "homepage_url": "https://www.device42.com/",
+      "description": "Device42 discovers and maps IT infrastructure and application dependencies across data centers and cloud, and records the results in a CMDB with DCIM, IPAM and asset management features.",
+      "claim_note": "The CMDB persists discovered state and reports on it, but the sources do not describe processing of network operational data such as telemetry.",
+      "claim_sources": [
+        "https://www.device42.com/"
+      ],
+      "other_catalog_sources": [
+        "https://www.device42.com/company/",
+        "https://www.device42.com/pricing/"
+      ]
+    },
+    {
+      "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Observability",
+      "product": "Cisco Crosswork Network Services Orchestrator (NSO)",
+      "homepage_url": "https://www.cisco.com/c/en/us/products/cloud-systems-management/network-services-orchestrator/index.html",
+      "description": "Linux-based application that stores network service intent and device configuration in a YANG-modelled database and pushes the resulting configuration changes to multivendor physical and virtual network devices.",
+      "claim_note": "NSO persists device configuration and some operational data, but the source does not describe broader processing of the actual network state.",
+      "claim_sources": [
+        "https://raw.githubusercontent.com/NSO-developer/nso-gitbook/main/development/introduction-to-automation/cdb-and-yang.md"
+      ],
+      "other_catalog_sources": [
+        "https://nso-docs.cisco.com/",
+        "https://raw.githubusercontent.com/NSO-developer/nso-gitbook/main/administration/management/system-management/cisco-smart-licensing.md"
+      ]
+    },
+    {
+      "claim": "Itential Platform - Observability",
+      "product": "Itential Platform",
+      "homepage_url": "https://www.itential.com/",
+      "description": "Platform where infrastructure teams build workflows and AI agents that call existing tools such as Ansible, Python and OpenTofu, and run network changes with access control, approvals and audit logs.",
+      "claim_note": "Drift and compliance tracking covers part of processing the actual network state, as a side feature of the orchestration platform.",
+      "claim_sources": [
+        "https://www.itential.com/"
+      ],
+      "other_catalog_sources": [
+        "https://www.itential.com/",
+        "https://www.itential.com/pricing/"
+      ]
+    },
+    {
+      "claim": "Gluware Gluware - Observability",
+      "product": "Gluware Gluware",
+      "homepage_url": "https://gluware.com/",
+      "description": "Network automation platform for multivendor enterprise networks that discovers existing devices, builds intent models from their configuration, detects drift and compliance issues, and applies validated changes.",
+      "claim_note": "Drift detection and compliance checks process the actual configuration state, but the source does not describe broader processing of operational state.",
+      "claim_sources": [
+        "https://gluware.com/gluware-company-and-product-facts/"
+      ],
+      "other_catalog_sources": [
+        "https://gluware.com/",
+        "https://gluware.com/gluware-end-user-license-agreement/"
+      ]
+    },
+    {
+      "claim": "Spacelift Spacelift - Observability",
+      "product": "Spacelift Spacelift",
+      "homepage_url": "https://spacelift.io/",
+      "description": "Platform that runs and coordinates infrastructure-as-code workflows for Terraform, OpenTofu, CloudFormation, Pulumi, Kubernetes and Ansible, with policies, approvals and drift detection.",
+      "claim_note": "Drift detection compares actual and declared resources, which is a side feature of the orchestration platform.",
+      "claim_sources": [
+        "https://spacelift.io/"
+      ],
+      "other_catalog_sources": [
+        "https://spacelift.io/",
+        "https://spacelift.io/pricing"
+      ]
+    },
+    {
+      "claim": "AlgoSec Horizon Security Analyzer - Observability",
+      "product": "AlgoSec Horizon Security Analyzer",
+      "homepage_url": "https://www.algosec.com/products/firewall-analyzer",
+      "description": "Firewall policy analysis tool that maps hybrid network security topology, analyzes rules for risk and compliance, and recommends rule cleanup.",
+      "claim_note": "The product processes the collected firewall rule state, but only for security policy, not the whole network state.",
+      "claim_sources": [
+        "https://www.algosec.com/products/firewall-analyzer"
+      ],
+      "other_catalog_sources": [
+        "https://www.algosec.com/products/firewall-analyzer"
+      ]
+    },
+    {
+      "claim": "FireMon Security Manager - Observability",
+      "product": "FireMon Security Manager",
+      "homepage_url": "https://www.firemon.com/products/security-manager",
+      "description": "Network security policy management product that collects and normalizes firewall and cloud security configurations into one policy database and detects rule changes.",
+      "claim_note": "The product stores and processes the actual security-policy state, with history and drift detection, but not the full network state.",
+      "claim_sources": [
+        "https://www.firemon.com/products/security-manager"
+      ],
+      "other_catalog_sources": [
+        "https://www.firemon.com/pricing",
+        "https://www.firemon.com/products/security-manager"
+      ]
+    },
+    {
+      "claim": "Tufin Orchestration Suite - Observability",
+      "product": "Tufin Orchestration Suite",
+      "homepage_url": "https://www.tufin.com/tufin-orchestration-suite",
+      "description": "Network security policy management suite that analyzes firewall, cloud and SASE policies against a defined zone policy and automates access change requests.",
+      "claim_note": "The suite processes the actual security-policy and connectivity state, but not the full network state.",
+      "claim_sources": [
+        "https://www.tufin.com/tufin-orchestration-suite"
+      ],
+      "other_catalog_sources": [
+        "https://www.tufin.com/",
+        "https://www.tufin.com/pricing",
+        "https://www.tufin.com/tufin-orchestration-suite"
+      ]
+    },
+    {
+      "claim": "Skybox Security Firewall Assurance - Observability",
+      "product": "Skybox Security Firewall Assurance",
+      "homepage_url": "https://www.skyboxsecurity.com/products/firewall-assurance/",
+      "description": "Discontinued firewall management product that analyzed multi-vendor firewall rule bases for risk, compliance and cleanup, and tracked firewall changes.",
+      "claim_note": "The product processed the actual state of firewalls only, not the full network state.",
+      "claim_sources": [
+        "https://web.archive.org/web/20250122112330id_/https://www.skyboxsecurity.com/products/firewall-assurance/"
+      ],
+      "other_catalog_sources": [
+        "https://web.archive.org/web/20250122112330id_/https://www.skyboxsecurity.com/products/firewall-assurance/",
+        "https://www.securityweek.com/skybox-security-shuts-down-lays-off-entire-workforce/",
+        "https://www.tufin.com/tufin-expresspath-program"
+      ]
+    }
+  ]
+}

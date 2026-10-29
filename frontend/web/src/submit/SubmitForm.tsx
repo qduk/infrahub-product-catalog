@@ -284,7 +284,7 @@ export function SubmitForm({ catalog, onDone }: Props) {
         )}
       </Step>
 
-      <Step number={5} title="Building blocks covered" hint="Full: the product covers the whole building block. Partial: it covers part of it.">
+      <Step number={5} title="Building blocks covered" hint="A maintainer checks each block against the framework's MUST and SHOULD requirements during review.">
         <div className="claim-cards">
           {claims.fields.map((field, index) => {
             const blockName = values.claims?.[index]?.block ?? ''
@@ -303,16 +303,6 @@ export function SubmitForm({ catalog, onDone }: Props) {
                       </option>
                     ))}
                   </select>
-                  <div className="segmented segmented-small" role="radiogroup" aria-label="Coverage">
-                    <label className="segment">
-                      <input type="radio" value="full" {...register(`claims.${index}.extent`)} />
-                      <span>Full</span>
-                    </label>
-                    <label className="segment">
-                      <input type="radio" value="partial" {...register(`claims.${index}.extent`)} />
-                      <span>Partial</span>
-                    </label>
-                  </div>
                   <button
                     type="button"
                     className="icon-button"
@@ -337,7 +327,7 @@ export function SubmitForm({ catalog, onDone }: Props) {
           })}
         </div>
         {claims.fields.length < catalog.blocks.length && (
-          <button type="button" className="add-button" onClick={() => claims.append({ block: '', extent: 'full', note: '', sources: [] })}>
+          <button type="button" className="add-button" onClick={() => claims.append({ block: '', note: '', sources: [] })}>
             + Add a building block
           </button>
         )}

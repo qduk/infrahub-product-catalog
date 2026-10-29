@@ -37,6 +37,12 @@ nodes:
         cardinality: many
         identifier: building_block__coverage_claims
         description: Claims that a product covers this block.
+      - name: requirements
+        peer: CatalogRequirement
+        kind: Generic
+        cardinality: many
+        identifier: building_block__requirements
+        description: The framework's MUST, SHOULD and MAY requirements for this block.
 
   - name: Publisher
     namespace: Catalog
@@ -96,6 +102,12 @@ nodes:
         cardinality: many
         identifier: coverage_claim__sources
         description: Coverage claims this source supports.
+      - name: verdicts
+        peer: CatalogRequirementVerdict
+        kind: Generic
+        cardinality: many
+        identifier: verdict__sources
+        description: Requirement verdicts this source supports.
       - name: publisher_of_products
         peer: CatalogProduct
         kind: Generic
@@ -243,14 +255,25 @@ nodes:
       - ["product", "building_block"]
     generate_profile: false
     attributes:
+      - name: name
+        kind: Text
+        unique: true
+        optional: true
+        read_only: true
+        computed_attribute:
+          kind: Jinja2
+          jinja2_template: "{{ product__full_name__value }} - {{ building_block__name__value }}"
+        description: Product and building block, used to identify the claim's requirement verdicts.
+        order_weight: 1050
       - name: extent
         kind: Dropdown
+        state: absent
         choices:
           - name: full
             label: Full
           - name: partial
             label: Partial
-        description: Whether the product covers the whole block or part of it.
+        description: Removed. The extent is computed from the requirement verdicts.
         order_weight: 1200
       - name: note
         kind: TextArea
@@ -278,7 +301,128 @@ nodes:
         optional: false
         identifier: coverage_claim__sources
         min_count: 1
-        description: Sources that support the coverage and its extent.
+        description: Sources that support the coverage.
+      - name: verdicts
+        peer: CatalogRequirementVerdict
+        kind: Component
+        cardinality: many
+        identifier: coverage_claim__verdicts
+        on_delete: cascade
+        description: One verdict for each framework requirement that applies to this block.
+
+  - name: Requirement
+    namespace: Catalog
+    description: A MUST, SHOULD or MAY requirement of the Network Automation Framework, quoted from the framework.
+    label: Requirement
+    icon: mdi:format-list-checks
+    include_in_menu: true
+    human_friendly_id:
+      - identifier__value
+    order_by:
+      - position__value
+    display_label: identifier__value
+    generate_profile: false
+    attributes:
+      - name: identifier
+        kind: Text
+        unique: true
+        description: Block, level and number, for example intent-should-2. Framework-wide ones start with framework-.
+        order_weight: 1000
+      - name: level
+        kind: Dropdown
+        choices:
+          - name: must
+            label: MUST
+          - name: should
+            label: SHOULD
+          - name: may
+            label: MAY
+        order_weight: 1100
+      - name: position
+        kind: Number
+        description: Order on the framework reference page.
+        order_weight: 1200
+      - name: summary
+        kind: Text
+        description: Short title in the catalog's own words.
+        order_weight: 1300
+      - name: statement
+        kind: TextArea
+        description: The requirement as the framework writes it.
+        order_weight: 1400
+      - name: reference_url
+        kind: URL
+        label: Reference
+        description: Link to the requirement's section of the framework reference.
+        order_weight: 1500
+    relationships:
+      - name: building_block
+        peer: CatalogBuildingBlock
+        kind: Attribute
+        cardinality: one
+        optional: true
+        identifier: building_block__requirements
+        description: Empty for requirements that apply to every building block.
+        order_weight: 1050
+      - name: verdicts
+        peer: CatalogRequirementVerdict
+        kind: Generic
+        cardinality: many
+        identifier: requirement__verdicts
+
+  - name: RequirementVerdict
+    namespace: Catalog
+    description: Whether a product meets one framework requirement for one building block it covers, with sources.
+    label: Requirement Verdict
+    icon: mdi:clipboard-check-outline
+    include_in_menu: true
+    human_friendly_id:
+      - claim__name__value
+      - requirement__identifier__value
+    display_label: "{{ claim__name__value }} - {{ requirement__identifier__value }}"
+    uniqueness_constraints:
+      - ["claim", "requirement"]
+    generate_profile: false
+    attributes:
+      - name: verdict
+        kind: Dropdown
+        choices:
+          - name: met
+            label: Met
+          - name: partly_met
+            label: Partly met
+          - name: not_met
+            label: Not met
+          - name: not_shown
+            label: Not shown by any source
+        order_weight: 1200
+      - name: note
+        kind: TextArea
+        optional: true
+        description: What the sources state, in neutral words.
+        order_weight: 1300
+    relationships:
+      - name: claim
+        peer: CatalogCoverageClaim
+        kind: Parent
+        cardinality: one
+        optional: false
+        identifier: coverage_claim__verdicts
+        order_weight: 1000
+      - name: requirement
+        peer: CatalogRequirement
+        kind: Attribute
+        cardinality: one
+        optional: false
+        identifier: requirement__verdicts
+        order_weight: 1100
+      - name: sources
+        peer: CatalogSource
+        kind: Attribute
+        cardinality: many
+        optional: true
+        identifier: verdict__sources
+        description: Sources that state the verdict. Required unless the verdict is "not shown".
 
   - name: Report
     namespace: Catalog

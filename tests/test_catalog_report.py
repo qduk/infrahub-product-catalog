@@ -10,7 +10,7 @@ from pathlib import Path
 from infrahub_sdk import Config, InfrahubClient
 from infrahub_sdk.node import InfrahubNode
 
-from transforms.catalog_report import CatalogReportTransform
+from transforms.catalog_report import CatalogReportTransform, Requirement, claim_extent
 
 FIXTURES = Path(__file__).parent / "fixtures"
 
@@ -39,7 +39,8 @@ def test_coverage_table_for_current_catalog() -> None:
             "| Red Hat Ansible | Partial | Full | — | — | — | — |",
             "| Stardust Systems SuzieQ | Full | — | — | Full | — | — |",
             "",
-            "Each claim's sources are listed on the claim in the catalog.",
+            "Full means that every MUST and SHOULD requirement of the building block is met. Each claim's "
+            "verdicts and sources are listed on the claim in the catalog.",
         ]
     )
 
@@ -71,3 +72,21 @@ def test_status_is_shown_after_name_of_products_that_are_not_active() -> None:
     table = section(build_report("catalog_report_status"), "Coverage by product").splitlines()
     assert "| Closed Corp Old Tool (discontinued) | — | Full |" in table
     assert "| Example Corp Example Tool | — | — |" in table
+
+
+def test_claim_is_full_only_when_every_must_and_should_is_met() -> None:
+    requirements = [
+        Requirement("intent-must-1", "must", "Intent"),
+        Requirement("intent-should-1", "should", "Intent"),
+        Requirement("intent-may-1", "may", "Intent"),
+        Requirement("framework-should-1", "should", None),
+        Requirement("executor-must-1", "must", "Executor"),
+    ]
+    all_met = {"intent-must-1": "met", "intent-should-1": "met", "framework-should-1": "met"}
+    assert claim_extent("Intent", all_met, requirements) == "full"
+    assert claim_extent("Intent", {**all_met, "intent-may-1": "not_met"}, requirements) == "full"
+    assert claim_extent("Intent", {**all_met, "intent-should-1": "partly_met"}, requirements) == "partial"
+    # Framework-wide requirements are shown but do not count toward full.
+    assert claim_extent("Intent", {**all_met, "framework-should-1": "not_shown"}, requirements) == "full"
+    assert claim_extent("Intent", {"intent-must-1": "met"}, requirements) == "partial"
+    assert claim_extent("Intent", {}, requirements) == "partial"

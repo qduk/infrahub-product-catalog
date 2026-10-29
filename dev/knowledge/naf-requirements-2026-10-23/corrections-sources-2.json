@@ -1,0 +1,103 @@
+[
+  {
+    "claim": "Kentik Kentik - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "met",
+    "note": "The vendor states that Kentik NMS normalizes SNMP and streaming telemetry data into a single data model based on OpenConfig, so dashboards show the same data whichever collection method a device uses.",
+    "sources": [
+      {"title": "Streaming Telemetry and SNMP Monitoring with Kentik NMS", "url": "https://www.kentik.com/resources/streaming-telemetry-and-snmp-monitoring-with-kentik-nms/"}
+    ],
+    "found": true
+  },
+  {
+    "claim": "LibreNMS LibreNMS - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "met",
+    "note": "The LibreNMS developer documentation states that per-OS YAML discovery definitions map vendor SNMP tables and OIDs to common sensor classes such as temperature, voltage and humidity, with divisors and multipliers to convert raw values into common units.",
+    "sources": [
+      {"title": "LibreNMS - Health Information (OS discovery)", "url": "https://docs.librenms.org/Developing/os/Health-Information/"}
+    ],
+    "found": true
+  },
+  {
+    "claim": "Slurp'it Slurp'it - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "met",
+    "note": "The vendor's product page lists normalizing field names and attributes across vendors as a feature, and the FAQ states that TextFSM templates turn raw device output into structured data.",
+    "sources": [
+      {"title": "Slurp'it - Product", "url": "https://slurpit.io/product/"},
+      {"title": "Slurp'it - Frequently asked questions", "url": "https://slurpit.io/knowledge-base/frequently-asked-questions/"}
+    ],
+    "found": true
+  },
+  {
+    "claim": "SolarWinds Network Performance Monitor - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "met",
+    "note": "The SolarWinds documentation states that Device Studio pollers for devices that are not supported by default feed polled values into the standard CPU and memory resources, such as Average CPU Load and Memory Utilization, and can poll custom OIDs for vendor, machine type and software version.",
+    "sources": [
+      {"title": "Device Studio technologies in the SolarWinds Platform", "url": "https://documentation.solarwinds.com/en/success_center/orionplatform/content/core-device-studio-technologies.htm"}
+    ],
+    "found": true
+  },
+  {
+    "claim": "Zabbix Zabbix - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "met",
+    "note": "The Zabbix manual states that preprocessing transforms received item values before they are stored, with steps that include JSONPath, regular expressions, custom multipliers, change per second and SNMP walk to JSON.",
+    "sources": [
+      {"title": "Zabbix manual - Item value preprocessing", "url": "https://www.zabbix.com/documentation/current/en/manual/config/items/preprocessing"}
+    ],
+    "found": true
+  },
+  {
+    "claim": "Stardust Systems SuzieQ - Collector",
+    "requirement": "collector-must-1",
+    "verdict": "met",
+    "note": "The SuzieQ documentation states that the poller gathers data from devices in the inventory at a set period, and that counter services such as interface counters have output that changes on every run, so they are recorded at each poll.",
+    "sources": [
+      {"title": "SuzieQ - Poller", "url": "https://suzieq.readthedocs.io/en/latest/poller/"},
+      {"title": "SuzieQ - Configuring a service", "url": "https://suzieq.readthedocs.io/en/latest/service/service-format/"}
+    ],
+    "found": true
+  },
+  {
+    "claim": "Nagios Enterprises Nagios Core - Presentation",
+    "requirement": "presentation-must-1",
+    "verdict": "met",
+    "note": "The Nagios Core documentation describes how the CGIs control which authenticated users can view monitoring information and submit commands through the web interface. Authenticated contacts get access to the hosts and services they are contacts for, and the authorized_for_* variables in the CGI configuration file grant more access.",
+    "sources": [
+      {"title": "Nagios Core - Authentication and authorization in the CGIs", "url": "https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/cgiauth.html"}
+    ],
+    "found": true
+  },
+  {
+    "claim": "The Apache Software Foundation Apache Airflow - Orchestrator",
+    "requirement": "orchestrator-should-3",
+    "verdict": "met",
+    "note": "The Airflow documentation states that dag.test() runs a DAG in a single Python process without a scheduler, and can mark matching tasks as successful to skip them. The CLI reference describes airflow dags test as running one DAG run for a given logical date, and the backfill command has a --dry-run option.",
+    "sources": [
+      {"title": "Airflow - Debugging Dags", "url": "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/debug.html"},
+      {"title": "Airflow - Command line interface reference", "url": "https://airflow.apache.org/docs/apache-airflow/stable/cli-and-env-variables-ref.html"}
+    ],
+    "found": true
+  },
+  {
+    "claim": "Windmill Labs Windmill - Orchestrator",
+    "requirement": "orchestrator-should-3",
+    "verdict": "met",
+    "note": "The Windmill documentation states that a whole flow, a single step, or a flow up to a given step can be run as a test from the editor before deployment, with results and logs shown for each step.",
+    "sources": [
+      {"title": "Windmill - Test flows", "url": "https://www.windmill.dev/docs/flows/test_flows"}
+    ],
+    "found": true
+  },
+  {
+    "claim": "Temporal Technologies Temporal - Orchestrator",
+    "requirement": "orchestrator-should-3",
+    "verdict": "not_met",
+    "note": "No page was found that states Temporal has no dry run for workflows or names an alternative to one. The Python testing documentation describes replay testing and a time-skipping test environment but does not mention dry runs, and the only dry-run options found apply to workflow resets, not to running a workflow.",
+    "sources": [],
+    "found": false
+  }
+]

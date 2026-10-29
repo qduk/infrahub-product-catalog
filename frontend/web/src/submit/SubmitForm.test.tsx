@@ -30,7 +30,6 @@ describe('SubmitForm', () => {
     await user.type(screen.getByLabelText('Source link'), 'https://example.org/docs')
     for (const chip of screen.getAllByRole('button', { name: 'Docs' })) await user.click(chip)
     await user.selectOptions(screen.getByLabelText('Building block'), 'Collector')
-    await user.click(screen.getByText('Partial'))
     await user.click(screen.getByRole('button', { name: 'Submit for review' }))
 
     await waitFor(() => expect(screen.getByText(/submission-test/)).toBeTruthy())
@@ -41,7 +40,8 @@ describe('SubmitForm', () => {
     const key = body.sources[0].key
     expect(body.fact_sources.publisher).toEqual([key])
     expect(body.fact_sources.description).toEqual([key])
-    expect(body.claims).toEqual([{ block: 'Collector', extent: 'partial', note: null, sources: [key] }])
+    expect(body.claims).toEqual([{ block: 'Collector', note: null, sources: [key] }])
+    expect(screen.queryByText('Partial')).toBeNull()
   })
 
   it('shows errors and sends nothing when required facts are missing', async () => {

@@ -96,7 +96,9 @@ export default function App() {
           </p>
           <div className="graph-stage">
             <CatalogGraph catalog={catalog.data} filters={filters} focus={focus} onFocus={setFocus} />
-            {selected && <ProductDetails product={selected} onClose={() => setFocus(null)} />}
+            {selected && (
+              <ProductDetails product={selected} requirements={catalog.data.requirements} onClose={() => setFocus(null)} />
+            )}
           </div>
           <footer className="app-footer">
             <p className="footer-notes">

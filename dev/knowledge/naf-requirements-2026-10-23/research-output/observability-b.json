@@ -1,0 +1,714 @@
+[
+  {
+    "claim": "NetBrain Technologies Agentic NetOps Platform - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "partly_met",
+    "note": "The vendor states that Golden Baseline regularly collects live network data and sets baselines from historical data, and that the platform has a REST API with device data calls. No source states that the historical data itself can be read through the API.",
+    "sources": [
+      {
+        "title": "AI answers the question: what's changed in my network?",
+        "url": "https://www.netbrain.com/blog/ai-answers-the-question-whats-changed-in-my-network/"
+      },
+      {
+        "title": "NetBrain Platform",
+        "url": "https://www.netbrain.com/platform/"
+      },
+      {
+        "title": "NetBrain REST API R13 (GitHub)",
+        "url": "https://github.com/NetBrainAPI/NetBrain-REST-API-R13"
+      }
+    ]
+  },
+  {
+    "claim": "NetBrain Technologies Agentic NetOps Platform - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "NetBrain Technologies Agentic NetOps Platform - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "met",
+    "note": "The vendor states that Golden Baseline finds deviations from the baseline and raises alarms, that the platform holds the network intent and golden configuration, and that it compares a live path with the intended golden path and reports each deviation.",
+    "sources": [
+      {
+        "title": "AI answers the question: what's changed in my network?",
+        "url": "https://www.netbrain.com/blog/ai-answers-the-question-whats-changed-in-my-network/"
+      },
+      {
+        "title": "NetBrain Platform",
+        "url": "https://www.netbrain.com/platform/"
+      },
+      {
+        "title": "Live Network Context - NetBrain",
+        "url": "https://www.netbrain.com/features/live-network-context/"
+      }
+    ]
+  },
+  {
+    "claim": "NetBrain Technologies Agentic NetOps Platform - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "met",
+    "note": "The vendor states that the platform pushes signals to ITSM platforms such as ServiceNow and to other tools through MCP, REST API and webhooks, and that runbooks run with human approval.",
+    "sources": [
+      {
+        "title": "NetBrain Platform",
+        "url": "https://www.netbrain.com/platform/"
+      }
+    ]
+  },
+  {
+    "claim": "NetBrain Technologies Agentic NetOps Platform - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "met",
+    "note": "The vendor states that it pulls CVE definitions from NIST feeds, matches them to discovered device configurations, and uses topology and context to link CVEs to affected business services.",
+    "sources": [
+      {
+        "title": "Datasheet: NetBrain's Approach to CVE Management",
+        "url": "https://www.netbrain.com/wp-content/uploads/2025/05/CVE-Management-R1.pdf"
+      },
+      {
+        "title": "NetBrain Platform",
+        "url": "https://www.netbrain.com/platform/"
+      }
+    ]
+  },
+  {
+    "claim": "Slurp'it Slurp'it - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "met",
+    "note": "The vendor states that every collection is stored and can be compared with earlier ones, and that the data can be read through a REST API or exported as JSON, CSV or XLSX.",
+    "sources": [
+      {
+        "title": "Slurp'it home page",
+        "url": "https://slurpit.io/"
+      }
+    ]
+  },
+  {
+    "claim": "Slurp'it Slurp'it - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Slurp'it Slurp'it - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "partly_met",
+    "note": "The vendor states that the NetBox plugin shows the differences between the actual network and the intended state in NetBox so that a user can reconcile them. No source states that these differences generate events, or that operational state is compared.",
+    "sources": [
+      {
+        "title": "Slurp'it NetBox plugin",
+        "url": "https://slurpit.io/netbox-plugin/"
+      }
+    ]
+  },
+  {
+    "claim": "Slurp'it Slurp'it - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Slurp'it Slurp'it - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "partly_met",
+    "note": "The vendor states that collected data is enriched with End of Life, CVE, MAC vendor and DNS data. No source states that it is enriched with intended state from a source of truth.",
+    "sources": [
+      {
+        "title": "Slurp'it home page",
+        "url": "https://slurpit.io/"
+      }
+    ]
+  },
+  {
+    "claim": "Juniper Networks Apstra Data Center Director - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "met",
+    "note": "The documentation states that Apstra keeps time-series samples for the duration requested by each probe and that the analytics data can be read from the GUI or the REST API. Older telemetry files are deleted when disk space runs out.",
+    "sources": [
+      {
+        "title": "Apstra 4.2 User Guide: Analytics Introduction",
+        "url": "https://www.juniper.net/documentation/us/en/software/apstra4.2/apstra-user-guide/topics/concept/analytics.html"
+      },
+      {
+        "title": "Apstra 4.2 User Guide: Probes Introduction",
+        "url": "https://www.juniper.net/documentation/us/en/software/apstra4.2/apstra-user-guide/topics/concept/probes.html"
+      }
+    ]
+  },
+  {
+    "claim": "Juniper Networks Apstra Data Center Director - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "partly_met",
+    "note": "The documentation describes a graph query language based on Gremlin (with a Cypher parser) for the network model held in the graph. No source states that the same language queries the stored telemetry time series.",
+    "sources": [
+      {
+        "title": "Apstra 4.2 User Guide: Graph",
+        "url": "https://www.juniper.net/documentation/us/en/software/apstra4.2/apstra-user-guide/topics/topic-map/graph.html"
+      }
+    ]
+  },
+  {
+    "claim": "Juniper Networks Apstra Data Center Director - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "met",
+    "note": "The documentation states that running configurations are continuously compared with the golden configuration and a configuration anomaly is raised on deviation, and that analytics probes combine intent with telemetry and raise anomalies.",
+    "sources": [
+      {
+        "title": "Apstra 4.2 User Guide: Anomalies (Service)",
+        "url": "https://www.juniper.net/documentation/us/en/software/apstra4.2/apstra-user-guide/topics/topic-map/anomalies-service-active.html"
+      },
+      {
+        "title": "Apstra 4.2 User Guide: Analytics Introduction",
+        "url": "https://www.juniper.net/documentation/us/en/software/apstra4.2/apstra-user-guide/topics/concept/analytics.html"
+      }
+    ]
+  },
+  {
+    "claim": "Juniper Networks Apstra Data Center Director - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "met",
+    "note": "The documentation states that anomalies are listed in the GUI with an anomaly history, and that anomalies can be forwarded to external syslog servers.",
+    "sources": [
+      {
+        "title": "Apstra 6.1 User Guide: Anomalies History (Blueprint)",
+        "url": "https://www.juniper.net/documentation/us/en/software/apstra6.1/apstra-user-guide/topics/concept/anomalies-blueprint-history.html"
+      },
+      {
+        "title": "Apstra 4.2 User Guide: Syslog Configuration (Platform)",
+        "url": "https://www.juniper.net/documentation/us/en/software/apstra4.2/apstra-user-guide/topics/topic-map/syslog-config.html"
+      }
+    ]
+  },
+  {
+    "claim": "Juniper Networks Apstra Data Center Director - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "partly_met",
+    "note": "The documentation states that analytics probes combine telemetry with intent from the blueprint graph. No source opened states enrichment with third-party data such as EoL or CVE information.",
+    "sources": [
+      {
+        "title": "Apstra 4.2 User Guide: Analytics Introduction",
+        "url": "https://www.juniper.net/documentation/us/en/software/apstra4.2/apstra-user-guide/topics/concept/analytics.html"
+      }
+    ]
+  },
+  {
+    "claim": "Freshworks Device42 - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "met",
+    "note": "The documentation states that every change to configuration items, from the UI, discovery, API or imports, is recorded as history, and that DOQL queries can be run against the database through the REST API. The sources describe CMDB data, not network telemetry.",
+    "sources": [
+      {
+        "title": "Object History (Audit Logs)",
+        "url": "https://docs.device42.com/reports/reports/object-history-aka-audit-log/"
+      },
+      {
+        "title": "DOQL - Device42 Object Query Language",
+        "url": "https://docs.device42.com/reports/device42-doql/"
+      }
+    ]
+  },
+  {
+    "claim": "Freshworks Device42 - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "met",
+    "note": "The documentation states that DOQL uses PostgreSQL-equivalent SELECT syntax and can be run in the application or through the REST API.",
+    "sources": [
+      {
+        "title": "DOQL - Device42 Object Query Language",
+        "url": "https://docs.device42.com/reports/device42-doql/"
+      }
+    ]
+  },
+  {
+    "claim": "Freshworks Device42 - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Freshworks Device42 - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Freshworks Device42 - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "partly_met",
+    "note": "The documentation states that users can record end-of-life and end-of-service dates for software, entered manually. No source states CVE or maintenance enrichment.",
+    "sources": [
+      {
+        "title": "Software EOL / EOS",
+        "url": "https://docs.device42.com/infrastructure-management/software/software-eol-eos/"
+      }
+    ]
+  },
+  {
+    "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "partly_met",
+    "note": "The documentation states that CDB persists configuration to disk, keeps operational data in RAM by default unless told to persist it, and that RESTCONF reads configuration and operational data. No source opened describes retention of historical data for analytics.",
+    "sources": [
+      {
+        "title": "NSO: CDB and YANG",
+        "url": "https://raw.githubusercontent.com/NSO-developer/nso-gitbook/main/development/introduction-to-automation/cdb-and-yang.md"
+      },
+      {
+        "title": "NSO: RESTCONF API",
+        "url": "https://nso-docs.cisco.com/guides/development/core-concepts/northbound-apis/restconf-api"
+      }
+    ]
+  },
+  {
+    "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "met",
+    "note": "The documentation describes a Query API over RESTCONF and NETCONF that runs XPath expressions and returns selected results in chunks.",
+    "sources": [
+      {
+        "title": "NSO: RESTCONF API",
+        "url": "https://nso-docs.cisco.com/guides/development/core-concepts/northbound-apis/restconf-api"
+      }
+    ]
+  },
+  {
+    "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "partly_met",
+    "note": "The documentation states that check-sync and compare-config compare the device configuration with the copy in NSO, and that an out-of-sync alarm is raised when a device was configured outside NSO. This covers configuration only, not operational state.",
+    "sources": [
+      {
+        "title": "NSO 6.6: Lifecycle Operations",
+        "url": "https://nso-docs.cisco.com/guides/nso-6.6/operation-and-usage/operations/lifecycle-operations"
+      },
+      {
+        "title": "NSO: Alarm Types",
+        "url": "https://nso-docs.cisco.com/guides/administration/management/system-management/alarms"
+      }
+    ]
+  },
+  {
+    "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "partly_met",
+    "note": "The documentation describes the out-of-sync alarm and the action an operator should take (compare-config, then sync-from or sync-to). No source opened states how alarms are sent to other systems.",
+    "sources": [
+      {
+        "title": "NSO: Alarm Types",
+        "url": "https://nso-docs.cisco.com/guides/administration/management/system-management/alarms"
+      }
+    ]
+  },
+  {
+    "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Itential Platform - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "partly_met",
+    "note": "The documentation states that each device backup is a point-in-time snapshot of the configuration that can be compared with earlier states, and the vendor states that the platform has open APIs. History covers device configuration only.",
+    "sources": [
+      {
+        "title": "Itential: Configuration Manager overview",
+        "url": "https://docs.itential.com/itential-platform/configuration-manager/overview"
+      },
+      {
+        "title": "Itential home page",
+        "url": "https://www.itential.com/"
+      }
+    ]
+  },
+  {
+    "claim": "Itential Platform - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Itential Platform - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "partly_met",
+    "note": "The documentation states that compliance plans run the golden configuration against the network on a schedule so that configuration drift is detected automatically. This covers configuration, not operational state.",
+    "sources": [
+      {
+        "title": "Itential: Configuration Manager overview",
+        "url": "https://docs.itential.com/itential-platform/configuration-manager/overview"
+      },
+      {
+        "title": "Itential: Compliance plans overview",
+        "url": "https://docs.itential.com/itential-platform/configuration-manager/golden-configurations/compliance-plans"
+      }
+    ]
+  },
+  {
+    "claim": "Itential Platform - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "partly_met",
+    "note": "The documentation states that compliance reports show which devices drifted and why, for people to review. No source opened states that drift results start workflows automatically.",
+    "sources": [
+      {
+        "title": "Itential: Configuration Manager overview",
+        "url": "https://docs.itential.com/itential-platform/configuration-manager/overview"
+      }
+    ]
+  },
+  {
+    "claim": "Itential Platform - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Gluware Gluware - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "partly_met",
+    "note": "The vendor states that GluAPI gives programmatic access. No source opened states how configuration or state history is stored.",
+    "sources": [
+      {
+        "title": "Gluware company and product facts",
+        "url": "https://gluware.com/gluware-company-and-product-facts/"
+      }
+    ]
+  },
+  {
+    "claim": "Gluware Gluware - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Gluware Gluware - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "partly_met",
+    "note": "The vendor states that Gluware continuously compares live configuration with the expected state and detects configuration changes. This covers configuration, not operational state.",
+    "sources": [
+      {
+        "title": "Gluware: Eliminate configuration drift",
+        "url": "https://gluware.com/eliminate-configuration-drift/"
+      },
+      {
+        "title": "Gluware company and product facts",
+        "url": "https://gluware.com/gluware-company-and-product-facts/"
+      }
+    ]
+  },
+  {
+    "claim": "Gluware Gluware - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "met",
+    "note": "The vendor states that drift detection can trigger workflows that include ServiceNow tickets, approvals, configuration updates, validation and notifications to operations teams.",
+    "sources": [
+      {
+        "title": "Gluware: Eliminate configuration drift",
+        "url": "https://gluware.com/eliminate-configuration-drift/"
+      }
+    ]
+  },
+  {
+    "claim": "Gluware Gluware - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "partly_met",
+    "note": "The vendor states that Device Manager uses Cisco Support API calls to list the PSIRT advisories that apply to devices in inventory, and that the Config Drift and Audit app finds configuration statements linked to CVEs. The source covers Cisco devices only.",
+    "sources": [
+      {
+        "title": "Gluware detects and mitigates threats to Cisco products (Thrangrycat)",
+        "url": "https://gluware.com/gluware-detects-and-mitigates-threats-to-cisco-products-exposed-through-network-os-and-configurations-including-the-latest-thrangrycat-vulnerability/"
+      }
+    ]
+  },
+  {
+    "claim": "Spacelift Spacelift - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "partly_met",
+    "note": "The documentation states that drift detection runs are kept in the run history and that a GraphQL API exposes stacks and runs. The stored data is about infrastructure-as-code runs, not network state.",
+    "sources": [
+      {
+        "title": "Spacelift docs: Drift detection",
+        "url": "https://docs.spacelift.io/concepts/stack/drift-detection"
+      },
+      {
+        "title": "Spacelift docs: GraphQL API",
+        "url": "https://docs.spacelift.io/integrations/api"
+      }
+    ]
+  },
+  {
+    "claim": "Spacelift Spacelift - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "partly_met",
+    "note": "The documentation states that Spacelift has a GraphQL API to query account resources such as stacks and runs. It covers Spacelift's own data only.",
+    "sources": [
+      {
+        "title": "Spacelift docs: GraphQL API",
+        "url": "https://docs.spacelift.io/integrations/api"
+      }
+    ]
+  },
+  {
+    "claim": "Spacelift Spacelift - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "partly_met",
+    "note": "The documentation states that scheduled proposed runs compare the declared infrastructure-as-code state with the deployed resources. This covers resources managed by infrastructure-as-code, not network operational state.",
+    "sources": [
+      {
+        "title": "Spacelift docs: Drift detection",
+        "url": "https://docs.spacelift.io/concepts/stack/drift-detection"
+      }
+    ]
+  },
+  {
+    "claim": "Spacelift Spacelift - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "met",
+    "note": "The documentation states that drift detection runs trigger webhooks, can be checked by policies, and can start reconciliation runs automatically or wait for human approval.",
+    "sources": [
+      {
+        "title": "Spacelift docs: Drift detection",
+        "url": "https://docs.spacelift.io/concepts/stack/drift-detection"
+      }
+    ]
+  },
+  {
+    "claim": "Spacelift Spacelift - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "AlgoSec Horizon Security Analyzer - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "partly_met",
+    "note": "The documentation states that a complete history of changes to device policies is logged. This covers firewall policy only, and no source opened describes API access to it.",
+    "sources": [
+      {
+        "title": "Welcome to AlgoSec Firewall Analyzer",
+        "url": "https://techdocs.algosec.com/en/asms/a32.60/asms-help/content/afa-admin/about-algosec-firewall-analyzer.htm"
+      }
+    ]
+  },
+  {
+    "claim": "AlgoSec Horizon Security Analyzer - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "AlgoSec Horizon Security Analyzer - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "partly_met",
+    "note": "The documentation states that notifications are sent when an analysis detects changes in the risks or policy of a device, or when real-time monitoring detects configuration changes. The source describes change detection, not comparison with an intended state.",
+    "sources": [
+      {
+        "title": "AlgoSec: Configure event-triggered notifications",
+        "url": "https://techdocs.algosec.com/en/asms/a32.60/asms-help/content/afa-admin/configuring-event-triggered.htm"
+      }
+    ]
+  },
+  {
+    "claim": "AlgoSec Horizon Security Analyzer - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "partly_met",
+    "note": "The documentation states that these notifications are sent by email to selected users. No other delivery method is described.",
+    "sources": [
+      {
+        "title": "AlgoSec: Configure event-triggered notifications",
+        "url": "https://techdocs.algosec.com/en/asms/a32.60/asms-help/content/afa-admin/configuring-event-triggered.htm"
+      }
+    ]
+  },
+  {
+    "claim": "AlgoSec Horizon Security Analyzer - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "FireMon Security Manager - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "partly_met",
+    "note": "The vendor states that it keeps historical snapshots and version control for every device and has an API-first architecture. This covers security device configuration only.",
+    "sources": [
+      {
+        "title": "FireMon Security Manager",
+        "url": "https://www.firemon.com/products/security-manager"
+      }
+    ]
+  },
+  {
+    "claim": "FireMon Security Manager - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "met",
+    "note": "The documentation states that SIQL queries run against normalized configurations from supported devices and that report widgets are built on SIQL queries.",
+    "sources": [
+      {
+        "title": "FireMon docs: About SIQL Queries",
+        "url": "https://docs.firemon.com/enterprise/Content/SECURITY_MANAGER/SIQL/About_SIQL_Queries.htm"
+      }
+    ]
+  },
+  {
+    "claim": "FireMon Security Manager - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "partly_met",
+    "note": "The vendor states that it detects rule changes continuously and uses its historical snapshots for drift detection. This covers security policy, not the full network state.",
+    "sources": [
+      {
+        "title": "FireMon Security Manager",
+        "url": "https://www.firemon.com/products/security-manager"
+      }
+    ]
+  },
+  {
+    "claim": "FireMon Security Manager - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "FireMon Security Manager - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Tufin Orchestration Suite - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "partly_met",
+    "note": "The vendor states that any two policy revisions can be compared and that changes to a rule can be viewed over time, and the GraphQL API documentation lists a version query for historical changes. This covers security policy only.",
+    "sources": [
+      {
+        "title": "Tufin SecureTrack+",
+        "url": "https://www.tufin.com/tufin-orchestration-suite/securetrack"
+      },
+      {
+        "title": "SecureTrack Aurora GraphQL API Documentation R24-1",
+        "url": "https://forum.tufin.com/support/kc/GraphQL/R24-1/"
+      }
+    ]
+  },
+  {
+    "claim": "Tufin Orchestration Suite - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "met",
+    "note": "The documentation describes Tufin Query Language (TQL) for searching rules and alerts, and a GraphQL API for querying rules, devices and policies.",
+    "sources": [
+      {
+        "title": "Tufin: TQL Fields For USP Alerts",
+        "url": "https://forum.tufin.com/support/kc/latest/Content/ST2/TQL/TQLFieldsUSP_Alerts.htm"
+      },
+      {
+        "title": "SecureTrack Aurora GraphQL API Documentation R24-1",
+        "url": "https://forum.tufin.com/support/kc/GraphQL/R24-1/"
+      }
+    ]
+  },
+  {
+    "claim": "Tufin Orchestration Suite - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "partly_met",
+    "note": "The documentation defines a violation as a rule that deviates from the policy in a unified security policy (USP), and the vendor states that SecureTrack flags violations continuously. This covers security policy, not the full network state.",
+    "sources": [
+      {
+        "title": "Tufin: Rule Violations",
+        "url": "https://forum.tufin.com/support/kc/latest/Content/ST2/RuleViewer/RuleViewer_Violations.htm"
+      },
+      {
+        "title": "Tufin SecureTrack+",
+        "url": "https://www.tufin.com/tufin-orchestration-suite/securetrack"
+      }
+    ]
+  },
+  {
+    "claim": "Tufin Orchestration Suite - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "met",
+    "note": "The documentation states that USP violation alerts can be sent to email addresses and to syslog.",
+    "sources": [
+      {
+        "title": "Tufin: TQL Fields For USP Alerts",
+        "url": "https://forum.tufin.com/support/kc/latest/Content/ST2/TQL/TQLFieldsUSP_Alerts.htm"
+      }
+    ]
+  },
+  {
+    "claim": "Tufin Orchestration Suite - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "partly_met",
+    "note": "The vendor states that the Vulnerability Mitigation App uses vulnerability scanner data to find firewall rules that expose assets to known vulnerabilities. No source states EoL or maintenance enrichment.",
+    "sources": [
+      {
+        "title": "Tufin SecureTrack+",
+        "url": "https://www.tufin.com/tufin-orchestration-suite/securetrack"
+      }
+    ]
+  },
+  {
+    "claim": "Skybox Security Firewall Assurance - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "partly_met",
+    "note": "The Common Criteria security target states that Firewall Assurance tracked changes for continuous firewall monitoring and that the suite offered an API to integrate Skybox data. It covers firewalls only, and the product is discontinued.",
+    "sources": [
+      {
+        "title": "Skybox Security Suite Security Target Version 1.0 (Common Criteria)",
+        "url": "https://www.commoncriteriaportal.org/files/epfiles/EFS-T053-Skybox_ST.pdf"
+      }
+    ]
+  },
+  {
+    "claim": "Skybox Security Firewall Assurance - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Skybox Security Firewall Assurance - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "partly_met",
+    "note": "The security target states that Firewall Assurance flagged unauthorized changes and detected compliance problems against built-in or custom policies. This covers firewalls only.",
+    "sources": [
+      {
+        "title": "Skybox Security Suite Security Target Version 1.0 (Common Criteria)",
+        "url": "https://www.commoncriteriaportal.org/files/epfiles/EFS-T053-Skybox_ST.pdf"
+      }
+    ]
+  },
+  {
+    "claim": "Skybox Security Firewall Assurance - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Skybox Security Firewall Assurance - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "partly_met",
+    "note": "The security target states that Firewall Assurance found vulnerabilities on firewalls and that the suite received vulnerability dictionary updates. It covers firewalls only.",
+    "sources": [
+      {
+        "title": "Skybox Security Suite Security Target Version 1.0 (Common Criteria)",
+        "url": "https://www.commoncriteriaportal.org/files/epfiles/EFS-T053-Skybox_ST.pdf"
+      }
+    ]
+  }
+]

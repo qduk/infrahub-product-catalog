@@ -1,0 +1,762 @@
+[
+  {
+    "claim": "Stardust Systems SuzieQ - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "met",
+    "note": "SuzieQ stores normalized device data in Parquet files with timestamps, and users can view state at a past time or the changes over a time range. The data is available through a CLI, GUI, REST API and Python.",
+    "sources": [
+      {
+        "title": "SuzieQ documentation",
+        "url": "https://suzieq.readthedocs.io/en/latest/"
+      },
+      {
+        "title": "Introducing SuzieQ CLI",
+        "url": "https://suzieq.readthedocs.io/en/latest/commands/introduction/"
+      }
+    ]
+  },
+  {
+    "claim": "Stardust Systems SuzieQ - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "met",
+    "note": "Commands and the Python API accept a pandas query string that filters data with comparison operators, regular expressions, and and/or conditions.",
+    "sources": [
+      {
+        "title": "SuzieQ Pandas Query Examples",
+        "url": "https://suzieq.readthedocs.io/en/latest/pandas-query-examples/"
+      }
+    ]
+  },
+  {
+    "claim": "Stardust Systems SuzieQ - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "partly_met",
+    "note": "SuzieQ shows current network state and changes over time, and its assert verb runs predefined checks on BGP, EVPN, interface and OSPF data. The sources do not state that it compares state with an intended state or generates events automatically.",
+    "sources": [
+      {
+        "title": "netenglabs/suzieq repository",
+        "url": "https://github.com/netenglabs/suzieq"
+      },
+      {
+        "title": "Introducing SuzieQ CLI",
+        "url": "https://suzieq.readthedocs.io/en/latest/commands/introduction/"
+      }
+    ]
+  },
+  {
+    "claim": "Stardust Systems SuzieQ - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Stardust Systems SuzieQ - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "SolarWinds Network Performance Monitor - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "met",
+    "note": "The vendor states NPM stores historical data. The SolarWinds Information Service (SWIS) provides an API to Orion platform data.",
+    "sources": [
+      {
+        "title": "SolarWinds Network Performance Monitor",
+        "url": "https://www.solarwinds.com/network-performance-monitor"
+      },
+      {
+        "title": "Orion SDK documentation",
+        "url": "https://solarwinds.github.io/OrionSDK/docs/"
+      }
+    ]
+  },
+  {
+    "claim": "SolarWinds Network Performance Monitor - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "met",
+    "note": "SWIS has an SQL-like language called SolarWinds Query Language (SWQL).",
+    "sources": [
+      {
+        "title": "Orion SDK documentation",
+        "url": "https://solarwinds.github.io/OrionSDK/docs/"
+      }
+    ]
+  },
+  {
+    "claim": "SolarWinds Network Performance Monitor - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "partly_met",
+    "note": "NPM alerts on thresholds such as devices going down, interface saturation and hardware health. The sources do not state that NPM compares state with an intended state.",
+    "sources": [
+      {
+        "title": "SolarWinds Network Performance Monitor",
+        "url": "https://www.solarwinds.com/network-performance-monitor"
+      }
+    ]
+  },
+  {
+    "claim": "SolarWinds Network Performance Monitor - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "partly_met",
+    "note": "Alerts notify people, and an alert action can send an HTTP GET or POST request to another system when the alert triggers. These are threshold alerts, not events for differences from an intended state.",
+    "sources": [
+      {
+        "title": "SolarWinds Network Performance Monitor",
+        "url": "https://www.solarwinds.com/network-performance-monitor"
+      },
+      {
+        "title": "Send a GET or POST request through HTTP or HTTPS in the SolarWinds Platform",
+        "url": "https://documentation.solarwinds.com/en/success_center/orionplatform/content/core-using-get-or-post-url-functions-sw1058.htm"
+      }
+    ]
+  },
+  {
+    "claim": "SolarWinds Network Performance Monitor - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Kentik Kentik - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "met",
+    "note": "The vendor states Kentik retains raw data for months. The Query API returns stored flow, BGP and SNMP data for a chosen time range.",
+    "sources": [
+      {
+        "title": "Kentik product",
+        "url": "https://www.kentik.com/product/"
+      },
+      {
+        "title": "Kentik Query API",
+        "url": "https://kb.kentik.com/docs/query-api"
+      }
+    ]
+  },
+  {
+    "claim": "Kentik Kentik - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "partly_met",
+    "note": "The Query API and portal filter data with operators such as equals, pattern match, regular expressions and comparisons. The SQL query method was deprecated on 1 May 2025.",
+    "sources": [
+      {
+        "title": "Kentik Query API",
+        "url": "https://kb.kentik.com/docs/query-api"
+      }
+    ]
+  },
+  {
+    "claim": "Kentik Kentik - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "partly_met",
+    "note": "Kentik sends notifications when traffic meets the threshold conditions of an alert policy. The sources do not state that it compares state with an intended state.",
+    "sources": [
+      {
+        "title": "Kentik Notification Channels",
+        "url": "https://kb.kentik.com/docs/notification-channel"
+      }
+    ]
+  },
+  {
+    "claim": "Kentik Kentik - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "partly_met",
+    "note": "Notification channels include email, Slack, Microsoft Teams, PagerDuty, ServiceNow and custom webhooks, and policies can trigger automatic mitigations. The events are threshold alerts, not differences from an intended state.",
+    "sources": [
+      {
+        "title": "Kentik Notification Channels",
+        "url": "https://kb.kentik.com/docs/notification-channel"
+      }
+    ]
+  },
+  {
+    "claim": "Kentik Kentik - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "partly_met",
+    "note": "Custom dimensions add business context to flow data, populated by rules, the API, or AWS and Azure tags. The sources do not state enrichment with intended state or with EoL, CVE or maintenance data.",
+    "sources": [
+      {
+        "title": "Kentik Custom Dimensions",
+        "url": "https://kb.kentik.com/docs/custom-dimensions"
+      }
+    ]
+  },
+  {
+    "claim": "LibreNMS LibreNMS - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "met",
+    "note": "The API returns device data, outages, availability and graphs of historical metrics for a from/to time range.",
+    "sources": [
+      {
+        "title": "LibreNMS API: Devices",
+        "url": "https://docs.librenms.org/API/Devices/"
+      }
+    ]
+  },
+  {
+    "claim": "LibreNMS LibreNMS - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "partly_met",
+    "note": "Alert rules are built from database entities and conditions, and users can override them with their own SQL queries. The sources do not describe a query language for extracting data through the API.",
+    "sources": [
+      {
+        "title": "LibreNMS Alert Rules",
+        "url": "https://docs.librenms.org/Alerting/Rules/"
+      }
+    ]
+  },
+  {
+    "claim": "LibreNMS LibreNMS - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "partly_met",
+    "note": "Alert rules compare collected values with thresholds or device warning levels. The sources do not state comparison with an intended state.",
+    "sources": [
+      {
+        "title": "LibreNMS Alert Rules",
+        "url": "https://docs.librenms.org/Alerting/Rules/"
+      }
+    ]
+  },
+  {
+    "claim": "LibreNMS LibreNMS - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "partly_met",
+    "note": "Alerts go to people through email, chat and paging transports, and to other systems through API, Alertmanager and ticketing transports. The events are threshold alerts, not differences from an intended state.",
+    "sources": [
+      {
+        "title": "LibreNMS Alert Transports",
+        "url": "https://docs.librenms.org/Alerting/Transports/"
+      }
+    ]
+  },
+  {
+    "claim": "LibreNMS LibreNMS - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Zabbix Zabbix - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "met",
+    "note": "Zabbix stores history, hourly trends and events with configurable retention. The JSON-RPC API method history.get returns history values for a time range.",
+    "sources": [
+      {
+        "title": "Zabbix features",
+        "url": "https://www.zabbix.com/features"
+      },
+      {
+        "title": "Zabbix API history.get",
+        "url": "https://www.zabbix.com/documentation/current/en/manual/api/reference/history/get"
+      }
+    ]
+  },
+  {
+    "claim": "Zabbix Zabbix - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "partly_met",
+    "note": "Calculated items use an expression syntax with item filters on host groups and tags and aggregate functions over history periods. The sources do not describe a general query language for extracting data.",
+    "sources": [
+      {
+        "title": "Zabbix aggregate calculations",
+        "url": "https://www.zabbix.com/documentation/current/en/manual/config/items/itemtypes/calculated/aggregate"
+      }
+    ]
+  },
+  {
+    "claim": "Zabbix Zabbix - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "partly_met",
+    "note": "Zabbix detects problems from thresholds, anomalies against history baselines and trend forecasts. The sources do not state comparison with an intended state.",
+    "sources": [
+      {
+        "title": "Zabbix features",
+        "url": "https://www.zabbix.com/features"
+      }
+    ]
+  },
+  {
+    "claim": "Zabbix Zabbix - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "partly_met",
+    "note": "Problems are sent to people through email, SMS and chat, to ITSM tools through webhooks, and can run remediation scripts. The events are threshold or anomaly problems, not differences from an intended state.",
+    "sources": [
+      {
+        "title": "Zabbix features",
+        "url": "https://www.zabbix.com/features"
+      }
+    ]
+  },
+  {
+    "claim": "Zabbix Zabbix - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "partly_met",
+    "note": "The vendor states messages can be enriched with runtime and inventory information, and the API can add inventory data. The sources do not state enrichment with intended state or EoL, CVE or maintenance data.",
+    "sources": [
+      {
+        "title": "Zabbix features",
+        "url": "https://www.zabbix.com/features"
+      }
+    ]
+  },
+  {
+    "claim": "Nagios Enterprises Nagios Core - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "partly_met",
+    "note": "Nagios Core can write plugin performance data to files or pass it to commands, but it does not process or graph that data itself. The sources do not describe programmatic access to stored history.",
+    "sources": [
+      {
+        "title": "Nagios Core Performance Data",
+        "url": "https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/perfdata.html"
+      }
+    ]
+  },
+  {
+    "claim": "Nagios Enterprises Nagios Core - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Nagios Enterprises Nagios Core - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "partly_met",
+    "note": "Nagios Core detects host and service state changes from plugin checks. The sources do not state comparison with an intended state.",
+    "sources": [
+      {
+        "title": "Nagios Core Event Handlers",
+        "url": "https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/eventhandlers.html"
+      }
+    ]
+  },
+  {
+    "claim": "Nagios Enterprises Nagios Core - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "partly_met",
+    "note": "Notifications go to contacts through commands such as email or pager, and event handlers run scripts that can, for example, open a helpdesk ticket or restart a service. The events are check state changes, not differences from an intended state.",
+    "sources": [
+      {
+        "title": "Nagios Core Notifications",
+        "url": "https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/notifications.html"
+      },
+      {
+        "title": "Nagios Core Event Handlers",
+        "url": "https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/eventhandlers.html"
+      }
+    ]
+  },
+  {
+    "claim": "Nagios Enterprises Nagios Core - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Paessler PRTG Network Monitor - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "met",
+    "note": "The PRTG API returns historic sensor data in XML, CSV or JSON for a start and end date, with limits of 40 days of raw data or 500 days of averages per request.",
+    "sources": [
+      {
+        "title": "How can I export historic data from the PRTG API?",
+        "url": "https://helpdesk.paessler.com/en/support/solutions/articles/76000063676-how-can-i-export-historic-data-from-the-prtg-api-"
+      }
+    ]
+  },
+  {
+    "claim": "Paessler PRTG Network Monitor - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Paessler PRTG Network Monitor - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "partly_met",
+    "note": "Notifications trigger on sensor status changes and threshold conditions. The sources do not state comparison with an intended state.",
+    "sources": [
+      {
+        "title": "PRTG Manual: Notifications",
+        "url": "https://www.paessler.com/manuals/prtg/notifications"
+      }
+    ]
+  },
+  {
+    "claim": "Paessler PRTG Network Monitor - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "partly_met",
+    "note": "Notification methods include email, SMS, push, Slack, Teams, HTTP actions, running a program and ticket assignment. The events are sensor status or threshold changes, not differences from an intended state.",
+    "sources": [
+      {
+        "title": "PRTG Manual: Notifications",
+        "url": "https://www.paessler.com/manuals/prtg/notifications"
+      }
+    ]
+  },
+  {
+    "claim": "Paessler PRTG Network Monitor - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Cisco pyATS - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "partly_met",
+    "note": "pyATS profiles the network and saves a snapshot that is used in Python. The sources do not describe a persistent store of state over time.",
+    "sources": [
+      {
+        "title": "Cisco pyATS",
+        "url": "https://developer.cisco.com/pyats/"
+      }
+    ]
+  },
+  {
+    "claim": "Cisco pyATS - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "partly_met",
+    "note": "The Genie Dq library queries the Python dictionaries of parsed state with filters, comparison operators and regular expressions. It works on data in memory, not on a stored history.",
+    "sources": [
+      {
+        "title": "Genie Useful Libraries (Dq and Diff)",
+        "url": "https://pubhub.devnetcloud.com/media/genie-docs/docs/userguide/utils/index.html"
+      }
+    ]
+  },
+  {
+    "claim": "Cisco pyATS - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "partly_met",
+    "note": "pyATS compares state before and after a change and reports the differences, and Genie includes a diff tool. The sources do not state comparison with an intended state or automatic events.",
+    "sources": [
+      {
+        "title": "Cisco pyATS",
+        "url": "https://developer.cisco.com/pyats/"
+      },
+      {
+        "title": "Genie Useful Libraries (Dq and Diff)",
+        "url": "https://pubhub.devnetcloud.com/media/genie-docs/docs/userguide/utils/index.html"
+      }
+    ]
+  },
+  {
+    "claim": "Cisco pyATS - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Cisco pyATS - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Network Unit Testing System NUTS - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Network Unit Testing System NUTS - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Network Unit Testing System NUTS - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "partly_met",
+    "note": "NUTS runs test cases based on a predefined network topology against the actual network and confirms the expected state. The sources do not state that it generates events automatically.",
+    "sources": [
+      {
+        "title": "NUTS documentation",
+        "url": "https://nuts.readthedocs.io/en/latest/"
+      }
+    ]
+  },
+  {
+    "claim": "Network Unit Testing System NUTS - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Network Unit Testing System NUTS - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Flock9 Netpicker - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "partly_met",
+    "note": "Netpicker stores every configuration backup in Git with version history and diffs, and the vendor states the product is API-based. This covers configuration, not operational state.",
+    "sources": [
+      {
+        "title": "Netpicker Network Config Backup",
+        "url": "https://netpicker.io/network-config-backup/"
+      },
+      {
+        "title": "Netpicker home page",
+        "url": "https://netpicker.io/"
+      }
+    ]
+  },
+  {
+    "claim": "Flock9 Netpicker - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Flock9 Netpicker - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "partly_met",
+    "note": "Each backup is compared with the previous version, and changes outside an approved window are flagged as drift. Tests validate configurations against standards and policies. The sources do not state comparison with an intended state from a source of truth.",
+    "sources": [
+      {
+        "title": "Netpicker Network Config Backup",
+        "url": "https://netpicker.io/network-config-backup/"
+      },
+      {
+        "title": "Netpicker home page",
+        "url": "https://netpicker.io/"
+      }
+    ]
+  },
+  {
+    "claim": "Flock9 Netpicker - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "met",
+    "note": "When drift is detected, Netpicker can send a Slack notification, create a ServiceNow incident or start a remediation workflow.",
+    "sources": [
+      {
+        "title": "Netpicker Network Config Backup",
+        "url": "https://netpicker.io/network-config-backup/"
+      }
+    ]
+  },
+  {
+    "claim": "Flock9 Netpicker - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "partly_met",
+    "note": "Netpicker matches device software versions against CVE data and reports end-of-life software. The sources do not state enrichment with intended state.",
+    "sources": [
+      {
+        "title": "Netpicker Network Security Automation",
+        "url": "https://netpicker.io/network-security-automation/"
+      }
+    ]
+  },
+  {
+    "claim": "Nokia Event-Driven Automation (EDA) - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "partly_met",
+    "note": "EDA holds runtime state for what it deploys and offers APIs and EQL to query it. The sources do not describe storage of historical state.",
+    "sources": [
+      {
+        "title": "Nokia EDA documentation home",
+        "url": "https://docs.eda.dev/26.8/"
+      },
+      {
+        "title": "EDA Query Language (EQL)",
+        "url": "https://docs.eda.dev/latest/user-guide/eda-query-language/"
+      }
+    ]
+  },
+  {
+    "claim": "Nokia Event-Driven Automation (EDA) - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "met",
+    "note": "EQL queries all state in the EDA database and on managed devices, with where filters, ordering, limits, aggregation functions and streaming updates.",
+    "sources": [
+      {
+        "title": "EDA Query Language (EQL)",
+        "url": "https://docs.eda.dev/latest/user-guide/eda-query-language/"
+      }
+    ]
+  },
+  {
+    "claim": "Nokia Event-Driven Automation (EDA) - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "met",
+    "note": "The vendor states EDA uses streaming telemetry to detect and correct deviations from the desired state in real time. This applies to resources EDA deploys.",
+    "sources": [
+      {
+        "title": "Nokia EDA documentation home",
+        "url": "https://docs.eda.dev/26.8/"
+      }
+    ]
+  },
+  {
+    "claim": "Nokia Event-Driven Automation (EDA) - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "met",
+    "note": "Detected deviations appear on the home dashboard for operators, and the vendor states EDA can correct them automatically.",
+    "sources": [
+      {
+        "title": "EDA UI",
+        "url": "https://docs.eda.dev/25.12/tour-of-eda/ui/"
+      },
+      {
+        "title": "Nokia EDA documentation home",
+        "url": "https://docs.eda.dev/26.8/"
+      }
+    ]
+  },
+  {
+    "claim": "Nokia Event-Driven Automation (EDA) - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Forward Networks Forward Enterprise - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "met",
+    "note": "Forward stores collected network snapshots, and the API lists, exports and imports snapshots and runs NQE queries against a chosen snapshot.",
+    "sources": [
+      {
+        "title": "Forward Networks API",
+        "url": "https://docs.fwd.app/25.9/api-doc/"
+      }
+    ]
+  },
+  {
+    "claim": "Forward Networks Forward Enterprise - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "met",
+    "note": "The Network Query Engine (NQE) API runs NQE queries on a snapshot, with options to filter and order the results.",
+    "sources": [
+      {
+        "title": "Forward Networks API",
+        "url": "https://docs.fwd.app/25.9/api-doc/"
+      }
+    ]
+  },
+  {
+    "claim": "Forward Networks Forward Enterprise - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "partly_met",
+    "note": "The platform computes the results of defined checks on each processed snapshot, and the vendor states intent checks show gaps between intent and actual behavior. The sources opened do not state that check failures generate events.",
+    "sources": [
+      {
+        "title": "Forward Networks API",
+        "url": "https://docs.fwd.app/25.9/api-doc/"
+      },
+      {
+        "title": "Forward Enterprise",
+        "url": "https://www.forwardnetworks.com/forward-enterprise/"
+      }
+    ]
+  },
+  {
+    "claim": "Forward Networks Forward Enterprise - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "partly_met",
+    "note": "The vendor states Forward orchestrates workflows with ServiceNow, Slack and Infoblox. The sources opened do not state that check failures are sent to these systems.",
+    "sources": [
+      {
+        "title": "Forward Enterprise",
+        "url": "https://www.forwardnetworks.com/forward-enterprise/"
+      }
+    ]
+  },
+  {
+    "claim": "Forward Networks Forward Enterprise - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "partly_met",
+    "note": "The vendor states Forward detects CVE-affected devices, and an NQE example imports a Cisco end-of-life list and matches it with device models. The sources do not state enrichment with intended state from another system.",
+    "sources": [
+      {
+        "title": "Forward Enterprise",
+        "url": "https://www.forwardnetworks.com/forward-enterprise/"
+      },
+      {
+        "title": "NQE Lifecycle Checks: EOL and Compliance Automation",
+        "url": "https://www.forwardnetworks.com/blog/2025/09/02/proactive-lifecycle-management-with-nqe-eol-eos-compliance-checks/"
+      }
+    ]
+  },
+  {
+    "claim": "IP Fabric IP Fabric - Observability",
+    "requirement": "observability-must-1",
+    "verdict": "met",
+    "note": "IP Fabric keeps multiple snapshots, and API requests can retrieve data from any snapshot by ID or from the last or previous snapshot.",
+    "sources": [
+      {
+        "title": "IP Fabric API overview",
+        "url": "https://docs.ipfabric.io/latest/IP_Fabric_API/"
+      }
+    ]
+  },
+  {
+    "claim": "IP Fabric IP Fabric - Observability",
+    "requirement": "observability-should-1",
+    "verdict": "partly_met",
+    "note": "The API filters table data with operators such as eq, like and color. The sources do not describe a query language beyond these filters.",
+    "sources": [
+      {
+        "title": "IP Fabric API overview",
+        "url": "https://docs.ipfabric.io/latest/IP_Fabric_API/"
+      }
+    ]
+  },
+  {
+    "claim": "IP Fabric IP Fabric - Observability",
+    "requirement": "observability-should-2",
+    "verdict": "partly_met",
+    "note": "Intent verification rules evaluate each snapshot's data against defined conditions, and calculating the results generates an event. The sources do not state comparison with an intended state held in another system.",
+    "sources": [
+      {
+        "title": "IP Fabric Intent Verification Rules",
+        "url": "https://docs.ipfabric.io/latest/IP_Fabric_API/intent_verification_rules/"
+      },
+      {
+        "title": "IP Fabric Webhooks",
+        "url": "https://docs.ipfabric.io/5.0/IP_Fabric_Settings/webhooks/"
+      }
+    ]
+  },
+  {
+    "claim": "IP Fabric IP Fabric - Observability",
+    "requirement": "observability-may-1",
+    "verdict": "met",
+    "note": "Webhooks subscribed to intent verification events can send notifications to messaging tools or update an external issue tracker.",
+    "sources": [
+      {
+        "title": "IP Fabric Webhooks",
+        "url": "https://docs.ipfabric.io/5.0/IP_Fabric_Settings/webhooks/"
+      }
+    ]
+  },
+  {
+    "claim": "IP Fabric IP Fabric - Observability",
+    "requirement": "observability-may-2",
+    "verdict": "partly_met",
+    "note": "The vendor states IP Fabric reports devices reaching end of life. The sources do not state enrichment with intended state, CVE or maintenance data.",
+    "sources": [
+      {
+        "title": "IP Fabric home page",
+        "url": "https://ipfabric.io/"
+      }
+    ]
+  }
+]

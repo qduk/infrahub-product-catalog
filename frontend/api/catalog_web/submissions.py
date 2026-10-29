@@ -18,7 +18,6 @@ SOURCES_MAX = 20
 
 LicenseModel = Literal["open_source", "open_core", "commercial"]
 Status = Literal["active", "discontinued", "acquired"]
-Extent = Literal["full", "partial"]
 
 
 def _text(max_length: int, min_length: int = 1):
@@ -93,8 +92,10 @@ class FactSources(BaseModel):
 
 
 class Claim(BaseModel):
+    """A building block the product covers. Its extent is computed from requirement verdicts that
+    maintainers add during review; an "extent" sent by an older form is ignored."""
+
     block: str = _text(NAME_MAX)
-    extent: Extent
     note: str | None = Field(default=None, max_length=TEXT_MAX)
     sources: list[str] = Field(min_length=1, max_length=SOURCES_MAX)
 
@@ -242,7 +243,6 @@ async def _write_submission(client: InfrahubClient, submission: Submission, bran
         claim_data = {
             "product": product,
             "building_block": block,
-            "extent": claim.extent,
             "sources": [sources[key] for key in claim.sources],
         }
         if claim.note:

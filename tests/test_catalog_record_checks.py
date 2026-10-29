@@ -74,6 +74,7 @@ def source(id_: str, title: str, url: str, uses: int = 1) -> dict:
         "license_model_of_products": {"count": 0},
         "status_of_products": {"count": 0},
         "coverage_claims": {"count": 0},
+        "verdicts": {"count": 0},
     }
 
 
@@ -82,7 +83,6 @@ def claim(id_: str, product_id: str, block_id: str, label: str, sources=("s1",))
         "id": id_,
         "__typename": "CatalogCoverageClaim",
         "display_label": label,
-        "extent": value("full"),
         "note": value(None),
         "product": {"node": {"id": product_id}},
         "building_block": {"node": {"id": block_id}},
@@ -101,8 +101,38 @@ def block(id_: str, name: str) -> dict:
     }
 
 
-def catalog(publishers=(), products=(), sources=(), claims=(), blocks=()) -> dict:
+def requirement(id_: str, block_id: str | None, level: str = "must") -> dict:
     return {
+        "id": id_,
+        "__typename": "CatalogRequirement",
+        "display_label": id_,
+        "identifier": value(id_),
+        "level": value(level),
+        "position": value(1),
+        "summary": value("Example summary"),
+        "statement": value("It MUST do something."),
+        "reference_url": value("https://reference.networkautomation.forum/Framework/Framework/#intent"),
+        "building_block": {"node": {"id": block_id} if block_id else None},
+    }
+
+
+def verdict(id_: str, claim_id: str, requirement_id: str, label: str, result: str = "met", sources=("s1",)) -> dict:
+    return {
+        "id": id_,
+        "__typename": "CatalogRequirementVerdict",
+        "display_label": label,
+        "verdict": value(result),
+        "note": value(None),
+        "claim": {"node": {"id": claim_id}},
+        "requirement": {"node": {"id": requirement_id}},
+        "sources": ids(*sources),
+    }
+
+
+def catalog(publishers=(), products=(), sources=(), claims=(), blocks=(), requirements=(), verdicts=()) -> dict:
+    return {
+        "CatalogRequirement": edges(*requirements),
+        "CatalogRequirementVerdict": edges(*verdicts),
         "CatalogPublisher": edges(*publishers),
         "CatalogProduct": edges(*products),
         "CatalogSource": edges(*sources),
@@ -118,6 +148,8 @@ def main_catalog() -> dict:
         sources=[source("s1", "Infrahub documentation", "https://docs.infrahub.app/")],
         claims=[claim("c1", "prod1", "b1", "OpsMill Infrahub - Intent")],
         blocks=[block("b1", "Intent"), block("b2", "Collector")],
+        requirements=[requirement("intent-must-1", "b1")],
+        verdicts=[verdict("v1", "c1", "intent-must-1", "OpsMill Infrahub - Intent - intent-must-1")],
     )
 
 
@@ -230,7 +262,10 @@ def test_changed_fact_of_existing_product_fails() -> None:
         ("CatalogProduct", 0, "publisher", {"node": {"id": "pub2"}}, "Product OpsMill Infrahub: publisher"),
         ("CatalogSource", 0, "last_checked", value("2026-10-22T00:00:00Z"), "Source Infrahub documentation: last-checked date"),
         ("CatalogSource", 0, "url", value("https://evil.example/"), "Source Infrahub documentation: link"),
-        ("CatalogCoverageClaim", 0, "extent", value("partial"), "Coverage claim OpsMill Infrahub - Intent: extent"),
+        ("CatalogCoverageClaim", 0, "note", value("Changed."), "Coverage claim OpsMill Infrahub - Intent: note"),
+        ("CatalogRequirementVerdict", 0, "verdict", value("not_met"), "Requirement verdict OpsMill Infrahub - Intent - intent-must-1: verdict"),
+        ("CatalogRequirementVerdict", 0, "sources", ids(), "Requirement verdict OpsMill Infrahub - Intent - intent-must-1: sources"),
+        ("CatalogRequirement", 0, "statement", value("Rewritten."), "Requirement intent-must-1: statement"),
         ("CatalogPublisher", 0, "homepage_url", value("https://x.example/"), "Publisher OpsMill: home page"),
         ("CatalogBuildingBlock", 0, "name", value("Intent!"), "Building block Intent: name"),
     ],
@@ -256,9 +291,24 @@ def test_added_building_block_fails() -> None:
     branch = submission_branch()
     add(branch, "CatalogBuildingBlock", block("b3", "Spam"))
     assert messages(run_submission(branch), "ERROR") == [
-        "Building block Spam was added. Building blocks come from the framework and are not added by "
-        "submissions; delete it."
+        "Building block Spam was added. Building blocks and requirements come from the framework and are not "
+        "added by submissions; delete it."
     ]
+
+
+def test_added_requirement_fails() -> None:
+    branch = submission_branch()
+    add(branch, "CatalogRequirement", requirement("intent-must-9", "b1"))
+    assert messages(run_submission(branch), "ERROR") == [
+        "Requirement intent-must-9 was added. Building blocks and requirements come from the framework and are "
+        "not added by submissions; delete it."
+    ]
+
+
+def test_verdicts_of_new_claims_may_be_added() -> None:
+    branch = submission_branch()
+    add(branch, "CatalogRequirementVerdict", verdict("v9", "c2", "intent-must-1", "Example Corp Collector - Collector - x"))
+    assert messages(run_submission(branch), "ERROR") == []
 
 
 def test_new_record_may_be_corrected_on_the_submission_branch() -> None:
@@ -353,14 +403,14 @@ def test_source_that_supports_nothing_fails() -> None:
     check = run(CatalogUnusedSourceCheck, data)
     assert check.passed is False
     assert messages(check, "ERROR") == [
-        "Source Spam page (https://spam.example/) supports no product fact or coverage claim. Link it to the "
-        "fact it supports, or delete it."
+        "Source Spam page (https://spam.example/) supports no product fact, coverage claim or requirement "
+        "verdict. Link it to the fact it supports, or delete it."
     ]
 
 
 @pytest.mark.parametrize(
     "use",
-    ["publisher_of_products", "description_of_products", "license_model_of_products", "status_of_products", "coverage_claims"],
+    ["publisher_of_products", "description_of_products", "license_model_of_products", "status_of_products", "coverage_claims", "verdicts"],
 )
 def test_source_with_any_use_passes(use: str) -> None:
     data = main_catalog()

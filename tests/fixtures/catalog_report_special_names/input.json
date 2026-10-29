@@ -49,9 +49,6 @@
                 "node": {
                   "id": "claim-1",
                   "__typename": "CatalogCoverageClaim",
-                  "extent": {
-                    "value": "full"
-                  },
                   "building_block": {
                     "node": {
                       "id": "block-1",
@@ -59,6 +56,24 @@
                         "value": "Block (A)"
                       }
                     }
+                  },
+                  "verdicts": {
+                    "edges": [
+                      {
+                        "node": {
+                          "verdict": {
+                            "value": "met"
+                          },
+                          "requirement": {
+                            "node": {
+                              "identifier": {
+                                "value": "block (a)-must-1"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
                   }
                 }
               }
@@ -66,6 +81,50 @@
           },
           "status": {
             "value": "active"
+          }
+        }
+      }
+    ]
+  },
+  "CatalogRequirement": {
+    "edges": [
+      {
+        "node": {
+          "id": "req-block (a)",
+          "__typename": "CatalogRequirement",
+          "identifier": {
+            "value": "block (a)-must-1"
+          },
+          "level": {
+            "value": "must"
+          },
+          "building_block": {
+            "node": {
+              "id": "block-block (a)",
+              "name": {
+                "value": "Block (A)"
+              }
+            }
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "req-block \"b\"",
+          "__typename": "CatalogRequirement",
+          "identifier": {
+            "value": "block \"b\"-must-1"
+          },
+          "level": {
+            "value": "must"
+          },
+          "building_block": {
+            "node": {
+              "id": "block-block \"b\"",
+              "name": {
+                "value": "Block \"B\""
+              }
+            }
           }
         }
       }

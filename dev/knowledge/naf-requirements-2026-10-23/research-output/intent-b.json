@@ -1,0 +1,759 @@
+[
+  {
+    "claim": "Network to Code Nautobot - Intent",
+    "requirement": "intent-must-1",
+    "verdict": "partly_met",
+    "note": "Nautobot's data models cover locations, racks, devices, interfaces, IP address space, VLANs, circuits and cables, and can be extended with custom fields and relationships. The pages opened do not state that secrets, operational levels or policy definitions are modelled.",
+    "sources": [
+      {
+        "title": "Nautobot documentation home",
+        "url": "https://docs.nautobot.com/projects/core/en/stable/"
+      },
+      {
+        "title": "nautobot/nautobot on GitHub",
+        "url": "https://github.com/nautobot/nautobot"
+      }
+    ]
+  },
+  {
+    "claim": "Network to Code Nautobot - Intent",
+    "requirement": "intent-must-2",
+    "verdict": "met",
+    "note": "The REST API supports create (POST), read (GET), update (PUT, PATCH) and delete (DELETE) on objects.",
+    "sources": [
+      {
+        "title": "Nautobot REST API overview",
+        "url": "https://docs.nautobot.com/projects/core/en/stable/user-guide/platform-functionality/rest-api/overview/"
+      }
+    ]
+  },
+  {
+    "claim": "Network to Code Nautobot - Intent",
+    "requirement": "intent-must-3",
+    "verdict": "met",
+    "note": "Nautobot provides REST and GraphQL APIs, with interactive API documentation on each running instance.",
+    "sources": [
+      {
+        "title": "nautobot/nautobot on GitHub",
+        "url": "https://github.com/nautobot/nautobot"
+      },
+      {
+        "title": "Nautobot REST API overview",
+        "url": "https://docs.nautobot.com/projects/core/en/stable/user-guide/platform-functionality/rest-api/overview/"
+      }
+    ]
+  },
+  {
+    "claim": "Network to Code Nautobot - Intent",
+    "requirement": "intent-should-1",
+    "verdict": "partly_met",
+    "note": "The Golden Config app, a separate open source app, generates intended configurations from Nautobot data. The core documentation does not describe this as part of Nautobot itself.",
+    "sources": [
+      {
+        "title": "Nautobot documentation home",
+        "url": "https://docs.nautobot.com/projects/core/en/stable/"
+      }
+    ]
+  },
+  {
+    "claim": "Network to Code Nautobot - Intent",
+    "requirement": "intent-should-2",
+    "verdict": "not_shown",
+    "note": "The pages opened mention native Git integration but do not state that Nautobot gives one view of desired state held in several data sources.",
+    "sources": []
+  },
+  {
+    "claim": "Network to Code Nautobot - Intent",
+    "requirement": "intent-should-3",
+    "verdict": "partly_met",
+    "note": "Change logging records a timestamp, the user and a request ID for each change. The pages opened do not state that data origin or valid periods are recorded.",
+    "sources": [
+      {
+        "title": "Nautobot change logging",
+        "url": "https://docs.nautobot.com/projects/core/en/stable/user-guide/platform-functionality/change-logging/"
+      }
+    ]
+  },
+  {
+    "claim": "Network to Code Nautobot - Intent",
+    "requirement": "intent-should-4",
+    "verdict": "partly_met",
+    "note": "Bulk REST updates and deletions are all-or-none, and users can define data validation rules. Branching and versioned data are provided by the separate Version Control app, which uses the Dolt database.",
+    "sources": [
+      {
+        "title": "Nautobot REST API overview",
+        "url": "https://docs.nautobot.com/projects/core/en/stable/user-guide/platform-functionality/rest-api/overview/"
+      },
+      {
+        "title": "nautobot/nautobot on GitHub",
+        "url": "https://github.com/nautobot/nautobot"
+      },
+      {
+        "title": "Nautobot Version Control app on GitHub",
+        "url": "https://github.com/nautobot/nautobot-app-version-control"
+      }
+    ]
+  },
+  {
+    "claim": "Network to Code Nautobot - Intent",
+    "requirement": "intent-may-1",
+    "verdict": "partly_met",
+    "note": "Nautobot offers data validation rules and Jobs that run against its data, and the Golden Config app generates intended configurations. The pages opened do not state data aggregation, replication or service decomposition.",
+    "sources": [
+      {
+        "title": "nautobot/nautobot on GitHub",
+        "url": "https://github.com/nautobot/nautobot"
+      },
+      {
+        "title": "Nautobot documentation home",
+        "url": "https://docs.nautobot.com/projects/core/en/stable/"
+      }
+    ]
+  },
+  {
+    "claim": "Sunbird Software dcTrack - Intent",
+    "requirement": "intent-must-1",
+    "verdict": "partly_met",
+    "note": "The vendor states dcTrack records physical data center assets, racks, power chains, capacity and structured cabling, with custom fields. Logical network data such as routing or configuration templates is not in its documented scope.",
+    "sources": [
+      {
+        "title": "dcTrack DCIM Operations Software data sheet",
+        "url": "https://info.sunbirddcim.com/hubfs/DS009_Sunbird_DataSheet_dcTrack9_2.pdf"
+      },
+      {
+        "title": "Sunbird DCIM products",
+        "url": "https://www.sunbirddcim.com/dcim-products"
+      }
+    ]
+  },
+  {
+    "claim": "Sunbird Software dcTrack - Intent",
+    "requirement": "intent-must-2",
+    "verdict": "met",
+    "note": "The API guide documents REST calls to create, modify, delete and retrieve items and item data ports.",
+    "sources": [
+      {
+        "title": "dcTrack 6.0.3 API Guide",
+        "url": "https://s3.amazonaws.com/dcTrack.Docs/dcTrack_6.0.3_GA/dcTrack-API-Guide-6.0.3.pdf"
+      }
+    ]
+  },
+  {
+    "claim": "Sunbird Software dcTrack - Intent",
+    "requirement": "intent-must-3",
+    "verdict": "met",
+    "note": "dcTrack has a REST API documented in a published API guide.",
+    "sources": [
+      {
+        "title": "dcTrack 6.0.3 API Guide",
+        "url": "https://s3.amazonaws.com/dcTrack.Docs/dcTrack_6.0.3_GA/dcTrack-API-Guide-6.0.3.pdf"
+      }
+    ]
+  },
+  {
+    "claim": "Sunbird Software dcTrack - Intent",
+    "requirement": "intent-should-1",
+    "verdict": "not_shown",
+    "note": "The pages opened do not mention a neutral model or generation of vendor configuration.",
+    "sources": []
+  },
+  {
+    "claim": "Sunbird Software dcTrack - Intent",
+    "requirement": "intent-should-2",
+    "verdict": "not_shown",
+    "note": "The vendor states dcTrack connects to ticketing and CMDB systems, but the pages opened do not state that it gives one view of desired state across data sources.",
+    "sources": []
+  },
+  {
+    "claim": "Sunbird Software dcTrack - Intent",
+    "requirement": "intent-should-3",
+    "verdict": "partly_met",
+    "note": "The vendor states dcTrack keeps request approvals, status and history and an audit trail of requests and work orders. Data origin, ownership and valid periods are not stated.",
+    "sources": [
+      {
+        "title": "dcTrack DCIM Operations Software data sheet",
+        "url": "https://info.sunbirddcim.com/hubfs/DS009_Sunbird_DataSheet_dcTrack9_2.pdf"
+      },
+      {
+        "title": "Sunbird DCIM products",
+        "url": "https://www.sunbirddcim.com/dcim-products"
+      }
+    ]
+  },
+  {
+    "claim": "Sunbird Software dcTrack - Intent",
+    "requirement": "intent-should-4",
+    "verdict": "not_shown",
+    "note": "The vendor states dcTrack validates physical connections and media types, but the pages opened do not state custom validation, transactional changes or versioned access to data.",
+    "sources": []
+  },
+  {
+    "claim": "Sunbird Software dcTrack - Intent",
+    "requirement": "intent-may-1",
+    "verdict": "partly_met",
+    "note": "The vendor states dcTrack validates physical connections and media types. Configuration artifact generation and service decomposition are not stated.",
+    "sources": [
+      {
+        "title": "dcTrack DCIM Operations Software data sheet",
+        "url": "https://info.sunbirddcim.com/hubfs/DS009_Sunbird_DataSheet_dcTrack9_2.pdf"
+      }
+    ]
+  },
+  {
+    "claim": "phpIPAM project phpIPAM - Intent",
+    "requirement": "intent-must-1",
+    "verdict": "partly_met",
+    "note": "phpIPAM stores IPv4 and IPv6 subnets and addresses, VLANs, VRFs, NAT, devices, racks and locations, with custom fields. Other aspects such as routing protocols or configuration templates are not listed.",
+    "sources": [
+      {
+        "title": "phpIPAM features",
+        "url": "https://phpipam.net/documents/features/"
+      }
+    ]
+  },
+  {
+    "claim": "phpIPAM project phpIPAM - Intent",
+    "requirement": "intent-must-2",
+    "verdict": "met",
+    "note": "The API supports create (POST), read (GET), update (PATCH) and delete (DELETE) on controllers such as sections, subnets, addresses, VLANs and VRFs.",
+    "sources": [
+      {
+        "title": "phpIPAM API documentation",
+        "url": "https://phpipam.net/api/api_documentation/"
+      }
+    ]
+  },
+  {
+    "claim": "phpIPAM project phpIPAM - Intent",
+    "requirement": "intent-must-3",
+    "verdict": "met",
+    "note": "phpIPAM has a REST API with published documentation.",
+    "sources": [
+      {
+        "title": "phpIPAM API documentation",
+        "url": "https://phpipam.net/api/api_documentation/"
+      }
+    ]
+  },
+  {
+    "claim": "phpIPAM project phpIPAM - Intent",
+    "requirement": "intent-should-1",
+    "verdict": "not_shown",
+    "note": "The pages opened do not mention generating vendor configuration from the stored data.",
+    "sources": []
+  },
+  {
+    "claim": "phpIPAM project phpIPAM - Intent",
+    "requirement": "intent-should-2",
+    "verdict": "not_shown",
+    "note": "The feature list includes RIPE and XLS/CSV subnet imports, but does not state that phpIPAM gives one view of desired state across data sources.",
+    "sources": []
+  },
+  {
+    "claim": "phpIPAM project phpIPAM - Intent",
+    "requirement": "intent-should-3",
+    "verdict": "partly_met",
+    "note": "The feature list includes changelogs. Data origin, ownership and valid periods are not stated.",
+    "sources": [
+      {
+        "title": "phpIPAM features",
+        "url": "https://phpipam.net/documents/features/"
+      }
+    ]
+  },
+  {
+    "claim": "phpIPAM project phpIPAM - Intent",
+    "requirement": "intent-should-4",
+    "verdict": "not_shown",
+    "note": "The pages opened do not state transactional changes, custom validation or versioned access to data.",
+    "sources": []
+  },
+  {
+    "claim": "phpIPAM project phpIPAM - Intent",
+    "requirement": "intent-may-1",
+    "verdict": "not_shown",
+    "note": "The pages opened do not state validation, aggregation or artifact generation logic for intended state.",
+    "sources": []
+  },
+  {
+    "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Intent",
+    "requirement": "intent-must-1",
+    "verdict": "partly_met",
+    "note": "NSO stores service intent and a copy of device configuration in the CDB, with the schema defined in YANG. The pages opened do not state that physical infrastructure, secrets or operational levels are modelled.",
+    "sources": [
+      {
+        "title": "NSO: CDB and YANG",
+        "url": "https://raw.githubusercontent.com/NSO-developer/nso-gitbook/main/development/introduction-to-automation/cdb-and-yang.md"
+      }
+    ]
+  },
+  {
+    "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Intent",
+    "requirement": "intent-must-2",
+    "verdict": "met",
+    "note": "The RESTCONF API provides create, read, update and delete operations on YANG-defined data.",
+    "sources": [
+      {
+        "title": "NSO RESTCONF API",
+        "url": "https://nso-docs.cisco.com/guides/development/core-concepts/northbound-apis/restconf-api"
+      }
+    ]
+  },
+  {
+    "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Intent",
+    "requirement": "intent-must-3",
+    "verdict": "met",
+    "note": "NSO implements RESTCONF as defined in RFC 8040, and also exposes data through NETCONF and the CLI.",
+    "sources": [
+      {
+        "title": "NSO RESTCONF API",
+        "url": "https://nso-docs.cisco.com/guides/development/core-concepts/northbound-apis/restconf-api"
+      },
+      {
+        "title": "NSO: CDB and YANG",
+        "url": "https://raw.githubusercontent.com/NSO-developer/nso-gitbook/main/development/introduction-to-automation/cdb-and-yang.md"
+      }
+    ]
+  },
+  {
+    "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Intent",
+    "requirement": "intent-should-1",
+    "verdict": "met",
+    "note": "Service models in YANG are mapped to device YANG models, and network element drivers turn them into device-specific configuration. Templates can cover several device types.",
+    "sources": [
+      {
+        "title": "NSO Services",
+        "url": "https://nso-docs.cisco.com/guides/development/core-concepts/services"
+      },
+      {
+        "title": "NSO Device Manager",
+        "url": "https://nso-docs.cisco.com/guides/operation-and-usage/operations/nso-device-manager"
+      }
+    ]
+  },
+  {
+    "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Intent",
+    "requirement": "intent-should-2",
+    "verdict": "not_shown",
+    "note": "The CDB holds the primary copy of each managed device's configuration, but the pages opened do not state a unified view across several external data sources.",
+    "sources": []
+  },
+  {
+    "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Intent",
+    "requirement": "intent-should-3",
+    "verdict": "partly_met",
+    "note": "RESTCONF commit parameters accept labels, and the API uses timestamps and ETags to prevent edit collisions. Data origin, ownership and valid periods are not stated.",
+    "sources": [
+      {
+        "title": "NSO RESTCONF API",
+        "url": "https://nso-docs.cisco.com/guides/development/core-concepts/northbound-apis/restconf-api"
+      }
+    ]
+  },
+  {
+    "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Intent",
+    "requirement": "intent-should-4",
+    "verdict": "partly_met",
+    "note": "The CDB provides transactions, and changes to devices are applied as one atomic transaction. YANG constraints validate data, and rollback files can be applied, but versioned read access to data is not stated.",
+    "sources": [
+      {
+        "title": "NSO: CDB and YANG",
+        "url": "https://raw.githubusercontent.com/NSO-developer/nso-gitbook/main/development/introduction-to-automation/cdb-and-yang.md"
+      },
+      {
+        "title": "NSO Device Manager",
+        "url": "https://nso-docs.cisco.com/guides/operation-and-usage/operations/nso-device-manager"
+      },
+      {
+        "title": "NSO RESTCONF API",
+        "url": "https://nso-docs.cisco.com/guides/development/core-concepts/northbound-apis/restconf-api"
+      }
+    ]
+  },
+  {
+    "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Intent",
+    "requirement": "intent-may-1",
+    "verdict": "partly_met",
+    "note": "NSO services map abstract service input to device-specific configuration with the FASTMAP algorithm, and YANG constraints validate data. Data aggregation and replication are not stated.",
+    "sources": [
+      {
+        "title": "NSO Services",
+        "url": "https://nso-docs.cisco.com/guides/development/core-concepts/services"
+      },
+      {
+        "title": "NSO: CDB and YANG",
+        "url": "https://raw.githubusercontent.com/NSO-developer/nso-gitbook/main/development/introduction-to-automation/cdb-and-yang.md"
+      }
+    ]
+  },
+  {
+    "claim": "HashiCorp Terraform - Intent",
+    "requirement": "intent-must-1",
+    "verdict": "partly_met",
+    "note": "Terraform configuration files describe resources on any platform with a provider, including compute, storage, networking and DNS. It is not specific to networks, and the pages opened do not state that physical infrastructure or operational levels are modelled.",
+    "sources": [
+      {
+        "title": "What is Terraform?",
+        "url": "https://developer.hashicorp.com/terraform/intro"
+      }
+    ]
+  },
+  {
+    "claim": "HashiCorp Terraform - Intent",
+    "requirement": "intent-must-2",
+    "verdict": "partly_met",
+    "note": "Terraform creates, updates and destroys infrastructure resources to match configuration files. The configuration itself is held in files that users edit, not in a data store with create, read, update and delete operations.",
+    "sources": [
+      {
+        "title": "What is Terraform?",
+        "url": "https://developer.hashicorp.com/terraform/intro"
+      },
+      {
+        "title": "Terraform State",
+        "url": "https://developer.hashicorp.com/terraform/language/state"
+      }
+    ]
+  },
+  {
+    "claim": "HashiCorp Terraform - Intent",
+    "requirement": "intent-must-3",
+    "verdict": "not_shown",
+    "note": "The state page describes the terraform output and terraform show commands with JSON output for integration, but does not describe an API to read or write the desired state. The HCP Terraform API was not assessed.",
+    "sources": []
+  },
+  {
+    "claim": "HashiCorp Terraform - Intent",
+    "requirement": "intent-should-1",
+    "verdict": "not_shown",
+    "note": "The pages opened do not state whether configuration uses a vendor-neutral representation.",
+    "sources": []
+  },
+  {
+    "claim": "HashiCorp Terraform - Intent",
+    "requirement": "intent-should-2",
+    "verdict": "not_shown",
+    "note": "The pages opened do not state a unified view of desired state across several data sources.",
+    "sources": []
+  },
+  {
+    "claim": "HashiCorp Terraform - Intent",
+    "requirement": "intent-should-3",
+    "verdict": "not_shown",
+    "note": "The pages opened do not state governance metadata such as ownership or valid periods.",
+    "sources": []
+  },
+  {
+    "claim": "HashiCorp Terraform - Intent",
+    "requirement": "intent-should-4",
+    "verdict": "partly_met",
+    "note": "Configuration can be committed to a version control system, and Terraform locks state in supported backends. Custom validation and transactional changes are not stated on the pages opened.",
+    "sources": [
+      {
+        "title": "What is Terraform?",
+        "url": "https://developer.hashicorp.com/terraform/intro"
+      },
+      {
+        "title": "Terraform State",
+        "url": "https://developer.hashicorp.com/terraform/language/state"
+      }
+    ]
+  },
+  {
+    "claim": "HashiCorp Terraform - Intent",
+    "requirement": "intent-may-1",
+    "verdict": "not_shown",
+    "note": "The pages opened describe modules and the plan step but do not state validation, aggregation or artifact generation logic for intended state.",
+    "sources": []
+  },
+  {
+    "claim": "Gluware Gluware - Intent",
+    "requirement": "intent-must-1",
+    "verdict": "partly_met",
+    "note": "The vendor states Gluware models desired device configuration and policy across 56 network operating systems from 22 vendors. Other aspects such as IP address management, racks, cabling or secrets are not stated.",
+    "sources": [
+      {
+        "title": "Gluware Multi-Vendor Networks",
+        "url": "https://gluware.com/multi-vendor-networks/"
+      },
+      {
+        "title": "Gluware Company and Product Facts",
+        "url": "https://gluware.com/gluware-company-and-product-facts/"
+      }
+    ]
+  },
+  {
+    "claim": "Gluware Gluware - Intent",
+    "requirement": "intent-must-2",
+    "verdict": "partly_met",
+    "note": "The vendor states GluAPI can add devices, retrieve device and organization data and push changes. Delete operations are not stated.",
+    "sources": [
+      {
+        "title": "GluAPI",
+        "url": "https://gluware.com/platform/gluapi/"
+      }
+    ]
+  },
+  {
+    "claim": "Gluware Gluware - Intent",
+    "requirement": "intent-must-3",
+    "verdict": "met",
+    "note": "The vendor states GluAPI is a REST API with resource-oriented URLs, JSON responses and published API documentation.",
+    "sources": [
+      {
+        "title": "GluAPI",
+        "url": "https://gluware.com/platform/gluapi/"
+      },
+      {
+        "title": "Gluware Company and Product Facts",
+        "url": "https://gluware.com/gluware-company-and-product-facts/"
+      }
+    ]
+  },
+  {
+    "claim": "Gluware Gluware - Intent",
+    "requirement": "intent-should-1",
+    "verdict": "met",
+    "note": "The vendor states that desired configuration and policy are defined once and rendered into platform-specific implementations, using the DIAL layer.",
+    "sources": [
+      {
+        "title": "Gluware Multi-Vendor Networks",
+        "url": "https://gluware.com/multi-vendor-networks/"
+      }
+    ]
+  },
+  {
+    "claim": "Gluware Gluware - Intent",
+    "requirement": "intent-should-2",
+    "verdict": "not_shown",
+    "note": "The pages opened do not state a unified view of desired state across several data sources.",
+    "sources": []
+  },
+  {
+    "claim": "Gluware Gluware - Intent",
+    "requirement": "intent-should-3",
+    "verdict": "not_shown",
+    "note": "The pages opened do not state governance metadata such as timestamps, origin, ownership or valid periods.",
+    "sources": []
+  },
+  {
+    "claim": "Gluware Gluware - Intent",
+    "requirement": "intent-should-4",
+    "verdict": "partly_met",
+    "note": "The vendor states Gluware audits configuration against defined rules and validates execution. Transactional changes and versioned access to data are not stated.",
+    "sources": [
+      {
+        "title": "Gluware Company and Product Facts",
+        "url": "https://gluware.com/gluware-company-and-product-facts/"
+      },
+      {
+        "title": "Gluware Multi-Vendor Networks",
+        "url": "https://gluware.com/multi-vendor-networks/"
+      }
+    ]
+  },
+  {
+    "claim": "Gluware Gluware - Intent",
+    "requirement": "intent-may-1",
+    "verdict": "partly_met",
+    "note": "The vendor states Gluware validates changes and renders the intent model into platform-specific configuration. Data aggregation, replication and service decomposition are not stated.",
+    "sources": [
+      {
+        "title": "Gluware Multi-Vendor Networks",
+        "url": "https://gluware.com/multi-vendor-networks/"
+      },
+      {
+        "title": "Gluware Company and Product Facts",
+        "url": "https://gluware.com/gluware-company-and-product-facts/"
+      }
+    ]
+  },
+  {
+    "claim": "ConfigHub ConfigHub - Intent",
+    "requirement": "intent-must-1",
+    "verdict": "partly_met",
+    "note": "ConfigHub stores Kubernetes, infrastructure and application configuration as YAML or JSON data. The documentation does not state that network device configuration or network data such as IP addressing is modelled.",
+    "sources": [
+      {
+        "title": "ConfigHub Documentation",
+        "url": "https://docs.confighub.com/"
+      },
+      {
+        "title": "ConfigHub: Configuration as Data",
+        "url": "https://docs.confighub.com/background/config-as-data/"
+      }
+    ]
+  },
+  {
+    "claim": "ConfigHub ConfigHub - Intent",
+    "requirement": "intent-must-2",
+    "verdict": "met",
+    "note": "The Unit API has POST to create, GET to read, PUT and PATCH to update and DELETE to remove units, including bulk operations.",
+    "sources": [
+      {
+        "title": "ConfigHub API Reference: Unit",
+        "url": "https://docs.confighub.com/developer/api-reference/unit/"
+      }
+    ]
+  },
+  {
+    "claim": "ConfigHub ConfigHub - Intent",
+    "requirement": "intent-must-3",
+    "verdict": "met",
+    "note": "The API reference is generated from an OpenAPI 3.0 specification.",
+    "sources": [
+      {
+        "title": "ConfigHub API Reference overview",
+        "url": "https://docs.confighub.com/developer/api-reference/overview/"
+      }
+    ]
+  },
+  {
+    "claim": "ConfigHub ConfigHub - Intent",
+    "requirement": "intent-should-1",
+    "verdict": "not_shown",
+    "note": "The documentation states configuration is stored with literal values and is not parameterized, and does not describe deriving vendor-specific configuration from a neutral model.",
+    "sources": []
+  },
+  {
+    "claim": "ConfigHub ConfigHub - Intent",
+    "requirement": "intent-should-2",
+    "verdict": "not_shown",
+    "note": "The vendor describes ConfigHub as a single source of truth, but the pages opened do not state a unified view of data held in several data sources.",
+    "sources": []
+  },
+  {
+    "claim": "ConfigHub ConfigHub - Intent",
+    "requirement": "intent-should-3",
+    "verdict": "partly_met",
+    "note": "ConfigHub keeps revisions with change history, and units carry labels, annotations and other metadata. Data ownership and valid periods are not stated.",
+    "sources": [
+      {
+        "title": "ConfigHub: Configuration as Data",
+        "url": "https://docs.confighub.com/background/config-as-data/"
+      },
+      {
+        "title": "ConfigHub Documentation",
+        "url": "https://docs.confighub.com/"
+      }
+    ]
+  },
+  {
+    "claim": "ConfigHub ConfigHub - Intent",
+    "requirement": "intent-should-4",
+    "verdict": "met",
+    "note": "A unit's configuration is applied as a single transaction, functions and triggers validate configuration, and revisions can be compared and restored.",
+    "sources": [
+      {
+        "title": "ConfigHub API Reference: Unit",
+        "url": "https://docs.confighub.com/developer/api-reference/unit/"
+      },
+      {
+        "title": "ConfigHub: Configuration as Data",
+        "url": "https://docs.confighub.com/background/config-as-data/"
+      }
+    ]
+  },
+  {
+    "claim": "ConfigHub ConfigHub - Intent",
+    "requirement": "intent-may-1",
+    "verdict": "partly_met",
+    "note": "Functions and triggers validate configuration, and data can be queried and updated in bulk. Generating configuration artifacts is not part of the documented approach, which stores literal configuration.",
+    "sources": [
+      {
+        "title": "ConfigHub: Configuration as Data",
+        "url": "https://docs.confighub.com/background/config-as-data/"
+      }
+    ]
+  },
+  {
+    "claim": "Tufin Orchestration Suite - Intent",
+    "requirement": "intent-must-1",
+    "verdict": "partly_met",
+    "note": "The Unified Security Policy defines allowed traffic between network segmentation zones. The suite does not state that it models other network aspects as intended state.",
+    "sources": [
+      {
+        "title": "Tufin SecureChange+",
+        "url": "https://www.tufin.com/tufin-orchestration-suite/securechange"
+      }
+    ]
+  },
+  {
+    "claim": "Tufin Orchestration Suite - Intent",
+    "requirement": "intent-must-2",
+    "verdict": "partly_met",
+    "note": "The TOS REST API supports GET, POST, PUT, PATCH and DELETE on resources. The pages opened do not confirm all four operations for Unified Security Policy data.",
+    "sources": [
+      {
+        "title": "Getting Started with the TOS API",
+        "url": "https://forum.tufin.com/support/kc/latest/Content/Suite/RESTAPI/4423.htm"
+      }
+    ]
+  },
+  {
+    "claim": "Tufin Orchestration Suite - Intent",
+    "requirement": "intent-must-3",
+    "verdict": "met",
+    "note": "The suite has REST APIs for SecureTrack and SecureChange, documented in Swagger.",
+    "sources": [
+      {
+        "title": "Getting Started with the TOS API",
+        "url": "https://forum.tufin.com/support/kc/latest/Content/Suite/RESTAPI/4423.htm"
+      }
+    ]
+  },
+  {
+    "claim": "Tufin Orchestration Suite - Intent",
+    "requirement": "intent-should-1",
+    "verdict": "partly_met",
+    "note": "The vendor states the Designer generates vendor-specific rule recommendations from access requests. This covers only firewall access changes.",
+    "sources": [
+      {
+        "title": "Tufin SecureChange+",
+        "url": "https://www.tufin.com/tufin-orchestration-suite/securechange"
+      }
+    ]
+  },
+  {
+    "claim": "Tufin Orchestration Suite - Intent",
+    "requirement": "intent-should-2",
+    "verdict": "not_shown",
+    "note": "The vendor describes a connectivity graph of multi-vendor environments, but the pages opened do not state a unified view of desired state across data sources.",
+    "sources": []
+  },
+  {
+    "claim": "Tufin Orchestration Suite - Intent",
+    "requirement": "intent-should-3",
+    "verdict": "partly_met",
+    "note": "USP exceptions can record a ticket ID, an approver and a time frame in which they are valid, and actions appear in the administrator audit trail. Data origin and timestamps for policy data are not stated.",
+    "sources": [
+      {
+        "title": "Tufin USP Exceptions",
+        "url": "https://forum.tufin.com/support/kc/latest/Content/ST2/USP_Exceptions/USPExceptions.htm"
+      }
+    ]
+  },
+  {
+    "claim": "Tufin Orchestration Suite - Intent",
+    "requirement": "intent-should-4",
+    "verdict": "partly_met",
+    "note": "The vendor states SecureChange+ evaluates the security and compliance impact of each change against policy before it is made. Transactional changes and versioned access to data are not stated.",
+    "sources": [
+      {
+        "title": "Tufin SecureChange+",
+        "url": "https://www.tufin.com/tufin-orchestration-suite/securechange"
+      }
+    ]
+  },
+  {
+    "claim": "Tufin Orchestration Suite - Intent",
+    "requirement": "intent-may-1",
+    "verdict": "partly_met",
+    "note": "The vendor states the suite checks changes against the Unified Security Policy and designs vendor-specific rule changes. Aggregation, replication and service decomposition are not stated.",
+    "sources": [
+      {
+        "title": "Tufin SecureChange+",
+        "url": "https://www.tufin.com/tufin-orchestration-suite/securechange"
+      }
+    ]
+  }
+]

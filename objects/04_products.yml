@@ -19,7 +19,6 @@ spec:
       coverage_claims:
         data:
           - building_block: Intent
-            extent: full
             note: The README describes Infrahub as one source of truth for infrastructure data.
             sources: [https://github.com/opsmill/infrahub]
 
@@ -36,12 +35,10 @@ spec:
       coverage_claims:
         data:
           - building_block: Executor
-            extent: full
             note: Network resource modules merge, replace, override or delete device configuration.
             sources:
               - https://docs.ansible.com/ansible/latest/network/user_guide/network_resource_modules.html
           - building_block: Collector
-            extent: partial
             note: >-
               Gathers device facts when a playbook runs. It does not poll devices on its own.
             sources:
@@ -61,11 +58,9 @@ spec:
       coverage_claims:
         data:
           - building_block: Collector
-            extent: full
             note: The poller gathers data from devices over SSH or REST API.
             sources: [https://suzieq.readthedocs.io/en/latest/]
           - building_block: Observability
-            extent: full
             note: Stores collected state in Parquet files and provides analysis on top of it.
             sources: [https://suzieq.readthedocs.io/en/latest/]
 ---
@@ -90,18 +85,15 @@ spec:
     coverage_claims:
       data:
       - building_block: Collector
-        extent: full
         note: Polling devices to read their performance state is the main purpose of the product.
         sources:
         - https://www.solarwinds.com/network-performance-monitor
       - building_block: Observability
-        extent: full
         note: The product keeps current and historical device state and processes it into alerts against
           thresholds and baselines.
         sources:
         - https://www.solarwinds.com/network-performance-monitor
       - building_block: Presentation
-        extent: partial
         note: The product offers dashboards and reports for its own monitoring data, not a general interface
           for an automation system.
         sources:
@@ -121,18 +113,15 @@ spec:
     coverage_claims:
       data:
       - building_block: Collector
-        extent: full
         note: Collecting flow, device and routing telemetry from the network is the main purpose of the
           product.
         sources:
         - https://www.kentik.com/product/
       - building_block: Observability
-        extent: full
         note: The product stores the collected network state and provides query and analysis on it.
         sources:
         - https://www.kentik.com/product/
       - building_block: Presentation
-        extent: partial
         note: The product provides views of its own telemetry data, not a general interface for an automation
           system.
         sources:
@@ -152,17 +141,14 @@ spec:
     coverage_claims:
       data:
       - building_block: Collector
-        extent: full
         note: Discovering devices and reading their state over SNMP is the main purpose of the product.
         sources:
         - https://raw.githubusercontent.com/librenms/librenms/master/README.md
       - building_block: Observability
-        extent: full
         note: The product stores collected device data and processes it into alerts.
         sources:
         - https://www.librenms.org/
       - building_block: Presentation
-        extent: partial
         note: The product provides graphs, a web interface and an API for its own monitoring data.
         sources:
         - https://www.librenms.org/
@@ -181,18 +167,15 @@ spec:
     coverage_claims:
       data:
       - building_block: Collector
-        extent: full
         note: Collecting metrics from devices with agents and agent-less methods is a main purpose of
           the product.
         sources:
         - https://www.zabbix.com/features
       - building_block: Observability
-        extent: full
         note: The product stores collected metrics and processes them into problems, trends and anomalies.
         sources:
         - https://www.zabbix.com/features
       - building_block: Presentation
-        extent: partial
         note: The product provides dashboards and maps for its own monitoring data, not a general interface
           for an automation system.
         sources:
@@ -212,19 +195,16 @@ spec:
     coverage_claims:
       data:
       - building_block: Observability
-        extent: partial
         note: The product checks the state of network devices and other IT systems, but the page does
           not describe how it persists that state, and networks are one of several targets.
         sources:
         - https://www.nagios.org/projects/nagios-core/
       - building_block: Collector
-        extent: partial
         note: The product reads device state through plugins as part of its checks, with network devices
           as one of several target types.
         sources:
         - https://www.nagios.org/projects/nagios-core/
       - building_block: Presentation
-        extent: partial
         note: The product page describes only a basic web interface; configuration uses text files.
         sources:
         - https://www.nagios.org/projects/nagios-core/
@@ -243,17 +223,14 @@ spec:
     coverage_claims:
       data:
       - building_block: Collector
-        extent: full
         note: Reading values from network devices through sensors is the main purpose of the product.
         sources:
         - https://www.paessler.com/prtg/prtg-network-monitor
       - building_block: Observability
-        extent: full
         note: The product stores sensor data and processes it into alerts and reports.
         sources:
         - https://www.paessler.com/prtg/prtg-network-monitor
       - building_block: Presentation
-        extent: partial
         note: The product provides maps and dashboards for its own monitoring data, not a general interface
           for an automation system.
         sources:
@@ -270,49 +247,15 @@ spec:
     coverage_claims:
       data:
       - building_block: Collector
-        extent: partial
         note: pyATS reads and stores device operational state, but it does so to support testing rather
           than as a general state collection service.
         sources:
         - https://developer.cisco.com/pyats/
       - building_block: Observability
-        extent: partial
         note: pyATS processes collected state to find differences, but it does not persist the actual
           network state as a continuous store.
         sources:
         - https://developer.cisco.com/pyats/
-  - name: NUTS
-    publisher: Network Unit Testing System
-    description: NUTS is a pytest plugin that reads the desired network state from YAML test bundles,
-      queries devices through Nornir and checks whether the results match.
-    homepage_url: https://nuts.readthedocs.io/en/latest/
-    license_model: open_source
-    license_model_sources:
-    - https://github.com/network-unit-testing-system/nuts/blob/master/LICENSE
-    publisher_sources:
-    - https://github.com/network-unit-testing-system/nuts/blob/master/LICENSE
-    description_sources:
-    - https://nuts.readthedocs.io/en/latest/
-    coverage_claims:
-      data:
-      - building_block: Intent
-        extent: partial
-        note: Test bundles store expected operational state as YAML files, but NUTS does not hold configuration
-          intent or a persistent store of desired state.
-        sources:
-        - https://github.com/network-unit-testing-system/nuts
-      - building_block: Observability
-        extent: partial
-        note: NUTS processes retrieved state against expectations, but it does not persist the actual
-          network state.
-        sources:
-        - https://nuts.readthedocs.io/en/latest/
-      - building_block: Collector
-        extent: partial
-        note: NUTS reads device state only for the duration of a test run and only for the data its tests
-          need.
-        sources:
-        - https://nuts.readthedocs.io/en/latest/
   - name: Netpicker
     publisher: Flock9
     description: Netpicker backs up device configurations and runs Python and pytest tests for configuration,
@@ -328,19 +271,16 @@ spec:
     coverage_claims:
       data:
       - building_block: Collector
-        extent: partial
         note: Netpicker retrieves and stores device configurations, which is one part of the actual network
           state.
         sources:
         - https://netpicker.io/
       - building_block: Observability
-        extent: partial
         note: Netpicker processes collected state through tests and compliance rules, but it is not a
           general store and analysis layer for all operational state.
         sources:
         - https://netpicker.io/
       - building_block: Executor
-        extent: partial
         note: Netpicker applies changes to devices through remediation jobs, as an extension of its testing
           and backup functions.
         sources:
@@ -386,19 +326,16 @@ spec:
     coverage_claims:
       data:
       - building_block: Intent
-        extent: full
         note: Storing and processing declared desired state is the main purpose of EDA, and it covers
           both configuration and expected state.
         sources:
         - https://docs.eda.dev/26.8/
       - building_block: Executor
-        extent: full
         note: EDA applies configuration changes to devices from the intended state, including validation
           and network-wide rollback.
         sources:
         - https://docs.eda.dev/26.8/
       - building_block: Observability
-        extent: partial
         note: EDA stores and queries operational state, but the page limits this to what EDA itself deploys.
         sources:
         - https://docs.eda.dev/26.8/
@@ -454,21 +391,13 @@ spec:
     coverage_claims:
       data:
       - building_block: Observability
-        extent: full
         note: Storing and analysing the actual network state in a model, including history, is the main
           purpose of the product.
         sources:
         - https://www.forwardnetworks.com/forward-enterprise/
       - building_block: Collector
-        extent: full
         note: The product reads state and configuration from network devices and cloud instances to build
           its model.
-        sources:
-        - https://www.forwardnetworks.com/forward-enterprise/
-      - building_block: Intent
-        extent: partial
-        note: The product stores and checks operational expectations (intent checks), but it is not where
-          the desired configuration of the network is defined.
         sources:
         - https://www.forwardnetworks.com/forward-enterprise/
   - name: IP Fabric
@@ -486,13 +415,11 @@ spec:
     coverage_claims:
       data:
       - building_block: Collector
-        extent: full
         note: Reading the actual state of every device with read-only access is a core function of the
           product.
         sources:
         - https://ipfabric.io/
       - building_block: Observability
-        extent: full
         note: Storing the discovered network state as a model and analysing it is the main purpose of
           the product.
         sources:
@@ -512,19 +439,11 @@ spec:
     coverage_claims:
       data:
       - building_block: Observability
-        extent: full
         note: Holding and analysing the live device, topology and path data of the network is the base
           of the product.
         sources:
         - https://www.netbrain.com/platform/
-      - building_block: Intent
-        extent: partial
-        note: The product stores design rules and golden configurations as expectations to check against,
-          but it is not presented as the main store of the desired network state.
-        sources:
-        - https://www.netbrain.com/platform/
       - building_block: Executor
-        extent: partial
         note: The product runs changes through runbooks, but change execution is one of several functions.
         sources:
         - https://www.netbrain.com/platform/
@@ -543,12 +462,10 @@ spec:
     coverage_claims:
       data:
       - building_block: Collector
-        extent: full
         note: Reading data from network devices is the main purpose of the product.
         sources:
         - https://slurpit.io/
       - building_block: Observability
-        extent: partial
         note: The product stores collected data and its history, but analysis is limited to inventory
           search and reports.
         sources:
@@ -568,19 +485,16 @@ spec:
     coverage_claims:
       data:
       - building_block: Intent
-        extent: full
         note: Storing the desired state of the fabric, including the expectations that must be met, is
           the main purpose of the product; the scope is data center fabrics only.
         sources:
         - https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html
       - building_block: Executor
-        extent: full
         note: Generating and deploying configuration from the intended state is a main function of the
           product.
         sources:
         - https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html
       - building_block: Observability
-        extent: partial
         note: The product collects and analyses telemetry, but mainly to validate its own intent; deeper
           analytics are placed in a separate product, Juniper Data Center Assurance.
         sources:
@@ -600,41 +514,10 @@ spec:
     coverage_claims:
       data:
       - building_block: Intent
-        extent: partial
         note: The product stores the desired state for IP addressing, DNS and DHCP only, not for the whole
           network.
         sources:
         - https://efficientip.com/products/solidserver-ddi/
-      - building_block: Executor
-        extent: partial
-        note: The product applies changes to DNS and DHCP services only.
-        sources:
-        - https://efficientip.com/products/solidserver-ddi/
-  - name: NIOS
-    publisher: Infoblox
-    description: Provides DNS, DHCP and IP address management for on-premises and cloud networks, with
-      optional discovery, reporting and integrations with automation tools.
-    homepage_url: https://www.infoblox.com/products/nios/
-    license_model: commercial
-    license_model_sources:
-    - https://www.infoblox.com/products/nios/
-    publisher_sources:
-    - https://www.infoblox.com/company/
-    description_sources:
-    - https://www.infoblox.com/products/nios/
-    coverage_claims:
-      data:
-      - building_block: Intent
-        extent: partial
-        note: The product stores the desired state for IP addressing, DNS and DHCP only, not for the whole
-          network.
-        sources:
-        - https://www.infoblox.com/products/nios/
-      - building_block: Collector
-        extent: partial
-        note: Discovery is an add-on to the product, not its main purpose.
-        sources:
-        - https://www.infoblox.com/products/nios/
   - name: NetBox
     publisher: NetBox Labs
     description: NetBox models and documents network infrastructure, defines its intended state and makes
@@ -650,12 +533,10 @@ spec:
     coverage_claims:
       data:
       - building_block: Intent
-        extent: full
         note: Storing and validating the intended state of the network is the stated main purpose of NetBox.
         sources:
         - https://github.com/netbox-community/netbox
       - building_block: Presentation
-        extent: partial
         note: NetBox provides a user interface for its own data, but not dashboards or interfaces for
           the rest of an automation system.
         sources:
@@ -675,13 +556,11 @@ spec:
     coverage_claims:
       data:
       - building_block: Intent
-        extent: full
         note: Defining and storing the intended network state, with validation rules, is the main purpose
           of Nautobot.
         sources:
         - https://github.com/nautobot/nautobot
       - building_block: Orchestrator
-        extent: partial
         note: Jobs run on demand or on a schedule and webhooks connect other tools, but coordinating automation
           in response to events is a secondary feature, not the main purpose.
         sources:
@@ -701,17 +580,10 @@ spec:
     coverage_claims:
       data:
       - building_block: Collector
-        extent: partial
         note: Discovery of the actual state is the main purpose, but it covers hybrid IT inventory and
           dependencies rather than the full operational state of the network.
         sources:
         - https://www.device42.com/company/
-      - building_block: Observability
-        extent: partial
-        note: The CMDB persists discovered state and reports on it, but the sources do not describe processing
-          of network operational data such as telemetry.
-        sources:
-        - https://www.device42.com/
   - name: dcTrack
     publisher: Sunbird Software
     description: dcTrack is data center infrastructure management software that records physical assets,
@@ -727,43 +599,15 @@ spec:
     coverage_claims:
       data:
       - building_block: Intent
-        extent: partial
         note: dcTrack stores the planned physical layer (racks, power, cabling, ports) but not logical
           network configuration or operational expectations.
         sources:
         - https://www.sunbirddcim.com/dcim-products
       - building_block: Presentation
-        extent: partial
         note: dcTrack provides 3D views and dashboards for its own data center data, not an interface
           for a whole network automation system.
         sources:
         - https://info.sunbirddcim.com/hubfs/DS009_Sunbird_DataSheet_dcTrack9_2.pdf
-  - name: phpIPAM
-    publisher: phpIPAM project
-    description: phpIPAM is a web application for IP address management that tracks IPv4 and IPv6 subnets
-      and addresses, VLANs, VRFs and devices, with subnet scanning and a REST API.
-    homepage_url: https://phpipam.net/
-    license_model: open_source
-    license_model_sources:
-    - https://raw.githubusercontent.com/phpipam/phpipam/master/misc/gpl-3.0.txt
-    publisher_sources:
-    - https://phpipam.net/
-    description_sources:
-    - https://phpipam.net/
-    coverage_claims:
-      data:
-      - building_block: Intent
-        extent: partial
-        note: phpIPAM stores the planned IP addressing, VLANs and VRFs, which is only one part of the
-          desired network state.
-        sources:
-        - https://phpipam.net/documents/features/
-      - building_block: Collector
-        extent: partial
-        note: Scanning reads whether addresses are in use, which is a narrow side feature of retrieving
-          actual network state.
-        sources:
-        - https://phpipam.net/documents/features/
   - name: IT Service Management
     publisher: ServiceNow
     description: ServiceNow IT Service Management is a set of applications for handling IT incidents,
@@ -776,7 +620,6 @@ spec:
     coverage_claims:
       data:
       - building_block: Presentation
-        extent: partial
         note: The framework names ITSM as an example of a graphical user interface, but ITSM covers service
           processes rather than all interfaces to a network automation system.
         sources:
@@ -808,7 +651,6 @@ spec:
     coverage_claims:
       data:
       - building_block: Presentation
-        extent: partial
         note: Backstage builds portals through which users interact with tools and services, but it is
           aimed at software development rather than network automation.
         sources:
@@ -829,18 +671,15 @@ spec:
     coverage_claims:
       data:
       - building_block: Intent
-        extent: full
         note: Storing and modelling network service intent in the CDB with YANG is a core purpose of NSO.
         sources:
         - https://raw.githubusercontent.com/NSO-developer/nso-gitbook/main/development/introduction-to-automation/cdb-and-yang.md
       - building_block: Executor
-        extent: full
         note: The device manager and NEDs push intended configuration changes to devices as transactions,
           which is a main function of NSO.
         sources:
         - https://raw.githubusercontent.com/NSO-developer/nso-gitbook/main/operation-and-usage/operations/nso-device-manager.md
       - building_block: Observability
-        extent: partial
         note: NSO persists device configuration and some operational data, but the source does not describe
           broader processing of the actual network state.
         sources:
@@ -857,13 +696,11 @@ spec:
     coverage_claims:
       data:
       - building_block: Intent
-        extent: partial
         note: Configuration files describe the desired configuration of resources, but not operational
           expectations, and Terraform is not network-specific.
         sources:
         - https://developer.hashicorp.com/terraform/intro
       - building_block: Executor
-        extent: full
         note: Applying planned changes to bring resources to the configured state is Terraform's main
           purpose.
         sources:
@@ -884,19 +721,16 @@ spec:
     coverage_claims:
       data:
       - building_block: Orchestrator
-        extent: full
         note: Coordinating automation tasks across existing tools, triggered by people, workflows or agents,
           is the product's main purpose.
         sources:
         - https://www.itential.com/
       - building_block: Executor
-        extent: partial
         note: Itential runs changes with checks and rollback, but the source describes it as calling existing
           tools such as Ansible and OpenTofu to make many of those changes.
         sources:
         - https://www.itential.com/
       - building_block: Observability
-        extent: partial
         note: Drift and compliance tracking covers part of processing the actual network state, as a side
           feature of the orchestration platform.
         sources:
@@ -917,18 +751,15 @@ spec:
     coverage_claims:
       data:
       - building_block: Intent
-        extent: full
         note: Defining and storing desired network configuration as intent is a main purpose of the platform.
         sources:
         - https://gluware.com/gluware-company-and-product-facts/
       - building_block: Executor
-        extent: full
         note: Applying configuration changes to multivendor devices through DIAL is a core function of
           the platform.
         sources:
         - https://gluware.com/gluware-company-and-product-facts/
       - building_block: Observability
-        extent: partial
         note: Drift detection and compliance checks process the actual configuration state, but the source
           does not describe broader processing of operational state.
         sources:
@@ -948,13 +779,11 @@ spec:
     coverage_claims:
       data:
       - building_block: Orchestrator
-        extent: partial
         note: The source describes orchestration across platforms and a workflow engine, but gives no
-          detail on event-driven execution, so the extent is partial.
+          detail on event-driven execution.
         sources:
         - https://www.networkworld.com/article/2069363/ibm-buys-pliant-for-network-automation.html
       - building_block: Executor
-        extent: partial
         note: Integrations with device APIs and CLIs are used to apply configuration changes, but the
           source does not say they are driven by an intended state.
         sources:
@@ -976,14 +805,7 @@ spec:
     - https://github.com/systeminit/si
     coverage_claims:
       data:
-      - building_block: Executor
-        extent: partial
-        note: The software applies infrastructure changes, but the source describes general cloud infrastructure
-          rather than network devices.
-        sources:
-        - https://github.com/systeminit/si
       - building_block: Collector
-        extent: partial
         note: Discovering existing infrastructure reads its actual state, but this is one step of the
           workflow rather than the main purpose.
         sources:
@@ -1003,43 +825,10 @@ spec:
     coverage_claims:
       data:
       - building_block: Intent
-        extent: partial
         note: ConfigHub persists desired configuration as the authoritative record, but for Kubernetes
           and application configuration rather than network devices, and without operational expectations.
         sources:
         - https://docs.confighub.com/background/config-as-data/
-  - name: Spacelift
-    publisher: Spacelift
-    description: Platform that runs and coordinates infrastructure-as-code workflows for Terraform, OpenTofu,
-      CloudFormation, Pulumi, Kubernetes and Ansible, with policies, approvals and drift detection.
-    homepage_url: https://spacelift.io/
-    license_model: commercial
-    license_model_sources:
-    - https://spacelift.io/pricing
-    publisher_sources:
-    - https://spacelift.io/
-    description_sources:
-    - https://spacelift.io/
-    coverage_claims:
-      data:
-      - building_block: Orchestrator
-        extent: full
-        note: Coordinating and triggering infrastructure-as-code and configuration runs is the product's
-          main purpose.
-        sources:
-        - https://spacelift.io/
-      - building_block: Observability
-        extent: partial
-        note: Drift detection compares actual and declared resources, which is a side feature of the orchestration
-          platform.
-        sources:
-        - https://spacelift.io/
-      - building_block: Presentation
-        extent: partial
-        note: Spacelift provides a web interface and assistant for its own workflows, not a general interface
-          for the whole automation system.
-        sources:
-        - https://spacelift.io/
   - name: Apache Airflow
     publisher: The Apache Software Foundation
     description: Platform for writing workflows as Python code and for scheduling and monitoring them.
@@ -1054,13 +843,11 @@ spec:
     coverage_claims:
       data:
       - building_block: Orchestrator
-        extent: full
         note: Coordinating and running tasks on schedules and in response to external events is the main
           purpose of Airflow; it is a general-purpose engine and ships no network-specific tasks.
         sources:
         - https://airflow.apache.org/docs/apache-airflow/stable/authoring-and-scheduling/event-scheduling.html
       - building_block: Presentation
-        extent: partial
         note: The web application presents only the workflows and their runs, not the network state or
           intent.
         sources:
@@ -1080,13 +867,11 @@ spec:
     coverage_claims:
       data:
       - building_block: Orchestrator
-        extent: full
         note: Running flows on schedules and from webhook events is the main purpose of Windmill; it is
           a general-purpose engine and ships no network-specific tasks.
         sources:
         - https://www.windmill.dev/
       - building_block: Presentation
-        extent: partial
         note: The generated user interfaces and app builder give users a way to run automation, but Windmill
           provides no network-specific dashboards.
         sources:
@@ -1106,7 +891,6 @@ spec:
     coverage_claims:
       data:
       - building_block: Orchestrator
-        extent: partial
         note: The opened pages support coordinating and running workflow steps reliably, but they do not
           describe starting workflows in response to events, and Temporal ships no network-specific tasks.
         sources:
@@ -1126,7 +910,6 @@ spec:
     coverage_claims:
       data:
       - building_block: Orchestrator
-        extent: full
         note: Coordinating pipeline runs on schedules and in response to events is the main purpose of
           Dagster; it is a general-purpose data tool and ships no network-specific tasks.
         sources:
@@ -1146,7 +929,6 @@ spec:
     coverage_claims:
       data:
       - building_block: Orchestrator
-        extent: full
         note: Coordinating workflow runs on schedules and in response to events is the main purpose of
           Prefect; it is a general-purpose engine and ships no network-specific tasks.
         sources:
@@ -1163,13 +945,11 @@ spec:
     coverage_claims:
       data:
       - building_block: Collector
-        extent: partial
         note: The product reads configuration from firewalls and related devices, which covers only the
           security-policy part of network state.
         sources:
         - https://www.algosec.com/products/firewall-analyzer
       - building_block: Observability
-        extent: partial
         note: The product processes the collected firewall rule state, but only for security policy, not
           the whole network state.
         sources:
@@ -1189,13 +969,11 @@ spec:
     coverage_claims:
       data:
       - building_block: Collector
-        extent: partial
         note: The product reads the actual configuration of firewalls and cloud security controls, which
           is only the security-policy part of network state.
         sources:
         - https://www.firemon.com/products/security-manager
       - building_block: Observability
-        extent: partial
         note: The product stores and processes the actual security-policy state, with history and drift
           detection, but not the full network state.
         sources:
@@ -1215,19 +993,16 @@ spec:
     coverage_claims:
       data:
       - building_block: Intent
-        extent: partial
         note: The suite stores intended state only for allowed traffic between security zones, not for
           the full network configuration.
         sources:
         - https://www.tufin.com/tufin-orchestration-suite/securechange
       - building_block: Observability
-        extent: partial
         note: The suite processes the actual security-policy and connectivity state, but not the full
           network state.
         sources:
         - https://www.tufin.com/tufin-orchestration-suite
       - building_block: Orchestrator
-        extent: partial
         note: The suite coordinates the steps of an access change request, which covers only security-policy
           changes rather than all network automation tasks.
         sources:
@@ -1252,7 +1027,6 @@ spec:
     coverage_claims:
       data:
       - building_block: Observability
-        extent: partial
         note: The product processed the actual state of firewalls only, not the full network state.
         sources:
         - https://web.archive.org/web/20250122112330id_/https://www.skyboxsecurity.com/products/firewall-assurance/

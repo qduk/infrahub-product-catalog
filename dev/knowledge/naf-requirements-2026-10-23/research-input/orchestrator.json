@@ -1,0 +1,207 @@
+{
+  "block": "Orchestrator",
+  "requirements": [
+    {
+      "identifier": "orchestrator-must-1",
+      "block": "Orchestrator",
+      "level": "must",
+      "position": 25,
+      "summary": "Coordinates processes across the building blocks into workflows",
+      "statement": "It MUST enable the coordination and integration of processes across the various building blocks, allowing the creation of more sophisticated and end-to-end automation workflows.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#orchestrator"
+    },
+    {
+      "identifier": "orchestrator-should-1",
+      "block": "Orchestrator",
+      "level": "should",
+      "position": 26,
+      "summary": "Runs workflows from events, synchronous, asynchronous or scheduled",
+      "statement": "Process execution SHOULD follow an event-driven approach, where events can be received synchronously, asynchronously, or generated on a scheduled basis.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#orchestrator"
+    },
+    {
+      "identifier": "orchestrator-should-2",
+      "block": "Orchestrator",
+      "level": "should",
+      "position": 27,
+      "summary": "Supports compensating actions for a controlled rollback",
+      "statement": "Execution logic SHOULD allow for reverse/compensating actions when a step results in an error or unexpected result, allowing for a controlled rollback. This may be hard to implement due to network infrastructure limitations.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#orchestrator"
+    },
+    {
+      "identifier": "orchestrator-should-3",
+      "block": "Orchestrator",
+      "level": "should",
+      "position": 28,
+      "summary": "Offers a dry run of a workflow",
+      "statement": "It SHOULD provide a dry-run operation to check the expected result of the workflow without actually executing it.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#orchestrator"
+    },
+    {
+      "identifier": "orchestrator-should-4",
+      "block": "Orchestrator",
+      "level": "should",
+      "position": 29,
+      "summary": "Schedules workflows on a regular basis or at a set time",
+      "statement": "It SHOULD provide the ability to schedule the execution of a workflow on a regular basis or at a given time in the future.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#orchestrator"
+    },
+    {
+      "identifier": "orchestrator-should-5",
+      "block": "Orchestrator",
+      "level": "should",
+      "position": 30,
+      "summary": "Gives logging and traceability of past and current workflows",
+      "statement": "It SHOULD provide end users with an understanding of the whole automation logging and traceability in the past and current workflows.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#orchestrator"
+    },
+    {
+      "identifier": "orchestrator-may-1",
+      "block": "Orchestrator",
+      "level": "may",
+      "position": 31,
+      "summary": "Correlates events to decide the course of action",
+      "statement": "It MAY include logic to correlate multiple events, infer relationships, and determine the appropriate course of action based on the event context.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#orchestrator"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "Network to Code Nautobot - Orchestrator",
+      "product": "Network to Code Nautobot",
+      "homepage_url": "https://networktocode.com/nautobot/",
+      "description": "Nautobot stores the intended state of a network in extensible data models and runs automation jobs against that data, with REST and GraphQL APIs and an app framework.",
+      "claim_note": "Jobs run on demand or on a schedule and webhooks connect other tools, but coordinating automation in response to events is a secondary feature, not the main purpose.",
+      "claim_sources": [
+        "https://github.com/nautobot/nautobot"
+      ],
+      "other_catalog_sources": [
+        "https://github.com/nautobot/nautobot"
+      ]
+    },
+    {
+      "claim": "Itential Platform - Orchestrator",
+      "product": "Itential Platform",
+      "homepage_url": "https://www.itential.com/",
+      "description": "Platform where infrastructure teams build workflows and AI agents that call existing tools such as Ansible, Python and OpenTofu, and run network changes with access control, approvals and audit logs.",
+      "claim_note": "Coordinating automation tasks across existing tools, triggered by people, workflows or agents, is the product's main purpose.",
+      "claim_sources": [
+        "https://www.itential.com/"
+      ],
+      "other_catalog_sources": [
+        "https://www.itential.com/",
+        "https://www.itential.com/pricing/"
+      ]
+    },
+    {
+      "claim": "IBM Pliant - Orchestrator",
+      "product": "IBM Pliant",
+      "homepage_url": "https://newsroom.ibm.com/Blog-IBM-Acquires-Pliant-to-Further-Enhance-Network-IT-Automation-Capabilities",
+      "description": "Network and IT infrastructure automation software with prebuilt integrations for third-party products that have an API or CLI, used to provision resources and manage configuration and traffic.",
+      "claim_note": "The source describes orchestration across platforms and a workflow engine, but gives no detail on event-driven execution, so the extent is partial.",
+      "claim_sources": [
+        "https://www.networkworld.com/article/2069363/ibm-buys-pliant-for-network-automation.html"
+      ],
+      "other_catalog_sources": [
+        "https://newsroom.ibm.com/Blog-IBM-Acquires-Pliant-to-Further-Enhance-Network-IT-Automation-Capabilities"
+      ]
+    },
+    {
+      "claim": "Spacelift Spacelift - Orchestrator",
+      "product": "Spacelift Spacelift",
+      "homepage_url": "https://spacelift.io/",
+      "description": "Platform that runs and coordinates infrastructure-as-code workflows for Terraform, OpenTofu, CloudFormation, Pulumi, Kubernetes and Ansible, with policies, approvals and drift detection.",
+      "claim_note": "Coordinating and triggering infrastructure-as-code and configuration runs is the product's main purpose.",
+      "claim_sources": [
+        "https://spacelift.io/"
+      ],
+      "other_catalog_sources": [
+        "https://spacelift.io/",
+        "https://spacelift.io/pricing"
+      ]
+    },
+    {
+      "claim": "The Apache Software Foundation Apache Airflow - Orchestrator",
+      "product": "The Apache Software Foundation Apache Airflow",
+      "homepage_url": "https://airflow.apache.org/",
+      "description": "Platform for writing workflows as Python code and for scheduling and monitoring them.",
+      "claim_note": "Coordinating and running tasks on schedules and in response to external events is the main purpose of Airflow; it is a general-purpose engine and ships no network-specific tasks.",
+      "claim_sources": [
+        "https://airflow.apache.org/docs/apache-airflow/stable/authoring-and-scheduling/event-scheduling.html"
+      ],
+      "other_catalog_sources": [
+        "https://airflow.apache.org/",
+        "https://raw.githubusercontent.com/apache/airflow/main/LICENSE"
+      ]
+    },
+    {
+      "claim": "Windmill Labs Windmill - Orchestrator",
+      "product": "Windmill Labs Windmill",
+      "homepage_url": "https://www.windmill.dev/",
+      "description": "Platform for building and running scripts, workflows, internal apps and data pipelines, with schedules, webhooks and generated user interfaces.",
+      "claim_note": "Running flows on schedules and from webhook events is the main purpose of Windmill; it is a general-purpose engine and ships no network-specific tasks.",
+      "claim_sources": [
+        "https://www.windmill.dev/"
+      ],
+      "other_catalog_sources": [
+        "https://raw.githubusercontent.com/windmill-labs/windmill/main/README.md",
+        "https://www.windmill.dev/"
+      ]
+    },
+    {
+      "claim": "Temporal Technologies Temporal - Orchestrator",
+      "product": "Temporal Technologies Temporal",
+      "homepage_url": "https://temporal.io/",
+      "description": "Durable execution platform that runs application code as workflows, records each step and resumes workflows after failures.",
+      "claim_note": "The opened pages support coordinating and running workflow steps reliably, but they do not describe starting workflows in response to events, and Temporal ships no network-specific tasks.",
+      "claim_sources": [
+        "https://raw.githubusercontent.com/temporalio/temporal/main/README.md"
+      ],
+      "other_catalog_sources": [
+        "https://raw.githubusercontent.com/temporalio/temporal/main/README.md",
+        "https://temporal.io/"
+      ]
+    },
+    {
+      "claim": "Prefect Technologies Dagster - Orchestrator",
+      "product": "Prefect Technologies Dagster",
+      "homepage_url": "https://dagster.io/",
+      "description": "Data orchestration platform that defines pipelines around the data assets they produce and tracks their lineage, quality and dependencies.",
+      "claim_note": "Coordinating pipeline runs on schedules and in response to events is the main purpose of Dagster; it is a general-purpose data tool and ships no network-specific tasks.",
+      "claim_sources": [
+        "https://dagster.io/docs/guides/automate/sensors"
+      ],
+      "other_catalog_sources": [
+        "https://dagster.io/"
+      ]
+    },
+    {
+      "claim": "Prefect Technologies Prefect - Orchestrator",
+      "product": "Prefect Technologies Prefect",
+      "homepage_url": "https://www.prefect.io/",
+      "description": "Workflow orchestration platform that runs Python workflows with scheduling, retries, caching and recovery.",
+      "claim_note": "Coordinating workflow runs on schedules and in response to events is the main purpose of Prefect; it is a general-purpose engine and ships no network-specific tasks.",
+      "claim_sources": [
+        "https://www.prefect.io/"
+      ],
+      "other_catalog_sources": [
+        "https://www.prefect.io/"
+      ]
+    },
+    {
+      "claim": "Tufin Orchestration Suite - Orchestrator",
+      "product": "Tufin Orchestration Suite",
+      "homepage_url": "https://www.tufin.com/tufin-orchestration-suite",
+      "description": "Network security policy management suite that analyzes firewall, cloud and SASE policies against a defined zone policy and automates access change requests.",
+      "claim_note": "The suite coordinates the steps of an access change request, which covers only security-policy changes rather than all network automation tasks.",
+      "claim_sources": [
+        "https://www.tufin.com/tufin-orchestration-suite/securechange"
+      ],
+      "other_catalog_sources": [
+        "https://www.tufin.com/",
+        "https://www.tufin.com/pricing",
+        "https://www.tufin.com/tufin-orchestration-suite"
+      ]
+    }
+  ]
+}

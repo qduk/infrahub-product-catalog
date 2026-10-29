@@ -1,0 +1,447 @@
+[
+  {
+    "claim": "Red Hat Ansible - Collector",
+    "requirement": "collector-must-1",
+    "verdict": "partly_met",
+    "note": "Network resource modules with the gathered state read the current configuration from network devices and return it as structured data. The source does not state that Ansible collects SNMP, Syslog, flow or packet data.",
+    "sources": [
+      {
+        "title": "Ansible network resource modules (documentation source)",
+        "url": "https://raw.githubusercontent.com/ansible/ansible-documentation/devel/docs/docsite/rst/network/user_guide/network_resource_modules.rst"
+      }
+    ]
+  },
+  {
+    "claim": "Red Hat Ansible - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "partly_met",
+    "note": "The documentation states that resource modules give a consistent experience across network platforms and return configuration as structured data. It does not state that the data structure is the same across vendors, and it covers configuration, not operational metrics.",
+    "sources": [
+      {
+        "title": "Ansible network resource modules (documentation source)",
+        "url": "https://raw.githubusercontent.com/ansible/ansible-documentation/devel/docs/docsite/rst/network/user_guide/network_resource_modules.rst"
+      }
+    ]
+  },
+  {
+    "claim": "Stardust Systems SuzieQ - Collector",
+    "requirement": "collector-must-1",
+    "verdict": "partly_met",
+    "note": "The poller reads device state over SSH or REST API from several vendors. The documentation does not state collection of SNMP, Syslog, flow or packet data.",
+    "sources": [
+      {
+        "title": "SuzieQ documentation",
+        "url": "https://suzieq.readthedocs.io/en/latest/"
+      }
+    ]
+  },
+  {
+    "claim": "Stardust Systems SuzieQ - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "met",
+    "note": "The documentation states that SuzieQ normalizes the collected data into a vendor-agnostic format.",
+    "sources": [
+      {
+        "title": "SuzieQ documentation",
+        "url": "https://suzieq.readthedocs.io/en/latest/"
+      }
+    ]
+  },
+  {
+    "claim": "SolarWinds Network Performance Monitor - Collector",
+    "requirement": "collector-must-1",
+    "verdict": "partly_met",
+    "note": "The product page states that NPM discovers and polls SNMP devices, and the platform documentation lists NPM among the products that receive Syslog messages. The sources do not state that NPM itself collects flow or packet data.",
+    "sources": [
+      {
+        "title": "SolarWinds Network Performance Monitor",
+        "url": "https://www.solarwinds.com/network-performance-monitor"
+      },
+      {
+        "title": "Monitor Syslog messages (SolarWinds Platform)",
+        "url": "https://documentation.solarwinds.com/en/success_center/orionplatform/content/core-monitoring-syslog-messages-sw2129.htm"
+      }
+    ]
+  },
+  {
+    "claim": "SolarWinds Network Performance Monitor - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Kentik Kentik - Collector",
+    "requirement": "collector-must-1",
+    "verdict": "met",
+    "note": "The Universal Agent documentation lists a Syslog server, an SNMP trap receiver, SNMP and streaming telemetry collection, a flow proxy for NetFlow, sFlow and IPFIX, passive packet capture for DNS, and ping and traceroute tests.",
+    "sources": [
+      {
+        "title": "Kentik Universal Agents",
+        "url": "https://kb.kentik.com/docs/universal-agents"
+      }
+    ]
+  },
+  {
+    "claim": "Kentik Kentik - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "partly_met",
+    "note": "The vendor states that the product normalizes telemetry so it can be used in several formats. The page does not state how values from different vendors are made comparable.",
+    "sources": [
+      {
+        "title": "Kentik product page",
+        "url": "https://www.kentik.com/product/"
+      }
+    ]
+  },
+  {
+    "claim": "LibreNMS LibreNMS - Collector",
+    "requirement": "collector-must-1",
+    "verdict": "partly_met",
+    "note": "LibreNMS collects data over SNMP and stores Syslog messages in its database. For NetFlow it reads data from a separate NfSen installation, which the documentation states is out of scope for LibreNMS.",
+    "sources": [
+      {
+        "title": "LibreNMS README",
+        "url": "https://raw.githubusercontent.com/librenms/librenms/master/README.md"
+      },
+      {
+        "title": "LibreNMS Syslog",
+        "url": "https://docs.librenms.org/Extensions/Syslog/"
+      },
+      {
+        "title": "LibreNMS NFSen",
+        "url": "https://docs.librenms.org/Extensions/NFSen/"
+      }
+    ]
+  },
+  {
+    "claim": "LibreNMS LibreNMS - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Zabbix Zabbix - Collector",
+    "requirement": "collector-must-1",
+    "verdict": "partly_met",
+    "note": "The vendor lists SNMP polling and traps, log file and Windows event log collection, SSH and Telnet checks, and many other methods. The page does not list NetFlow, sFlow or packet capture.",
+    "sources": [
+      {
+        "title": "Zabbix features",
+        "url": "https://www.zabbix.com/features"
+      }
+    ]
+  },
+  {
+    "claim": "Zabbix Zabbix - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "partly_met",
+    "note": "The vendor states that item preprocessing can normalize and transform data before it is stored, using rules such as regular expressions, JSONPath and JavaScript. The user defines these rules; the page does not state that values are normalized across vendors by default.",
+    "sources": [
+      {
+        "title": "Zabbix features",
+        "url": "https://www.zabbix.com/features"
+      }
+    ]
+  },
+  {
+    "claim": "Nagios Enterprises Nagios Core - Collector",
+    "requirement": "collector-must-1",
+    "verdict": "partly_met",
+    "note": "The documentation states that Nagios Core has no internal checking mechanism and reads host and service state only through external plugins. The sources do not state that it collects Syslog, flow or packet data.",
+    "sources": [
+      {
+        "title": "Nagios Core plugins",
+        "url": "https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/plugins.html"
+      }
+    ]
+  },
+  {
+    "claim": "Nagios Enterprises Nagios Core - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "partly_met",
+    "note": "The plugin API requires every plugin to return a standard status code (OK, WARNING, CRITICAL, UNKNOWN) and an optional performance data string in a fixed format. Metric values themselves are not normalized across vendors by the core.",
+    "sources": [
+      {
+        "title": "Nagios Core plugin API",
+        "url": "https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/pluginapi.html"
+      }
+    ]
+  },
+  {
+    "claim": "Paessler PRTG Network Monitor - Collector",
+    "requirement": "collector-must-1",
+    "verdict": "met",
+    "note": "The PRTG manual lists SNMP sensors, Syslog Receiver and SNMP Trap Receiver sensors, NetFlow, sFlow, jFlow and IPFIX sensors, Packet Sniffer sensors and Traceroute Hop Count sensors.",
+    "sources": [
+      {
+        "title": "PRTG Manual: available sensor types",
+        "url": "https://www.paessler.com/manuals/prtg/available_sensor_types"
+      }
+    ]
+  },
+  {
+    "claim": "Paessler PRTG Network Monitor - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Cisco pyATS - Collector",
+    "requirement": "collector-must-1",
+    "verdict": "partly_met",
+    "note": "pyATS connects to devices over CLI, NETCONF or RESTCONF to read device state. The source does not state collection of SNMP, Syslog, flow or packet data.",
+    "sources": [
+      {
+        "title": "pyATS documentation introduction",
+        "url": "https://developer.cisco.com/docs/pyats/"
+      }
+    ]
+  },
+  {
+    "claim": "Cisco pyATS - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "met",
+    "note": "The documentation states that pyATS provides platform-agnostic Python object models for features such as OSPF and BGP.",
+    "sources": [
+      {
+        "title": "pyATS documentation introduction",
+        "url": "https://developer.cisco.com/docs/pyats/"
+      }
+    ]
+  },
+  {
+    "claim": "Network Unit Testing System NUTS - Collector",
+    "requirement": "collector-must-1",
+    "verdict": "partly_met",
+    "note": "NUTS test bundles read device data through Nornir with NAPALM getters and Netmiko commands during a test run. The documentation does not state collection of SNMP, Syslog, flow or packet data.",
+    "sources": [
+      {
+        "title": "NUTS test bundles",
+        "url": "https://nuts.readthedocs.io/en/latest/testbundles/alltestbundles.html"
+      }
+    ]
+  },
+  {
+    "claim": "Network Unit Testing System NUTS - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Flock9 Netpicker - Collector",
+    "requirement": "collector-must-1",
+    "verdict": "partly_met",
+    "note": "The vendor states that Netpicker connects to devices through Netmiko over SSH, Telnet or API and retrieves running configurations. Syslog messages are used only to trigger backups; the page does not state collection of SNMP, flow or packet data.",
+    "sources": [
+      {
+        "title": "Netpicker network config backup",
+        "url": "https://netpicker.io/network-config-backup/"
+      }
+    ]
+  },
+  {
+    "claim": "Flock9 Netpicker - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Forward Networks Forward Enterprise - Collector",
+    "requirement": "collector-must-1",
+    "verdict": "partly_met",
+    "note": "The vendor states that the product ingests state and configuration from routers, switches, firewalls, load balancers and cloud instances. The page does not state collection of Syslog, flow or packet data.",
+    "sources": [
+      {
+        "title": "Forward Enterprise",
+        "url": "https://www.forwardnetworks.com/forward-enterprise/"
+      }
+    ]
+  },
+  {
+    "claim": "Forward Networks Forward Enterprise - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "met",
+    "note": "The vendor states that collected information is normalized and presented uniformly across all supported vendors through the Network Query Engine.",
+    "sources": [
+      {
+        "title": "Forward Networks blog: Query your network like a database",
+        "url": "https://www.forwardnetworks.com/blog/2019/11/21/query-your-network-like-a-database/"
+      }
+    ]
+  },
+  {
+    "claim": "IP Fabric IP Fabric - Collector",
+    "requirement": "collector-must-1",
+    "verdict": "partly_met",
+    "note": "The vendor states that IP Fabric reads devices through CLI and API calls and does not collect any SNMP data. The page does not state collection of Syslog, flow or packet data.",
+    "sources": [
+      {
+        "title": "IP Fabric home page",
+        "url": "https://ipfabric.io/"
+      }
+    ]
+  },
+  {
+    "claim": "IP Fabric IP Fabric - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "met",
+    "note": "The vendor states that IP Fabric stores the discovered data in a vendor-neutral data model.",
+    "sources": [
+      {
+        "title": "IP Fabric home page",
+        "url": "https://ipfabric.io/"
+      }
+    ]
+  },
+  {
+    "claim": "Slurp'it Slurp'it - Collector",
+    "requirement": "collector-must-1",
+    "verdict": "partly_met",
+    "note": "The vendor states that Slurp'it collects data over SNMP, SSH and API, using show commands parsed by templates. The page does not state collection of Syslog, flow or packet data.",
+    "sources": [
+      {
+        "title": "Slurp'it home page",
+        "url": "https://slurpit.io/"
+      }
+    ]
+  },
+  {
+    "claim": "Slurp'it Slurp'it - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "partly_met",
+    "note": "The vendor states that it parses output with more than 1,800 templates and adds normalised interface data. The page does not state that all collected values are normalized across vendors.",
+    "sources": [
+      {
+        "title": "Slurp'it home page",
+        "url": "https://slurpit.io/"
+      }
+    ]
+  },
+  {
+    "claim": "Infoblox NIOS - Collector",
+    "requirement": "collector-must-1",
+    "verdict": "partly_met",
+    "note": "Discovery collects routing and ARP tables, switch port data, VLANs and traceroute paths over SNMP, and further data over CLI through Telnet or SSH, on appliances licensed for Discovery. The documentation does not state collection of Syslog, flow or packet data.",
+    "sources": [
+      {
+        "title": "Infoblox NIOS 8.6: Configuring Discovery Properties",
+        "url": "https://docs.infoblox.com/display/nios86/Configuring+Discovery+Properties"
+      }
+    ]
+  },
+  {
+    "claim": "Infoblox NIOS - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Freshworks Device42 - Collector",
+    "requirement": "collector-must-1",
+    "verdict": "partly_met",
+    "note": "Device42 reads inventory, VLANs, subnets, ARP and MAC tables and CDP/LLDP neighbors over SNMP, and its NetFlow Collector receives NetFlow v1 to v9 and IPFIX. The documentation does not state collection of Syslog or packet data.",
+    "sources": [
+      {
+        "title": "Device42: SNMP network autodiscovery",
+        "url": "https://docs.device42.com/auto-discovery/network-auto-discovery/"
+      },
+      {
+        "title": "Device42: NetFlow Collector",
+        "url": "https://docs.device42.com/auto-discovery/netflow-collector/"
+      }
+    ]
+  },
+  {
+    "claim": "Freshworks Device42 - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "phpIPAM project phpIPAM - Collector",
+    "requirement": "collector-must-1",
+    "verdict": "partly_met",
+    "note": "phpIPAM checks host status with ping or fping scans and discovers subnets, hosts, VLANs and VRFs from route, ARP and MAC tables over SNMP. The sources do not state collection of Syslog, flow or packet data.",
+    "sources": [
+      {
+        "title": "phpIPAM v1.2 release notes",
+        "url": "https://phpipam.net/news/phpipam-v1-2-released/"
+      },
+      {
+        "title": "phpIPAM v1.3 release notes",
+        "url": "https://phpipam.net/news/phpipam-v1-3-released/"
+      }
+    ]
+  },
+  {
+    "claim": "phpIPAM project phpIPAM - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "System Initiative System Initiative - Collector",
+    "requirement": "collector-must-1",
+    "verdict": "not_shown",
+    "note": "The repository states that agents can discover infrastructure and that the project is archived. It does not state which protocols are used or whether network devices are supported.",
+    "sources": []
+  },
+  {
+    "claim": "System Initiative System Initiative - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "AlgoSec Horizon Security Analyzer - Collector",
+    "requirement": "collector-must-1",
+    "verdict": "partly_met",
+    "note": "For Palo Alto Networks devices, the documentation states that configuration is read over SSH or the Panorama REST API and traffic logs are collected as Syslog messages. The source covers only security devices and does not state collection of SNMP, flow or packet data.",
+    "sources": [
+      {
+        "title": "AlgoSec: Add Palo Alto Networks devices",
+        "url": "https://techdocs.algosec.com/en/asms/a32.60/asms-help/content/afa-admin/adding-a-palo-alto-networks.htm"
+      }
+    ]
+  },
+  {
+    "claim": "AlgoSec Horizon Security Analyzer - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "FireMon Security Manager - Collector",
+    "requirement": "collector-must-1",
+    "verdict": "partly_met",
+    "note": "The vendor states that the product retrieves configurations from more than 120 firewall and cloud platforms and detects rule changes. The page does not state collection of SNMP, Syslog, flow or packet data.",
+    "sources": [
+      {
+        "title": "FireMon Security Manager",
+        "url": "https://www.firemon.com/products/security-manager"
+      }
+    ]
+  },
+  {
+    "claim": "FireMon Security Manager - Collector",
+    "requirement": "collector-should-1",
+    "verdict": "met",
+    "note": "The vendor states that the product ingests and normalizes configurations from more than 120 firewall and cloud platforms into one data model.",
+    "sources": [
+      {
+        "title": "FireMon Security Manager",
+        "url": "https://www.firemon.com/products/security-manager"
+      }
+    ]
+  }
+]

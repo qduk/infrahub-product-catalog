@@ -1,0 +1,232 @@
+{
+  "block": "Observability",
+  "requirements": [
+    {
+      "identifier": "observability-must-1",
+      "block": "Observability",
+      "level": "must",
+      "position": 20,
+      "summary": "Stores historical data with powerful programmatic access",
+      "statement": "It MUST support historical data persistence and offer powerful programmatic access to this data\u2014enabling advanced analytics, reporting, and troubleshooting workflows.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#observability"
+    },
+    {
+      "identifier": "observability-should-1",
+      "block": "Observability",
+      "level": "should",
+      "position": 21,
+      "summary": "Offers a capable query language",
+      "statement": "It SHOULD offer a capable query language to extract the data.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#observability"
+    },
+    {
+      "identifier": "observability-should-2",
+      "block": "Observability",
+      "level": "should",
+      "position": 22,
+      "summary": "Detects drift from the intended state and generates events",
+      "statement": "It SHOULD expose relevant insights into the current network state and automatically generate events when discrepancies are detected between the actual state (configuration or operational) and the intended state. These events MAY be processed by humans or connected to the Orchestration block to be automatically processed.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#observability"
+    },
+    {
+      "identifier": "observability-may-1",
+      "block": "Observability",
+      "level": "may",
+      "position": 23,
+      "summary": "Sends drift events to people or to the Orchestrator",
+      "statement": "It SHOULD expose relevant insights into the current network state and automatically generate events when discrepancies are detected between the actual state (configuration or operational) and the intended state. These events MAY be processed by humans or connected to the Orchestration block to be automatically processed.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#observability"
+    },
+    {
+      "identifier": "observability-may-2",
+      "block": "Observability",
+      "level": "may",
+      "position": 24,
+      "summary": "Enriches data with intended state and third-party context",
+      "statement": "Retrieved data MAY be enriched with contextual information from the intended state, including other third-party sources (e.g., EoL information, CVEs, maintenance notifications, etc.), enhancing analysis and enabling more accurate data correlation.",
+      "reference_url": "https://reference.networkautomation.forum/Framework/Framework/#observability"
+    }
+  ],
+  "claims": [
+    {
+      "claim": "Stardust Systems SuzieQ - Observability",
+      "product": "Stardust Systems SuzieQ",
+      "homepage_url": "https://suzieq.readthedocs.io/en/latest/",
+      "description": "A multi-vendor network observability application that collects device state over SSH or REST API, stores it in Parquet files and answers questions about it through a CLI, GUI, REST API or Python.",
+      "claim_note": "Stores collected state in Parquet files and provides analysis on top of it.",
+      "claim_sources": [
+        "https://suzieq.readthedocs.io/en/latest/"
+      ],
+      "other_catalog_sources": [
+        "https://github.com/netenglabs/suzieq",
+        "https://suzieq.readthedocs.io/en/latest/"
+      ]
+    },
+    {
+      "claim": "SolarWinds Network Performance Monitor - Observability",
+      "product": "SolarWinds Network Performance Monitor",
+      "homepage_url": "https://www.solarwinds.com/network-performance-monitor",
+      "description": "Polls multi-vendor network devices to track availability, traffic and hardware health, and shows the results in dashboards, maps and threshold-based alerts.",
+      "claim_note": "The product keeps current and historical device state and processes it into alerts against thresholds and baselines.",
+      "claim_sources": [
+        "https://www.solarwinds.com/network-performance-monitor"
+      ],
+      "other_catalog_sources": [
+        "https://documentation.solarwinds.com/en/success_center/npm/content/npm_licensing_model.htm",
+        "https://www.solarwinds.com/network-performance-monitor"
+      ]
+    },
+    {
+      "claim": "Kentik Kentik - Observability",
+      "product": "Kentik Kentik",
+      "homepage_url": "https://www.kentik.com/",
+      "description": "Collects network telemetry such as flow, SNMP and streaming telemetry from data center, cloud and internet networks, stores it, and lets users query and visualize it.",
+      "claim_note": "The product stores the collected network state and provides query and analysis on it.",
+      "claim_sources": [
+        "https://www.kentik.com/product/"
+      ],
+      "other_catalog_sources": [
+        "https://www.kentik.com/pricing/",
+        "https://www.kentik.com/product/"
+      ]
+    },
+    {
+      "claim": "LibreNMS LibreNMS - Observability",
+      "product": "LibreNMS LibreNMS",
+      "homepage_url": "https://www.librenms.org/",
+      "description": "Network monitoring system that discovers devices with protocols such as SNMP, LLDP and CDP, collects their data, graphs it and sends alerts.",
+      "claim_note": "The product stores collected device data and processes it into alerts.",
+      "claim_sources": [
+        "https://www.librenms.org/"
+      ],
+      "other_catalog_sources": [
+        "https://raw.githubusercontent.com/librenms/librenms/master/LICENSE.txt",
+        "https://raw.githubusercontent.com/librenms/librenms/master/README.md",
+        "https://www.librenms.org/"
+      ]
+    },
+    {
+      "claim": "Zabbix Zabbix - Observability",
+      "product": "Zabbix Zabbix",
+      "homepage_url": "https://www.zabbix.com/",
+      "description": "Monitoring software that collects metrics from network devices, servers and applications, detects problems against thresholds, sends notifications and shows the data in dashboards and maps.",
+      "claim_note": "The product stores collected metrics and processes them into problems, trends and anomalies.",
+      "claim_sources": [
+        "https://www.zabbix.com/features"
+      ],
+      "other_catalog_sources": [
+        "https://www.zabbix.com/features"
+      ]
+    },
+    {
+      "claim": "Nagios Enterprises Nagios Core - Observability",
+      "product": "Nagios Enterprises Nagios Core",
+      "homepage_url": "https://www.nagios.org/projects/nagios-core/",
+      "description": "Monitoring software that runs plugin-based checks against servers, network devices, websites and services, and alerts on problems, with a basic web interface.",
+      "claim_note": "The product checks the state of network devices and other IT systems, but the page does not describe how it persists that state, and networks are one of several targets.",
+      "claim_sources": [
+        "https://www.nagios.org/projects/nagios-core/"
+      ],
+      "other_catalog_sources": [
+        "https://www.nagios.org/projects/nagios-core/"
+      ]
+    },
+    {
+      "claim": "Paessler PRTG Network Monitor - Observability",
+      "product": "Paessler PRTG Network Monitor",
+      "homepage_url": "https://www.paessler.com/prtg/prtg-network-monitor",
+      "description": "On-premises Windows software that monitors devices, systems and traffic through sensors such as SNMP, and provides maps, dashboards, alerts and reports.",
+      "claim_note": "The product stores sensor data and processes it into alerts and reports.",
+      "claim_sources": [
+        "https://www.paessler.com/prtg/prtg-network-monitor"
+      ],
+      "other_catalog_sources": [
+        "https://www.paessler.com/prtg/prtg-network-monitor"
+      ]
+    },
+    {
+      "claim": "Cisco pyATS - Observability",
+      "product": "Cisco pyATS",
+      "homepage_url": "https://developer.cisco.com/pyats/",
+      "description": "pyATS is a Python test and validation framework that records the operational state of network devices, compares it before and after changes, and runs reusable tests against the network.",
+      "claim_note": "pyATS processes collected state to find differences, but it does not persist the actual network state as a continuous store.",
+      "claim_sources": [
+        "https://developer.cisco.com/pyats/"
+      ],
+      "other_catalog_sources": [
+        "https://developer.cisco.com/pyats/"
+      ]
+    },
+    {
+      "claim": "Network Unit Testing System NUTS - Observability",
+      "product": "Network Unit Testing System NUTS",
+      "homepage_url": "https://nuts.readthedocs.io/en/latest/",
+      "description": "NUTS is a pytest plugin that reads the desired network state from YAML test bundles, queries devices through Nornir and checks whether the results match.",
+      "claim_note": "NUTS processes retrieved state against expectations, but it does not persist the actual network state.",
+      "claim_sources": [
+        "https://nuts.readthedocs.io/en/latest/"
+      ],
+      "other_catalog_sources": [
+        "https://github.com/network-unit-testing-system/nuts/blob/master/LICENSE",
+        "https://nuts.readthedocs.io/en/latest/"
+      ]
+    },
+    {
+      "claim": "Flock9 Netpicker - Observability",
+      "product": "Flock9 Netpicker",
+      "homepage_url": "https://netpicker.io/",
+      "description": "Netpicker backs up device configurations and runs Python and pytest tests for configuration, compliance and security against network devices, with optional automated remediation jobs.",
+      "claim_note": "Netpicker processes collected state through tests and compliance rules, but it is not a general store and analysis layer for all operational state.",
+      "claim_sources": [
+        "https://netpicker.io/"
+      ],
+      "other_catalog_sources": [
+        "https://netpicker.io/",
+        "https://netpicker.io/about-us/",
+        "https://netpicker.io/pricing/"
+      ]
+    },
+    {
+      "claim": "Nokia Event-Driven Automation (EDA) - Observability",
+      "product": "Nokia Event-Driven Automation (EDA)",
+      "homepage_url": "https://docs.eda.dev/",
+      "description": "Nokia EDA is a Kubernetes-based platform where users declare the desired state of fabrics, interfaces and services, which it translates into multivendor device configuration and checks against streaming telemetry.",
+      "claim_note": "EDA stores and queries operational state, but the page limits this to what EDA itself deploys.",
+      "claim_sources": [
+        "https://docs.eda.dev/26.8/"
+      ],
+      "other_catalog_sources": [
+        "https://docs.eda.dev/26.8/",
+        "https://docs.eda.dev/26.8/getting-started/try-eda/"
+      ]
+    },
+    {
+      "claim": "Forward Networks Forward Enterprise - Observability",
+      "product": "Forward Networks Forward Enterprise",
+      "homepage_url": "https://www.forwardnetworks.com/forward-enterprise/",
+      "description": "Builds a model of a hybrid network from device and cloud state and configuration, so teams can search it, verify its behavior and test proposed changes before deployment.",
+      "claim_note": "Storing and analysing the actual network state in a model, including history, is the main purpose of the product.",
+      "claim_sources": [
+        "https://www.forwardnetworks.com/forward-enterprise/"
+      ],
+      "other_catalog_sources": [
+        "https://www.forwardnetworks.com/",
+        "https://www.forwardnetworks.com/forward-enterprise/",
+        "https://www.forwardnetworks.com/pricing/"
+      ]
+    },
+    {
+      "claim": "IP Fabric IP Fabric - Observability",
+      "product": "IP Fabric IP Fabric",
+      "homepage_url": "https://ipfabric.io/",
+      "description": "Discovers on-premises and cloud network devices through CLI and API calls and builds a read-only, point-in-time model of the network for analysis, compliance checks and integration.",
+      "claim_note": "Storing the discovered network state as a model and analysing it is the main purpose of the product.",
+      "claim_sources": [
+        "https://ipfabric.io/"
+      ],
+      "other_catalog_sources": [
+        "https://ipfabric.io/"
+      ]
+    }
+  ]
+}

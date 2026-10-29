@@ -8,4 +8,4 @@
 |---|---|---|
 | Example Corp Example Tool | — | — |
 
-Each claim's sources are listed on the claim in the catalog.
+Full means that every MUST and SHOULD requirement of the building block is met. Each claim's verdicts and sources are listed on the claim in the catalog.

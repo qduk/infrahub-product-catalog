@@ -1,3 +1,4 @@
+import json
 import asyncio
 import copy
 from types import SimpleNamespace
@@ -21,7 +22,7 @@ VALID = {
         {"key": "s2", "title": "Example license", "url": "https://example.org/license"},
     ],
     "fact_sources": {"publisher": ["s1"], "description": ["s1"], "license_model": ["s2"], "status": []},
-    "claims": [{"block": "Collector", "extent": "full", "note": None, "sources": ["s1"]}],
+    "claims": [{"block": "Collector", "note": None, "sources": ["s1"]}],
 }
 
 
@@ -66,7 +67,7 @@ def test_status_with_source_passes() -> None:
 
 
 def test_one_claim_per_building_block() -> None:
-    claims = [VALID["claims"][0], {"block": "Collector", "extent": "partial", "sources": ["s1"]}]
+    claims = [VALID["claims"][0], {"block": "Collector", "sources": ["s1"]}]
     assert "only one claim per building block" in errors(submission(claims=claims))
 
 
@@ -246,3 +247,10 @@ def test_failure_after_branch_creation_deletes_the_branch() -> None:
         run(client, VALID)
     assert client.deleted == ["submission-test"]
     assert client.branches == []
+
+
+def test_extent_from_an_older_form_is_ignored() -> None:
+    data = json.loads(json.dumps(VALID))
+    data["claims"][0]["extent"] = "full"
+    claim = Submission.model_validate(data).claims[0]
+    assert not hasattr(claim, "extent")

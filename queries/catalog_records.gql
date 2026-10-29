@@ -112,6 +112,9 @@ query catalog_records {
         coverage_claims {
           count
         }
+        verdicts {
+          count
+        }
       }
     }
   }
@@ -121,9 +124,6 @@ query catalog_records {
         id
         __typename
         display_label
-        extent {
-          value
-        }
         note {
           value
         }
@@ -133,6 +133,70 @@ query catalog_records {
           }
         }
         building_block {
+          node {
+            id
+          }
+        }
+        sources {
+          edges {
+            node {
+              id
+            }
+          }
+        }
+      }
+    }
+  }
+  CatalogRequirement {
+    edges {
+      node {
+        id
+        __typename
+        display_label
+        identifier {
+          value
+        }
+        level {
+          value
+        }
+        position {
+          value
+        }
+        summary {
+          value
+        }
+        statement {
+          value
+        }
+        reference_url {
+          value
+        }
+        building_block {
+          node {
+            id
+          }
+        }
+      }
+    }
+  }
+  CatalogRequirementVerdict {
+    edges {
+      node {
+        id
+        __typename
+        display_label
+        verdict {
+          value
+        }
+        note {
+          value
+        }
+        claim {
+          node {
+            id
+          }
+        }
+        requirement {
           node {
             id
           }

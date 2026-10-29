@@ -12,7 +12,7 @@ export function product(id: string, status: Status, claims: [string, Extent][]):
     status,
     status_date: null,
     sources: { publisher: [], description: [], license_model: [], status: [] },
-    claims: claims.map(([block, extent]) => ({ block, extent, note: null, sources: [] })),
+    claims: claims.map(([block, extent]) => ({ block, extent, assessed: true, note: null, sources: [], verdicts: [] })),
   }
 }
 
@@ -23,6 +23,7 @@ export const SIX_BLOCKS = ['Presentation', 'Observability', 'Orchestrator', 'Int
 export const sampleCatalog: Catalog = {
   blocks: SIX_BLOCKS,
   publishers: [],
+  requirements: [],
   products: [
     product('a', 'active', [['Collector', 'full'], ['Observability', 'partial']]),
     product('b', 'discontinued', [['Collector', 'partial']]),

@@ -72,5 +72,129 @@
   },
   "CatalogProduct": {
     "edges": []
+  },
+  "CatalogRequirement": {
+    "edges": [
+      {
+        "node": {
+          "id": "req-intent",
+          "__typename": "CatalogRequirement",
+          "identifier": {
+            "value": "intent-must-1"
+          },
+          "level": {
+            "value": "must"
+          },
+          "building_block": {
+            "node": {
+              "id": "block-intent",
+              "name": {
+                "value": "Intent"
+              }
+            }
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "req-observability",
+          "__typename": "CatalogRequirement",
+          "identifier": {
+            "value": "observability-must-1"
+          },
+          "level": {
+            "value": "must"
+          },
+          "building_block": {
+            "node": {
+              "id": "block-observability",
+              "name": {
+                "value": "Observability"
+              }
+            }
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "req-orchestrator",
+          "__typename": "CatalogRequirement",
+          "identifier": {
+            "value": "orchestrator-must-1"
+          },
+          "level": {
+            "value": "must"
+          },
+          "building_block": {
+            "node": {
+              "id": "block-orchestrator",
+              "name": {
+                "value": "Orchestrator"
+              }
+            }
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "req-executor",
+          "__typename": "CatalogRequirement",
+          "identifier": {
+            "value": "executor-must-1"
+          },
+          "level": {
+            "value": "must"
+          },
+          "building_block": {
+            "node": {
+              "id": "block-executor",
+              "name": {
+                "value": "Executor"
+              }
+            }
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "req-collector",
+          "__typename": "CatalogRequirement",
+          "identifier": {
+            "value": "collector-must-1"
+          },
+          "level": {
+            "value": "must"
+          },
+          "building_block": {
+            "node": {
+              "id": "block-collector",
+              "name": {
+                "value": "Collector"
+              }
+            }
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "req-presentation",
+          "__typename": "CatalogRequirement",
+          "identifier": {
+            "value": "presentation-must-1"
+          },
+          "level": {
+            "value": "must"
+          },
+          "building_block": {
+            "node": {
+              "id": "block-presentation",
+              "name": {
+                "value": "Presentation"
+              }
+            }
+          }
+        }
+      }
+    ]
   }
 }

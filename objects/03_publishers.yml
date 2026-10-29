@@ -32,8 +32,6 @@ spec:
     homepage_url: https://www.paessler.com/
   - name: Cisco
     homepage_url: https://www.cisco.com/
-  - name: Network Unit Testing System
-    homepage_url: https://github.com/network-unit-testing-system
   - name: Flock9
     homepage_url: https://flock9.com/
   - name: Nokia
@@ -56,8 +54,6 @@ spec:
     homepage_url: https://www.juniper.net/
   - name: EfficientIP
     homepage_url: https://efficientip.com/
-  - name: Infoblox
-    homepage_url: https://www.infoblox.com/
   - name: NetBox Labs
     homepage_url: https://netboxlabs.com/
   - name: Network to Code
@@ -66,8 +62,6 @@ spec:
     homepage_url: https://www.freshworks.com/
   - name: Sunbird Software
     homepage_url: https://www.sunbirddcim.com/
-  - name: phpIPAM project
-    homepage_url: https://phpipam.net/
   - name: ServiceNow
     homepage_url: https://www.servicenow.com/
   - name: Atlassian
@@ -86,8 +80,6 @@ spec:
     homepage_url: https://github.com/systeminit
   - name: ConfigHub
     homepage_url: https://confighub.com/
-  - name: Spacelift
-    homepage_url: https://spacelift.io/
   - name: The Apache Software Foundation
     homepage_url: https://www.apache.org/
   - name: Windmill Labs

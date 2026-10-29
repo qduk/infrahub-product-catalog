@@ -1,0 +1,369 @@
+{
+  "decided": "2026-10-27",
+  "rules": {
+    "executor-must-1": "Looser reading chosen by the user: met when a source shows the product writes to network devices over at least one of SSH/CLI, NETCONF, gNMI/gNOI or device REST APIs; partly met when no protocol is named, or it writes only to cloud APIs or to DNS/DHCP servers.",
+    "collector-must-1": "Looser reading chosen by the user: met when the product reads live data from network devices and also collects metrics (SNMP or streaming telemetry), logs (Syslog), flows, packets or traces; partly met when it reads only configuration or state, or covers only one narrow kind of device."
+  },
+  "changes": [
+    {
+      "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Executor",
+      "requirement": "executor-must-1",
+      "verdict": "met"
+    },
+    {
+      "claim": "Flock9 Netpicker - Executor",
+      "requirement": "executor-must-1",
+      "verdict": "met"
+    },
+    {
+      "claim": "Itential Platform - Executor",
+      "requirement": "executor-must-1",
+      "verdict": "met"
+    },
+    {
+      "claim": "Red Hat Ansible - Executor",
+      "requirement": "executor-must-1",
+      "verdict": "met"
+    },
+    {
+      "claim": "Freshworks Device42 - Collector",
+      "requirement": "collector-must-1",
+      "verdict": "met"
+    },
+    {
+      "claim": "Infoblox NIOS - Collector",
+      "requirement": "collector-must-1",
+      "verdict": "met"
+    },
+    {
+      "claim": "LibreNMS LibreNMS - Collector",
+      "requirement": "collector-must-1",
+      "verdict": "met"
+    },
+    {
+      "claim": "Slurp'it Slurp'it - Collector",
+      "requirement": "collector-must-1",
+      "verdict": "met"
+    },
+    {
+      "claim": "SolarWinds Network Performance Monitor - Collector",
+      "requirement": "collector-must-1",
+      "verdict": "met"
+    },
+    {
+      "claim": "Zabbix Zabbix - Collector",
+      "requirement": "collector-must-1",
+      "verdict": "met"
+    },
+    {
+      "claim": "phpIPAM project phpIPAM - Collector",
+      "requirement": "collector-must-1",
+      "verdict": "met"
+    },
+    {
+      "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Executor",
+      "requirement": "executor-should-5",
+      "verdict": "met",
+      "note": "The vendor states that the service re-deploy action is idempotent, so nothing is done when no configuration diff exists. The same page states that sync-to pushes a minimal diff, which NSO calculates by reading the device configuration and comparing it with the configuration in NSO.",
+      "sources": [
+        {
+          "title": "NSO 6.4 Lifecycle Operations",
+          "url": "https://nso-docs.cisco.com/guides/nso-6.4/operation-and-usage/operations/lifecycle-operations"
+        }
+      ],
+      "reason": "Corrected by the user's knowledge of the product on 2026-10-27; source found afterwards."
+    },
+    {
+      "claim": "Cloud Native Computing Foundation (CNCF) Backstage - Presentation",
+      "requirement": "presentation-must-1",
+      "verdict": "met",
+      "note": "The Backstage documentation lists built-in sign-in providers, including GitHub, GitLab, Google, Okta, Keycloak and Azure, and generic OAuth2 and SAML providers. The permission framework documentation states that Backstage can authorize access to data, APIs and interface actions through an integrator-defined permission policy, which can be role-based, attribute-based or delegated to an external authorization provider.",
+      "sources": [
+        {
+          "title": "Backstage Authentication and identity",
+          "url": "https://backstage.io/docs/auth/"
+        },
+        {
+          "title": "Backstage Permission framework overview",
+          "url": "https://backstage.io/docs/permissions/overview"
+        }
+      ],
+      "reason": "Corrected by the user's knowledge of the product on 2026-10-27; source found afterwards."
+    },
+    {
+      "claim": "Forward Networks Forward Enterprise - Collector",
+      "requirement": "collector-must-1",
+      "verdict": "met",
+      "note": "The vendor's community guide states that Forward can discover and report on any device it can authenticate to through CLI, SNMP or API, and that SNMP profiles define which OIDs Forward collects from matching devices during collection.",
+      "sources": [
+        {
+          "title": "Getting Started with SNMP Endpoints in Forward",
+          "url": "https://community.forwardnetworks.com/nqe-discussions-39/getting-started-with-snmp-endpoints-in-forward-591"
+        }
+      ],
+      "reason": "Corrected by the user's knowledge of the product on 2026-10-27; source found afterwards."
+    },
+    {
+      "claim": "Forward Networks Forward Enterprise - Observability",
+      "requirement": "observability-should-2",
+      "verdict": "met",
+      "note": "The vendor states that Forward Enterprise verifies network compliance with custom intent checks, continuously audits the network and sends alerts for noncompliance. The same page states that engineers can compare snapshots of the network over time to find changes.",
+      "sources": [
+        {
+          "title": "Automatic Noncompliance Detection Alerts",
+          "url": "https://www.forwardnetworks.com/blog/lf/automatic-noncompliance-detection-alerts/"
+        }
+      ],
+      "reason": "Corrected by the user's knowledge of the product on 2026-10-27; source found afterwards."
+    },
+    {
+      "claim": "Itential Platform - Orchestrator",
+      "requirement": "orchestrator-should-3",
+      "verdict": "met",
+      "note": "The Itential documentation states that workflow canvas debug mode simulates workflow execution with mock data instead of calls to external systems. The 2023.2 release notes state that the testInstances task calculates the minimum device configuration commands for a service change, as the replacement for the removed dryRun task; this applies to NSO-backed services, not to every workflow.",
+      "sources": [
+        {
+          "title": "Itential Use canvas debug mode",
+          "url": "https://docs.itential.com/itential-platform/studio/workflows/canvas-debug-mode"
+        },
+        {
+          "title": "Itential 2023.2 DryRun and View DryRun manual tasks removed",
+          "url": "https://docs.itential.com/itential-platform/2023-2/release-notes/breaking-changes/dryrun-view-dryrun-manual-tasks-removed"
+        }
+      ],
+      "reason": "Corrected by the user's knowledge of the product on 2026-10-27; source found afterwards."
+    },
+    {
+      "claim": "Kentik Kentik - Presentation",
+      "requirement": "framework-should-1",
+      "verdict": "met",
+      "note": "Kentik publishes a Terraform provider that creates, updates and removes Kentik synthetic tests and agents from Terraform configuration files. The page does not mention version control or CI/CD pipelines directly, and it covers synthetic monitoring configuration only.",
+      "sources": [
+        {
+          "title": "Kentik Synthetics Terraform provider documentation",
+          "url": "https://github.com/kentik/terraform-provider-kentik-synthetics/blob/master/docs/index.md"
+        }
+      ],
+      "reason": "Corrected by the user's knowledge of the product on 2026-10-27; source found afterwards."
+    },
+    {
+      "claim": "Nokia Event-Driven Automation (EDA) - Executor",
+      "requirement": "executor-must-1",
+      "verdict": "met",
+      "note": "The vendor states that gNMI is currently the only supported protocol for device management in EDA, and that support for other management protocols is planned. The same page states that EDA is the source of truth for node configuration.",
+      "sources": [
+        {
+          "title": "Nokia EDA 26.8 Tour of EDA: Nodes",
+          "url": "https://docs.eda.dev/26.8/tour-of-eda/nodes/"
+        }
+      ],
+      "reason": "Corrected by the user's knowledge of the product on 2026-10-27; source found afterwards."
+    },
+    {
+      "claim": "Kentik Kentik - Collector",
+      "requirement": "collector-should-1",
+      "verdict": "met",
+      "note": "The vendor states that Kentik NMS normalizes SNMP and streaming telemetry data into a single data model based on OpenConfig, so dashboards show the same data whichever collection method a device uses.",
+      "sources": [
+        {
+          "title": "Streaming Telemetry and SNMP Monitoring with Kentik NMS",
+          "url": "https://www.kentik.com/resources/streaming-telemetry-and-snmp-monitoring-with-kentik-nms/"
+        }
+      ],
+      "reason": "Corrected by the user's knowledge of the product on 2026-10-28; source found afterwards."
+    },
+    {
+      "claim": "LibreNMS LibreNMS - Collector",
+      "requirement": "collector-should-1",
+      "verdict": "met",
+      "note": "The LibreNMS developer documentation states that per-OS YAML discovery definitions map vendor SNMP tables and OIDs to common sensor classes such as temperature, voltage and humidity, with divisors and multipliers to convert raw values into common units.",
+      "sources": [
+        {
+          "title": "LibreNMS - Health Information (OS discovery)",
+          "url": "https://docs.librenms.org/Developing/os/Health-Information/"
+        }
+      ],
+      "reason": "Corrected by the user's knowledge of the product on 2026-10-28; source found afterwards."
+    },
+    {
+      "claim": "Slurp'it Slurp'it - Collector",
+      "requirement": "collector-should-1",
+      "verdict": "met",
+      "note": "The vendor's product page lists normalizing field names and attributes across vendors as a feature, and the FAQ states that TextFSM templates turn raw device output into structured data.",
+      "sources": [
+        {
+          "title": "Slurp'it - Product",
+          "url": "https://slurpit.io/product/"
+        },
+        {
+          "title": "Slurp'it - Frequently asked questions",
+          "url": "https://slurpit.io/knowledge-base/frequently-asked-questions/"
+        }
+      ],
+      "reason": "Corrected by the user's knowledge of the product on 2026-10-28; source found afterwards."
+    },
+    {
+      "claim": "SolarWinds Network Performance Monitor - Collector",
+      "requirement": "collector-should-1",
+      "verdict": "met",
+      "note": "The SolarWinds documentation states that Device Studio pollers for devices that are not supported by default feed polled values into the standard CPU and memory resources, such as Average CPU Load and Memory Utilization, and can poll custom OIDs for vendor, machine type and software version.",
+      "sources": [
+        {
+          "title": "Device Studio technologies in the SolarWinds Platform",
+          "url": "https://documentation.solarwinds.com/en/success_center/orionplatform/content/core-device-studio-technologies.htm"
+        }
+      ],
+      "reason": "Corrected by the user's knowledge of the product on 2026-10-28; source found afterwards."
+    },
+    {
+      "claim": "Zabbix Zabbix - Collector",
+      "requirement": "collector-should-1",
+      "verdict": "met",
+      "note": "The Zabbix manual states that preprocessing transforms received item values before they are stored, with steps that include JSONPath, regular expressions, custom multipliers, change per second and SNMP walk to JSON.",
+      "sources": [
+        {
+          "title": "Zabbix manual - Item value preprocessing",
+          "url": "https://www.zabbix.com/documentation/current/en/manual/config/items/preprocessing"
+        }
+      ],
+      "reason": "Corrected by the user's knowledge of the product on 2026-10-28; source found afterwards."
+    },
+    {
+      "claim": "Stardust Systems SuzieQ - Collector",
+      "requirement": "collector-must-1",
+      "verdict": "met",
+      "note": "The SuzieQ documentation states that the poller gathers data from devices in the inventory at a set period, and that counter services such as interface counters have output that changes on every run, so they are recorded at each poll.",
+      "sources": [
+        {
+          "title": "SuzieQ - Poller",
+          "url": "https://suzieq.readthedocs.io/en/latest/poller/"
+        },
+        {
+          "title": "SuzieQ - Configuring a service",
+          "url": "https://suzieq.readthedocs.io/en/latest/service/service-format/"
+        }
+      ],
+      "reason": "Corrected by the user's knowledge of the product on 2026-10-28; source found afterwards."
+    },
+    {
+      "claim": "Nagios Enterprises Nagios Core - Presentation",
+      "requirement": "presentation-must-1",
+      "verdict": "met",
+      "note": "The Nagios Core documentation describes how the CGIs control which authenticated users can view monitoring information and submit commands through the web interface. Authenticated contacts get access to the hosts and services they are contacts for, and the authorized_for_* variables in the CGI configuration file grant more access.",
+      "sources": [
+        {
+          "title": "Nagios Core - Authentication and authorization in the CGIs",
+          "url": "https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/cgiauth.html"
+        }
+      ],
+      "reason": "Corrected by the user's knowledge of the product on 2026-10-28; source found afterwards."
+    },
+    {
+      "claim": "The Apache Software Foundation Apache Airflow - Orchestrator",
+      "requirement": "orchestrator-should-3",
+      "verdict": "met",
+      "note": "The Airflow documentation states that dag.test() runs a DAG in a single Python process without a scheduler, and can mark matching tasks as successful to skip them. The CLI reference describes airflow dags test as running one DAG run for a given logical date, and the backfill command has a --dry-run option.",
+      "sources": [
+        {
+          "title": "Airflow - Debugging Dags",
+          "url": "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/debug.html"
+        },
+        {
+          "title": "Airflow - Command line interface reference",
+          "url": "https://airflow.apache.org/docs/apache-airflow/stable/cli-and-env-variables-ref.html"
+        }
+      ],
+      "reason": "Corrected by the user's knowledge of the product on 2026-10-28; source found afterwards."
+    },
+    {
+      "claim": "Windmill Labs Windmill - Orchestrator",
+      "requirement": "orchestrator-should-3",
+      "verdict": "met",
+      "note": "The Windmill documentation states that a whole flow, a single step, or a flow up to a given step can be run as a test from the editor before deployment, with results and logs shown for each step.",
+      "sources": [
+        {
+          "title": "Windmill - Test flows",
+          "url": "https://www.windmill.dev/docs/flows/test_flows"
+        }
+      ],
+      "reason": "Corrected by the user's knowledge of the product on 2026-10-28; source found afterwards."
+    },
+    {
+      "claim": "Freshworks Device42 - Collector",
+      "requirement": "collector-should-1",
+      "verdict": "met",
+      "note": "The vendor states that its data normalization and enrichment service replaces the raw vendor, operating system and software values that discovery jobs collect with standardized names and version numbers. The page does not describe normalization rules for each discovery method or for hardware models.",
+      "sources": [
+        {
+          "title": "Device42 documentation: Enriched Data",
+          "url": "https://docs.device42.com/auto-discovery/enriched-data/"
+        }
+      ],
+      "reason": "Corrected by the user's knowledge of the product on 2026-10-28; source found afterwards."
+    },
+    {
+      "claim": "Juniper Networks Apstra Data Center Director - Observability",
+      "requirement": "observability-should-1",
+      "verdict": "met",
+      "note": "The vendor states that users run graph queries on the Apstra graph to find patterns of nodes and relationships, with a query language based on Gremlin, and that Apstra also parses queries written in Cypher. Query results return the matched graph elements and can notify applications when results change.",
+      "sources": [
+        {
+          "title": "Juniper Apstra User Guide: Graph",
+          "url": "https://www.juniper.net/documentation/us/en/software/apstra6.1/apstra-user-guide/topics/topic-map/graph.html"
+        }
+      ],
+      "reason": "Corrected by the user's knowledge of the product on 2026-10-28; source found afterwards."
+    },
+    {
+      "claim": "OpsMill Infrahub - Intent",
+      "requirement": "intent-should-3",
+      "verdict": "partly_met",
+      "note": "The vendor states that every attribute and relationship carries Source (where the data comes from) and Owner (who owns it) metadata plus a protected flag, and that every object records created_at, created_by, updated_at and updated_by. The vendor states that each value and relationship is stored with the period during which it applied, and that a query with a branch and a timestamp (the GraphQL `at` parameter) returns the data that was valid at that time. These validity periods are recorded from changes; no page states that a user can set a validity period of their own, such as a future start or end date for a value. No page states that a user can set validity periods, such as a future start or end date; Infrahub records the period each value applied.",
+      "sources": [
+        {
+          "title": "Data lineage and metadata",
+          "url": "https://docs.infrahub.app/objects/metadata"
+        },
+        {
+          "title": "Immutable history",
+          "url": "https://docs.infrahub.app/immutable-history/overview"
+        },
+        {
+          "title": "Query historical data",
+          "url": "https://docs.infrahub.app/immutable-history/query-historical-data"
+        }
+      ],
+      "reason": "Set to partly met by the user on 2026-10-28, after reviewing the sources."
+    },
+    {
+      "claim": "OpsMill Infrahub - Intent",
+      "requirement": "intent-should-4",
+      "verdict": "partly_met",
+      "note": "The vendor states that related changes can be grouped on one branch so that a single merge applies them to the default branch, and that a merge either completes or is rolled back; the merge page also states that a merge is not one database transaction. The vendor states that checks are user-defined validation logic that run on a proposed change, and that a proposed change cannot be merged if a check does not complete successfully. The vendor states that each change creates a new timestamped version and that data can be read on any branch as it existed at an earlier time; no page states that a single GraphQL mutation outside a branch merge runs as one transaction. The all-or-nothing behavior is stated for branch merges only, and the merge page states that a merge is not one database transaction.",
+      "sources": [
+        {
+          "title": "Branches overview",
+          "url": "https://docs.infrahub.app/branches/overview"
+        },
+        {
+          "title": "Merge a branch",
+          "url": "https://docs.infrahub.app/branches/merge"
+        },
+        {
+          "title": "Checks & Validation",
+          "url": "https://docs.infrahub.app/checks/overview"
+        },
+        {
+          "title": "Immutable history",
+          "url": "https://docs.infrahub.app/immutable-history/overview"
+        },
+        {
+          "title": "Query historical data",
+          "url": "https://docs.infrahub.app/immutable-history/query-historical-data"
+        }
+      ],
+      "reason": "Set to partly met by the user on 2026-10-28, after reviewing the sources."
+    }
+  ],
+  "framework_wide": "Shown on every claim but not counted toward full coverage (user decision, 2026-10-27)."
+}

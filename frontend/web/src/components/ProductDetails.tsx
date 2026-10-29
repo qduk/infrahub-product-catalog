@@ -1,7 +1,8 @@
 import type { CSSProperties } from 'react'
-import { LICENSE_LABELS, STATUS_LABELS, type Product, type Source } from '../api'
+import { LICENSE_LABELS, STATUS_LABELS, type Product, type Requirement, type Source } from '../api'
 import { blockStyle } from '../graph/blockStyle'
 import { Logo } from '../graph/Logo'
+import { Requirements } from './Requirements'
 
 function hostOf(url: string): string {
   try {
@@ -26,10 +27,11 @@ function SourceLinks({ sources }: { sources: Source[] }) {
 
 interface Props {
   product: Product
+  requirements: Requirement[]
   onClose: () => void
 }
 
-export function ProductDetails({ product, onClose }: Props) {
+export function ProductDetails({ product, requirements, onClose }: Props) {
   const claims = [...product.claims].sort((a, b) =>
     a.extent === b.extent ? a.block.localeCompare(b.block) : a.extent === 'full' ? -1 : 1,
   )
@@ -92,10 +94,13 @@ export function ProductDetails({ product, onClose }: Props) {
             >
               <div className="coverage-head">
                 <span className="coverage-block">{claim.block}</span>
-                <span className="coverage-extent">{claim.extent === 'full' ? 'Full' : 'Partial'}</span>
+                <span className="coverage-extent">
+                  {claim.extent === 'full' ? 'Full' : claim.assessed ? 'Partial' : 'Not assessed'}
+                </span>
               </div>
               {claim.note && <p className="coverage-note">{claim.note}</p>}
               <SourceLinks sources={claim.sources} />
+              <Requirements claim={claim} requirements={requirements} />
             </li>
           ))}
         </ul>

@@ -30,7 +30,10 @@ The instance reads this repository from GitHub as a read-only repository (`CoreR
   - `catalog_submission_check`: on branches named `submission-*`, any record on `main` that was changed or deleted, and any added building block;
   - `catalog_duplicate_check`: publishers, products of one publisher, and source links whose names or links are the same once case, spaces, punctuation, `http`/`https` and a trailing `/` are ignored;
   - `catalog_coverage_check`: products that cover no building block, reported as warnings that do not block the merge;
-  - `catalog_unused_source_check`: sources that support no product fact or coverage claim.
+  - `catalog_unused_source_check`: sources that support no product fact, coverage claim or requirement verdict;
+  - `catalog_verdict_check`: requirement verdicts other than "not shown" that have no source, and verdicts for a requirement of another building block.
+- The framework's requirements are in `objects/01_building_blocks.yml`, and each coverage claim's requirement verdicts in `objects/06_requirement_verdicts.yml`. A claim's full or partial coverage is computed from its verdicts and is not stored. The research and decisions behind the verdicts are in `dev/knowledge/naf-requirements-2026-10-23/`.
+- Object files only add and update records. Deleting a product, claim or source on an Infrahub instance takes a script or the web interface, for example `dev/knowledge/naf-requirements-2026-10-23/apply_removals.py`.
 - Schemas and object files are not in `.infrahub.yml`, so the repository import never writes them to `main`. Load them with `infrahubctl` as described above.
 - Infrahub reads only what is pushed to `main` on GitHub. After a change to `checks/`, `queries/` or `.infrahub.yml` is pushed, open the repository in the Infrahub web interface and run **Import latest commit**.
 - To run a check by hand before opening a proposed change: `uv run infrahubctl check <name> --branch <branch> --format-json`. Without `--format-json`, information messages (sources due for review, products with no coverage) are not shown when the check passes.

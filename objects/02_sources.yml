@@ -70,15 +70,6 @@ spec:
   - title: 'pyATS: developer.cisco.com/pyats'
     url: https://developer.cisco.com/pyats/
     last_checked: '2026-10-21T00:00:00Z'
-  - title: 'NUTS: github.com/network-unit-testing-system/nuts/blob/master/LICENSE'
-    url: https://github.com/network-unit-testing-system/nuts/blob/master/LICENSE
-    last_checked: '2026-10-21T00:00:00Z'
-  - title: 'NUTS: nuts.readthedocs.io/en/latest'
-    url: https://nuts.readthedocs.io/en/latest/
-    last_checked: '2026-10-21T00:00:00Z'
-  - title: 'NUTS: github.com/network-unit-testing-system/nuts'
-    url: https://github.com/network-unit-testing-system/nuts
-    last_checked: '2026-10-21T00:00:00Z'
   - title: 'Netpicker: netpicker.io/about-us'
     url: https://netpicker.io/about-us/
     last_checked: '2026-10-21T00:00:00Z'
@@ -160,12 +151,6 @@ spec:
   - title: 'SOLIDserver DDI: efficientip.com/support-services/license-request'
     url: https://efficientip.com/support-services/license-request/
     last_checked: '2026-10-21T00:00:00Z'
-  - title: 'NIOS: www.infoblox.com/company'
-    url: https://www.infoblox.com/company/
-    last_checked: '2026-10-21T00:00:00Z'
-  - title: 'NIOS: www.infoblox.com/products/nios'
-    url: https://www.infoblox.com/products/nios/
-    last_checked: '2026-10-21T00:00:00Z'
   - title: 'NetBox: netboxlabs.com/community'
     url: https://netboxlabs.com/community/
     last_checked: '2026-10-21T00:00:00Z'
@@ -184,23 +169,11 @@ spec:
   - title: 'Device42: www.device42.com/pricing'
     url: https://www.device42.com/pricing/
     last_checked: '2026-10-21T00:00:00Z'
-  - title: 'Device42: www.device42.com'
-    url: https://www.device42.com/
-    last_checked: '2026-10-21T00:00:00Z'
   - title: 'dcTrack: www.sunbirddcim.com/dcim-products'
     url: https://www.sunbirddcim.com/dcim-products
     last_checked: '2026-10-21T00:00:00Z'
   - title: 'dcTrack: info.sunbirddcim.com/hubfs/DS009_Sunbird_DataSheet_dcTrack9_2.pdf'
     url: https://info.sunbirddcim.com/hubfs/DS009_Sunbird_DataSheet_dcTrack9_2.pdf
-    last_checked: '2026-10-21T00:00:00Z'
-  - title: 'phpIPAM: phpipam.net'
-    url: https://phpipam.net/
-    last_checked: '2026-10-21T00:00:00Z'
-  - title: 'phpIPAM: raw.githubusercontent.com/phpipam/phpipam/master/misc/gpl-3.0.txt'
-    url: https://raw.githubusercontent.com/phpipam/phpipam/master/misc/gpl-3.0.txt
-    last_checked: '2026-10-21T00:00:00Z'
-  - title: 'phpIPAM: phpipam.net/documents/features'
-    url: https://phpipam.net/documents/features/
     last_checked: '2026-10-21T00:00:00Z'
   - title: 'IT Service Management: en.wikipedia.org/wiki/ServiceNow'
     url: https://en.wikipedia.org/wiki/ServiceNow
@@ -273,12 +246,6 @@ spec:
     last_checked: '2026-10-21T00:00:00Z'
   - title: 'ConfigHub: docs.confighub.com/background/config-as-data'
     url: https://docs.confighub.com/background/config-as-data/
-    last_checked: '2026-10-21T00:00:00Z'
-  - title: 'Spacelift: spacelift.io'
-    url: https://spacelift.io/
-    last_checked: '2026-10-21T00:00:00Z'
-  - title: 'Spacelift: spacelift.io/pricing'
-    url: https://spacelift.io/pricing
     last_checked: '2026-10-21T00:00:00Z'
   - title: 'Apache Airflow: airflow.apache.org'
     url: https://airflow.apache.org/

@@ -18,7 +18,7 @@ function validForm(): SubmissionForm {
     { key: 's2', title: 'License', url: 'https://example.org/license' },
   ]
   form.factSources = { publisher: ['s1'], description: ['s1'], license_model: ['s2'], status: [] }
-  form.claims = [{ block: 'Collector', extent: 'full', note: '', sources: ['s1'] }]
+  form.claims = [{ block: 'Collector', note: '', sources: ['s1'] }]
   return form
 }
 
@@ -46,7 +46,7 @@ describe('submission form rules', () => {
 
   it('allows only one claim per building block', () => {
     const form = validForm()
-    form.claims.push({ block: 'Collector', extent: 'partial', note: '', sources: ['s1'] })
+    form.claims.push({ block: 'Collector', note: '', sources: ['s1'] })
     expect(issuePaths(form)).toContain('claims.1.block')
   })
 

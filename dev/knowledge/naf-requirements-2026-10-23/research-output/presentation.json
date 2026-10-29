@@ -1,0 +1,526 @@
+[
+  {
+    "claim": "SolarWinds Network Performance Monitor - Presentation",
+    "requirement": "presentation-must-1",
+    "verdict": "met",
+    "note": "The documentation states that web console users can be SolarWinds Platform accounts, Windows or Active Directory accounts, or SAML accounts, and that each account specifies the views a user can access and the actions the user may perform.",
+    "sources": [
+      {
+        "title": "Create users in the SolarWinds Platform",
+        "url": "https://documentation.solarwinds.com/en/success_center/orionplatform/content/core-creating-new-accounts-sw1310.htm"
+      },
+      {
+        "title": "Manage SolarWinds Platform Web Console user accounts",
+        "url": "https://documentation.solarwinds.com/en/success_center/orionplatform/content/core-managing-web-accounts-sw1724.htm"
+      }
+    ]
+  },
+  {
+    "claim": "SolarWinds Network Performance Monitor - Presentation",
+    "requirement": "presentation-may-1",
+    "verdict": "met",
+    "note": "The documentation describes a web console in which users view information in views, resources and reports; the product page lists dashboards and topology maps.",
+    "sources": [
+      {
+        "title": "Create users in the SolarWinds Platform",
+        "url": "https://documentation.solarwinds.com/en/success_center/orionplatform/content/core-creating-new-accounts-sw1310.htm"
+      },
+      {
+        "title": "SolarWinds Network Performance Monitor",
+        "url": "https://www.solarwinds.com/network-performance-monitor"
+      }
+    ]
+  },
+  {
+    "claim": "SolarWinds Network Performance Monitor - Presentation",
+    "requirement": "presentation-may-2",
+    "verdict": "met",
+    "note": "The documentation states that users with default rights can view information, and that extra rights allow administration tasks and actions such as acknowledging alerts.",
+    "sources": [
+      {
+        "title": "Create users in the SolarWinds Platform",
+        "url": "https://documentation.solarwinds.com/en/success_center/orionplatform/content/core-creating-new-accounts-sw1310.htm"
+      },
+      {
+        "title": "Manage SolarWinds Platform Web Console user accounts",
+        "url": "https://documentation.solarwinds.com/en/success_center/orionplatform/content/core-managing-web-accounts-sw1724.htm"
+      }
+    ]
+  },
+  {
+    "claim": "Kentik Kentik - Presentation",
+    "requirement": "presentation-must-1",
+    "verdict": "met",
+    "note": "The knowledge base states that Kentik supports SAML2 single sign-on with two-factor authentication, and role-based access control in which roles are collections of permissions for specific actions.",
+    "sources": [
+      {
+        "title": "Kentik Authentication & SSO",
+        "url": "https://kb.kentik.com/docs/authentication-sso"
+      },
+      {
+        "title": "Kentik RBAC",
+        "url": "https://kb.kentik.com/docs/kentik-rbac"
+      }
+    ]
+  },
+  {
+    "claim": "Kentik Kentik - Presentation",
+    "requirement": "presentation-may-1",
+    "verdict": "met",
+    "note": "The knowledge base describes a web portal with dashboards, data visualizations, query tools and an AI Advisor that takes natural-language prompts.",
+    "sources": [
+      {
+        "title": "Kentik Portal Overview",
+        "url": "https://kb.kentik.com/docs/portal-overview"
+      }
+    ]
+  },
+  {
+    "claim": "Kentik Kentik - Presentation",
+    "requirement": "presentation-may-2",
+    "verdict": "met",
+    "note": "The knowledge base states that portal users can view and query data, save dashboards, configure alerts and add devices through Device Discovery, depending on their permissions.",
+    "sources": [
+      {
+        "title": "Kentik Portal Overview",
+        "url": "https://kb.kentik.com/docs/portal-overview"
+      }
+    ]
+  },
+  {
+    "claim": "LibreNMS LibreNMS - Presentation",
+    "requirement": "presentation-must-1",
+    "verdict": "met",
+    "note": "The documentation lists authentication through MySQL, Active Directory, LDAP, RADIUS, HTTP authentication, single sign-on and OAuth/SAML providers, with two-factor authentication and user, global-read and admin levels. Only one authentication module can be active at a time.",
+    "sources": [
+      {
+        "title": "LibreNMS Authentication Options",
+        "url": "https://docs.librenms.org/Extensions/Authentication/"
+      }
+    ]
+  },
+  {
+    "claim": "LibreNMS LibreNMS - Presentation",
+    "requirement": "presentation-may-1",
+    "verdict": "met",
+    "note": "The project page lists a mobile-friendly web interface with graphs and alert views, and an API.",
+    "sources": [
+      {
+        "title": "LibreNMS",
+        "url": "https://www.librenms.org/"
+      }
+    ]
+  },
+  {
+    "claim": "LibreNMS LibreNMS - Presentation",
+    "requirement": "presentation-may-2",
+    "verdict": "met",
+    "note": "The documentation describes read-only and read/write admin levels, and the project page describes an API to manage, graph and retrieve data.",
+    "sources": [
+      {
+        "title": "LibreNMS Authentication Options",
+        "url": "https://docs.librenms.org/Extensions/Authentication/"
+      },
+      {
+        "title": "LibreNMS",
+        "url": "https://www.librenms.org/"
+      }
+    ]
+  },
+  {
+    "claim": "Zabbix Zabbix - Presentation",
+    "requirement": "presentation-must-1",
+    "verdict": "met",
+    "note": "The documentation lists internal, HTTP, LDAP, SAML and multi-factor authentication, configurable per user group, and custom user roles with read-write, read-only or deny permissions.",
+    "sources": [
+      {
+        "title": "Zabbix manual: Authentication",
+        "url": "https://www.zabbix.com/documentation/current/en/manual/web_interface/frontend_sections/users/authentication"
+      },
+      {
+        "title": "Zabbix features",
+        "url": "https://www.zabbix.com/features"
+      }
+    ]
+  },
+  {
+    "claim": "Zabbix Zabbix - Presentation",
+    "requirement": "presentation-may-1",
+    "verdict": "met",
+    "note": "The vendor describes widget-based dashboards, maps, geographic maps and scheduled PDF reports in the web frontend.",
+    "sources": [
+      {
+        "title": "Zabbix features",
+        "url": "https://www.zabbix.com/features"
+      }
+    ]
+  },
+  {
+    "claim": "Zabbix Zabbix - Presentation",
+    "requirement": "presentation-may-2",
+    "verdict": "met",
+    "note": "The vendor states that users can view data in dashboards, acknowledge problems, run scripts from dashboards and maps, and create and configure hosts.",
+    "sources": [
+      {
+        "title": "Zabbix features",
+        "url": "https://www.zabbix.com/features"
+      }
+    ]
+  },
+  {
+    "claim": "Nagios Enterprises Nagios Core - Presentation",
+    "requirement": "presentation-must-1",
+    "verdict": "partly_met",
+    "note": "The documentation states that the web server performs authentication, for example with an htpasswd file, and that Nagios Core grants access to hosts and services only to the contacts listed for them, plus a few global authorization settings. It does not describe built-in directory or single sign-on integration.",
+    "sources": [
+      {
+        "title": "Nagios Core: Authentication and Authorization in the CGIs",
+        "url": "https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/cgiauth.html"
+      }
+    ]
+  },
+  {
+    "claim": "Nagios Enterprises Nagios Core - Presentation",
+    "requirement": "presentation-may-1",
+    "verdict": "met",
+    "note": "The vendor describes a basic web interface for Nagios Core.",
+    "sources": [
+      {
+        "title": "Nagios Core",
+        "url": "https://www.nagios.org/projects/nagios-core/"
+      }
+    ]
+  },
+  {
+    "claim": "Nagios Enterprises Nagios Core - Presentation",
+    "requirement": "presentation-may-2",
+    "verdict": "met",
+    "note": "The documentation states that authorized users can view host and service status and issue host and service commands from the web interface.",
+    "sources": [
+      {
+        "title": "Nagios Core: Authentication and Authorization in the CGIs",
+        "url": "https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/cgiauth.html"
+      }
+    ]
+  },
+  {
+    "claim": "Paessler PRTG Network Monitor - Presentation",
+    "requirement": "presentation-must-1",
+    "verdict": "met",
+    "note": "The manual describes local users, Active Directory group integration and single sign-on with Microsoft Entra ID or Okta, with access rights defined per user group. Active Directory integration supports one domain and no nested groups, and single sign-on is not in the freeware edition.",
+    "sources": [
+      {
+        "title": "PRTG Manual: Active Directory Integration",
+        "url": "https://www.paessler.com/manuals/prtg/active_directory_integration"
+      },
+      {
+        "title": "PRTG Manual: Single Sign-On",
+        "url": "https://www.paessler.com/manuals/prtg/single_sign-on"
+      },
+      {
+        "title": "PRTG Manual: User Accounts Settings",
+        "url": "https://www.paessler.com/manuals/prtg/user_accounts_settings"
+      }
+    ]
+  },
+  {
+    "claim": "Paessler PRTG Network Monitor - Presentation",
+    "requirement": "presentation-may-1",
+    "verdict": "met",
+    "note": "The vendor states that PRTG has web, desktop and mobile interfaces, maps, dashboards and reports.",
+    "sources": [
+      {
+        "title": "PRTG Network Monitor",
+        "url": "https://www.paessler.com/prtg/prtg-network-monitor"
+      }
+    ]
+  },
+  {
+    "claim": "Paessler PRTG Network Monitor - Presentation",
+    "requirement": "presentation-may-2",
+    "verdict": "met",
+    "note": "The manual states that read/write users can edit settings and add or delete objects, maps and reports, and that read-only users can view results and acknowledge alarms.",
+    "sources": [
+      {
+        "title": "PRTG Manual: User Accounts Settings",
+        "url": "https://www.paessler.com/manuals/prtg/user_accounts_settings"
+      }
+    ]
+  },
+  {
+    "claim": "NetBox Labs NetBox - Presentation",
+    "requirement": "presentation-must-1",
+    "verdict": "met",
+    "note": "The documentation describes local users and groups, LDAP, HTTP header authentication and single sign-on through python-social-auth; the README describes a permission system that can limit users to specific functions or tenants.",
+    "sources": [
+      {
+        "title": "NetBox documentation: Authentication overview",
+        "url": "https://netboxlabs.com/docs/netbox/administration/authentication/overview/"
+      },
+      {
+        "title": "netbox-community/netbox README",
+        "url": "https://github.com/netbox-community/netbox"
+      }
+    ]
+  },
+  {
+    "claim": "NetBox Labs NetBox - Presentation",
+    "requirement": "presentation-may-1",
+    "verdict": "met",
+    "note": "The README describes a web user interface with a customizable dashboard, plus REST and GraphQL APIs.",
+    "sources": [
+      {
+        "title": "netbox-community/netbox README",
+        "url": "https://github.com/netbox-community/netbox"
+      }
+    ]
+  },
+  {
+    "claim": "NetBox Labs NetBox - Presentation",
+    "requirement": "presentation-may-2",
+    "verdict": "met",
+    "note": "The README states that users create and edit data in the web interface, run custom scripts from it, and that all changes are logged.",
+    "sources": [
+      {
+        "title": "netbox-community/netbox README",
+        "url": "https://github.com/netbox-community/netbox"
+      }
+    ]
+  },
+  {
+    "claim": "Sunbird Software dcTrack - Presentation",
+    "requirement": "presentation-must-1",
+    "verdict": "met",
+    "note": "The datasheet lists role-based granular permissions, multi-tenancy, SAML 2.0, LDAP and Active Directory support.",
+    "sources": [
+      {
+        "title": "dcTrack DCIM Operations Software datasheet (version 9.2)",
+        "url": "https://info.sunbirddcim.com/hubfs/DS009_Sunbird_DataSheet_dcTrack9_2.pdf"
+      }
+    ]
+  },
+  {
+    "claim": "Sunbird Software dcTrack - Presentation",
+    "requirement": "presentation-may-1",
+    "verdict": "met",
+    "note": "The datasheet describes a web-based HTML5 interface that works on mobile devices, preconfigured and personal dashboards, 3D views and reports.",
+    "sources": [
+      {
+        "title": "dcTrack DCIM Operations Software datasheet (version 9.2)",
+        "url": "https://info.sunbirddcim.com/hubfs/DS009_Sunbird_DataSheet_dcTrack9_2.pdf"
+      }
+    ]
+  },
+  {
+    "claim": "Sunbird Software dcTrack - Presentation",
+    "requirement": "presentation-may-2",
+    "verdict": "met",
+    "note": "The datasheet describes a change request workflow with approvals, status and history, and APIs that create, read, update and delete asset items.",
+    "sources": [
+      {
+        "title": "dcTrack DCIM Operations Software datasheet (version 9.2)",
+        "url": "https://info.sunbirddcim.com/hubfs/DS009_Sunbird_DataSheet_dcTrack9_2.pdf"
+      }
+    ]
+  },
+  {
+    "claim": "ServiceNow IT Service Management - Presentation",
+    "requirement": "presentation-must-1",
+    "verdict": "met",
+    "note": "A ServiceNow Community article lists local, LDAP, SAML 2.0, OpenID Connect and multi-factor authentication, and role-based access to features.",
+    "sources": [
+      {
+        "title": "ServiceNow Community: Administration: Identity & Authentication",
+        "url": "https://www.servicenow.com/community/servicenow-ai-platform-articles/administration-identity-amp-authentication-knowledge-amp/ta-p/2366519"
+      }
+    ]
+  },
+  {
+    "claim": "ServiceNow IT Service Management - Presentation",
+    "requirement": "presentation-may-1",
+    "verdict": "met",
+    "note": "The ITSM guide describes a service portal for employees, the Service Operations Workspace, Virtual Agent and dashboards.",
+    "sources": [
+      {
+        "title": "ServiceNow Community: ITSM Welcome Guide",
+        "url": "https://www.servicenow.com/community/itsm-articles/itsm-welcome-guide/ta-p/2304257"
+      }
+    ]
+  },
+  {
+    "claim": "ServiceNow IT Service Management - Presentation",
+    "requirement": "presentation-may-2",
+    "verdict": "met",
+    "note": "The ITSM guide states that employees request services and report incidents, and that agents manage incidents, changes and requests in the Service Operations Workspace.",
+    "sources": [
+      {
+        "title": "ServiceNow Community: ITSM Welcome Guide",
+        "url": "https://www.servicenow.com/community/itsm-articles/itsm-welcome-guide/ta-p/2304257"
+      }
+    ]
+  },
+  {
+    "claim": "Cloud Native Computing Foundation (CNCF) Backstage - Presentation",
+    "requirement": "presentation-must-1",
+    "verdict": "partly_met",
+    "note": "The documentation lists many built-in sign-in providers and a permission framework that supports role-based or attribute-based policies. It also states that by default Backstage endpoints are not protected, so the integrator must write authorization policies.",
+    "sources": [
+      {
+        "title": "Backstage: Authentication",
+        "url": "https://backstage.io/docs/auth/"
+      },
+      {
+        "title": "Backstage: Permissions overview",
+        "url": "https://backstage.io/docs/permissions/overview"
+      }
+    ]
+  },
+  {
+    "claim": "Cloud Native Computing Foundation (CNCF) Backstage - Presentation",
+    "requirement": "presentation-may-1",
+    "verdict": "met",
+    "note": "The README describes a framework for building developer portals with a software catalog, project templates and a documentation portal (TechDocs).",
+    "sources": [
+      {
+        "title": "backstage/backstage README",
+        "url": "https://github.com/backstage/backstage"
+      }
+    ]
+  },
+  {
+    "claim": "Cloud Native Computing Foundation (CNCF) Backstage - Presentation",
+    "requirement": "presentation-may-2",
+    "verdict": "met",
+    "note": "The README states that users browse the software catalog and documentation and create new projects from software templates.",
+    "sources": [
+      {
+        "title": "backstage/backstage README",
+        "url": "https://github.com/backstage/backstage"
+      }
+    ]
+  },
+  {
+    "claim": "Spacelift Spacelift - Presentation",
+    "requirement": "presentation-must-1",
+    "verdict": "met",
+    "note": "The documentation states that Spacelift supports single sign-on with SAML 2.0 or OIDC, SCIM provisioning, and group-based permissions through login and stack access policies; the vendor also lists role-based access control.",
+    "sources": [
+      {
+        "title": "Spacelift docs: Single Sign-On",
+        "url": "https://docs.spacelift.io/integrations/single-sign-on"
+      },
+      {
+        "title": "Spacelift",
+        "url": "https://spacelift.io/"
+      }
+    ]
+  },
+  {
+    "claim": "Spacelift Spacelift - Presentation",
+    "requirement": "presentation-may-1",
+    "verdict": "met",
+    "note": "The vendor describes visibility into what runs where and an AI chat assistant, and the documentation describes a Slack integration.",
+    "sources": [
+      {
+        "title": "Spacelift",
+        "url": "https://spacelift.io/"
+      },
+      {
+        "title": "Spacelift docs: Slack integration",
+        "url": "https://docs.spacelift.io/integrations/chatops/slack"
+      }
+    ]
+  },
+  {
+    "claim": "Spacelift Spacelift - Presentation",
+    "requirement": "presentation-may-2",
+    "verdict": "met",
+    "note": "The documentation states that users can view planned changes and confirm or discard runs from Slack, subject to read or write permissions; the vendor describes approval policies.",
+    "sources": [
+      {
+        "title": "Spacelift docs: Slack integration",
+        "url": "https://docs.spacelift.io/integrations/chatops/slack"
+      },
+      {
+        "title": "Spacelift",
+        "url": "https://spacelift.io/"
+      }
+    ]
+  },
+  {
+    "claim": "The Apache Software Foundation Apache Airflow - Presentation",
+    "requirement": "presentation-must-1",
+    "verdict": "met",
+    "note": "The documentation states that a pluggable auth manager handles authentication and authorization, that unauthenticated users are not allowed by default, and that roles can be scoped from a single workflow (DAG) to full admin.",
+    "sources": [
+      {
+        "title": "Airflow: Auth manager",
+        "url": "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/auth-manager/index.html"
+      },
+      {
+        "title": "Airflow: Security model",
+        "url": "https://airflow.apache.org/docs/apache-airflow/stable/security/security_model.html"
+      }
+    ]
+  },
+  {
+    "claim": "The Apache Software Foundation Apache Airflow - Presentation",
+    "requirement": "presentation-may-1",
+    "verdict": "met",
+    "note": "The project describes a web application to monitor, schedule and manage workflows and view task logs.",
+    "sources": [
+      {
+        "title": "Apache Airflow",
+        "url": "https://airflow.apache.org/"
+      }
+    ]
+  },
+  {
+    "claim": "The Apache Software Foundation Apache Airflow - Presentation",
+    "requirement": "presentation-may-2",
+    "verdict": "met",
+    "note": "The documentation states that viewer users have read-only access and that regular users can view and edit workflows, task instances and workflow runs.",
+    "sources": [
+      {
+        "title": "Airflow: Security model",
+        "url": "https://airflow.apache.org/docs/apache-airflow/stable/security/security_model.html"
+      }
+    ]
+  },
+  {
+    "claim": "Windmill Labs Windmill - Presentation",
+    "requirement": "presentation-must-1",
+    "verdict": "met",
+    "note": "The vendor lists login through Google, GitHub, Azure AD, Okta, GitLab or any OpenID Connect provider, built-in and custom roles, groups and path-level permissions. SAML and SCIM are only in the Enterprise edition.",
+    "sources": [
+      {
+        "title": "Windmill: Role-based access control",
+        "url": "https://www.windmill.dev/platform/rbac"
+      }
+    ]
+  },
+  {
+    "claim": "Windmill Labs Windmill - Presentation",
+    "requirement": "presentation-may-1",
+    "verdict": "met",
+    "note": "The README states that Windmill generates a user interface from script parameters and has an app builder for user interfaces on top of scripts and flows.",
+    "sources": [
+      {
+        "title": "windmill-labs/windmill README",
+        "url": "https://raw.githubusercontent.com/windmill-labs/windmill/main/README.md"
+      }
+    ]
+  },
+  {
+    "claim": "Windmill Labs Windmill - Presentation",
+    "requirement": "presentation-may-2",
+    "verdict": "met",
+    "note": "The vendor states that operators run scripts, flows and apps, and developers create and edit them, with viewer or writer permissions per folder.",
+    "sources": [
+      {
+        "title": "Windmill: Role-based access control",
+        "url": "https://www.windmill.dev/platform/rbac"
+      }
+    ]
+  }
+]

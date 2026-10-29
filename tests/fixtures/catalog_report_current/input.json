@@ -85,9 +85,6 @@
                 "node": {
                   "id": "18e05a55-138f-f298-3860-c51eb135bae6",
                   "__typename": "CatalogCoverageClaim",
-                  "extent": {
-                    "value": "full"
-                  },
                   "building_block": {
                     "node": {
                       "id": "18e05988-25ea-5e33-386b-c510ae06685d",
@@ -95,6 +92,24 @@
                         "value": "Intent"
                       }
                     }
+                  },
+                  "verdicts": {
+                    "edges": [
+                      {
+                        "node": {
+                          "verdict": {
+                            "value": "met"
+                          },
+                          "requirement": {
+                            "node": {
+                              "identifier": {
+                                "value": "intent-must-1"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
                   }
                 }
               }
@@ -118,9 +133,6 @@
                 "node": {
                   "id": "18e05a55-3518-d0d4-3864-c518ba265e01",
                   "__typename": "CatalogCoverageClaim",
-                  "extent": {
-                    "value": "full"
-                  },
                   "building_block": {
                     "node": {
                       "id": "18e05988-3eab-bb6f-3866-c515781621da",
@@ -128,6 +140,24 @@
                         "value": "Executor"
                       }
                     }
+                  },
+                  "verdicts": {
+                    "edges": [
+                      {
+                        "node": {
+                          "verdict": {
+                            "value": "met"
+                          },
+                          "requirement": {
+                            "node": {
+                              "identifier": {
+                                "value": "executor-must-1"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
                   }
                 }
               },
@@ -135,9 +165,6 @@
                 "node": {
                   "id": "18e05a55-3ccb-0626-386b-c51c40dcc11e",
                   "__typename": "CatalogCoverageClaim",
-                  "extent": {
-                    "value": "partial"
-                  },
                   "building_block": {
                     "node": {
                       "id": "18e05988-42f3-9508-3860-c513699444e7",
@@ -145,6 +172,24 @@
                         "value": "Collector"
                       }
                     }
+                  },
+                  "verdicts": {
+                    "edges": [
+                      {
+                        "node": {
+                          "verdict": {
+                            "value": "partly_met"
+                          },
+                          "requirement": {
+                            "node": {
+                              "identifier": {
+                                "value": "collector-must-1"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
                   }
                 }
               }
@@ -168,9 +213,6 @@
                 "node": {
                   "id": "18e05a55-4107-d41c-3866-c51f093f34d1",
                   "__typename": "CatalogCoverageClaim",
-                  "extent": {
-                    "value": "full"
-                  },
                   "building_block": {
                     "node": {
                       "id": "18e05988-42f3-9508-3860-c513699444e7",
@@ -178,6 +220,24 @@
                         "value": "Collector"
                       }
                     }
+                  },
+                  "verdicts": {
+                    "edges": [
+                      {
+                        "node": {
+                          "verdict": {
+                            "value": "met"
+                          },
+                          "requirement": {
+                            "node": {
+                              "identifier": {
+                                "value": "collector-must-1"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
                   }
                 }
               },
@@ -185,9 +245,6 @@
                 "node": {
                   "id": "18e05a55-42a4-df5e-386d-c51b9cac8f2f",
                   "__typename": "CatalogCoverageClaim",
-                  "extent": {
-                    "value": "full"
-                  },
                   "building_block": {
                     "node": {
                       "id": "18e05988-371f-44d2-3869-c510fb1235e2",
@@ -195,6 +252,24 @@
                         "value": "Observability"
                       }
                     }
+                  },
+                  "verdicts": {
+                    "edges": [
+                      {
+                        "node": {
+                          "verdict": {
+                            "value": "met"
+                          },
+                          "requirement": {
+                            "node": {
+                              "identifier": {
+                                "value": "observability-must-1"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
                   }
                 }
               }
@@ -202,6 +277,130 @@
           },
           "status": {
             "value": "active"
+          }
+        }
+      }
+    ]
+  },
+  "CatalogRequirement": {
+    "edges": [
+      {
+        "node": {
+          "id": "req-collector",
+          "__typename": "CatalogRequirement",
+          "identifier": {
+            "value": "collector-must-1"
+          },
+          "level": {
+            "value": "must"
+          },
+          "building_block": {
+            "node": {
+              "id": "block-collector",
+              "name": {
+                "value": "Collector"
+              }
+            }
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "req-executor",
+          "__typename": "CatalogRequirement",
+          "identifier": {
+            "value": "executor-must-1"
+          },
+          "level": {
+            "value": "must"
+          },
+          "building_block": {
+            "node": {
+              "id": "block-executor",
+              "name": {
+                "value": "Executor"
+              }
+            }
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "req-intent",
+          "__typename": "CatalogRequirement",
+          "identifier": {
+            "value": "intent-must-1"
+          },
+          "level": {
+            "value": "must"
+          },
+          "building_block": {
+            "node": {
+              "id": "block-intent",
+              "name": {
+                "value": "Intent"
+              }
+            }
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "req-observability",
+          "__typename": "CatalogRequirement",
+          "identifier": {
+            "value": "observability-must-1"
+          },
+          "level": {
+            "value": "must"
+          },
+          "building_block": {
+            "node": {
+              "id": "block-observability",
+              "name": {
+                "value": "Observability"
+              }
+            }
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "req-orchestrator",
+          "__typename": "CatalogRequirement",
+          "identifier": {
+            "value": "orchestrator-must-1"
+          },
+          "level": {
+            "value": "must"
+          },
+          "building_block": {
+            "node": {
+              "id": "block-orchestrator",
+              "name": {
+                "value": "Orchestrator"
+              }
+            }
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "req-presentation",
+          "__typename": "CatalogRequirement",
+          "identifier": {
+            "value": "presentation-must-1"
+          },
+          "level": {
+            "value": "must"
+          },
+          "building_block": {
+            "node": {
+              "id": "block-presentation",
+              "name": {
+                "value": "Presentation"
+              }
+            }
           }
         }
       }

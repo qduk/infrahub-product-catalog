@@ -1,0 +1,931 @@
+[
+  {
+    "claim": "Red Hat Ansible - Executor",
+    "requirement": "executor-must-1",
+    "verdict": "partly_met",
+    "note": "Network modules connect over CLI over SSH, NETCONF (XML over SSH) and HTTP/HTTPS APIs, and a gRPC connection plugin exists. The sources do not state support for gNMI or gNOI.",
+    "sources": [
+      {
+        "title": "Ansible: How Network Automation is Different",
+        "url": "https://github.com/ansible/ansible-documentation/blob/devel/docs/docsite/rst/network/getting_started/network_differences.rst"
+      },
+      {
+        "title": "ansible.netcommon.grpc connection plugin",
+        "url": "https://github.com/ansible-collections/ansible.netcommon/blob/main/docs/ansible.netcommon.grpc_connection.rst"
+      }
+    ]
+  },
+  {
+    "claim": "Red Hat Ansible - Executor",
+    "requirement": "executor-should-1",
+    "verdict": "partly_met",
+    "note": "Resource modules merge, replace, override or delete device configuration sections. The opened sources do not state device actions such as reboots or software updates.",
+    "sources": [
+      {
+        "title": "Ansible: Network Resource Modules",
+        "url": "https://github.com/ansible/ansible-documentation/blob/devel/docs/docsite/rst/network/user_guide/network_resource_modules.rst"
+      }
+    ]
+  },
+  {
+    "claim": "Red Hat Ansible - Executor",
+    "requirement": "executor-should-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Red Hat Ansible - Executor",
+    "requirement": "executor-should-3",
+    "verdict": "met",
+    "note": "Check mode runs a playbook without changing remote systems and reports the changes that modules would make; only modules that support check mode report changes. The rendered state also produces device configuration offline.",
+    "sources": [
+      {
+        "title": "Ansible: Validating tasks: check mode and diff mode",
+        "url": "https://github.com/ansible/ansible-documentation/blob/devel/docs/docsite/rst/playbook_guide/playbooks_checkmode.rst"
+      },
+      {
+        "title": "Ansible: Network Resource Modules",
+        "url": "https://github.com/ansible/ansible-documentation/blob/devel/docs/docsite/rst/network/user_guide/network_resource_modules.rst"
+      }
+    ]
+  },
+  {
+    "claim": "Red Hat Ansible - Executor",
+    "requirement": "executor-should-4",
+    "verdict": "partly_met",
+    "note": "The netconf_config module edits the candidate datastore, commits it, supports confirmed commit with automatic rollback and rollback-on-error, when the device supports these NETCONF capabilities. Transactions across several devices are not stated.",
+    "sources": [
+      {
+        "title": "ansible.netcommon.netconf_config module",
+        "url": "https://github.com/ansible-collections/ansible.netcommon/blob/main/docs/ansible.netcommon.netconf_config_module.rst"
+      }
+    ]
+  },
+  {
+    "claim": "Red Hat Ansible - Executor",
+    "requirement": "executor-may-1",
+    "verdict": "met",
+    "note": "Resource modules take a desired configuration and a state such as merged or overridden, and the glossary describes resource models as bringing a system to a desired state rather than telling Ansible how to get there. Playbooks run tasks in the order written.",
+    "sources": [
+      {
+        "title": "Ansible: Network Resource Modules",
+        "url": "https://github.com/ansible/ansible-documentation/blob/devel/docs/docsite/rst/network/user_guide/network_resource_modules.rst"
+      },
+      {
+        "title": "Ansible: Glossary",
+        "url": "https://github.com/ansible/ansible-documentation/blob/devel/docs/docsite/rst/reference_appendices/glossary.rst"
+      }
+    ]
+  },
+  {
+    "claim": "Red Hat Ansible - Executor",
+    "requirement": "executor-should-5",
+    "verdict": "partly_met",
+    "note": "The glossary states that resource models are idempotent and run change commands only when needed. This is stated for resource models, not for every module.",
+    "sources": [
+      {
+        "title": "Ansible: Glossary",
+        "url": "https://github.com/ansible/ansible-documentation/blob/devel/docs/docsite/rst/reference_appendices/glossary.rst"
+      }
+    ]
+  },
+  {
+    "claim": "Flock9 Netpicker - Executor",
+    "requirement": "executor-must-1",
+    "verdict": "partly_met",
+    "note": "Example automation jobs send CLI configuration commands through a Netmiko-based device interface. NETCONF, gNMI, gNOI and REST write interfaces are not stated.",
+    "sources": [
+      {
+        "title": "netpicker/network-automation-jobs repository",
+        "url": "https://github.com/netpicker/network-automation-jobs"
+      }
+    ]
+  },
+  {
+    "claim": "Flock9 Netpicker - Executor",
+    "requirement": "executor-should-1",
+    "verdict": "partly_met",
+    "note": "Jobs apply configuration commands and save the configuration; the vendor states it runs remediation with pre- and post-change backup and diff. Reboots and software updates are not stated.",
+    "sources": [
+      {
+        "title": "netpicker/network-automation-jobs repository",
+        "url": "https://github.com/netpicker/network-automation-jobs"
+      },
+      {
+        "title": "Netpicker home page",
+        "url": "https://netpicker.io/"
+      }
+    ]
+  },
+  {
+    "claim": "Flock9 Netpicker - Executor",
+    "requirement": "executor-should-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Flock9 Netpicker - Executor",
+    "requirement": "executor-should-3",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Flock9 Netpicker - Executor",
+    "requirement": "executor-should-4",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Flock9 Netpicker - Executor",
+    "requirement": "executor-may-1",
+    "verdict": "partly_met",
+    "note": "Jobs are Python functions that define the steps to run, which is an imperative approach. A declarative approach is not stated.",
+    "sources": [
+      {
+        "title": "netpicker/network-automation-jobs repository",
+        "url": "https://github.com/netpicker/network-automation-jobs"
+      }
+    ]
+  },
+  {
+    "claim": "Flock9 Netpicker - Executor",
+    "requirement": "executor-should-5",
+    "verdict": "partly_met",
+    "note": "The example jobs check the device first and skip the change when the desired state already exists. This is written into each job by its author; the sources do not state it as a platform behavior.",
+    "sources": [
+      {
+        "title": "netpicker/network-automation-jobs repository",
+        "url": "https://github.com/netpicker/network-automation-jobs"
+      }
+    ]
+  },
+  {
+    "claim": "Nokia Event-Driven Automation (EDA) - Executor",
+    "requirement": "executor-must-1",
+    "verdict": "partly_met",
+    "note": "The node management documentation lists CLI, gNMI, gNSI, JSON-RPC and NETCONF as management services, and image deployment requires gNOI privileges. The sources do not state which of these EDA uses to write configuration, or REST API support.",
+    "sources": [
+      {
+        "title": "Nokia EDA 24.12: Node management",
+        "url": "https://documentation.nokia.com/eda/24-12/books/user/node-management.html"
+      },
+      {
+        "title": "Nokia EDA: Image management",
+        "url": "https://docs.eda.dev/26.8/user-guide/administration/image-management/"
+      }
+    ]
+  },
+  {
+    "claim": "Nokia Event-Driven Automation (EDA) - Executor",
+    "requirement": "executor-should-1",
+    "verdict": "met",
+    "note": "EDA translates intents into device configuration and rolls it out, and the DeployImage workflow upgrades or downgrades node operating systems and runs operational commands such as reboot.",
+    "sources": [
+      {
+        "title": "Nokia EDA 26.8 documentation home",
+        "url": "https://docs.eda.dev/26.8/"
+      },
+      {
+        "title": "Nokia EDA: Image management",
+        "url": "https://docs.eda.dev/26.8/user-guide/administration/image-management/"
+      }
+    ]
+  },
+  {
+    "claim": "Nokia Event-Driven Automation (EDA) - Executor",
+    "requirement": "executor-should-2",
+    "verdict": "met",
+    "note": "Users describe the services and components they want, and EDA translates that intent into device configuration.",
+    "sources": [
+      {
+        "title": "Nokia EDA 26.8 documentation home",
+        "url": "https://docs.eda.dev/26.8/"
+      }
+    ]
+  },
+  {
+    "claim": "Nokia Event-Driven Automation (EDA) - Executor",
+    "requirement": "executor-should-3",
+    "verdict": "met",
+    "note": "A dry run of a transaction shows expected configuration issues before the transaction is committed on the network.",
+    "sources": [
+      {
+        "title": "Nokia EDA: Transactions",
+        "url": "https://docs.eda.dev/26.8/user-guide/transactions/"
+      }
+    ]
+  },
+  {
+    "claim": "Nokia Event-Driven Automation (EDA) - Executor",
+    "requirement": "executor-should-4",
+    "verdict": "met",
+    "note": "Changes within a transaction succeed or fail together; if a change cannot be deployed on any target node, the transaction fails and the changes are reverted from all nodes.",
+    "sources": [
+      {
+        "title": "Nokia EDA: Transactions",
+        "url": "https://docs.eda.dev/26.8/user-guide/transactions/"
+      }
+    ]
+  },
+  {
+    "claim": "Nokia Event-Driven Automation (EDA) - Executor",
+    "requirement": "executor-may-1",
+    "verdict": "partly_met",
+    "note": "The documentation describes a declarative approach in which users state the intent and EDA derives the configuration. An imperative task approach is not stated in the opened sources.",
+    "sources": [
+      {
+        "title": "Nokia EDA 26.8 documentation home",
+        "url": "https://docs.eda.dev/26.8/"
+      }
+    ]
+  },
+  {
+    "claim": "Nokia Event-Driven Automation (EDA) - Executor",
+    "requirement": "executor-should-5",
+    "verdict": "met",
+    "note": "The documentation states that an intent run with the same inputs always produces the same outputs.",
+    "sources": [
+      {
+        "title": "Nokia EDA: Transactions",
+        "url": "https://docs.eda.dev/26.8/user-guide/transactions/"
+      }
+    ]
+  },
+  {
+    "claim": "NetBrain Technologies Agentic NetOps Platform - Executor",
+    "requirement": "executor-must-1",
+    "verdict": "partly_met",
+    "note": "The Execute node logs in to each device and issues commands. The documentation does not name the protocols, and NETCONF, gNMI, gNOI and REST write interfaces are not stated.",
+    "sources": [
+      {
+        "title": "NetBrain R11 help: Change Management (CM) Module",
+        "url": "https://www.netbrain.com/docs/R11/help/HTML/change-management-cm-module.html"
+      }
+    ]
+  },
+  {
+    "claim": "NetBrain Technologies Agentic NetOps Platform - Executor",
+    "requirement": "executor-should-1",
+    "verdict": "partly_met",
+    "note": "Change runbooks run configuration commands on devices, from a template or per device. Reboots and software updates are not stated in the opened sources.",
+    "sources": [
+      {
+        "title": "NetBrain R11 help: Change Management (CM) Module",
+        "url": "https://www.netbrain.com/docs/R11/help/HTML/change-management-cm-module.html"
+      }
+    ]
+  },
+  {
+    "claim": "NetBrain Technologies Agentic NetOps Platform - Executor",
+    "requirement": "executor-should-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "NetBrain Technologies Agentic NetOps Platform - Executor",
+    "requirement": "executor-should-3",
+    "verdict": "partly_met",
+    "note": "Dry runs are available through the Ansible Task node, which runs an Ansible playbook. A dry run for the native Execute node is not stated.",
+    "sources": [
+      {
+        "title": "NetBrain R11 help: Change Management (CM) Module",
+        "url": "https://www.netbrain.com/docs/R11/help/HTML/change-management-cm-module.html"
+      }
+    ]
+  },
+  {
+    "claim": "NetBrain Technologies Agentic NetOps Platform - Executor",
+    "requirement": "executor-should-4",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "NetBrain Technologies Agentic NetOps Platform - Executor",
+    "requirement": "executor-may-1",
+    "verdict": "partly_met",
+    "note": "Changes are defined as commands to run on devices, which is an imperative approach. A declarative approach for change execution is not stated.",
+    "sources": [
+      {
+        "title": "NetBrain R11 help: Change Management (CM) Module",
+        "url": "https://www.netbrain.com/docs/R11/help/HTML/change-management-cm-module.html"
+      }
+    ]
+  },
+  {
+    "claim": "NetBrain Technologies Agentic NetOps Platform - Executor",
+    "requirement": "executor-should-5",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Juniper Networks Apstra Data Center Director - Executor",
+    "requirement": "executor-must-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Juniper Networks Apstra Data Center Director - Executor",
+    "requirement": "executor-should-1",
+    "verdict": "met",
+    "note": "Committing blueprint changes pushes the generated configuration to devices, and Apstra upgrades the network operating system of EOS, NX-OS, SONiC and Junos devices, after which the device reboots.",
+    "sources": [
+      {
+        "title": "Apstra 5.1 User Guide: Commit / Revert Changes to Blueprint",
+        "url": "https://www.juniper.net/documentation/us/en/software/apstra5.1/apstra-user-guide/topics/task/blueprint-commit-revert.html"
+      },
+      {
+        "title": "Apstra 6.0 User Guide: Upgrade Device NOS",
+        "url": "https://www.juniper.net/documentation/us/en/software/apstra6.0/apstra-user-guide/topics/topic-map/device-nos-upgrade.html"
+      }
+    ]
+  },
+  {
+    "claim": "Juniper Networks Apstra Data Center Director - Executor",
+    "requirement": "executor-should-2",
+    "verdict": "met",
+    "note": "The vendor states that Apstra generates vendor-specific configuration from the user's intent.",
+    "sources": [
+      {
+        "title": "Juniper Apstra Data Center Director product page",
+        "url": "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html"
+      }
+    ]
+  },
+  {
+    "claim": "Juniper Networks Apstra Data Center Director - Executor",
+    "requirement": "executor-should-3",
+    "verdict": "partly_met",
+    "note": "Changes are staged as uncommitted changes and validated before commit, and the vendor states it pre-validates every change. A preview of the device configuration that would be pushed is not described.",
+    "sources": [
+      {
+        "title": "Apstra 5.1 User Guide: Commit / Revert Changes to Blueprint",
+        "url": "https://www.juniper.net/documentation/us/en/software/apstra5.1/apstra-user-guide/topics/task/blueprint-commit-revert.html"
+      },
+      {
+        "title": "Juniper Apstra Data Center Director product page",
+        "url": "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html"
+      }
+    ]
+  },
+  {
+    "claim": "Juniper Networks Apstra Data Center Director - Executor",
+    "requirement": "executor-should-4",
+    "verdict": "partly_met",
+    "note": "Staged changes are committed together as a blueprint revision, and Time Voyager rolls back to an earlier revision. The documentation does not state whether deployment to devices is atomic.",
+    "sources": [
+      {
+        "title": "Apstra 5.1 User Guide: Commit / Revert Changes to Blueprint",
+        "url": "https://www.juniper.net/documentation/us/en/software/apstra5.1/apstra-user-guide/topics/task/blueprint-commit-revert.html"
+      },
+      {
+        "title": "Juniper Apstra Data Center Director product page",
+        "url": "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html"
+      }
+    ]
+  },
+  {
+    "claim": "Juniper Networks Apstra Data Center Director - Executor",
+    "requirement": "executor-may-1",
+    "verdict": "partly_met",
+    "note": "The vendor describes intent-based, declarative automation. An imperative task approach is not stated.",
+    "sources": [
+      {
+        "title": "Juniper Apstra Data Center Director product page",
+        "url": "https://www.juniper.net/us/en/products/network-automation/apstra-data-center-director.html"
+      }
+    ]
+  },
+  {
+    "claim": "Juniper Networks Apstra Data Center Director - Executor",
+    "requirement": "executor-should-5",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "EfficientIP SOLIDserver DDI - Executor",
+    "requirement": "executor-must-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "EfficientIP SOLIDserver DDI - Executor",
+    "requirement": "executor-should-1",
+    "verdict": "partly_met",
+    "note": "The vendor states that IP address changes are pushed automatically to DNS and DHCP servers, including Microsoft, ISC BIND and cloud DNS services. Changes to other network devices, reboots and software updates are not stated.",
+    "sources": [
+      {
+        "title": "EfficientIP SOLIDserver DDI product page",
+        "url": "https://efficientip.com/products/solidserver-ddi/"
+      }
+    ]
+  },
+  {
+    "claim": "EfficientIP SOLIDserver DDI - Executor",
+    "requirement": "executor-should-2",
+    "verdict": "partly_met",
+    "note": "DNS and DHCP changes are derived from the IP address plan in the product's central repository, which covers only its own DDI data.",
+    "sources": [
+      {
+        "title": "EfficientIP SOLIDserver DDI product page",
+        "url": "https://efficientip.com/products/solidserver-ddi/"
+      }
+    ]
+  },
+  {
+    "claim": "EfficientIP SOLIDserver DDI - Executor",
+    "requirement": "executor-should-3",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "EfficientIP SOLIDserver DDI - Executor",
+    "requirement": "executor-should-4",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "EfficientIP SOLIDserver DDI - Executor",
+    "requirement": "executor-may-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "EfficientIP SOLIDserver DDI - Executor",
+    "requirement": "executor-should-5",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Executor",
+    "requirement": "executor-must-1",
+    "verdict": "partly_met",
+    "note": "The device manager writes to devices with NETCONF edit-config, CLI over SSH through CLI NEDs, SNMP, and REST through generic NEDs. gNMI and gNOI are not stated in the opened sources.",
+    "sources": [
+      {
+        "title": "NSO Device Manager",
+        "url": "https://github.com/NSO-developer/nso-gitbook/blob/main/operation-and-usage/operations/nso-device-manager.md"
+      }
+    ]
+  },
+  {
+    "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Executor",
+    "requirement": "executor-should-1",
+    "verdict": "met",
+    "note": "NSO pushes configuration changes to devices and exposes device RPCs and actions, such as Junos request-reboot and request-package-add, through its northbound interfaces.",
+    "sources": [
+      {
+        "title": "NSO Device Manager",
+        "url": "https://github.com/NSO-developer/nso-gitbook/blob/main/operation-and-usage/operations/nso-device-manager.md"
+      }
+    ]
+  },
+  {
+    "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Executor",
+    "requirement": "executor-should-2",
+    "verdict": "met",
+    "note": "A service maps input parameters that describe the desired service to device configuration, and NSO calculates the minimal device changes needed.",
+    "sources": [
+      {
+        "title": "NSO: Services",
+        "url": "https://github.com/NSO-developer/nso-gitbook/blob/main/development/core-concepts/services.md"
+      }
+    ]
+  },
+  {
+    "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Executor",
+    "requirement": "executor-should-3",
+    "verdict": "met",
+    "note": "The commit dry-run command shows the changes, including in device-native format, without sending them, and sync-to has a dry-run option.",
+    "sources": [
+      {
+        "title": "NSO Device Manager",
+        "url": "https://github.com/NSO-developer/nso-gitbook/blob/main/operation-and-usage/operations/nso-device-manager.md"
+      }
+    ]
+  },
+  {
+    "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Executor",
+    "requirement": "executor-should-4",
+    "verdict": "met",
+    "note": "NSO runs changes across devices as one atomic transaction that is either applied on all participating devices or aborted and rolled back.",
+    "sources": [
+      {
+        "title": "NSO Device Manager",
+        "url": "https://github.com/NSO-developer/nso-gitbook/blob/main/operation-and-usage/operations/nso-device-manager.md"
+      }
+    ]
+  },
+  {
+    "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Executor",
+    "requirement": "executor-may-1",
+    "verdict": "met",
+    "note": "Service mappings are a declarative model-to-model mapping, and device RPCs and actions can be invoked directly.",
+    "sources": [
+      {
+        "title": "NSO: Services",
+        "url": "https://github.com/NSO-developer/nso-gitbook/blob/main/development/core-concepts/services.md"
+      },
+      {
+        "title": "NSO Device Manager",
+        "url": "https://github.com/NSO-developer/nso-gitbook/blob/main/operation-and-usage/operations/nso-device-manager.md"
+      }
+    ]
+  },
+  {
+    "claim": "Cisco Crosswork Network Services Orchestrator (NSO) - Executor",
+    "requirement": "executor-should-5",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "HashiCorp Terraform - Executor",
+    "requirement": "executor-must-1",
+    "verdict": "partly_met",
+    "note": "Terraform manages resources through the APIs of cloud platforms and other services. SSH, NETCONF, gNMI and gNOI are not stated.",
+    "sources": [
+      {
+        "title": "What is Terraform",
+        "url": "https://developer.hashicorp.com/terraform/intro"
+      }
+    ]
+  },
+  {
+    "claim": "HashiCorp Terraform - Executor",
+    "requirement": "executor-should-1",
+    "verdict": "partly_met",
+    "note": "Terraform creates, updates or destroys infrastructure resources, including networking resources. Device actions such as reboots and software updates are not stated.",
+    "sources": [
+      {
+        "title": "What is Terraform",
+        "url": "https://developer.hashicorp.com/terraform/intro"
+      }
+    ]
+  },
+  {
+    "claim": "HashiCorp Terraform - Executor",
+    "requirement": "executor-should-2",
+    "verdict": "met",
+    "note": "Configuration files describe the end state of the infrastructure, and Terraform plans and applies changes from them.",
+    "sources": [
+      {
+        "title": "What is Terraform",
+        "url": "https://developer.hashicorp.com/terraform/intro"
+      }
+    ]
+  },
+  {
+    "claim": "HashiCorp Terraform - Executor",
+    "requirement": "executor-should-3",
+    "verdict": "met",
+    "note": "The plan command shows the proposed changes without carrying them out.",
+    "sources": [
+      {
+        "title": "terraform plan command reference",
+        "url": "https://developer.hashicorp.com/terraform/cli/commands/plan"
+      }
+    ]
+  },
+  {
+    "claim": "HashiCorp Terraform - Executor",
+    "requirement": "executor-should-4",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "HashiCorp Terraform - Executor",
+    "requirement": "executor-may-1",
+    "verdict": "partly_met",
+    "note": "Terraform configuration is declarative. An imperative approach is not stated.",
+    "sources": [
+      {
+        "title": "What is Terraform",
+        "url": "https://developer.hashicorp.com/terraform/intro"
+      }
+    ]
+  },
+  {
+    "claim": "HashiCorp Terraform - Executor",
+    "requirement": "executor-should-5",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Itential Platform - Executor",
+    "requirement": "executor-must-1",
+    "verdict": "partly_met",
+    "note": "Itential Automation Gateway writes configuration through NETCONF over SSH, Netmiko-supported devices, Ansible network modules, Nornir and OpenTofu. gNMI, gNOI and REST device APIs are not stated in the opened sources.",
+    "sources": [
+      {
+        "title": "Itential Automation Gateway overview",
+        "url": "https://docs.itential.com/itential-automation-gateway/iag-4-and-earlier/iag-overview"
+      },
+      {
+        "title": "Itential Automation Gateway: NETCONF integration",
+        "url": "https://docs.itential.com/itential-automation-gateway/iag-4-and-earlier/netconf-integration"
+      }
+    ]
+  },
+  {
+    "claim": "Itential Platform - Executor",
+    "requirement": "executor-should-1",
+    "verdict": "partly_met",
+    "note": "The gateway configures devices through Netmiko and NETCONF and can run proprietary NETCONF RPCs. Reboots and software updates are not stated.",
+    "sources": [
+      {
+        "title": "Itential Automation Gateway overview",
+        "url": "https://docs.itential.com/itential-automation-gateway/iag-4-and-earlier/iag-overview"
+      },
+      {
+        "title": "Itential Automation Gateway: NETCONF integration",
+        "url": "https://docs.itential.com/itential-automation-gateway/iag-4-and-earlier/netconf-integration"
+      }
+    ]
+  },
+  {
+    "claim": "Itential Platform - Executor",
+    "requirement": "executor-should-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Itential Platform - Executor",
+    "requirement": "executor-should-3",
+    "verdict": "partly_met",
+    "note": "The gateway can run OpenTofu plan and validate actions. A dry run for other kinds of changes is not stated.",
+    "sources": [
+      {
+        "title": "Itential Automation Gateway overview",
+        "url": "https://docs.itential.com/itential-automation-gateway/iag-4-and-earlier/iag-overview"
+      }
+    ]
+  },
+  {
+    "claim": "Itential Platform - Executor",
+    "requirement": "executor-should-4",
+    "verdict": "partly_met",
+    "note": "The NETCONF integration writes to the candidate datastore and then commits it, and the vendor states that actions run with pre-checks, post-checks and rollback. Transactions across devices are not stated.",
+    "sources": [
+      {
+        "title": "Itential Automation Gateway: NETCONF integration",
+        "url": "https://docs.itential.com/itential-automation-gateway/iag-4-and-earlier/netconf-integration"
+      },
+      {
+        "title": "Itential home page",
+        "url": "https://www.itential.com/"
+      }
+    ]
+  },
+  {
+    "claim": "Itential Platform - Executor",
+    "requirement": "executor-may-1",
+    "verdict": "partly_met",
+    "note": "Itential runs imperative scripts and playbooks and can run declarative OpenTofu modules, so both approaches depend on the tools it calls.",
+    "sources": [
+      {
+        "title": "Itential Automation Gateway overview",
+        "url": "https://docs.itential.com/itential-automation-gateway/iag-4-and-earlier/iag-overview"
+      }
+    ]
+  },
+  {
+    "claim": "Itential Platform - Executor",
+    "requirement": "executor-should-5",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Gluware Gluware - Executor",
+    "requirement": "executor-must-1",
+    "verdict": "partly_met",
+    "note": "The vendor states that its DIAL layer handles CLI and API interactions with devices from 22 vendors. The specific protocols, such as NETCONF, gNMI or gNOI, are not stated.",
+    "sources": [
+      {
+        "title": "Gluware company and product facts",
+        "url": "https://gluware.com/gluware-company-and-product-facts/"
+      }
+    ]
+  },
+  {
+    "claim": "Gluware Gluware - Executor",
+    "requirement": "executor-should-1",
+    "verdict": "met",
+    "note": "The vendor states that Gluware applies configuration changes to reconcile devices with the intent, and that OS Manager automates network operating system upgrade workflows.",
+    "sources": [
+      {
+        "title": "Gluware company and product facts",
+        "url": "https://gluware.com/gluware-company-and-product-facts/"
+      }
+    ]
+  },
+  {
+    "claim": "Gluware Gluware - Executor",
+    "requirement": "executor-should-2",
+    "verdict": "met",
+    "note": "The vendor states that teams define the desired state and the platform applies the changes needed to reach it.",
+    "sources": [
+      {
+        "title": "Gluware company and product facts",
+        "url": "https://gluware.com/gluware-company-and-product-facts/"
+      }
+    ]
+  },
+  {
+    "claim": "Gluware Gluware - Executor",
+    "requirement": "executor-should-3",
+    "verdict": "met",
+    "note": "The vendor states that the Config Model Editor shows the configuration changes before they run.",
+    "sources": [
+      {
+        "title": "Gluware Config Model Editor",
+        "url": "https://gluware.com/apps/config-modeling/"
+      }
+    ]
+  },
+  {
+    "claim": "Gluware Gluware - Executor",
+    "requirement": "executor-should-4",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "Gluware Gluware - Executor",
+    "requirement": "executor-may-1",
+    "verdict": "partly_met",
+    "note": "The vendor states that Gluware uses a declarative approach to configuration management. An imperative approach is not stated.",
+    "sources": [
+      {
+        "title": "Gluware company and product facts",
+        "url": "https://gluware.com/gluware-company-and-product-facts/"
+      }
+    ]
+  },
+  {
+    "claim": "Gluware Gluware - Executor",
+    "requirement": "executor-should-5",
+    "verdict": "met",
+    "note": "The vendor states that the platform reads the current state, compares it with the desired configuration and applies only the changes needed.",
+    "sources": [
+      {
+        "title": "Gluware Config Model Editor",
+        "url": "https://gluware.com/apps/config-modeling/"
+      }
+    ]
+  },
+  {
+    "claim": "IBM Pliant - Executor",
+    "requirement": "executor-must-1",
+    "verdict": "partly_met",
+    "note": "IBM states that Pliant integrates with technology that has an API or a CLI. The specific protocols are not stated.",
+    "sources": [
+      {
+        "title": "IBM acquires Pliant (IBM Newsroom)",
+        "url": "https://newsroom.ibm.com/Blog-IBM-Acquires-Pliant-to-Further-Enhance-Network-IT-Automation-Capabilities"
+      }
+    ]
+  },
+  {
+    "claim": "IBM Pliant - Executor",
+    "requirement": "executor-should-1",
+    "verdict": "partly_met",
+    "note": "IBM states that Pliant is used for resource provisioning, traffic management and configuration management. Reboots and software updates are not stated.",
+    "sources": [
+      {
+        "title": "IBM acquires Pliant (IBM Newsroom)",
+        "url": "https://newsroom.ibm.com/Blog-IBM-Acquires-Pliant-to-Further-Enhance-Network-IT-Automation-Capabilities"
+      }
+    ]
+  },
+  {
+    "claim": "IBM Pliant - Executor",
+    "requirement": "executor-should-2",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "IBM Pliant - Executor",
+    "requirement": "executor-should-3",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "IBM Pliant - Executor",
+    "requirement": "executor-should-4",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "IBM Pliant - Executor",
+    "requirement": "executor-may-1",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "IBM Pliant - Executor",
+    "requirement": "executor-should-5",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "System Initiative System Initiative - Executor",
+    "requirement": "executor-must-1",
+    "verdict": "partly_met",
+    "note": "Action functions call cloud provider APIs, for example AWS. Writing to network devices over SSH, NETCONF, gNMI or gNOI is not stated, and the project is archived.",
+    "sources": [
+      {
+        "title": "System Initiative docs: comparison with infrastructure as code",
+        "url": "https://github.com/systeminit/si/blob/main/app/docs/src/explanation/iac-comparison.md"
+      },
+      {
+        "title": "systeminit/si repository README",
+        "url": "https://github.com/systeminit/si"
+      }
+    ]
+  },
+  {
+    "claim": "System Initiative System Initiative - Executor",
+    "requirement": "executor-should-1",
+    "verdict": "partly_met",
+    "note": "Action functions create, update and delete cloud resources and run actions such as restarting or rebooting an EC2 instance. Network devices are not stated.",
+    "sources": [
+      {
+        "title": "System Initiative docs: comparison with infrastructure as code",
+        "url": "https://github.com/systeminit/si/blob/main/app/docs/src/explanation/iac-comparison.md"
+      }
+    ]
+  },
+  {
+    "claim": "System Initiative System Initiative - Executor",
+    "requirement": "executor-should-2",
+    "verdict": "met",
+    "note": "Each component records the intended configuration, which System Initiative compares with the real resource before acting on it.",
+    "sources": [
+      {
+        "title": "System Initiative docs: comparison with infrastructure as code",
+        "url": "https://github.com/systeminit/si/blob/main/app/docs/src/explanation/iac-comparison.md"
+      }
+    ]
+  },
+  {
+    "claim": "System Initiative System Initiative - Executor",
+    "requirement": "executor-should-3",
+    "verdict": "partly_met",
+    "note": "AI agents propose changes in simulated change sets that give feedback before the changes are applied. A preview of the result of the actions is not described in detail.",
+    "sources": [
+      {
+        "title": "System Initiative docs: comparison with infrastructure as code",
+        "url": "https://github.com/systeminit/si/blob/main/app/docs/src/explanation/iac-comparison.md"
+      }
+    ]
+  },
+  {
+    "claim": "System Initiative System Initiative - Executor",
+    "requirement": "executor-should-4",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  },
+  {
+    "claim": "System Initiative System Initiative - Executor",
+    "requirement": "executor-may-1",
+    "verdict": "met",
+    "note": "Components hold the intended configuration that is compared with the real state, and users can also queue explicit actions such as restart against a resource.",
+    "sources": [
+      {
+        "title": "System Initiative docs: comparison with infrastructure as code",
+        "url": "https://github.com/systeminit/si/blob/main/app/docs/src/explanation/iac-comparison.md"
+      }
+    ]
+  },
+  {
+    "claim": "System Initiative System Initiative - Executor",
+    "requirement": "executor-should-5",
+    "verdict": "not_shown",
+    "note": "",
+    "sources": []
+  }
+]
