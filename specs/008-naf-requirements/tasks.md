@@ -64,7 +64,7 @@ description: "Task list for framework requirements and coverage assessments"
 - [X] T014 Load everything on a local branch, open a proposed change, confirm all checks pass, merge
 - [X] T015 Run the quickstart walkthrough; update `AGENTS.md`, `frontend/README.md` and
   `dev/guides/record-a-product.md`
-- [ ] T016 Commit and merge; ask the user before pushing and before updating the GCP beta
+- [X] T016 Commit and merge; ask the user before pushing and before updating the GCP beta
 
 ## Dependencies
 

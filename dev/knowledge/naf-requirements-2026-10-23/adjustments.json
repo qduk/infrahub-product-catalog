@@ -318,7 +318,7 @@
       "claim": "OpsMill Infrahub - Intent",
       "requirement": "intent-should-3",
       "verdict": "partly_met",
-      "note": "The vendor states that every attribute and relationship carries Source (where the data comes from) and Owner (who owns it) metadata plus a protected flag, and that every object records created_at, created_by, updated_at and updated_by. The vendor states that each value and relationship is stored with the period during which it applied, and that a query with a branch and a timestamp (the GraphQL `at` parameter) returns the data that was valid at that time. These validity periods are recorded from changes; no page states that a user can set a validity period of their own, such as a future start or end date for a value. No page states that a user can set validity periods, such as a future start or end date; Infrahub records the period each value applied.",
+      "note": "The vendor states that every attribute and relationship carries Source (where the data comes from) and Owner (who owns it) metadata plus a protected flag, and that every object records created_at, created_by, updated_at and updated_by. The vendor states that each value and relationship is stored with the period during which it applied, and that a query with a branch and a timestamp (the GraphQL `at` parameter) returns the data that was valid at that time. These validity periods are recorded from changes; no page states that a user can set a validity period of their own, such as a future start or end date for a value.",
       "sources": [
         {
           "title": "Data lineage and metadata",
@@ -339,7 +339,7 @@
       "claim": "OpsMill Infrahub - Intent",
       "requirement": "intent-should-4",
       "verdict": "partly_met",
-      "note": "The vendor states that related changes can be grouped on one branch so that a single merge applies them to the default branch, and that a merge either completes or is rolled back; the merge page also states that a merge is not one database transaction. The vendor states that checks are user-defined validation logic that run on a proposed change, and that a proposed change cannot be merged if a check does not complete successfully. The vendor states that each change creates a new timestamped version and that data can be read on any branch as it existed at an earlier time; no page states that a single GraphQL mutation outside a branch merge runs as one transaction. The all-or-nothing behavior is stated for branch merges only, and the merge page states that a merge is not one database transaction.",
+      "note": "The vendor states that related changes can be grouped on one branch so that a single merge applies them to the default branch, and that a merge either completes or is rolled back; the merge page also states that a merge is not one database transaction. The vendor states that checks are user-defined validation logic that run on a proposed change, and that a proposed change cannot be merged if a check does not complete successfully. The vendor states that each change creates a new timestamped version and that data can be read on any branch as it existed at an earlier time; no page states that a single GraphQL mutation outside a branch merge runs as one transaction.",
       "sources": [
         {
           "title": "Branches overview",

@@ -59,9 +59,9 @@ def products_file_claims() -> tuple[set[str], set[str]]:
 
 
 def old_extents() -> dict[str, str]:
-    """Extents as recorded on main before this feature, from Git."""
+    """Extents as recorded before this feature, from Git (1de35a7 is the feature commit)."""
     text = subprocess.run(
-        ["git", "show", "main:objects/04_products.yml"], cwd=ROOT, capture_output=True, text=True, check=True
+        ["git", "show", "1de35a7^:objects/04_products.yml"], cwd=ROOT, capture_output=True, text=True, check=True
     ).stdout
     extents = {}
     for doc in yaml.safe_load_all(text):

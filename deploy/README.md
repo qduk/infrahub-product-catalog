@@ -189,6 +189,14 @@ looks the repository up as a `CoreRepository` and fails with `NodeNotFoundError`
 runs one worker with its copy on the `git_data` volume, and **Import latest commit** makes the copy.
 If the volume is ever deleted, run **Import latest commit** once, then **Retry** the checks.
 
+## Checks that time out
+
+On the 2 vCPU machine with one worker, the checks of a proposed change run together and share the
+SDK's request rate limit. A check that waits longer than 60 seconds is stopped
+(`TaskRunTimeoutError`), and Infrahub keeps showing it as "in progress". This is not a finding about
+the data. Rerun the checks from the proposed change (**Retry**, or the GraphQL mutation
+`CoreProposedChangeRunCheck` with `check_type: USER`); on 2026-10-29 the rerun passed each time.
+
 ## If the HTTPS certificate is not issued
 
 Caddy logs the reason: `sudo docker compose -f docker-compose.yml -f deploy/docker-compose.gcp.yml

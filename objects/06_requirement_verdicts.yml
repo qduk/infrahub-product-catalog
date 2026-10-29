@@ -3676,8 +3676,7 @@ spec:
         a query with a branch and a timestamp (the GraphQL `at` parameter) returns the data that
         was valid at that time. These validity periods are recorded from changes; no page states
         that a user can set a validity period of their own, such as a future start or end date
-        for a value. No page states that a user can set validity periods, such as a future start
-        or end date; Infrahub records the period each value applied.
+        for a value.
       sources:
         - https://docs.infrahub.app/objects/metadata
         - https://docs.infrahub.app/immutable-history/overview
@@ -3693,9 +3692,7 @@ spec:
         change, and that a proposed change cannot be merged if a check does not complete
         successfully. The vendor states that each change creates a new timestamped version and
         that data can be read on any branch as it existed at an earlier time; no page states
-        that a single GraphQL mutation outside a branch merge runs as one transaction. The
-        all-or-nothing behavior is stated for branch merges only, and the merge page states that
-        a merge is not one database transaction.
+        that a single GraphQL mutation outside a branch merge runs as one transaction.
       sources:
         - https://docs.infrahub.app/branches/overview
         - https://docs.infrahub.app/branches/merge
