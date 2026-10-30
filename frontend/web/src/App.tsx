@@ -1,10 +1,11 @@
 import { useQuery } from '@tanstack/react-query'
 import { useEffect, useState } from 'react'
 import { fetchCatalog } from './api'
+import { BlockDetails } from './components/BlockDetails'
 import { FilterBar } from './components/FilterBar'
 import { FrameworkView } from './components/FrameworkView'
 import { ProductDetails } from './components/ProductDetails'
-import { parseFilters, serializeFilters, type Filters } from './filters'
+import { countBlockProducts, parseFilters, serializeFilters, type Filters } from './filters'
 import type { Focus } from './graph/buildGraph'
 import { CatalogGraph } from './graph/CatalogGraph'
 import { slugify } from './graph/logos'
@@ -22,6 +23,7 @@ export default function App() {
   const [view, setView] = useState<View>(() =>
     new URLSearchParams(window.location.search).get('view') === 'framework' ? 'framework' : 'graph',
   )
+  const [frameworkBlock, setFrameworkBlock] = useState<string | null>(null)
   const [pendingProduct, setPendingProduct] = useState(() => new URLSearchParams(window.location.search).get('product'))
 
   // Open the product named in the page address once the catalog has loaded.
@@ -38,6 +40,7 @@ export default function App() {
 
   const selectedId = focus?.kind === 'product' ? focus.id : null
   const selected = catalog.data?.products.find((product) => product.id === selectedId) ?? null
+  const selectedBlock = catalog.data?.blocks.find((block) => block.name === frameworkBlock) ?? null
 
   useEffect(() => {
     if (pendingProduct) return
@@ -47,6 +50,15 @@ export default function App() {
     const search = params.toString()
     window.history.replaceState(null, '', `${window.location.pathname}${search ? `?${search}` : ''}${window.location.hash}`)
   }, [filters, selected, pendingProduct, view])
+
+  // Escape closes the block panel of the framework view, as it clears the focus in the graph.
+  useEffect(() => {
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setFrameworkBlock(null)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
 
   useEffect(() => {
     const onHash = () => setSubmitView(isSubmitView())
@@ -104,10 +116,18 @@ export default function App() {
             <p className="hint">
               {view === 'graph'
                 ? 'Drag to move, scroll to zoom. Click a product or a building block to highlight its links. Solid lines are full coverage, dashed lines partial coverage.'
-                : 'The building blocks as the framework diagram arranges them. Click a block to view its products.'}
+                : 'The building blocks as the framework diagram arranges them. Click a block to view its MUST and SHOULD requirements.'}
             </p>
             <div className="view-toggle" role="group" aria-label="View">
-              <button type="button" className="chip" aria-pressed={view === 'graph'} onClick={() => setView('graph')}>
+              <button
+                type="button"
+                className="chip"
+                aria-pressed={view === 'graph'}
+                onClick={() => {
+                  setView('graph')
+                  setFrameworkBlock(null)
+                }}
+              >
                 Products
               </button>
               <button
@@ -131,14 +151,27 @@ export default function App() {
               )}
             </div>
           ) : (
-            <FrameworkView
-              catalog={catalog.data}
-              filters={filters}
-              onSelectBlock={(block) => {
-                setFilters({ ...filters, block })
-                setView('graph')
-              }}
-            />
+            <div className="graph-stage">
+              <FrameworkView
+                catalog={catalog.data}
+                filters={filters}
+                selectedBlock={frameworkBlock}
+                onSelectBlock={setFrameworkBlock}
+              />
+              {selectedBlock && (
+                <BlockDetails
+                  block={selectedBlock}
+                  requirements={catalog.data.requirements}
+                  productCount={countBlockProducts(catalog.data, filters, selectedBlock.name)}
+                  onShowProducts={() => {
+                    setFilters({ ...filters, block: selectedBlock.name })
+                    setFrameworkBlock(null)
+                    setView('graph')
+                  }}
+                  onClose={() => setFrameworkBlock(null)}
+                />
+              )}
+            </div>
           )}
           <footer className="app-footer">
             <p className="footer-notes">

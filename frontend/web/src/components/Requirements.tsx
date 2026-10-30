@@ -10,7 +10,7 @@ export const VERDICT_LABELS: Record<VerdictValue, string> = {
 
 const VERDICT_TITLES: Partial<Record<VerdictValue, string>> = { not_shown: 'Not shown by any source' }
 
-const LEVEL_LABELS = { must: 'MUST', should: 'SHOULD', may: 'MAY' }
+export const LEVEL_LABELS = { must: 'MUST', should: 'SHOULD', may: 'MAY' }
 
 interface Row {
   requirement: Requirement

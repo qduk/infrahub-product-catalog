@@ -21,10 +21,11 @@ const INFRASTRUCTURE = 'Routers · Switches · Firewalls · Load Balancers · SD
 interface Props {
   catalog: Catalog
   filters: Filters
+  selectedBlock: string | null
   onSelectBlock: (name: string) => void
 }
 
-export function FrameworkView({ catalog, filters, onSelectBlock }: Props) {
+export function FrameworkView({ catalog, filters, selectedBlock, onSelectBlock }: Props) {
   const names = catalog.blocks.map((block) => block.name).sort(byFrameworkOrder)
   const row = (name: 'top' | 'middle' | 'bottom') => names.filter((block) => DIAGRAM[block]?.row === name)
   const others = names.filter((block) => !DIAGRAM[block])
@@ -38,7 +39,7 @@ export function FrameworkView({ catalog, filters, onSelectBlock }: Props) {
         type="button"
         className={`framework-block${DIAGRAM[name]?.row === 'top' ? ' framework-block-wide' : ''}`}
         style={{ '--block-color': blockStyle(name).color } as CSSProperties}
-        aria-pressed={filters.block === name}
+        aria-pressed={selectedBlock === name}
         onClick={() => onSelectBlock(name)}
       >
         <span className="framework-block-name">{name}</span>
@@ -59,7 +60,7 @@ export function FrameworkView({ catalog, filters, onSelectBlock }: Props) {
   }
 
   return (
-    <div className="framework" aria-label="Network Automation Framework building blocks">
+    <div className={`framework${selectedBlock ? ' framework-with-panel' : ''}`} aria-label="Network Automation Framework building blocks">
       <div className="framework-row framework-row-top">{row('top').map(tile)}</div>
       <div className="framework-row framework-row-middle">{row('middle').map(tile)}</div>
       <div className="framework-row framework-row-bottom">{row('bottom').map(tile)}</div>

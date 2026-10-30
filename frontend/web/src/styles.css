@@ -1217,6 +1217,49 @@ button:disabled {
   color: var(--text-muted);
 }
 
+/* Block panel of the framework view */
+/* Leaves room for the panel so the diagram stays visible beside it. */
+.framework-with-panel {
+  padding-right: calc(min(400px, 100% - 1.5rem) + 2.5rem);
+}
+
+.block-details {
+  border-color: color-mix(in srgb, var(--block-color) 60%, var(--border-strong));
+}
+
+.block-details-name {
+  color: var(--block-color);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.block-details-description {
+  margin-top: 0.8rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.block-details-products {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.requirement-statement {
+  margin-top: 0.3rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.requirement-statement summary {
+  cursor: pointer;
+  color: var(--accent);
+}
+
+.requirement-statement p {
+  margin: 0.3rem 0 0;
+  line-height: 1.45;
+}
+
 /* Narrow screens */
 @media (max-width: 900px) {
   .app-footer {
@@ -1238,6 +1281,10 @@ button:disabled {
 
   .framework {
     padding: 1rem;
+  }
+
+  .framework-with-panel {
+    padding-right: 1rem;
   }
 
   .framework-row-middle,
