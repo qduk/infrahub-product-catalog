@@ -185,7 +185,6 @@ export function SubmitForm({ catalog, onDone }: Props) {
             <select {...register('product.status')}>
               <option value="active">Active</option>
               <option value="discontinued">Discontinued</option>
-              <option value="acquired">Acquired</option>
             </select>
           </Field>
           {values.product?.status !== 'active' && (

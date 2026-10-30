@@ -7,10 +7,10 @@ describe('filters', () => {
 
 
   it('reads and writes the page address', () => {
-    const filters = { statuses: ['active', 'acquired'] as const, extents: ['full'] as const, block: 'Intent' }
+    const filters = { statuses: ['active', 'discontinued'] as const, extents: ['full'] as const, block: 'Intent' }
     const search = serializeFilters({ ...filters, statuses: [...filters.statuses], extents: [...filters.extents] })
-    expect(search).toBe('status=active%2Cacquired&extent=full&block=Intent')
-    expect(parseFilters(search)).toEqual({ statuses: ['active', 'acquired'], extents: ['full'], block: 'Intent' })
+    expect(search).toBe('status=active%2Cdiscontinued&extent=full&block=Intent')
+    expect(parseFilters(search)).toEqual({ statuses: ['active', 'discontinued'], extents: ['full'], block: 'Intent' })
   })
 
   it('leaves default filters out of the page address', () => {

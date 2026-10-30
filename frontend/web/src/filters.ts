@@ -8,7 +8,7 @@ export interface Filters {
   block: string | null
 }
 
-export const ALL_STATUSES: Status[] = ['active', 'discontinued', 'acquired']
+export const ALL_STATUSES: Status[] = ['active', 'discontinued']
 export const ALL_EXTENTS: Extent[] = ['full', 'partial']
 
 export const DEFAULT_FILTERS: Filters = { statuses: ['active'], extents: ['full', 'partial'], block: null }

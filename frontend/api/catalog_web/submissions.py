@@ -17,7 +17,7 @@ URL_MAX = 500
 SOURCES_MAX = 20
 
 LicenseModel = Literal["open_source", "open_core", "commercial"]
-Status = Literal["active", "discontinued", "acquired"]
+Status = Literal["active", "discontinued"]
 
 
 def _text(max_length: int, min_length: int = 1):

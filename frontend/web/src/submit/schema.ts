@@ -34,7 +34,7 @@ export const submissionSchema = z
       description: text(TEXT_MAX, 'a description'),
       homepage_url: url,
       license_model: z.enum(['', 'open_source', 'open_core', 'commercial']),
-      status: z.enum(['active', 'discontinued', 'acquired']),
+      status: z.enum(['active', 'discontinued']),
       status_date: z.string(),
     }),
     publisherMode: z.enum(['existing', 'new']),

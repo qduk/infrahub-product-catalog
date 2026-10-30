@@ -1,6 +1,6 @@
 // Types and calls for the catalog web service (specs/005-catalog-web-app/contracts/api.md).
 
-export type Status = 'active' | 'discontinued' | 'acquired'
+export type Status = 'active' | 'discontinued'
 export type Extent = 'full' | 'partial'
 export type LicenseModel = 'open_source' | 'open_core' | 'commercial'
 
@@ -112,7 +112,6 @@ export async function submitProduct(body: unknown): Promise<SubmissionResult> {
 export const STATUS_LABELS: Record<Status, string> = {
   active: 'Active',
   discontinued: 'Discontinued',
-  acquired: 'Acquired',
 }
 
 export const LICENSE_LABELS: Record<LicenseModel, string> = {

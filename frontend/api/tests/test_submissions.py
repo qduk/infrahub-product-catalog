@@ -63,7 +63,7 @@ def test_status_other_than_active_needs_a_source() -> None:
 
 
 def test_status_with_source_passes() -> None:
-    Submission.model_validate(submission(product__status="acquired", fact_sources__status=["s1"]))
+    Submission.model_validate(submission(product__status="discontinued", fact_sources__status=["s1"]))
 
 
 def test_one_claim_per_building_block() -> None:

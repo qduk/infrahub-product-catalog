@@ -37,8 +37,8 @@ it covers. The file format is in
      `not_shown`, the source that states it. Refer to the claim as `["<publisher> <product>", "<block>"]`.
      A claim is full only when every MUST and SHOULD of its block is `met`; framework-wide
      requirements are shown but do not count.
-   - If the product is no longer sold, set `status` to `discontinued`, or to `acquired` when it
-     was absorbed into another company and is no longer sold on its own. Add the source that
+   - If the product is no longer sold, set `status` to `discontinued`. This includes a product
+     that was absorbed into another company and is no longer sold on its own. Add the source that
      states it under `status_sources`, and `status_date` when the source gives a date. Leave all
      three out for a product that is still sold.
 5. Check and load the files on your branch:
