@@ -1,6 +1,6 @@
 // Filter state and how it is stored in the page address. src/graph/buildGraph.ts applies it.
 
-import type { Extent, Status } from './api'
+import type { Catalog, Extent, Status } from './api'
 
 export interface Filters {
   statuses: Status[]
@@ -40,4 +40,13 @@ export function serializeFilters(filters: Filters): string {
   }
   if (filters.block) params.set('block', filters.block)
   return params.toString()
+}
+
+// Products with the selected statuses that cover a block with one of the selected extents.
+export function countBlockProducts(catalog: Catalog, filters: Filters, block: string): number {
+  return catalog.products.filter(
+    (product) =>
+      filters.statuses.includes(product.status) &&
+      product.claims.some((claim) => claim.block === block && filters.extents.includes(claim.extent)),
+  ).length
 }

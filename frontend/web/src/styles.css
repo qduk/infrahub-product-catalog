@@ -1084,6 +1084,139 @@ button:disabled {
   background: var(--surface-raised);
 }
 
+/* View toggle and the framework view: the blocks as the framework diagram arranges them */
+.view-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.view-toggle {
+  display: flex;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.framework {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.75rem;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background:
+    radial-gradient(600px 400px at 50% 50%, rgba(6, 182, 212, 0.06), transparent 70%),
+    rgba(5, 7, 13, 0.55);
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.45);
+}
+
+.framework-row {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+}
+
+.framework-row-middle {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Collector and Executor sit inset, as in the diagram. */
+.framework-row-bottom {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding: 0 5%;
+  column-gap: 15%;
+}
+
+.framework-row:empty {
+  display: none;
+}
+
+.framework-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.1rem 1rem;
+  border-radius: 18px;
+  border: 3px solid var(--block-color);
+  background: color-mix(in srgb, var(--block-color) 22%, var(--surface));
+  box-shadow: 0 0 28px color-mix(in srgb, var(--block-color) 30%, transparent);
+  color: var(--text);
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+  transition: box-shadow 150ms, transform 150ms;
+}
+
+.framework-block:hover,
+.framework-block:focus-visible,
+.framework-block[aria-pressed='true'] {
+  box-shadow: 0 0 40px color-mix(in srgb, var(--block-color) 60%, transparent);
+  transform: translateY(-2px);
+}
+
+.framework-block-name {
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--block-color, var(--text));
+}
+
+.framework-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.framework-items-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.framework-block-wide .framework-items {
+  width: auto;
+}
+
+.framework-item {
+  padding: 0.55rem 0.6rem;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--block-color) 35%, transparent);
+  background: color-mix(in srgb, var(--block-color) 14%, transparent);
+  font-size: 0.85rem;
+}
+
+.framework-block-wide .framework-item {
+  border: none;
+  background: none;
+  padding: 0;
+  color: var(--text-muted);
+}
+
+.framework-count {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.framework-infrastructure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.1rem 1rem;
+  border-radius: 18px;
+  border: 1px dashed var(--border-strong);
+  background: var(--surface);
+  text-align: center;
+}
+
+.framework-infrastructure-items {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
 /* Narrow screens */
 @media (max-width: 900px) {
   .app-footer {
@@ -1094,6 +1227,23 @@ button:disabled {
 
   .graph-canvas {
     height: 70vh;
+  }
+
+  .view-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    margin-bottom: 0.6rem;
+  }
+
+  .framework {
+    padding: 1rem;
+  }
+
+  .framework-row-middle,
+  .framework-row-bottom {
+    grid-template-columns: 1fr;
+    padding: 0;
   }
 
   .details {

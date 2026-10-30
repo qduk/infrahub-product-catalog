@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react'
 import { STATUS_LABELS, type Catalog, type Extent, type Status } from '../api'
-import { ALL_EXTENTS, ALL_STATUSES, DEFAULT_FILTERS, serializeFilters, type Filters } from '../filters'
+import { ALL_EXTENTS, ALL_STATUSES, countBlockProducts, DEFAULT_FILTERS, serializeFilters, type Filters } from '../filters'
 import { blockStyle, byFrameworkOrder } from '../graph/blockStyle'
 
 interface Props {
@@ -20,12 +20,6 @@ export function FilterBar({ catalog, filters, onChange }: Props) {
   const extentCount = (extent: Extent) =>
     withClaims.filter(
       (product) => filters.statuses.includes(product.status) && product.claims.some((claim) => claim.extent === extent),
-    ).length
-  const blockCount = (block: string) =>
-    withClaims.filter(
-      (product) =>
-        filters.statuses.includes(product.status) &&
-        product.claims.some((claim) => claim.block === block && filters.extents.includes(claim.extent)),
     ).length
   const isDefault = serializeFilters(filters) === serializeFilters(DEFAULT_FILTERS)
 
@@ -88,7 +82,7 @@ export function FilterBar({ catalog, filters, onChange }: Props) {
           >
             <span className="chip-dot" />
             {block.name}
-            <span className="chip-count">{blockCount(block.name)}</span>
+            <span className="chip-count">{countBlockProducts(catalog, filters, block.name)}</span>
           </button>
         ))}
       </div>

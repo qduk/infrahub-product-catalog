@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { DEFAULT_FILTERS, parseFilters, serializeFilters } from './filters'
+import { countBlockProducts, DEFAULT_FILTERS, parseFilters, serializeFilters } from './filters'
+import { sampleCatalog } from './graph/fixtures'
 
 describe('filters', () => {
 
@@ -19,5 +20,11 @@ describe('filters', () => {
 
   it('ignores unknown values in the page address', () => {
     expect(parseFilters('status=bogus&extent=nope')).toEqual(DEFAULT_FILTERS)
+  })
+
+  it('counts the products that cover a block with the selected statuses and extents', () => {
+    expect(countBlockProducts(sampleCatalog, DEFAULT_FILTERS, 'Collector')).toBe(1)
+    expect(countBlockProducts(sampleCatalog, { ...DEFAULT_FILTERS, statuses: ['active', 'discontinued'] }, 'Collector')).toBe(2)
+    expect(countBlockProducts(sampleCatalog, { ...DEFAULT_FILTERS, extents: ['full'] }, 'Observability')).toBe(0)
   })
 })

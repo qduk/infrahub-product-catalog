@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query'
 import { useEffect, useState } from 'react'
 import { fetchCatalog } from './api'
 import { FilterBar } from './components/FilterBar'
+import { FrameworkView } from './components/FrameworkView'
 import { ProductDetails } from './components/ProductDetails'
 import { parseFilters, serializeFilters, type Filters } from './filters'
 import type { Focus } from './graph/buildGraph'
@@ -12,17 +13,25 @@ import { SubmitForm } from './submit/SubmitForm'
 
 const isSubmitView = () => window.location.hash === '#submit'
 
+type View = 'graph' | 'framework'
+
 export default function App() {
   const catalog = useQuery({ queryKey: ['catalog'], queryFn: fetchCatalog, staleTime: 60_000 })
   const [filters, setFilters] = useState<Filters>(() => parseFilters(window.location.search))
   const [focus, setFocus] = useState<Focus>(null)
+  const [view, setView] = useState<View>(() =>
+    new URLSearchParams(window.location.search).get('view') === 'framework' ? 'framework' : 'graph',
+  )
   const [pendingProduct, setPendingProduct] = useState(() => new URLSearchParams(window.location.search).get('product'))
 
   // Open the product named in the page address once the catalog has loaded.
   useEffect(() => {
     if (!pendingProduct || !catalog.data) return
     const product = catalog.data.products.find((item) => slugify(item.full_name) === pendingProduct)
-    if (product) setFocus({ kind: 'product', id: product.id })
+    if (product) {
+      setFocus({ kind: 'product', id: product.id })
+      setView('graph')
+    }
     setPendingProduct(null)
   }, [pendingProduct, catalog.data])
   const [submitView, setSubmitView] = useState(isSubmitView)
@@ -33,10 +42,11 @@ export default function App() {
   useEffect(() => {
     if (pendingProduct) return
     const params = new URLSearchParams(serializeFilters(filters))
+    if (view === 'framework') params.set('view', 'framework')
     if (selected) params.set('product', slugify(selected.full_name))
     const search = params.toString()
     window.history.replaceState(null, '', `${window.location.pathname}${search ? `?${search}` : ''}${window.location.hash}`)
-  }, [filters, selected, pendingProduct])
+  }, [filters, selected, pendingProduct, view])
 
   useEffect(() => {
     const onHash = () => setSubmitView(isSubmitView())
@@ -90,16 +100,46 @@ export default function App() {
               setFocus(null)
             }}
           />
-          <p className="hint">
-            Drag to move, scroll to zoom. Click a product or a building block to highlight its links. Solid lines
-            are full coverage, dashed lines partial coverage.
-          </p>
-          <div className="graph-stage">
-            <CatalogGraph catalog={catalog.data} filters={filters} focus={focus} onFocus={setFocus} />
-            {selected && (
-              <ProductDetails product={selected} requirements={catalog.data.requirements} onClose={() => setFocus(null)} />
-            )}
+          <div className="view-row">
+            <p className="hint">
+              {view === 'graph'
+                ? 'Drag to move, scroll to zoom. Click a product or a building block to highlight its links. Solid lines are full coverage, dashed lines partial coverage.'
+                : 'The building blocks as the framework diagram arranges them. Click a block to view its products.'}
+            </p>
+            <div className="view-toggle" role="group" aria-label="View">
+              <button type="button" className="chip" aria-pressed={view === 'graph'} onClick={() => setView('graph')}>
+                Products
+              </button>
+              <button
+                type="button"
+                className="chip"
+                aria-pressed={view === 'framework'}
+                onClick={() => {
+                  setView('framework')
+                  setFocus(null)
+                }}
+              >
+                Framework only
+              </button>
+            </div>
           </div>
+          {view === 'graph' ? (
+            <div className="graph-stage">
+              <CatalogGraph catalog={catalog.data} filters={filters} focus={focus} onFocus={setFocus} />
+              {selected && (
+                <ProductDetails product={selected} requirements={catalog.data.requirements} onClose={() => setFocus(null)} />
+              )}
+            </div>
+          ) : (
+            <FrameworkView
+              catalog={catalog.data}
+              filters={filters}
+              onSelectBlock={(block) => {
+                setFilters({ ...filters, block })
+                setView('graph')
+              }}
+            />
+          )}
           <footer className="app-footer">
             <p className="footer-notes">
             Building blocks from the{' '}
