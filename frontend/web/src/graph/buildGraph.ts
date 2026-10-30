@@ -7,13 +7,15 @@ import { BLOCK_SIZE, PRODUCT_SIZE, layoutGraph } from './layout'
 
 export type Focus = { kind: 'product'; id: string } | { kind: 'block'; name: string } | null
 
-export type BlockNodeData = { name: string; faded: boolean }
+// morph, count and selected are set only by src/graph/morph.ts, for the framework view.
+export type BlockNodeData = { name: string; faded: boolean; morph?: number; count?: number; selected?: boolean }
 export type ProductNodeData = { product: Product; faded: boolean }
-export type CoverageEdgeData = { extent: Extent; block: string; faded: boolean }
+export type CoverageEdgeData = { extent: Extent; block: string; faded: boolean; visibility?: number }
 
 export type BlockNode = Node<BlockNodeData, 'block'>
 export type ProductNode = Node<ProductNodeData, 'product'>
-export type GraphNode = BlockNode | ProductNode
+export type InfrastructureNode = Node<Record<string, never>, 'infrastructure'>
+export type GraphNode = BlockNode | ProductNode | InfrastructureNode
 export type CoverageEdge = Edge<CoverageEdgeData>
 
 export const blockNodeId = (name: string) => `block:${name}`

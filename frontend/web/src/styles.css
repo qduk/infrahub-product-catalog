@@ -293,8 +293,8 @@ button:disabled {
 }
 
 .graph-block {
-  width: 280px;
-  height: 110px;
+  width: 100%;
+  height: 100%;
   border-radius: 18px;
   border: 3px solid var(--block-color);
   background: color-mix(in srgb, var(--block-color) 22%, var(--surface));
@@ -1218,9 +1218,45 @@ button:disabled {
 }
 
 /* Block panel of the framework view */
-/* Leaves room for the panel so the diagram stays visible beside it. */
-.framework-with-panel {
-  padding-right: calc(min(400px, 100% - 1.5rem) + 2.5rem);
+/* The framework view inside the graph canvas */
+.graph-canvas-framework .react-flow__pane {
+  cursor: default;
+}
+
+.graph-block {
+  overflow: hidden;
+}
+
+.graph-block.morphing {
+  justify-content: flex-start;
+  padding: 1rem;
+  gap: 0.6rem;
+}
+
+.graph-block.selected {
+  box-shadow: 0 0 48px color-mix(in srgb, var(--block-color) 70%, transparent);
+}
+
+.graph-block-framework {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  text-align: center;
+}
+
+.framework-items-plain .framework-item {
+  border: none;
+  background: none;
+  padding: 0;
+  color: var(--text-muted);
+}
+
+.graph-infrastructure {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
 }
 
 .block-details {
@@ -1265,10 +1301,6 @@ button:disabled {
 
   .framework {
     padding: 1rem;
-  }
-
-  .framework-with-panel {
-    padding-right: 1rem;
   }
 
   .framework-row-middle,

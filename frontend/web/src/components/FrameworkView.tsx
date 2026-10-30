@@ -1,22 +1,11 @@
-// The building blocks laid out as in the framework's reference diagram, without products.
-// Diagram: https://reference.networkautomation.forum/Framework/images/naf-automation-framework-v1-dark.png
-// The items inside each block are copied from that diagram.
+// The building blocks as the framework diagram arranges them, as a list for narrow screens. On wider
+// screens, src/graph/CatalogGraph.tsx shows the same diagram in the graph canvas.
 
 import type { CSSProperties } from 'react'
 import type { Catalog } from '../api'
 import { countBlockProducts, type Filters } from '../filters'
 import { blockStyle, byFrameworkOrder } from '../graph/blockStyle'
-
-const DIAGRAM: Record<string, { row: 'top' | 'middle' | 'bottom'; items: string[] }> = {
-  Presentation: { row: 'top', items: ['Dashboards · CLI · ITSM Integration · API Gateway · ChatOps'] },
-  Observability: { row: 'middle', items: ['Observed State · Data Normalization', 'Observed Logic & Analytics'] },
-  Orchestrator: { row: 'middle', items: ['Events', 'Workflows', 'Rollback', 'Scheduling'] },
-  Intent: { row: 'middle', items: ['Intended State (SoT)', 'Intended Logic & Validation'] },
-  Collector: { row: 'bottom', items: ['Read Operations', '▲ Read from infrastructure'] },
-  Executor: { row: 'bottom', items: ['Write Operations · Idempotent · Dry-Run', '▼ Write to infrastructure'] },
-}
-
-const INFRASTRUCTURE = 'Routers · Switches · Firewalls · Load Balancers · SD-WAN · Cloud Fabric · Compute · DPU'
+import { FRAMEWORK_DIAGRAM as DIAGRAM, INFRASTRUCTURE_ITEMS as INFRASTRUCTURE } from '../graph/framework'
 
 interface Props {
   catalog: Catalog
@@ -60,7 +49,7 @@ export function FrameworkView({ catalog, filters, selectedBlock, onSelectBlock }
   }
 
   return (
-    <div className={`framework${selectedBlock ? ' framework-with-panel' : ''}`} aria-label="Network Automation Framework building blocks">
+    <div className="framework" aria-label="Network Automation Framework building blocks">
       <div className="framework-row framework-row-top">{row('top').map(tile)}</div>
       <div className="framework-row framework-row-middle">{row('middle').map(tile)}</div>
       <div className="framework-row framework-row-bottom">{row('bottom').map(tile)}</div>

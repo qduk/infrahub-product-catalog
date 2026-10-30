@@ -7,14 +7,26 @@ import { FrameworkView } from './components/FrameworkView'
 import { ProductDetails } from './components/ProductDetails'
 import { countBlockProducts, parseFilters, serializeFilters, type Filters } from './filters'
 import type { Focus } from './graph/buildGraph'
-import { CatalogGraph } from './graph/CatalogGraph'
+import { CatalogGraph, type View } from './graph/CatalogGraph'
 import { slugify } from './graph/logos'
 import { MadeBy } from './components/MadeBy'
 import { SubmitForm } from './submit/SubmitForm'
 
 const isSubmitView = () => window.location.hash === '#submit'
 
-type View = 'graph' | 'framework'
+// Below this width the framework view is a one-column list instead of a diagram in the graph canvas.
+const NARROW = '(max-width: 900px)'
+
+function useNarrow() {
+  const [narrow, setNarrow] = useState(() => window.matchMedia(NARROW).matches)
+  useEffect(() => {
+    const query = window.matchMedia(NARROW)
+    const onChange = () => setNarrow(query.matches)
+    query.addEventListener('change', onChange)
+    return () => query.removeEventListener('change', onChange)
+  }, [])
+  return narrow
+}
 
 export default function App() {
   const catalog = useQuery({ queryKey: ['catalog'], queryFn: fetchCatalog, staleTime: 60_000 })
@@ -24,6 +36,7 @@ export default function App() {
     new URLSearchParams(window.location.search).get('view') === 'framework' ? 'framework' : 'graph',
   )
   const [frameworkBlock, setFrameworkBlock] = useState<string | null>(null)
+  const narrow = useNarrow()
   const [pendingProduct, setPendingProduct] = useState(() => new URLSearchParams(window.location.search).get('product'))
 
   // Open the product named in the page address once the catalog has loaded.
@@ -143,36 +156,42 @@ export default function App() {
               </button>
             </div>
           </div>
-          {view === 'graph' ? (
-            <div className="graph-stage">
-              <CatalogGraph catalog={catalog.data} filters={filters} focus={focus} onFocus={setFocus} />
-              {selected && (
-                <ProductDetails product={selected} requirements={catalog.data.requirements} onClose={() => setFocus(null)} />
-              )}
-            </div>
-          ) : (
-            <div className="graph-stage">
+          <div className="graph-stage">
+            {view === 'framework' && narrow ? (
               <FrameworkView
                 catalog={catalog.data}
                 filters={filters}
                 selectedBlock={frameworkBlock}
                 onSelectBlock={setFrameworkBlock}
               />
-              {selectedBlock && (
-                <BlockDetails
-                  block={selectedBlock}
-                  requirements={catalog.data.requirements}
-                  productCount={countBlockProducts(catalog.data, filters, selectedBlock.name)}
-                  onShowProducts={() => {
-                    setFilters({ ...filters, block: selectedBlock.name })
-                    setFrameworkBlock(null)
-                    setView('graph')
-                  }}
-                  onClose={() => setFrameworkBlock(null)}
-                />
-              )}
-            </div>
-          )}
+            ) : (
+              <CatalogGraph
+                catalog={catalog.data}
+                filters={filters}
+                focus={focus}
+                onFocus={setFocus}
+                view={view}
+                selectedBlock={frameworkBlock}
+                onSelectBlock={setFrameworkBlock}
+              />
+            )}
+            {view === 'graph' && selected && (
+              <ProductDetails product={selected} requirements={catalog.data.requirements} onClose={() => setFocus(null)} />
+            )}
+            {view === 'framework' && selectedBlock && (
+              <BlockDetails
+                block={selectedBlock}
+                requirements={catalog.data.requirements}
+                productCount={countBlockProducts(catalog.data, filters, selectedBlock.name)}
+                onShowProducts={() => {
+                  setFilters({ ...filters, block: selectedBlock.name })
+                  setFrameworkBlock(null)
+                  setView('graph')
+                }}
+                onClose={() => setFrameworkBlock(null)}
+              />
+            )}
+          </div>
           <footer className="app-footer">
             <p className="footer-notes">
             Building blocks from the{' '}

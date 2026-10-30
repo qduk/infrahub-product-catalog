@@ -3,6 +3,7 @@ import type { CSSProperties } from 'react'
 import { STATUS_LABELS } from '../api'
 import { blockStyle } from './blockStyle'
 import type { BlockNode as BlockNodeType, CoverageEdge, ProductNode as ProductNodeType } from './buildGraph'
+import { FRAMEWORK_DIAGRAM, INFRASTRUCTURE_ITEMS } from './framework'
 import { Logo } from './Logo'
 
 // Edges attach to the centre of each node, so lines can arrive from any side.
@@ -13,13 +14,50 @@ const centreHandles = (
   </>
 )
 
+// In the framework view (morph 1) a block shows the items of the diagram instead of its tagline.
 export function BlockNode({ data }: NodeProps<BlockNodeType>) {
   const style = blockStyle(data.name)
+  const morph = data.morph ?? 0
+  const items = FRAMEWORK_DIAGRAM[data.name]?.items ?? []
+  const count = data.count ?? 0
   return (
-    <div className={`graph-block${data.faded ? ' faded' : ''}`} style={{ '--block-color': style.color } as CSSProperties}>
+    <div
+      className={`graph-block${data.faded ? ' faded' : ''}${data.selected ? ' selected' : ''}${morph > 0 ? ' morphing' : ''}`}
+      style={{ '--block-color': style.color } as CSSProperties}
+    >
       {centreHandles}
       <div className="graph-block-name">{data.name}</div>
-      {style.tagline && <div className="graph-block-tagline">{style.tagline}</div>}
+      {morph < 0.5 ? (
+        style.tagline && (
+          <div className="graph-block-tagline" style={{ opacity: 1 - morph * 2 }}>
+            {style.tagline}
+          </div>
+        )
+      ) : (
+        <div className="graph-block-framework" style={{ opacity: morph * 2 - 1 }}>
+          {items.length > 0 && (
+            <div className={`framework-items${items.length === 4 ? ' framework-items-grid' : ''}${FRAMEWORK_DIAGRAM[data.name]?.row === 'top' ? ' framework-items-plain' : ''}`}>
+              {items.map((item) => (
+                <span key={item} className="framework-item">
+                  {item}
+                </span>
+              ))}
+            </div>
+          )}
+          <span className="framework-count">
+            {count} {count === 1 ? 'product' : 'products'}
+          </span>
+        </div>
+      )}
+    </div>
+  )
+}
+
+export function InfrastructureNode() {
+  return (
+    <div className="framework-infrastructure graph-infrastructure">
+      <span className="framework-block-name">Infrastructure</span>
+      <span className="framework-infrastructure-items">{INFRASTRUCTURE_ITEMS}</span>
     </div>
   )
 }
@@ -51,11 +89,11 @@ export function CoverageEdgeView({ sourceX, sourceY, targetX, targetY, data }: E
         stroke: color,
         strokeWidth: data?.extent === 'full' ? 2.2 : 1.6,
         strokeDasharray: data?.extent === 'partial' ? '6 5' : undefined,
-        opacity: data?.faded ? 0.08 : 0.75,
+        opacity: (data?.faded ? 0.08 : 0.75) * (data?.visibility ?? 1),
       }}
     />
   )
 }
 
-export const nodeTypes = { block: BlockNode, product: ProductNode }
+export const nodeTypes = { block: BlockNode, product: ProductNode, infrastructure: InfrastructureNode }
 export const edgeTypes = { coverage: CoverageEdgeView }
