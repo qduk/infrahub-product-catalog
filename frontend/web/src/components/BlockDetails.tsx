@@ -10,15 +10,6 @@ function RequirementItem({ requirement }: { requirement: Requirement }) {
         <span className={`level level-${requirement.level}`}>{LEVEL_LABELS[requirement.level]}</span>
         <span className="requirement-summary">{requirement.summary}</span>
       </div>
-      <details className="requirement-statement">
-        <summary>Framework text</summary>
-        <p>{requirement.statement}</p>
-      </details>
-      <div className="requirement-links">
-        <a className="requirement-ref" href={requirement.reference_url} target="_blank" rel="noopener noreferrer">
-          Framework ↗
-        </a>
-      </div>
     </li>
   )
 }
